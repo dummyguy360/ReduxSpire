@@ -8,8 +8,8 @@
     {"resourceType":"GMOverriddenProperty","resourceVersion":"1.0","name":"","objectId":{"name":"obj_secretdestroyable","path":"objects/obj_secretdestroyable/obj_secretdestroyable.yy",},"propertyId":{"name":"layer_tile","path":"objects/obj_secretdestroyable/obj_secretdestroyable.yy",},"value":"\"Tiles_4\"",},
   ],
   "parent": {
-    "name": "Objects",
-    "path": "folders/Objects.yy",
+    "name": "Compat",
+    "path": "folders/Objects/level/destroyables/secretdestroyables/Compat.yy",
   },
   "parentObjectId": {
     "name": "obj_secretdestroyable",

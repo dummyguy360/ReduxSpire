@@ -25,8 +25,8 @@
   "nineSlice": null,
   "origin": 4,
   "parent": {
-    "name": "Sprites",
-    "path": "folders/Sprites.yy",
+    "name": "Conekitty",
+    "path": "folders/Sprites/Dialogue Icons/Conekitty.yy",
   },
   "preMultiplyAlpha": false,
   "sequence": {

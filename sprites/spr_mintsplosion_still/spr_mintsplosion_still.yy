@@ -25,8 +25,8 @@
   "nineSlice": null,
   "origin": 4,
   "parent": {
-    "name": "Sprites",
-    "path": "folders/Sprites.yy",
+    "name": "mintsplosion",
+    "path": "folders/Sprites/enem/norm/w2/mintsplosion.yy",
   },
   "preMultiplyAlpha": false,
   "sequence": {

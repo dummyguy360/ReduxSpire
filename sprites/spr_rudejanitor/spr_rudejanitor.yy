@@ -25,8 +25,8 @@
   "nineSlice": null,
   "origin": 4,
   "parent": {
-    "name": "Sprites",
-    "path": "folders/Sprites.yy",
+    "name": "janitor",
+    "path": "folders/Sprites/enem/norm/misc/janitor.yy",
   },
   "preMultiplyAlpha": false,
   "sequence": {

@@ -38,8 +38,8 @@
   "nineSlice": null,
   "origin": 0,
   "parent": {
-    "name": "Sprites",
-    "path": "folders/Sprites.yy",
+    "name": "Collect",
+    "path": "folders/Sprites/LevelAssets/Collect.yy",
   },
   "preMultiplyAlpha": false,
   "sequence": {

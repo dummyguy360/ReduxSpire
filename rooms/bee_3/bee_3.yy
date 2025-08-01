@@ -196,8 +196,8 @@
       ],"depth":1400,"effectEnabled":true,"effectType":null,"gridX":16,"gridY":16,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"properties":[],"userdefinedDepth":false,"visible":false,},
   ],
   "parent": {
-    "name": "Rooms",
-    "path": "folders/Rooms.yy",
+    "name": "Bee",
+    "path": "folders/Rooms/Levels/World 2/Bee.yy",
   },
   "parentRoom": null,
   "physicsSettings": {

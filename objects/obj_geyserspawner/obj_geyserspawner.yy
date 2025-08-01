@@ -10,8 +10,8 @@
   "managed": true,
   "overriddenProperties": [],
   "parent": {
-    "name": "Objects",
-    "path": "folders/Objects.yy",
+    "name": "Geyser",
+    "path": "folders/Objects/level/LevelOBJS/Molasses/Geyser.yy",
   },
   "parentObjectId": null,
   "persistent": false,

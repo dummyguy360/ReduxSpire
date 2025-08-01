@@ -51,8 +51,8 @@
   "nineSlice": null,
   "origin": 4,
   "parent": {
-    "name": "Sprites",
-    "path": "folders/Sprites.yy",
+    "name": "guard",
+    "path": "folders/Sprites/enem/norm/w2/guard.yy",
   },
   "preMultiplyAlpha": false,
   "sequence": {

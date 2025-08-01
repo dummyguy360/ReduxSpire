@@ -10,8 +10,8 @@
   "managed": true,
   "overriddenProperties": [],
   "parent": {
-    "name": "Objects",
-    "path": "folders/Objects.yy",
+    "name": "Unused",
+    "path": "folders/Objects/level/LevelOBJS/Mines/Unused.yy",
   },
   "parentObjectId": {
     "name": "obj_donutShitterOLD",

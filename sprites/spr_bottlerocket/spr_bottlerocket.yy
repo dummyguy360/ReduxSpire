@@ -42,8 +42,8 @@
   "nineSlice": null,
   "origin": 4,
   "parent": {
-    "name": "Sprites",
-    "path": "folders/Sprites.yy",
+    "name": "Sucrose",
+    "path": "folders/Sprites/LevelAssets/Sucrose.yy",
   },
   "preMultiplyAlpha": false,
   "sequence": {

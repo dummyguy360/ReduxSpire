@@ -10,8 +10,8 @@
   "managed": true,
   "overriddenProperties": [],
   "parent": {
-    "name": "Objects",
-    "path": "folders/Objects.yy",
+    "name": "travel",
+    "path": "folders/Objects/level/transport/travel.yy",
   },
   "parentObjectId": null,
   "persistent": false,

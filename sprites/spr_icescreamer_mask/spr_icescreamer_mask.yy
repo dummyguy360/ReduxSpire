@@ -49,8 +49,8 @@
   },
   "origin": 4,
   "parent": {
-    "name": "Sprites",
-    "path": "folders/Sprites.yy",
+    "name": "Collision Masks",
+    "path": "folders/Sprites/Collision Masks.yy",
   },
   "preMultiplyAlpha": false,
   "sequence": {

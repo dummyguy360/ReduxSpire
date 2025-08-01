@@ -11,8 +11,8 @@
   "managed": true,
   "overriddenProperties": [],
   "parent": {
-    "name": "Objects",
-    "path": "folders/Objects.yy",
+    "name": "Dance Off",
+    "path": "folders/Rooms/Levels/World 2/Dance Off.yy",
   },
   "parentObjectId": null,
   "persistent": false,

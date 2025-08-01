@@ -45,8 +45,8 @@
   "nineSlice": null,
   "origin": 9,
   "parent": {
-    "name": "Sprites",
-    "path": "folders/Sprites.yy",
+    "name": "Timer",
+    "path": "folders/Sprites/GUI/HUD/Timer.yy",
   },
   "preMultiplyAlpha": false,
   "sequence": {

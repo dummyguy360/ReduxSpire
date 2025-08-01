@@ -16,8 +16,8 @@
   "managed": true,
   "overriddenProperties": [],
   "parent": {
-    "name": "Objects",
-    "path": "folders/Objects.yy",
+    "name": "Creamthief",
+    "path": "folders/Objects/level/LevelOBJS/Danceoff/Creamthief.yy",
   },
   "parentObjectId": null,
   "persistent": false,

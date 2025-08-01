@@ -13,8 +13,8 @@
   "managed": true,
   "overriddenProperties": [],
   "parent": {
-    "name": "Objects",
-    "path": "folders/Objects.yy",
+    "name": "Shell",
+    "path": "folders/Objects/important/Shell.yy",
   },
   "parentObjectId": null,
   "persistent": true,

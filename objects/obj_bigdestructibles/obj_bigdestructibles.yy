@@ -8,8 +8,8 @@
   "managed": true,
   "overriddenProperties": [],
   "parent": {
-    "name": "Objects",
-    "path": "folders/Objects.yy",
+    "name": "destroyableparents",
+    "path": "folders/Objects/level/destroyables/destroyableparents.yy",
   },
   "parentObjectId": {
     "name": "obj_destructibles",

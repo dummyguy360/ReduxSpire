@@ -32,8 +32,8 @@
   "nineSlice": null,
   "origin": 4,
   "parent": {
-    "name": "Sprites",
-    "path": "folders/Sprites.yy",
+    "name": "popcorn",
+    "path": "folders/Sprites/enem/norm/w2/popcorn.yy",
   },
   "preMultiplyAlpha": false,
   "sequence": {

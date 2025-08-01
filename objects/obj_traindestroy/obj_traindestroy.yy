@@ -6,8 +6,8 @@
   "managed": true,
   "overriddenProperties": [],
   "parent": {
-    "name": "Objects",
-    "path": "folders/Objects.yy",
+    "name": "Train",
+    "path": "folders/Objects/level/LevelOBJS/Mines/Train.yy",
   },
   "parentObjectId": null,
   "persistent": false,

@@ -50,8 +50,8 @@
   },
   "origin": 1,
   "parent": {
-    "name": "Sprites",
-    "path": "folders/Sprites.yy",
+    "name": "SugarySpire",
+    "path": "SugarySpire.yyp",
   },
   "preMultiplyAlpha": false,
   "sequence": {

@@ -25,8 +25,8 @@
   "nineSlice": null,
   "origin": 4,
   "parent": {
-    "name": "Sprites",
-    "path": "folders/Sprites.yy",
+    "name": "cottonjump",
+    "path": "folders/Sprites/enem/norm/misc/cottonjump.yy",
   },
   "preMultiplyAlpha": false,
   "sequence": {

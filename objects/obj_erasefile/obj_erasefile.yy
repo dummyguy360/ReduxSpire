@@ -11,8 +11,8 @@
   "managed": true,
   "overriddenProperties": [],
   "parent": {
-    "name": "Objects",
-    "path": "folders/Objects.yy",
+    "name": "Options Menu",
+    "path": "folders/Objects/important/Options Menu.yy",
   },
   "parentObjectId": null,
   "persistent": false,

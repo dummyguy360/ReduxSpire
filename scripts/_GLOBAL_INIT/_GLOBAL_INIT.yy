@@ -5,7 +5,7 @@
   "isCompatibility": false,
   "isDnD": false,
   "parent": {
-    "name": "DecompilerGenerated",
-    "path": "folders/DecompilerGenerated.yy",
+    "name": "Scripts",
+    "path": "folders/Scripts.yy",
   },
 }

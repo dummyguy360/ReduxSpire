@@ -31,8 +31,8 @@
   "nineSlice": null,
   "origin": 6,
   "parent": {
-    "name": "Sprites",
-    "path": "folders/Sprites.yy",
+    "name": "Dance-Off",
+    "path": "folders/Sprites/LevelAssets/Dance-Off.yy",
   },
   "preMultiplyAlpha": false,
   "sequence": {

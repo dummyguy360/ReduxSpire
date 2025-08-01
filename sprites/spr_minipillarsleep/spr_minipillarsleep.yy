@@ -49,8 +49,8 @@
   },
   "origin": 0,
   "parent": {
-    "name": "Sprites",
-    "path": "folders/Sprites.yy",
+    "name": "Escape",
+    "path": "folders/Sprites/LevelAssets/Escape.yy",
   },
   "preMultiplyAlpha": false,
   "sequence": {

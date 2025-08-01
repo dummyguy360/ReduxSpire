@@ -32,8 +32,8 @@
   "nineSlice": null,
   "origin": 0,
   "parent": {
-    "name": "Sprites",
-    "path": "folders/Sprites.yy",
+    "name": "Sleep",
+    "path": "folders/Sprites/Background/W2/Sucrose/Sucrose Wastes/Sleep.yy",
   },
   "preMultiplyAlpha": false,
   "sequence": {

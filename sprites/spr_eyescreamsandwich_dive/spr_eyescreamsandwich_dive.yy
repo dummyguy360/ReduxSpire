@@ -29,8 +29,8 @@
   "nineSlice": null,
   "origin": 4,
   "parent": {
-    "name": "Sprites",
-    "path": "folders/Sprites.yy",
+    "name": "eyescream",
+    "path": "folders/Sprites/enem/norm/w2/eyescream.yy",
   },
   "preMultiplyAlpha": false,
   "sequence": {

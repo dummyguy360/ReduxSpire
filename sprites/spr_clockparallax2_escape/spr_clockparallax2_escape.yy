@@ -25,8 +25,8 @@
   "nineSlice": null,
   "origin": 0,
   "parent": {
-    "name": "Sprites",
-    "path": "folders/Sprites.yy",
+    "name": "escape",
+    "path": "folders/Sprites/Background/W1/cottontown/escape.yy",
   },
   "preMultiplyAlpha": false,
   "sequence": {

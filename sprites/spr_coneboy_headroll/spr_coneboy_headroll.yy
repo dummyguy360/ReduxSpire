@@ -25,8 +25,8 @@
   "nineSlice": null,
   "origin": 9,
   "parent": {
-    "name": "Sprites",
-    "path": "folders/Sprites.yy",
+    "name": "headless",
+    "path": "folders/Sprites/Players/Characters/Coneboy/states/headless.yy",
   },
   "preMultiplyAlpha": false,
   "sequence": {

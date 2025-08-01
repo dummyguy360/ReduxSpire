@@ -14,8 +14,8 @@
   "managed": true,
   "overriddenProperties": [],
   "parent": {
-    "name": "Objects",
-    "path": "folders/Objects.yy",
+    "name": "Painter",
+    "path": "folders/Objects/enemy/boss/Painter.yy",
   },
   "parentObjectId": {
     "name": "par_boss",

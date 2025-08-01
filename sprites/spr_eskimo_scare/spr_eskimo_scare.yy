@@ -29,8 +29,8 @@
   "nineSlice": null,
   "origin": 4,
   "parent": {
-    "name": "Sprites",
-    "path": "folders/Sprites.yy",
+    "name": "eskimo",
+    "path": "folders/Sprites/enem/norm/w2/eskimo.yy",
   },
   "preMultiplyAlpha": false,
   "sequence": {

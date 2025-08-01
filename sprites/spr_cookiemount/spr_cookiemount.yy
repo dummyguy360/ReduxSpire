@@ -34,8 +34,8 @@
   "nineSlice": null,
   "origin": 4,
   "parent": {
-    "name": "Sprites",
-    "path": "folders/Sprites.yy",
+    "name": "Choco Cafe",
+    "path": "folders/Sprites/LevelAssets/Choco Cafe.yy",
   },
   "preMultiplyAlpha": false,
   "sequence": {

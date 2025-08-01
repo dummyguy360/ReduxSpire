@@ -38,8 +38,8 @@
   "nineSlice": null,
   "origin": 4,
   "parent": {
-    "name": "Sprites",
-    "path": "folders/Sprites.yy",
+    "name": "froth",
+    "path": "folders/Sprites/enem/norm/w2/froth.yy",
   },
   "preMultiplyAlpha": false,
   "sequence": {

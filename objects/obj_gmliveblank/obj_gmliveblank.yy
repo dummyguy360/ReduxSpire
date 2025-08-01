@@ -6,8 +6,8 @@
   "managed": true,
   "overriddenProperties": [],
   "parent": {
-    "name": "Objects",
-    "path": "folders/Objects.yy",
+    "name": "GMLive",
+    "path": "folders/Extensions/GMLive.yy",
   },
   "parentObjectId": null,
   "persistent": false,

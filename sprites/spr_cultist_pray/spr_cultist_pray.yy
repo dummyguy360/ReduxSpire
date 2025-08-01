@@ -30,8 +30,8 @@
   "nineSlice": null,
   "origin": 4,
   "parent": {
-    "name": "Sprites",
-    "path": "folders/Sprites.yy",
+    "name": "Cultist",
+    "path": "folders/Sprites/Objects/Cultist.yy",
   },
   "preMultiplyAlpha": false,
   "sequence": {

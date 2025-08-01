@@ -38,8 +38,8 @@
   "nineSlice": null,
   "origin": 4,
   "parent": {
-    "name": "Sprites",
-    "path": "folders/Sprites.yy",
+    "name": "Secret Portal",
+    "path": "folders/Sprites/LevelAssets/Door/Secret Portal.yy",
   },
   "preMultiplyAlpha": false,
   "sequence": {

@@ -29,8 +29,8 @@
   "nineSlice": null,
   "origin": 4,
   "parent": {
-    "name": "Sprites",
-    "path": "folders/Sprites.yy",
+    "name": "Lap Janitor",
+    "path": "folders/Sprites/Followers/Lap Janitor.yy",
   },
   "preMultiplyAlpha": false,
   "sequence": {

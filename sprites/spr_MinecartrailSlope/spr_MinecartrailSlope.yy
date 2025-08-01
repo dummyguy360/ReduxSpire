@@ -67,8 +67,8 @@
   },
   "origin": 3,
   "parent": {
-    "name": "Sprites",
-    "path": "folders/Sprites.yy",
+    "name": "Mines",
+    "path": "folders/Sprites/LevelAssets/Mines.yy",
   },
   "preMultiplyAlpha": false,
   "sequence": {

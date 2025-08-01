@@ -25,8 +25,8 @@
   "nineSlice": null,
   "origin": 9,
   "parent": {
-    "name": "Sprites",
-    "path": "folders/Sprites.yy",
+    "name": "knight",
+    "path": "folders/Sprites/Players/Characters/Coneboy/states/knight.yy",
   },
   "preMultiplyAlpha": false,
   "sequence": {

@@ -12,8 +12,8 @@
   "managed": true,
   "overriddenProperties": [],
   "parent": {
-    "name": "Objects",
-    "path": "folders/Objects.yy",
+    "name": "Bee",
+    "path": "folders/Objects/level/LevelOBJS/Bee.yy",
   },
   "parentObjectId": null,
   "persistent": false,

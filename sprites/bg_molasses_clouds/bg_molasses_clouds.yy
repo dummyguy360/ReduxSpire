@@ -28,8 +28,8 @@
   "nineSlice": null,
   "origin": 4,
   "parent": {
-    "name": "Sprites",
-    "path": "folders/Sprites.yy",
+    "name": "Molasses BG 3",
+    "path": "folders/Sprites/Background/W1/Molasses BG 3.yy",
   },
   "preMultiplyAlpha": false,
   "sequence": {

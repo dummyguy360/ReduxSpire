@@ -31,8 +31,8 @@
   "nineSlice": null,
   "origin": 4,
   "parent": {
-    "name": "Sprites",
-    "path": "folders/Sprites.yy",
+    "name": "honeyslime",
+    "path": "folders/Sprites/enem/norm/w2/honeyslime.yy",
   },
   "preMultiplyAlpha": false,
   "sequence": {

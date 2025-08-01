@@ -34,8 +34,8 @@
   "nineSlice": null,
   "origin": 0,
   "parent": {
-    "name": "Sprites",
-    "path": "folders/Sprites.yy",
+    "name": "Fonts",
+    "path": "folders/Sprites/Fonts.yy",
   },
   "preMultiplyAlpha": false,
   "sequence": {

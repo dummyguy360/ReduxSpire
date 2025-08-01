@@ -25,8 +25,8 @@
   "nineSlice": null,
   "origin": 4,
   "parent": {
-    "name": "Sprites",
-    "path": "folders/Sprites.yy",
+    "name": "lumbear",
+    "path": "folders/Sprites/enem/norm/misc/lumbear.yy",
   },
   "preMultiplyAlpha": false,
   "sequence": {

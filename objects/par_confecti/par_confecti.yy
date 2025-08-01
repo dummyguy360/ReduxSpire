@@ -13,8 +13,8 @@
   "managed": true,
   "overriddenProperties": [],
   "parent": {
-    "name": "Objects",
-    "path": "folders/Objects.yy",
+    "name": "Confecti",
+    "path": "folders/Objects/level/Followers/Confecti.yy",
   },
   "parentObjectId": {
     "name": "par_follower",

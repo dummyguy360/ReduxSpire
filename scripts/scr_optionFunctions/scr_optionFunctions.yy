@@ -5,7 +5,7 @@
   "isCompatibility": false,
   "isDnD": false,
   "parent": {
-    "name": "Scripts",
-    "path": "folders/Scripts.yy",
+    "name": "Options Menu",
+    "path": "folders/Objects/important/Options Menu.yy",
   },
 }

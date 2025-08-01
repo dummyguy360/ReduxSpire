@@ -8,8 +8,8 @@
   "managed": true,
   "overriddenProperties": [],
   "parent": {
-    "name": "Objects",
-    "path": "folders/Objects.yy",
+    "name": "Fudgetop",
+    "path": "folders/Objects/level/LevelOBJS/Fudgetop.yy",
   },
   "parentObjectId": null,
   "persistent": false,

@@ -49,8 +49,8 @@
   },
   "origin": 0,
   "parent": {
-    "name": "Sprites",
-    "path": "folders/Sprites.yy",
+    "name": "Door",
+    "path": "folders/Sprites/LevelAssets/Door.yy",
   },
   "preMultiplyAlpha": false,
   "sequence": {

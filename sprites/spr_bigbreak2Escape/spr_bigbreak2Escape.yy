@@ -38,8 +38,8 @@
   "nineSlice": null,
   "origin": 9,
   "parent": {
-    "name": "Sprites",
-    "path": "folders/Sprites.yy",
+    "name": "Escape",
+    "path": "folders/Sprites/LevelAssets/Blocks/Escape.yy",
   },
   "preMultiplyAlpha": false,
   "sequence": {

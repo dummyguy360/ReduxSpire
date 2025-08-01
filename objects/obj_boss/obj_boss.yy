@@ -6,8 +6,8 @@
   "managed": true,
   "overriddenProperties": [],
   "parent": {
-    "name": "Objects",
-    "path": "folders/Objects.yy",
+    "name": "boss",
+    "path": "folders/Objects/enemy/boss.yy",
   },
   "parentObjectId": null,
   "persistent": false,

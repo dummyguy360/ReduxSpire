@@ -34,8 +34,8 @@
   "nineSlice": null,
   "origin": 4,
   "parent": {
-    "name": "Sprites",
-    "path": "folders/Sprites.yy",
+    "name": "Creamthief",
+    "path": "folders/Sprites/Objects/Creamthief.yy",
   },
   "preMultiplyAlpha": false,
   "sequence": {

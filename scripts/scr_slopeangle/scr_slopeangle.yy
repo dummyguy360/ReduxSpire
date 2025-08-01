@@ -5,7 +5,7 @@
   "isCompatibility": false,
   "isDnD": false,
   "parent": {
-    "name": "Scripts",
-    "path": "folders/Scripts.yy",
+    "name": "Slope Angles",
+    "path": "folders/Scripts/funny scripts/Slope Angles.yy",
   },
 }

@@ -16,8 +16,8 @@
   "managed": true,
   "overriddenProperties": [],
   "parent": {
-    "name": "Objects",
-    "path": "folders/Objects.yy",
+    "name": "Buttons",
+    "path": "folders/Objects/level/Technical/Buttons.yy",
   },
   "parentObjectId": {
     "name": "par_logicobjects",

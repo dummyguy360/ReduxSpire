@@ -11,8 +11,8 @@
   "managed": true,
   "overriddenProperties": [],
   "parent": {
-    "name": "Objects",
-    "path": "folders/Objects.yy",
+    "name": "Dissonance",
+    "path": "folders/Objects/important/Dissonance.yy",
   },
   "parentObjectId": null,
   "persistent": true,

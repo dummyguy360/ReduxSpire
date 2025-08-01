@@ -11,8 +11,8 @@
   "managed": true,
   "overriddenProperties": [],
   "parent": {
-    "name": "Objects",
-    "path": "folders/Objects.yy",
+    "name": "escape",
+    "path": "folders/Objects/level/escape.yy",
   },
   "parentObjectId": {
     "name": "obj_solid",

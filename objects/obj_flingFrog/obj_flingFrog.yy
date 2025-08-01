@@ -11,8 +11,8 @@
   "managed": true,
   "overriddenProperties": [],
   "parent": {
-    "name": "Objects",
-    "path": "folders/Objects.yy",
+    "name": "Molasses",
+    "path": "folders/Objects/level/LevelOBJS/Molasses.yy",
   },
   "parentObjectId": null,
   "persistent": false,

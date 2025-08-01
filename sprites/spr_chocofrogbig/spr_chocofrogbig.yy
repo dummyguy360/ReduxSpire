@@ -70,8 +70,8 @@
   },
   "origin": 0,
   "parent": {
-    "name": "Sprites",
-    "path": "folders/Sprites.yy",
+    "name": "Blocks",
+    "path": "folders/Sprites/LevelAssets/Blocks.yy",
   },
   "preMultiplyAlpha": false,
   "sequence": {

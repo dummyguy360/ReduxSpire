@@ -12,8 +12,8 @@
   "managed": true,
   "overriddenProperties": [],
   "parent": {
-    "name": "Objects",
-    "path": "folders/Objects.yy",
+    "name": "Danceoff",
+    "path": "folders/Objects/level/LevelOBJS/Danceoff.yy",
   },
   "parentObjectId": null,
   "persistent": false,

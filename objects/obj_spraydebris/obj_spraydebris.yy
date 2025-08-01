@@ -9,8 +9,8 @@
   "managed": true,
   "overriddenProperties": [],
   "parent": {
-    "name": "Objects",
-    "path": "folders/Objects.yy",
+    "name": "destroyabledebris",
+    "path": "folders/Objects/level/destroyables/destroyabledebris.yy",
   },
   "parentObjectId": {
     "name": "obj_parentparticle",

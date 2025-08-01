@@ -36,8 +36,8 @@
   "nineSlice": null,
   "origin": 9,
   "parent": {
-    "name": "Sprites",
-    "path": "folders/Sprites.yy",
+    "name": "TV",
+    "path": "folders/Sprites/GUI/HUD/TV.yy",
   },
   "preMultiplyAlpha": false,
   "sequence": {

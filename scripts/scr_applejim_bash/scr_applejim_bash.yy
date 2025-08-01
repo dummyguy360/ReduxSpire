@@ -5,7 +5,7 @@
   "isCompatibility": false,
   "isDnD": false,
   "parent": {
-    "name": "Scripts",
-    "path": "folders/Scripts.yy",
+    "name": "Apple Jim Scripts",
+    "path": "folders/Scripts/funny scripts/Apple Jim Scripts.yy",
   },
 }

@@ -25,8 +25,8 @@
   "nineSlice": null,
   "origin": 4,
   "parent": {
-    "name": "Sprites",
-    "path": "folders/Sprites.yy",
+    "name": "Snitch",
+    "path": "folders/Sprites/Dialogue Icons/Snitch.yy",
   },
   "preMultiplyAlpha": false,
   "sequence": {

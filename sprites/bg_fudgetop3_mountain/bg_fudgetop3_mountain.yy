@@ -25,8 +25,8 @@
   "nineSlice": null,
   "origin": 0,
   "parent": {
-    "name": "Sprites",
-    "path": "folders/Sprites.yy",
+    "name": "OLD",
+    "path": "folders/Sprites/Background/W2/Fudgetop/Fudgetop 3/OLD.yy",
   },
   "preMultiplyAlpha": false,
   "sequence": {

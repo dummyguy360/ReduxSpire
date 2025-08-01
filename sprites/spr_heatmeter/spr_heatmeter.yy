@@ -37,8 +37,8 @@
   "nineSlice": null,
   "origin": 4,
   "parent": {
-    "name": "Sprites",
-    "path": "folders/Sprites.yy",
+    "name": "Cake",
+    "path": "folders/Sprites/GUI/HUD/Cake.yy",
   },
   "preMultiplyAlpha": false,
   "sequence": {

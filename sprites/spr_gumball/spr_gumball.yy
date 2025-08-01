@@ -28,8 +28,8 @@
   "nineSlice": null,
   "origin": 4,
   "parent": {
-    "name": "Sprites",
-    "path": "folders/Sprites.yy",
+    "name": "gumball",
+    "path": "folders/Sprites/enem/transfo/gumball.yy",
   },
   "preMultiplyAlpha": false,
   "sequence": {

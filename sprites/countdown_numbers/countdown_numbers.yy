@@ -31,8 +31,8 @@
   "nineSlice": null,
   "origin": 0,
   "parent": {
-    "name": "Sprites",
-    "path": "folders/Sprites.yy",
+    "name": "Meme",
+    "path": "folders/Sprites/Unused/Meme.yy",
   },
   "preMultiplyAlpha": false,
   "sequence": {

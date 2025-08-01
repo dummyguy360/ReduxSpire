@@ -35,8 +35,8 @@
   "nineSlice": null,
   "origin": 4,
   "parent": {
-    "name": "Sprites",
-    "path": "folders/Sprites.yy",
+    "name": "cherry",
+    "path": "folders/Sprites/enem/norm/escape/cherry.yy",
   },
   "preMultiplyAlpha": false,
   "sequence": {

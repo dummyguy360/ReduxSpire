@@ -25,8 +25,8 @@
   "nineSlice": null,
   "origin": 9,
   "parent": {
-    "name": "Sprites",
-    "path": "folders/Sprites.yy",
+    "name": "Blocks",
+    "path": "folders/Sprites/LevelAssets/Blocks.yy",
   },
   "preMultiplyAlpha": false,
   "sequence": {

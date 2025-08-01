@@ -34,8 +34,8 @@
   "nineSlice": null,
   "origin": 4,
   "parent": {
-    "name": "Sprites",
-    "path": "folders/Sprites.yy",
+    "name": "cotton",
+    "path": "folders/Sprites/enem/transfo/cotton.yy",
   },
   "preMultiplyAlpha": false,
   "sequence": {

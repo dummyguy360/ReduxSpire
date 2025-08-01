@@ -38,8 +38,8 @@
   "nineSlice": null,
   "origin": 4,
   "parent": {
-    "name": "Sprites",
-    "path": "folders/Sprites.yy",
+    "name": "Supertaunt Charge",
+    "path": "folders/Sprites/Effects/Supertaunt Charge.yy",
   },
   "preMultiplyAlpha": false,
   "sequence": {

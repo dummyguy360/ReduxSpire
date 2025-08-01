@@ -11,8 +11,8 @@
   "managed": true,
   "overriddenProperties": [],
   "parent": {
-    "name": "Objects",
-    "path": "folders/Objects.yy",
+    "name": "Particles",
+    "path": "folders/Objects/Effects and Particles/Particles.yy",
   },
   "parentObjectId": null,
   "persistent": false,

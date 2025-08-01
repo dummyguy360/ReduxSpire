@@ -9,8 +9,8 @@
   "managed": true,
   "overriddenProperties": [],
   "parent": {
-    "name": "Objects",
-    "path": "folders/Objects.yy",
+    "name": "secretdestroyables",
+    "path": "folders/Objects/level/destroyables/secretdestroyables.yy",
   },
   "parentObjectId": {
     "name": "obj_metalblock",

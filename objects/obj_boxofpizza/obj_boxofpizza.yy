@@ -11,8 +11,8 @@
   "managed": true,
   "overriddenProperties": [],
   "parent": {
-    "name": "Objects",
-    "path": "folders/Objects.yy",
+    "name": "transport",
+    "path": "folders/Objects/level/transport.yy",
   },
   "parentObjectId": {
     "name": "obj_solid",

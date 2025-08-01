@@ -36,8 +36,8 @@
   "nineSlice": null,
   "origin": 9,
   "parent": {
-    "name": "Sprites",
-    "path": "folders/Sprites.yy",
+    "name": "icescreamer",
+    "path": "folders/Sprites/enem/norm/w2/icescreamer.yy",
   },
   "preMultiplyAlpha": false,
   "sequence": {

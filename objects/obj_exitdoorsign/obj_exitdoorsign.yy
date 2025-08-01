@@ -9,8 +9,8 @@
   "managed": true,
   "overriddenProperties": [],
   "parent": {
-    "name": "Objects",
-    "path": "folders/Objects.yy",
+    "name": "Level Decor",
+    "path": "folders/Objects/level/Level Decor.yy",
   },
   "parentObjectId": null,
   "persistent": false,

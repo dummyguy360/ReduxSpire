@@ -11,8 +11,8 @@
   "managed": true,
   "overriddenProperties": [],
   "parent": {
-    "name": "Objects",
-    "path": "folders/Objects.yy",
+    "name": "destroyables",
+    "path": "folders/Objects/level/destroyables.yy",
   },
   "parentObjectId": {
     "name": "obj_solid",

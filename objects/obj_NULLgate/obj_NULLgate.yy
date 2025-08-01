@@ -9,8 +9,8 @@
   "managed": true,
   "overriddenProperties": [],
   "parent": {
-    "name": "Objects",
-    "path": "folders/Objects.yy",
+    "name": "Logic Gates",
+    "path": "folders/Objects/level/Technical/Logic Gates.yy",
   },
   "parentObjectId": {
     "name": "par_logicobjects",

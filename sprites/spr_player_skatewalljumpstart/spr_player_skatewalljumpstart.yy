@@ -29,8 +29,8 @@
   "nineSlice": null,
   "origin": 4,
   "parent": {
-    "name": "Sprites",
-    "path": "folders/Sprites.yy",
+    "name": "Frostburn",
+    "path": "folders/Sprites/Players/Characters/Pizzelle/Frostburn.yy",
   },
   "preMultiplyAlpha": false,
   "sequence": {

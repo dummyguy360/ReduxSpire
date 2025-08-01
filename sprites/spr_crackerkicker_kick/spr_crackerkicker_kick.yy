@@ -34,8 +34,8 @@
   "nineSlice": null,
   "origin": 4,
   "parent": {
-    "name": "Sprites",
-    "path": "folders/Sprites.yy",
+    "name": "crackerkicker",
+    "path": "folders/Sprites/enem/norm/misc/crackerkicker.yy",
   },
   "preMultiplyAlpha": false,
   "sequence": {

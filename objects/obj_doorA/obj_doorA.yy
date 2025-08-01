@@ -6,8 +6,8 @@
   "managed": true,
   "overriddenProperties": [],
   "parent": {
-    "name": "Objects",
-    "path": "folders/Objects.yy",
+    "name": "Door Triggers",
+    "path": "folders/Objects/level/transport/Door Triggers.yy",
   },
   "parentObjectId": {
     "name": "obj_doortrigger_parent",

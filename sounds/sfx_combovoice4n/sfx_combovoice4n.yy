@@ -12,8 +12,8 @@
   "conversionMode": 0,
   "duration": 0.9887528,
   "parent": {
-    "name": "Sounds",
-    "path": "folders/Sounds.yy",
+    "name": "voicelines",
+    "path": "folders/Sounds/voicelines.yy",
   },
   "preload": true,
   "sampleRate": 44100,

@@ -18,8 +18,8 @@
   "managed": true,
   "overriddenProperties": [],
   "parent": {
-    "name": "Objects",
-    "path": "folders/Objects.yy",
+    "name": "Config",
+    "path": "folders/Objects/Menus/Config.yy",
   },
   "parentObjectId": null,
   "persistent": false,

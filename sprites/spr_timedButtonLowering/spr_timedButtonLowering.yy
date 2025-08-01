@@ -31,8 +31,8 @@
   "nineSlice": null,
   "origin": 4,
   "parent": {
-    "name": "Sprites",
-    "path": "folders/Sprites.yy",
+    "name": "Timed Button",
+    "path": "folders/Sprites/Objects/Gate & Button/Timed Button.yy",
   },
   "preMultiplyAlpha": false,
   "sequence": {

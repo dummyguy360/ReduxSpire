@@ -42,8 +42,8 @@
   "nineSlice": null,
   "origin": 4,
   "parent": {
-    "name": "Sprites",
-    "path": "folders/Sprites.yy",
+    "name": "Coneball",
+    "path": "folders/Sprites/enem/boss/Coneball.yy",
   },
   "preMultiplyAlpha": false,
   "sequence": {
