@@ -1,0 +1,23 @@
+depth = 4;
+
+canCollide = function(arg0 = 370)
+{
+    switch (arg0)
+    {
+        case 370:
+        case 578:
+            var _state = global.freezeframe ? arg0.frozenstate : arg0.state;
+            return _state == states.minecart;
+            break;
+        
+        case 290:
+        case 1:
+        case 511:
+            return true;
+            break;
+        
+        default:
+            return false;
+            break;
+    }
+};
