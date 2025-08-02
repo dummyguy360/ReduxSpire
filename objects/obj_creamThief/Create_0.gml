@@ -1,3 +1,12 @@
+enum thiefstate 
+{
+	idle,
+	normal,
+	grab,
+	taunt,
+	drift
+}
+
 scr_collision_init();
 taunttimer = 0;
 tauntStored = {};
@@ -12,7 +21,7 @@ hsp = 0;
 vsp = 0;
 image_speed = 0.35;
 grounded = 0;
-state = states.frozen;
+state = thiefstate.idle;
 
 with (instance_create(x, y, obj_icontracker))
 {
@@ -20,6 +29,6 @@ with (instance_create(x, y, obj_icontracker))
     
     visible_cond = function()
     {
-        return target.state != states.frozen;
+        return target.state != thiefstate.idle;
     };
 }

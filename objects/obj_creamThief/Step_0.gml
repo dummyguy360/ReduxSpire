@@ -1,6 +1,6 @@
 switch (state)
 {
-    case states.frozen:
+    case thiefstate.idle:
         if (sprite_index != spr_creamthief_grab)
         {
             hsp = 0;
@@ -21,7 +21,7 @@ switch (state)
         image_speed = 0.35;
         break;
     
-    case states.normal:
+    case thiefstate.normal:
         hsp = movespeed * image_xscale;
         
         if (grounded)
@@ -45,14 +45,12 @@ switch (state)
                 sprite_index = spr_creamthief_slide;
         }
         else if (sprite_index != spr_creamthief_jump || (animation_end() && sprite_index == spr_creamthief_jump))
-        {
             sprite_index = spr_creamthief_fall;
-        }
         
         image_speed = 0.4;
         break;
     
-    case states.titlescreen:
+    case thiefstate.grab:
         hsp = movespeed * image_xscale;
         instance_destroy(instance_place(x + hsp, y, obj_destructibles));
         
@@ -68,13 +66,13 @@ switch (state)
         if ((animation_end() && sprite_index != spr_creamthief_grabbingStart) || sprite_index == spr_creamthief_grabbing)
         {
             if (grounded)
-                state = states.normal;
+                state = thiefstate.normal;
         }
         
         image_speed = 0.3;
         break;
     
-    case states.Nhookshot:
+    case thiefstate.taunt:
         hsp = 0;
         vsp = 0;
         
@@ -85,7 +83,7 @@ switch (state)
         image_speed = 0;
         break;
     
-    case states.slap:
+    case thiefstate.drift:
         hsp = movespeed * image_xscale;
         movespeed = approach(movespeed, 0, 0.4);
         
@@ -95,7 +93,7 @@ switch (state)
             image_index = 0;
             sprite_index = spr_creamthief_walk;
             movespeed = 8;
-            state = states.normal;
+            state = thiefstate.normal;
         }
         
         break;
@@ -103,7 +101,7 @@ switch (state)
 
 if (hsp != 0)
 {
-    with (create_afterimage(UnknownEnum.Value_0, image_xscale))
+    with (create_afterimage(afterimages.fade, image_xscale))
     {
         gonealpha = 0.45;
         alarm[0] = 1;

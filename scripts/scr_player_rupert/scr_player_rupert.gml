@@ -218,7 +218,7 @@ function state_player_rupertjump()
         
         if (blue_aft >= 6)
         {
-            create_afterimage(UnknownEnum.Value_1, xscale);
+            create_afterimage(afterimages.blue, xscale);
             blue_aft = 0;
         }
         

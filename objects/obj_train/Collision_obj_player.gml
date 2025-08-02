@@ -1,6 +1,6 @@
 with (other)
 {
-    if (state != states.squished && (other.state == states.normal || other.state == states.titlescreen))
+    if (state != states.squished && (other.state == trainstate.normal || other.state == trainstate.drift))
     {
         scr_hurtplayer();
         image_index = 0;

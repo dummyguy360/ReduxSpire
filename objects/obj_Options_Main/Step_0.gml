@@ -5,13 +5,13 @@ if (selected == false)
 {
     scr_getinput();
     
-    if ((key_up2 || keyboard_check_pressed(vk_up)) && optionselected > UnknownEnum.Value_0)
+    if ((key_up2 || keyboard_check_pressed(vk_up)) && optionselected > OPTIONSELECTED.back)
     {
         optionselected -= 1;
         scr_sound(sound_step);
     }
     
-    if ((key_down2 || keyboard_check_pressed(vk_down)) && optionselected < UnknownEnum.Value_3)
+    if ((key_down2 || keyboard_check_pressed(vk_down)) && optionselected < OPTIONSELECTED.controls)
     {
         optionselected += 1;
         scr_sound(sound_step);
@@ -19,7 +19,7 @@ if (selected == false)
     
     switch (optionselected)
     {
-        case UnknownEnum.Value_0:
+        case OPTIONSELECTED.back:
             subtitle = "GO BACK TO MAIN SCREEN";
             CursorY = -999;
             
@@ -31,7 +31,7 @@ if (selected == false)
             
             break;
         
-        case UnknownEnum.Value_1:
+        case OPTIONSELECTED.audio:
             subtitle = "ADJUST AUDIO SETTINGS";
             CursorY = 100;
             
@@ -44,7 +44,7 @@ if (selected == false)
             
             break;
         
-        case UnknownEnum.Value_2:
+        case OPTIONSELECTED.video:
             subtitle = "ADJUST VIDEO SETTINGS";
             CursorY = 200;
             
@@ -57,7 +57,7 @@ if (selected == false)
             
             break;
         
-        case UnknownEnum.Value_3:
+        case OPTIONSELECTED.controls:
             subtitle = "CHANGE CONTROL INPUTS";
             CursorY = 300;
             
@@ -70,7 +70,7 @@ if (selected == false)
             
             break;
         
-        case UnknownEnum.Value_4:
+        case OPTIONSELECTED.misc:
             subtitle = string_upper("Adjust Miscellaneous Settings");
             CursorY = 400;
             

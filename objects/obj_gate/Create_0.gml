@@ -1,3 +1,5 @@
+/// @description Set up variables.
+// Credits to PierRoulette#0126 and Trek of the Oddities
 enum GateState 
 {
 	RAISED,
@@ -17,23 +19,31 @@ depth = 4;
 image_speed = 0.35;
 logicMap = ds_map_create();
 
-canCollide = function(arg0 = 370)
+// Set the collision criteria so that this object is solid if the gate has been completely lowered.
+canCollide = function(callingObject = obj_player)
 {
-    return currentState == UnknownEnum.Value_1;
+    return currentState == GateState.LOWERED;
 };
 
 if (!reversed)
 {
-    currentState = UnknownEnum.Value_1;
-    nextState = UnknownEnum.Value_1;
-    queuedEvent = UnknownEnum.Value_0;
+	// State of the gate right now.
+    currentState = GateState.LOWERED;
+	// State of the gate to be switched to after an alarm 0 call.
+    nextState = GateState.LOWERED;
+	// An event to queue. Modified externally to influence gate behavior.
+    queuedEvent = GateEvent.NONE;
 }
 else
 {
-    currentState = UnknownEnum.Value_0;
-    nextState = UnknownEnum.Value_0;
-    queuedEvent = UnknownEnum.Value_0;
+	// State of the gate right now.
+    currentState = GateState.RAISED;
+	// State of the gate to be switched to after an alarm 0 call.
+    nextState = GateState.RAISED;
+	// An event to queue. Modified externally to influence gate behavior.
+    queuedEvent = GateEvent.NONE;
     sprite_index = spr_gateRaised;
 }
 
+// Rounds Image Angle to snap to only four directions.
 image_angle = round(image_angle / 90) * 90;

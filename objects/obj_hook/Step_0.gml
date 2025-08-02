@@ -11,11 +11,11 @@ if (!instance_exists(hookStopID))
 
 switch (state)
 {
-    case states.frozen:
+    case HookState.idle:
         visible = true;
         break;
     
-    case states.normal:
+    case HookState.goback:
         var _target_dir = point_direction(x, y, xstart, ystart);
         var _point_distance = min(point_distance(x, y, xstart, ystart), gobackspeed);
         x += lengthdir_x(_point_distance, _target_dir);
@@ -25,13 +25,13 @@ switch (state)
         {
             x = xstart;
             y = ystart;
-            state = states.frozen;
+            state = HookState.idle;
         }
         
         visible = true;
         break;
     
-    case states.titlescreen:
+    case HookState.carrying:
         var _target_dir = point_direction(x, y, hookStopID.x, hookStopID.y);
         xprevious = x;
         yprevious = y;
@@ -63,7 +63,7 @@ switch (state)
         {
             x = hookStopID.x;
             y = hookStopID.y;
-            state = states.normal;
+            state = HookState.goback;
             visible = true;
             
             with (playerID)

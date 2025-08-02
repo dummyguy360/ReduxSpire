@@ -1,14 +1,14 @@
 draw_set_halign(fa_center);
 draw_set_font(global.font);
-draw_option(150, 30, "BACK", optionselected == UnknownEnum.Value_0);
-draw_option(480, 100, "MASTER GAIN", optionselected == UnknownEnum.Value_1);
-draw_option(480, 150, string(round(optionsaved_masterVolume * 100)), optionselected == UnknownEnum.Value_1);
-draw_option(480, 200, "MUSIC GAIN", optionselected == UnknownEnum.Value_2);
-draw_option(480, 250, string(round(optionsaved_musicVolume * 100)), optionselected == UnknownEnum.Value_2);
-draw_option(480, 300, "SFX GAIN", optionselected == UnknownEnum.Value_3);
-draw_option(480, 350, string(round(optionsaved_soundVolume * 100)), optionselected == UnknownEnum.Value_3);
-draw_option(480, 400, "DIALOGUE GAIN", optionselected == UnknownEnum.Value_4);
-draw_option(480, 450, string(round(optionsaved_dialogueVolume * 100)), optionselected == UnknownEnum.Value_4);
+draw_option(150, 30, "BACK", optionselected == OPTION_AUDIOSELECTED.back);
+draw_option(480, 100, "MASTER GAIN", optionselected == OPTION_AUDIOSELECTED.master);
+draw_option(480, 150, string(round(optionsaved_masterVolume * 100)), optionselected == OPTION_AUDIOSELECTED.master);
+draw_option(480, 200, "MUSIC GAIN", optionselected == OPTION_AUDIOSELECTED.music);
+draw_option(480, 250, string(round(optionsaved_musicVolume * 100)), optionselected == OPTION_AUDIOSELECTED.music);
+draw_option(480, 300, "SFX GAIN", optionselected == OPTION_AUDIOSELECTED.sound);
+draw_option(480, 350, string(round(optionsaved_soundVolume * 100)), optionselected == OPTION_AUDIOSELECTED.sound);
+draw_option(480, 400, "DIALOGUE GAIN", optionselected == OPTION_AUDIOSELECTED.dialogue);
+draw_option(480, 450, string(round(optionsaved_dialogueVolume * 100)), optionselected == OPTION_AUDIOSELECTED.dialogue);
 draw_set_font(global.smallfont);
 var _string_width = string_width(subtitle) + 32;
 

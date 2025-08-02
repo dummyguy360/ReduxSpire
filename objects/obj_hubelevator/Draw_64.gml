@@ -1,4 +1,4 @@
-if (state == states.normal)
+if (state == elevatorstates.selecting)
 {
     var txt = hub_array[selected][1];
     var yy = string_height(txt);
@@ -27,7 +27,7 @@ if (state == states.normal)
     surface_reset_target();
     draw_surface(surface2, 240, 150);
 }
-else if (state == states.titlescreen)
+else if (state == elevatorstates.cutscene)
 {
     draw_sprite_tiled(bg_menuTile, -1, drawx++, drawy++);
     draw_set_font(global.font);

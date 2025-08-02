@@ -89,7 +89,7 @@ function state_player_ufofloat()
     
     if (hsp != 0 || vsp != 0)
     {
-        with (create_afterimage(UnknownEnum.Value_0, xscale))
+        with (create_afterimage(afterimages.fade, xscale))
         {
             gonealpha = 0.85;
             alarm[0] = 1;
@@ -141,7 +141,7 @@ function state_player_ufodash()
             verticalMovespeed = 0;
     }
     
-    create_afterimage(choose(UnknownEnum.Value_1, UnknownEnum.Value_2), xscale);
+    create_afterimage(choose(afterimages.blue, afterimages.pink), xscale);
     
     if (animation_end() && sprite_index == spr_player_ufoFloatSpeedUp)
         state = states.ufofloat;

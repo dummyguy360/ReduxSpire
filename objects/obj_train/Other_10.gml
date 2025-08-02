@@ -43,4 +43,4 @@ repeat (5)
 
 vsp = 0;
 movespeed = 10;
-state = states.frozen;
+state = trainstate.idle;

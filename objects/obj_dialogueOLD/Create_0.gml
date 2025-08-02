@@ -1,6 +1,14 @@
+enum dialogstate 
+{
+	intro,
+	outro,
+	normal,
+	choices	
+}
+
 instant_destroy = false;
 current_message = 0;
-state = states.frozen;
+state = dialogstate.intro;
 choice_selected = 0;
 pause_time = 0;
 whos_talkin = 0;
@@ -11,7 +19,7 @@ snddelay = 3;
 sndcnt = 0;
 animation = 1;
 yoffset = 200;
-surface = -4;
+surface = noone;
 force_next = false;
 depth = -999;
 image_alpha = 0;

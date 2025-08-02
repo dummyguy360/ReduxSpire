@@ -1,9 +1,9 @@
 if (canmove == true)
 {
     scr_getinput();
-    ScrollY = lerp(ScrollY, (optionselected / UnknownEnum.Value_7) * -500, 0.15);
+    ScrollY = lerp(ScrollY, (optionselected / OPTION_VIDEOSELECTED.smoothscale) * -500, 0.15);
     
-    if ((key_up2 || keyboard_check_pressed(vk_up)) && optionselected > UnknownEnum.Value_0)
+    if ((key_up2 || keyboard_check_pressed(vk_up)) && optionselected > OPTION_VIDEOSELECTED.back)
     {
         optionselected -= 1;
         scr_sound(sound_step);
@@ -16,7 +16,7 @@ if (canmove == true)
         optionsaved_lowperformance = global.lowperformance;
     }
     
-    if ((key_down2 || keyboard_check_pressed(vk_down)) && optionselected < UnknownEnum.Value_8)
+    if ((key_down2 || keyboard_check_pressed(vk_down)) && optionselected < OPTION_VIDEOSELECTED.lowperformance)
     {
         optionselected += 1;
         scr_sound(sound_step);
@@ -32,7 +32,7 @@ if (canmove == true)
     
     switch (optionselected)
     {
-        case UnknownEnum.Value_0:
+        case OPTION_VIDEOSELECTED.back:
             subtitle = "GO BACK TO MAIN SCREEN";
             CursorY = -999;
             
@@ -44,7 +44,7 @@ if (canmove == true)
             
             break;
         
-        case UnknownEnum.Value_1:
+        case OPTION_VIDEOSELECTED.fullscreen:
             subtitle = "TOGGLE WINDOW MODE";
             CursorY = 100;
             optionsaved_fullscreen += (key_right2 + key_left2);
@@ -62,7 +62,7 @@ if (canmove == true)
             
             break;
         
-        case UnknownEnum.Value_2:
+        case OPTION_VIDEOSELECTED.resolution:
             subtitle = "ADJUST WINDOWED RESOLUTION";
             CursorY = 200;
             optionsaved_resolution += (key_right2 + key_left2);
@@ -96,7 +96,7 @@ if (canmove == true)
             
             break;
         
-        case UnknownEnum.Value_3:
+        case OPTION_VIDEOSELECTED.hitstun:
             subtitle = "TOGGLES HITSTUN";
             CursorY = 300;
             optionsaved_hitstun += (key_right2 + key_left2);
@@ -113,7 +113,7 @@ if (canmove == true)
             
             break;
         
-        case UnknownEnum.Value_4:
+        case OPTION_VIDEOSELECTED.smoothcam:
             subtitle = "TOGGLE SMOOTHCAM";
             CursorY = 400;
             optionsaved_smoothcam += (key_right2 + key_left2);
@@ -130,7 +130,7 @@ if (canmove == true)
             
             break;
         
-        case UnknownEnum.Value_5:
+        case OPTION_VIDEOSELECTED.screenmelt:
             subtitle = "TOGGLE ESCAPE SCREEN MELT EFFECTS";
             CursorY = 500;
             optionsaved_screenmelt += (key_right2 + key_left2);
@@ -147,7 +147,7 @@ if (canmove == true)
             
             break;
         
-        case UnknownEnum.Value_6:
+        case OPTION_VIDEOSELECTED.screentilt:
             subtitle = "TOGGLE ESCAPE SCREEN TILT EFFECTS";
             CursorY = 600;
             optionsaved_screentilt += (key_right2 + key_left2);
@@ -164,7 +164,7 @@ if (canmove == true)
             
             break;
         
-        case UnknownEnum.Value_7:
+        case OPTION_VIDEOSELECTED.smoothscale:
             subtitle = "TOGGLE LINEAR FILTERING WHEN USING SCREEN SCALES NOT IN 16:9";
             CursorY = 700;
             optionsaved_smoothscale += (key_right2 + key_left2);
@@ -181,7 +181,7 @@ if (canmove == true)
             
             break;
         
-        case UnknownEnum.Value_8:
+        case OPTION_VIDEOSELECTED.lowperformance:
             subtitle = "TOGGLE LOW PERFORMANCE MODE";
             CursorY = 800;
             optionsaved_lowperformance += (key_right2 + key_left2);

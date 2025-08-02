@@ -23,7 +23,7 @@ function scr_painter_lunge()
     
     if (sprite_index == spr_painter_lunge || sprite_index == spr_painter_lungestart2)
     {
-        create_afterimage(UnknownEnum.Value_1, 6);
+        create_afterimage(afterimages.blue, 6);
         
         if (sprite_index == spr_painter_lungestart2 && animation_end())
             sprite_index = spr_painter_lunge;

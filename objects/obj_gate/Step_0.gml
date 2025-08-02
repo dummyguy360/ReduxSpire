@@ -1,15 +1,15 @@
-var _values;
-_values[0] = false;
+/// @description Control state of the gate.
+// State changes must be induced externally.
+var _values; _values[0] = false;
 var i = 0;
-
+// Input
 with (par_logicobjects)
 {
     if (outputID == other.gateID)
         _values[i++] = logicOutput;
 }
-
+// Process.
 var _check = false;
-
 for (i = 0; i < array_length(_values); i++)
 {
     if (_values[i])
@@ -19,42 +19,44 @@ for (i = 0; i < array_length(_values); i++)
     }
 }
 
-if (_check)
+if (_check)// Powered
 {
     if (!reversed)
-        queuedEvent = UnknownEnum.Value_2;
+        queuedEvent = GateEvent.RAISE;
     else
-        queuedEvent = UnknownEnum.Value_1;
+        queuedEvent = GateEvent.LOWER;
 }
+// Unpowered
 else if (!reversed)
-{
-    queuedEvent = UnknownEnum.Value_1;
-}
+    queuedEvent = GateEvent.LOWER;
 else
-{
-    queuedEvent = UnknownEnum.Value_2;
-}
+    queuedEvent = GateEvent.RAISE;
 
-if ((currentState == UnknownEnum.Value_1 || currentState == UnknownEnum.Value_0) && queuedEvent != UnknownEnum.Value_0)
+// If an event is queued and we are ready for that event, begin the event.
+// If the event is irrelevant (i.e. raising a gate that is already open), discard the event.
+if ((currentState == GateState.LOWERED || currentState == GateState.RAISED) && queuedEvent != GateEvent.NONE)
 {
-    if (queuedEvent == UnknownEnum.Value_2 && currentState != UnknownEnum.Value_0)
+    if (queuedEvent == GateEvent.RAISE && currentState != GateState.RAISED)
     {
-        currentState = UnknownEnum.Value_2;
-        nextState = UnknownEnum.Value_0;
+        currentState = GateState.RAISING;
+        nextState = GateState.RAISED;
         sprite_index = spr_gateRaising;
     }
-    else if (queuedEvent == UnknownEnum.Value_1 && currentState != UnknownEnum.Value_1)
+    else if (queuedEvent == GateEvent.LOWER && currentState != GateState.LOWERED)
     {
-        currentState = UnknownEnum.Value_3;
-        nextState = UnknownEnum.Value_1;
+        currentState = GateState.LOWERING;
+        nextState = GateState.LOWERED;
         sprite_index = spr_gateLowering;
     }
     
-    queuedEvent = UnknownEnum.Value_0;
+    queuedEvent = GateEvent.NONE;
 }
 
-if (currentState == UnknownEnum.Value_1)
+if (currentState == GateState.LOWERED)
 {
+	// Failsafe to ensure player doesn't get stuck on a gate that lowered on top of them.
+	// If this happens - push a player out to the left/right side of the gate.
+	// May behave oddly if space to the left/right of gate isn't clear.	
     with (obj_player)
     {
         if (state != states.noclip)
@@ -113,7 +115,7 @@ if (currentState == UnknownEnum.Value_1)
     
     with (obj_baddie)
     {
-        if (state != states.cheesepepstick)
+        if (state != baddiestate.grabbed)
         {
             if (place_meeting(x, y, other))
             {

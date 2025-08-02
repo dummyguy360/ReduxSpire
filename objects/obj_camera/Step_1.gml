@@ -1,8 +1,9 @@
+/// @description Camera Regions
 var _is_region_active = false;
-var _region = -4;
+var _region = noone;
 var _debugZOOM = false;
 
-if (true && keyboard_check(ord("C")))
+if (DEBUG && keyboard_check(ord("C")))
     _debugZOOM = true;
 
 with (obj_cameraRegion)

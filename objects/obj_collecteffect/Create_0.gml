@@ -1,5 +1,5 @@
-var cam_x = camera_get_view_x(view_camera[0]);
-var cam_y = camera_get_view_y(view_camera[0]);
+var cam_x = camx;
+var cam_y = camy;
 depth = -10;
 image_speed = 0;
 image_index = 0;

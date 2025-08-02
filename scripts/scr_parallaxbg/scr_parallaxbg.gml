@@ -42,8 +42,8 @@ function scr_parallaxbg_start()
     {
         surface_set_target(global.parallaxbg_surface);
         draw_clear_alpha(c_black, 0);
-        var _cam_x = camera_get_view_x(view_camera[0]);
-        var _cam_y = camera_get_view_y(view_camera[0]);
+        var _cam_x = camx;
+        var _cam_y = camy;
         var a = layer_get_all();
         
         for (var i = 0; i < array_length(a); i++)

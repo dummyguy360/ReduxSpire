@@ -1,4 +1,4 @@
-with (create_afterimage(UnknownEnum.Value_7))
+with (create_afterimage(afterimages.enemy))
 {
     image_alpha = 0.85;
     image_angle = other.image_angle;

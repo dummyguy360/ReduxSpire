@@ -209,7 +209,7 @@ if (state == states.mach3 || state == states.Nhookshot || state == states.mach2 
     
     if (mach_aftimg <= 0)
     {
-        create_afterimage(choose(UnknownEnum.Value_1, UnknownEnum.Value_2), xscale, true);
+        create_afterimage(choose(afterimages.blue, afterimages.pink), xscale, true);
         mach_aftimg = 6;
     }
 }

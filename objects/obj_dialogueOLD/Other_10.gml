@@ -2,15 +2,15 @@ var curMsg = global.dialogmsg[current_message];
 var dialogLength = array_length(global.dialogmsg);
 var _func = curMsg[3];
 
-if (_func != -4)
+if (_func != noone)
     _func();
 
-if (state != states.Nhookshot)
+if (state != dialogstate.choices)
 {
     drawchar = 0;
     
     if (current_message == (dialogLength - 1))
-        state = states.normal;
+        state = dialogstate.outro;
     else
         current_message++;
 }

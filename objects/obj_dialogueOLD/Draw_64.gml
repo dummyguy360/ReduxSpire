@@ -8,12 +8,10 @@ var _textLength = string_length(_text);
 var _portrait = curMsg[1];
 var _sound = curMsg[2];
 var _func = curMsg[3];
-var hasImage = _portrait != -4;
+var hasImage = _portrait != noone;
 
 if (!surface_exists(surface))
-{
     surface = surface_create(760, 100);
-}
 else
 {
     surface_set_target(surface);

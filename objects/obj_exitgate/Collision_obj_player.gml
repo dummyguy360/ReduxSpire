@@ -20,8 +20,8 @@ if (global.panic == 1 && room != sucrose_1)
             {
                 with (instance_create(x, y, obj_endlevelfade))
                 {
-                    var _cam_x = camera_get_view_x(view_camera[0]);
-                    var _cam_y = camera_get_view_y(view_camera[0]);
+                    var _cam_x = camx;
+                    var _cam_y = camy;
                     PlayerX = other.x - _cam_x;
                     PlayerY = other.y - _cam_y;
                 }

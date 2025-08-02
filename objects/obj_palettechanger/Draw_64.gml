@@ -1,5 +1,5 @@
-var draw_x = camera_get_view_width(view_camera[0]) / 2;
-var draw_y = camera_get_view_height(view_camera[0]) / 2;
+var draw_x = camw / 2;
+var draw_y = camh / 2;
 draw_set_alpha(0.5);
 draw_rectangle_color(-32, -32, 992, 572, c_black, c_black, c_black, c_black, 0);
 draw_set_alpha(1);

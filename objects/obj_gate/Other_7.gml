@@ -1,6 +1,7 @@
+/// @description Update state.
 currentState = nextState;
 
-if (currentState == UnknownEnum.Value_0)
+if (currentState == GateState.RAISED)
     sprite_index = spr_gateRaised;
-else if (currentState == UnknownEnum.Value_1)
+else if (currentState == GateState.LOWERED)
     sprite_index = spr_gateLowered;

@@ -1,12 +1,12 @@
 function scr_levelSet()
 {
-    global.MinesFlags[UnknownEnum.Value_0] = false;
-    global.MinesFlags[UnknownEnum.Value_1] = false;
-    global.MinesFlags[UnknownEnum.Value_2] = false;
-    global.MinesFlags[UnknownEnum.Value_3] = false;
-    global.MinesFlags[UnknownEnum.Value_4] = false;
-    global.MinesFlags[UnknownEnum.Value_5] = false;
-    global.MinesFlags[UnknownEnum.Value_6] = false;
+	global.MinesFlags[GnomeFlags.PROGRESS] = false;
+	global.MinesFlags[GnomeFlags.RED] = false;
+	global.MinesFlags[GnomeFlags.GREEN] = false;
+	global.MinesFlags[GnomeFlags.BLUE] = false;
+	global.MinesFlags[GnomeFlags.YELLOW] = false;
+	global.MinesFlags[GnomeFlags.WHITE] = false;
+	global.MinesFlags[GnomeFlags.PURPLE] = false;
     instance_destroy(obj_endlevelfade);
     instance_destroy(obj_fadeout);
     instance_destroy(obj_cutsceneManager);
@@ -84,13 +84,13 @@ function scr_levelSet()
         global.targetCamX = obj_player.x;
         global.targetCamY = obj_player.y;
         var target = obj_player;
-        var _cam_x = target.x - (camera_get_view_width(view_camera[0]) / 2);
-        var _cam_y = target.y - (camera_get_view_height(view_camera[0]) / 2);
+        var _cam_x = target.x - (camw / 2);
+        var _cam_y = target.y - (camh / 2);
         chargecamera = 0;
-        _cam_x = clamp(_cam_x, Camera_xorigin, (Camera_xorigin + Camera_width) - camera_get_view_width(view_camera[0]));
-        _cam_y = clamp(_cam_y, Camera_yorigin, (Camera_yorigin + Camera_height) - camera_get_view_height(view_camera[0]));
-        _cam_x = clamp(_cam_x, 0, room_width - camera_get_view_width(view_camera[0]));
-        _cam_y = clamp(_cam_y, 0, room_height - camera_get_view_height(view_camera[0]));
+        _cam_x = clamp(_cam_x, Camera_xorigin, (Camera_xorigin + Camera_width) - camw);
+        _cam_y = clamp(_cam_y, Camera_yorigin, (Camera_yorigin + Camera_height) - camh);
+        _cam_x = clamp(_cam_x, 0, room_width - camw);
+        _cam_y = clamp(_cam_y, 0, room_height - camh);
         Cam_x = _cam_x;
         Cam_y = _cam_y;
         cam_langle = 0;

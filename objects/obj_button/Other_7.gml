@@ -1,10 +1,10 @@
-if (currentState == UnknownEnum.Value_2)
+if (currentState == ButtonState.PRESSING)
 {
-    currentState = UnknownEnum.Value_1;
+    currentState = ButtonState.PRESSED;
     sprite_index = spr_Pressed;
 }
-else if (currentState == UnknownEnum.Value_3)
+else if (currentState == ButtonState.REVERTING)
 {
-    currentState = UnknownEnum.Value_0;
+    currentState = ButtonState.RELEASED;
     sprite_index = spr_Released;
 }

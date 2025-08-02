@@ -1,4 +1,4 @@
-if (point_in_rectangle(x, y, camera_get_view_x(view_camera[0]) - 64, camera_get_view_y(view_camera[0]) - 64, camera_get_view_x(view_camera[0]) + camera_get_view_width(view_camera[0]) + 64, camera_get_view_y(view_camera[0]) + camera_get_view_height(view_camera[0]) + 64))
+if (point_in_rectangle(x, y, camx - 64, camy - 64, camx + camw + 64, camy + camh + 64))
 {
     if (!surface_exists(s))
     {

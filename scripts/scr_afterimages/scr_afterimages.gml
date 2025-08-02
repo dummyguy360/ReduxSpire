@@ -8,7 +8,7 @@ function create_afterimage(arg0, arg1 = image_xscale, arg2 = false)
     var pal = [-4, -4];
     var _angle = _id.image_angle;
     
-    if (object_get_parent(parent) == 381)
+    if (object_get_parent(parent) == obj_baddie)
         pal = [paletteselect, spr_palette];
     
     if (parent == obj_player)

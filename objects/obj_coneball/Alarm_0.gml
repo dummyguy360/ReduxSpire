@@ -1,2 +1,2 @@
-create_afterimage(UnknownEnum.Value_7);
+create_afterimage(afterimages.enemy);
 alarm[0] = 10;

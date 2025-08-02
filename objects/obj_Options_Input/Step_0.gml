@@ -1,17 +1,17 @@
 if (canmove == true)
 {
     scr_getinput();
-    ScrollY = lerp(ScrollY, (optionselected / UnknownEnum.Value_11) * -100, 0.15);
+    ScrollY = lerp(ScrollY, (optionselected / OPTION_INPUTSELECTED.special) * -100, 0.15);
     
     if (selecting == false)
     {
-        if ((key_up2 || keyboard_check_pressed(vk_up)) && optionselected > UnknownEnum.Value_0)
+        if ((key_up2 || keyboard_check_pressed(vk_up)) && optionselected > OPTION_INPUTSELECTED.back)
         {
             optionselected -= 1;
             scr_sound(sound_step);
         }
         
-        if ((key_down2 || keyboard_check_pressed(vk_down)) && optionselected < UnknownEnum.Value_11)
+        if ((key_down2 || keyboard_check_pressed(vk_down)) && optionselected < OPTION_INPUTSELECTED.special)
         {
             optionselected += 1;
             scr_sound(sound_step);
@@ -41,7 +41,7 @@ if (canmove == true)
     
     switch (optionselected)
     {
-        case UnknownEnum.Value_0:
+        case OPTION_INPUTSELECTED.back:
             subtitle = "GO BACK TO MAIN SCREEN";
             
             if (key_jump || keyboard_check_pressed(vk_enter))
@@ -65,7 +65,7 @@ if (canmove == true)
             
             break;
         
-        case UnknownEnum.Value_1:
+        case OPTION_INPUTSELECTED.up:
             if (selecting == true)
             {
                 if (keyboard_check_pressed(vk_anykey))
@@ -83,7 +83,7 @@ if (canmove == true)
             
             break;
         
-        case UnknownEnum.Value_2:
+        case OPTION_INPUTSELECTED.right:
             if (selecting == true)
             {
                 if (keyboard_check_pressed(vk_anykey))
@@ -101,7 +101,7 @@ if (canmove == true)
             
             break;
         
-        case UnknownEnum.Value_3:
+        case OPTION_INPUTSELECTED.left:
             if (selecting == true)
             {
                 if (keyboard_check_pressed(vk_anykey))
@@ -119,7 +119,7 @@ if (canmove == true)
             
             break;
         
-        case UnknownEnum.Value_4:
+        case OPTION_INPUTSELECTED.down:
             if (selecting == true)
             {
                 if (keyboard_check_pressed(vk_anykey))
@@ -137,7 +137,7 @@ if (canmove == true)
             
             break;
         
-        case UnknownEnum.Value_5:
+        case OPTION_INPUTSELECTED.jump:
             if (selecting == true)
             {
                 if (keyboard_check_pressed(vk_anykey))
@@ -155,7 +155,7 @@ if (canmove == true)
             
             break;
         
-        case UnknownEnum.Value_6:
+        case OPTION_INPUTSELECTED.slap:
             if (selecting == true)
             {
                 if (keyboard_check_pressed(vk_anykey))
@@ -173,7 +173,7 @@ if (canmove == true)
             
             break;
         
-        case UnknownEnum.Value_7:
+        case OPTION_INPUTSELECTED.taunt:
             if (selecting == true)
             {
                 if (keyboard_check_pressed(vk_anykey))
@@ -191,7 +191,7 @@ if (canmove == true)
             
             break;
         
-        case UnknownEnum.Value_8:
+        case OPTION_INPUTSELECTED.shoot:
             if (selecting == true)
             {
                 if (keyboard_check_pressed(vk_anykey))
@@ -209,7 +209,7 @@ if (canmove == true)
             
             break;
         
-        case UnknownEnum.Value_9:
+        case OPTION_INPUTSELECTED.attack:
             if (selecting == true)
             {
                 if (keyboard_check_pressed(vk_anykey))
@@ -227,7 +227,7 @@ if (canmove == true)
             
             break;
         
-        case UnknownEnum.Value_10:
+        case OPTION_INPUTSELECTED.start:
             if (selecting == true)
             {
                 if (keyboard_check_pressed(vk_anykey))
@@ -245,7 +245,7 @@ if (canmove == true)
             
             break;
         
-        case UnknownEnum.Value_11:
+        case OPTION_INPUTSELECTED.special:
             if (selecting == true)
             {
                 if (keyboard_check_pressed(vk_anykey))

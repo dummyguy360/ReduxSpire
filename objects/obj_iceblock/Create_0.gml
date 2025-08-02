@@ -1,10 +1,17 @@
+enum iceType 
+{
+	normal,
+	heavy,
+	fragile,
+}
+
 scr_collision_init();
 image_speed = 0;
 color_index = 0;
 color = 
-{
-    light: 10790143,
-    dark: 5987276
+{ 
+	light :	#ffa4a4, 
+	dark :#cc5b5b 
 };
 invtime = 0;
 grounded = false;

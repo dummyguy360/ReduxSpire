@@ -13,18 +13,6 @@ enum Exclude
 	ALL = 15,
 }
 
-enum afterimages 
-{
-	fade = 0,
-	blue = 1,
-	pink = 2,
-	orange = 3,
-	solid_blue = 4,
-	solid_pink = 5,
-	solid_orange = 6,
-	enemy = 7,
-}
-
 // Generic Enum Declaration
 enum UnknownEnum 
 {

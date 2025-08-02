@@ -13,9 +13,9 @@ for (var i = 0; i < array_length(global.secret_layers); i++)
             surface_set_target(a.surf);
             draw_clear_alpha(c_white, 0);
             var tilemap = layer_tilemap_get_id(global.secret_layers[i].nm);
-            draw_tilemap(tilemap, -camera_get_view_x(view_camera[0]), -camera_get_view_y(view_camera[0]));
+            draw_tilemap(tilemap, -camx, -camy);
             surface_reset_target();
-            draw_surface_ext(a.surf, camera_get_view_x(view_camera[0]), camera_get_view_y(view_camera[0]), 1, 1, 0, c_white, a.alpha);
+            draw_surface_ext(a.surf, camx, camy, 1, 1, 0, c_white, a.alpha);
         }
     }
 }

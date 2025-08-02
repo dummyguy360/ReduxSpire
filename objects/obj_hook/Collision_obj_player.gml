@@ -1,4 +1,4 @@
-if (state == states.frozen)
+if (state == HookState.idle)
 {
     if (other.state != states.hooks && other.state != states.frozen && other.state != states.noclip && other.state != states.backbreaker)
     {
@@ -11,6 +11,6 @@ if (state == states.frozen)
             other.playerID = id;
         }
         
-        state = states.titlescreen;
+        state = HookState.carrying;
     }
 }

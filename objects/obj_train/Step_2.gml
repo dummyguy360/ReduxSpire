@@ -1,2 +1,2 @@
-if (state != states.frozen)
+if (state != trainstate.idle)
     scr_collide();

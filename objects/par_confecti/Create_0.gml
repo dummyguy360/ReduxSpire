@@ -1,3 +1,10 @@
+enum confectistate 
+{
+	normal,
+	taunt,
+	appear
+}
+
 image_speed = 0.35;
 depth = -6;
 followQueue = ds_queue_create();
@@ -14,4 +21,4 @@ targety = ystart;
 scr_confecti_init();
 sprite_index = spr_appear;
 mask_index = spr_crouchmask;
-state = states.titlescreen;
+state = confectistate.appear;

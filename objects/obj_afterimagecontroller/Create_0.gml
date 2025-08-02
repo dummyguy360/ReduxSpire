@@ -1,43 +1,23 @@
+enum afterimages 
+{
+	fade = 0,
+	blue = 1,
+	pink = 2,
+	orange = 3,
+	solid_blue = 4,
+	solid_pink = 5,
+	solid_orange = 6,
+	enemy = 7,
+}
+
 depth = 1;
-color_arr[UnknownEnum.Value_0] = 
-{
-    light: c_white,
-    dark: 0
-};
-color_arr[UnknownEnum.Value_1] = 
-{
-    light: 16295984,
-    dark: 7944463
-};
-color_arr[UnknownEnum.Value_2] = 
-{
-    light: 9982184,
-    dark: 2099551
-};
-color_arr[UnknownEnum.Value_3] = 
-{
-    light: 1601784,
-    dark: 16552
-};
-color_arr[UnknownEnum.Value_4] = 
-{
-    light: 16295984,
-    dark: 16295984
-};
-color_arr[UnknownEnum.Value_5] = 
-{
-    light: 9982184,
-    dark: 9982184
-};
-color_arr[UnknownEnum.Value_6] = 
-{
-    light: 1601784,
-    dark: 1601784
-};
-color_arr[UnknownEnum.Value_7] = 
-{
-    light: 12512,
-    dark: 12512
-};
+color_arr[afterimages.fade] = { light : c_white, dark : c_black }
+color_arr[afterimages.blue] = { light : #30a8f8, dark : #0f3979 }
+color_arr[afterimages.pink] = { light : #e85098, dark : #5f0920 }
+color_arr[afterimages.orange] = { light : #f87018, dark : #a84000 }
+color_arr[afterimages.solid_blue] = { light : #30a8f8, dark : #30a8f8 }
+color_arr[afterimages.solid_pink] = { light : #e85098, dark : #e85098 }
+color_arr[afterimages.solid_orange] = { light : #f87018, dark : #f87018 }
+color_arr[afterimages.enemy] = { light : #e03000, dark : #e03000 }
 global.BlinkTrail = false;
 blinkingBuffer = 3;

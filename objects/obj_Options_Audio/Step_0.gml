@@ -2,7 +2,7 @@ if (canmove == true)
 {
     scr_getinput();
     
-    if ((key_up2 || keyboard_check_pressed(vk_up)) && optionselected > UnknownEnum.Value_0)
+    if ((key_up2 || keyboard_check_pressed(vk_up)) && optionselected > OPTION_AUDIOSELECTED.back)
     {
         optionselected -= 1;
         scr_sound(sound_step);
@@ -17,7 +17,7 @@ if (canmove == true)
         audio_sound_gain(obj_Options_Main.PauseMusic, global.musicVolume, 0);
     }
     
-    if ((key_down2 || keyboard_check_pressed(vk_down)) && optionselected < UnknownEnum.Value_4)
+    if ((key_down2 || keyboard_check_pressed(vk_down)) && optionselected < OPTION_AUDIOSELECTED.dialogue)
     {
         optionselected += 1;
         scr_sound(sound_step);
@@ -33,7 +33,7 @@ if (canmove == true)
     
     switch (optionselected)
     {
-        case UnknownEnum.Value_0:
+        case OPTION_AUDIOSELECTED.back:
             subtitle = "GO BACK TO MAIN SCREEN";
             CursorY = -999;
             
@@ -45,7 +45,7 @@ if (canmove == true)
             
             break;
         
-        case UnknownEnum.Value_1:
+        case OPTION_AUDIOSELECTED.master:
             subtitle = "ADJUST MASTER VOLUME";
             CursorY = 100;
             optionsaved_masterVolume += ((key_right + key_left) / (key_attack ? 200 : 400));
@@ -64,7 +64,7 @@ if (canmove == true)
             
             break;
         
-        case UnknownEnum.Value_2:
+        case OPTION_AUDIOSELECTED.music:
             subtitle = "ADJUST MUSIC VOLUME";
             CursorY = 200;
             optionsaved_musicVolume += ((key_right + key_left) / (key_attack ? 200 : 400));
@@ -85,7 +85,7 @@ if (canmove == true)
             
             break;
         
-        case UnknownEnum.Value_3:
+        case OPTION_AUDIOSELECTED.sound:
             subtitle = "ADJUST SOUNDEFFECTS VOLUME";
             CursorY = 300;
             optionsaved_soundVolume += ((key_right + key_left) / (key_attack ? 200 : 400));
@@ -105,7 +105,7 @@ if (canmove == true)
             
             break;
         
-        case UnknownEnum.Value_4:
+        case OPTION_AUDIOSELECTED.dialogue:
             subtitle = "ADJUST DIALOGUE VOLUME";
             CursorY = 400;
             optionsaved_dialogueVolume += ((key_right + key_left) / (key_attack ? 200 : 400));

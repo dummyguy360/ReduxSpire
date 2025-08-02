@@ -6,8 +6,8 @@ if (!instance_exists(target))
 
 var w = sprite_width / 2;
 var h = sprite_height / 2;
-x = clamp(target.x, camera_get_view_x(view_camera[0]) + w, (camera_get_view_x(view_camera[0]) + camera_get_view_width(view_camera[0])) - w);
-y = clamp(target.y, camera_get_view_y(view_camera[0]) + h, (camera_get_view_y(view_camera[0]) + camera_get_view_height(view_camera[0])) - h);
+x = clamp(target.x, camx + w, (camx + camw) - w);
+y = clamp(target.y, camy + h, (camy + camh) - h);
 var bbox_in_cam = false;
 
 with (target)

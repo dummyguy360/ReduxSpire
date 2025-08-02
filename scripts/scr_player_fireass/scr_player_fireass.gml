@@ -49,7 +49,7 @@ function state_player_fireass()
     
     if (fire_afterimagetimer <= 0 && sprite_index != spr_player_fireassend)
     {
-        create_afterimage(UnknownEnum.Value_3, xscale);
+        create_afterimage(afterimages.orange, xscale);
         fire_afterimagetimer = 6;
     }
 }

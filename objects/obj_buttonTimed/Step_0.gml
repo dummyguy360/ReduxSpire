@@ -1,10 +1,10 @@
-if (countdownCounter > 0 && currentState == UnknownEnum.Value_1)
+if (countdownCounter > 0 && currentState == ButtonState.PRESSED)
 {
     countdownCounter--;
     
     if (countdownCounter <= 0)
     {
-        currentState = UnknownEnum.Value_3;
+        currentState = ButtonState.REVERTING;
         sprite_index = spr_Reverting;
     }
 }

@@ -10,7 +10,7 @@ function scr_enemy_stun()
     {
         sprite_index = deadspr;
         
-        with (create_afterimage(UnknownEnum.Value_0, image_xscale))
+        with (create_afterimage(afterimages.fade, image_xscale))
         {
             image_alpha = 0.6;
             vanish = true;

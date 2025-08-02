@@ -1,4 +1,4 @@
-if (PauseMusic != -4)
+if (PauseMusic != noone)
 {
     global.PAUSE_contTrack_pos = audio_sound_get_track_position(PauseMusic);
     audio_stop_sound(PauseMusic);

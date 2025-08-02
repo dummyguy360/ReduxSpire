@@ -1,7 +1,7 @@
-var cam_width = camera_get_view_width(view_camera[0]);
-var cam_height = camera_get_view_height(view_camera[0]);
-var cam_x = camera_get_view_x(view_camera[0]);
-var cam_y = camera_get_view_y(view_camera[0]);
+var cam_width = camw;
+var cam_height = camh;
+var cam_x = camx;
+var cam_y = camy;
 var c = view_camera[0];
 
 if (sucrose_lighting || dance_lighting)

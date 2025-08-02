@@ -1,4 +1,4 @@
-if (state == states.normal)
+if (state == trainstate.normal)
 {
     if (sprite_index != spr_spraydie && scr_solid(x + image_xscale, y, true))
     {

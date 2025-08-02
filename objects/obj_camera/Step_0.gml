@@ -240,7 +240,7 @@ if (oldranklol != global.currentrank)
 
 bubblescale = approach(bubblescale, 0, 0.1);
 global.screenflash -= 1;
-audio_listener_position(camera_get_view_x(view_camera[0]) + (cam_w / 2), camera_get_view_y(view_camera[0]) + (cam_h / 2), 0);
+audio_listener_position(camx + (cam_w / 2), camy + (cam_h / 2), 0);
 
 if (painterdex < sprite_get_number(spr_painterhp))
     painterdex += 0.35;

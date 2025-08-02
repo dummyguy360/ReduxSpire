@@ -1,6 +1,6 @@
 switch (state)
 {
-    case states.normal:
+    case elevatorstates.selecting:
         if (!instance_exists(obj_fadeout))
         {
             var length = array_length(hub_array) - 1;
@@ -19,7 +19,7 @@ switch (state)
                 if (hub_array[selected][0] != room)
                 {
                     alarm[0] = 180;
-                    state = states.titlescreen;
+                    state = elevatorstates.cutscene;
                     
                     with (obj_player)
                     {
@@ -30,7 +30,7 @@ switch (state)
                 }
                 else
                 {
-                    state = states.frozen;
+                    state = elevatorstates.normal;
                     
                     with (obj_player)
                         state = states.normal;
@@ -40,7 +40,7 @@ switch (state)
         
         break;
     
-    case states.titlescreen:
+    case elevatorstates.cutscene:
         if (playerID.key_jump && alarm[0] != -1)
             alarm[0] = 1;
 }

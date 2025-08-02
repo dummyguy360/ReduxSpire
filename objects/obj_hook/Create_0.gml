@@ -1,9 +1,16 @@
+enum HookState 
+{
+	idle,
+	goback,
+	carrying
+}
+
 hookSoundEmitter = audio_emitter_create();
 hookSound = audio_play_sound_on(hookSoundEmitter, sfx_propeller, true, 100);
 audio_emitter_gain(hookSoundEmitter, 1);
 image_speed = 0.35;
-playerID = -4;
-state = states.frozen;
+playerID = noone;
+state = HookState.idle;
 hookStopID = instance_nearest(x, y, obj_hookstop);
 
 if (!instance_exists(hookStopID))

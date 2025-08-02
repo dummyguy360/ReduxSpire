@@ -6,9 +6,7 @@ function state_player_backbreaker()
         movespeed = 0;
     }
     else
-    {
         hsp = xscale * movespeed;
-    }
     
     landAnim = 0;
     
@@ -23,7 +21,7 @@ function state_player_backbreaker()
         state = states.machslide;
         sprite_index = spr_player_crouchslide;
     }
-    
+    // Taunt.
     if (sprite_index == spr_taunt)
     {
         if (taunttimer >= 5 && supertauntcharged == true && key_up)
@@ -44,7 +42,7 @@ function state_player_backbreaker()
     
     if (taunttimer <= 0 && sprite_index == spr_taunt)
         scr_taunt_setVariables();
-    
+    // Supertaunt.
     if (sprite_index == spr_supertaunt1 || sprite_index == spr_supertaunt2 || sprite_index == spr_supertaunt3)
     {
         vsp = 0;
@@ -102,54 +100,57 @@ function state_player_backbreaker()
         image_speed = 0;
     else
         image_speed = 0.35;
+    // Debug Stuff.
+	if DEBUG
+	{
+	    if (key_down2)
+	    {
+	        paletteselect++;
+        
+	        if (paletteselect >= array_length(my_palettes))
+	            paletteselect = 0;
+        
+	        if (buffer_exists(my_pal_buffer))
+	            buffer_delete(my_pal_buffer);
+        
+	        taunttimer = 20;
+	    }
     
-    if (key_down2)
-    {
-        paletteselect++;
-        
-        if (paletteselect >= array_length(my_palettes))
-            paletteselect = 0;
-        
-        if (buffer_exists(my_pal_buffer))
-            buffer_delete(my_pal_buffer);
-        
-        taunttimer = 20;
-    }
-    
-    if (key_up2 && supertauntcharged == false)
-    {
-        switch (character)
-        {
-            case "P":
-                character = "N";
-                paletteselect = 1;
-                break;
+	    if (key_up2 && supertauntcharged == false)
+	    {
+	        switch (character)
+	        {
+	            case "P":
+	                character = "N";
+	                paletteselect = 1;
+	                break;
             
-            case "N":
-                character = "G";
-                paletteselect = 1;
-                break;
+	            case "N":
+	                character = "G";
+	                paletteselect = 1;
+	                break;
             
-            case "G":
-                character = "C";
-                paletteselect = 0;
-                break;
+	            case "G":
+	                character = "C";
+	                paletteselect = 0;
+	                break;
             
-            case "C":
-                character = "P";
-                paletteselect = 1;
-                break;
-        }
+	            case "C":
+	                character = "P";
+	                paletteselect = 1;
+	                break;
+	        }
         
-        scr_characterspr();
-        tauntStored.sprite_index = spr_idle;
-        tauntStored.state = states.normal;
-        scr_sound(choose(sound_taunt1, sound_taunt2, sound_taunt3, sound_taunt4, sound_taunt5, sound_taunt6, sound_taunt7, sound_taunt8));
-        taunttimer = 20;
-        image_index = irandom_range(0, sprite_get_number(spr_taunt));
-        sprite_index = spr_taunt;
+	        scr_characterspr();
+	        tauntStored.sprite_index = spr_idle;
+	        tauntStored.state = states.normal;
+	        scr_sound(choose(sound_taunt1, sound_taunt2, sound_taunt3, sound_taunt4, sound_taunt5, sound_taunt6, sound_taunt7, sound_taunt8));
+	        taunttimer = 20;
+	        image_index = irandom_range(0, sprite_get_number(spr_taunt));
+	        sprite_index = spr_taunt;
         
-        with (instance_create(x, y, obj_taunteffect))
-            playerID = other.id;
-    }
+	        with (instance_create(x, y, obj_taunteffect))
+	            playerID = other.id;
+	    }
+	}
 }

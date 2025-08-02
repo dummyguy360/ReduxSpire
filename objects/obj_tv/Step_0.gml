@@ -6,7 +6,7 @@ if (!visible)
 if (!(obj_player.state == states.knightpep && obj_player.state == states.knightpepattack && obj_player.state == states.knightpepslopes))
     once = 0;
 
-if (obj_player.y < (180 + obj_camera.Cam_y) && obj_player.x > ((camera_get_view_width(view_camera[0]) - 350) + obj_camera.Cam_x))
+if (obj_player.y < (180 + obj_camera.Cam_y) && obj_player.x > ((camw - 350) + obj_camera.Cam_x))
 {
     DrawY = lerp(DrawY, -300, 0.15);
     alpha = 0.5;

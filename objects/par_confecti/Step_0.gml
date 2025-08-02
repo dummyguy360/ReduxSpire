@@ -3,15 +3,15 @@ if (obj_player.x != x)
 
 switch (state)
 {
-    case states.frozen:
+    case confectistate.normal:
         scr_confecti_normal();
         break;
     
-    case states.normal:
+    case confectistate.taunt:
         scr_confecti_taunt();
         break;
     
-    case states.titlescreen:
+    case confectistate.appear:
         scr_confecti_appear();
         break;
 }

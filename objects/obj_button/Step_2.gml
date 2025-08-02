@@ -1,1 +1,1 @@
-logicOutput = currentState == UnknownEnum.Value_1;
+logicOutput = currentState == ButtonState.PRESSED;

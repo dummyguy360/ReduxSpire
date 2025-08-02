@@ -1,6 +1,6 @@
 switch (state)
 {
-    case states.normal:
+    case trainstate.normal:
         hsp = movespeed * image_xscale;
         
         if (grounded)
@@ -13,9 +13,7 @@ switch (state)
                 rubberband = 3;
             }
             else
-            {
                 rubberband = 0;
-            }
             
             movespeed = approach(movespeed, 14 + rubberband, 0.5);
         }
@@ -40,13 +38,13 @@ switch (state)
         
         break;
     
-    case states.frozen:
+    case trainstate.idle:
         hsp = 0;
         movespeed = 10;
         sprite_index = spr_spray;
         break;
     
-    case states.titlescreen:
+    case trainstate.drift:
         hsp = movespeed * -image_xscale;
         movespeed = approach(movespeed, 0, 0.4);
         
@@ -55,7 +53,7 @@ switch (state)
             image_index = 0;
             sprite_index = spr_spray;
             movespeed = 10;
-            state = states.normal;
+            state = trainstate.normal;
         }
         
         break;
@@ -79,5 +77,5 @@ if (y > (room_height + 64) && sprite_index != spr_spraydie)
     y = ystart;
     image_index = 0;
     sprite_index = spr_spray;
-    state = states.frozen;
+    state = trainstate.idle;
 }

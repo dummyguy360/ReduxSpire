@@ -1,10 +1,19 @@
+enum OPTIONSELECTED 
+{
+	back = 0,
+	audio = 1,
+	video = 2,
+	controls = 3,
+	misc = 4
+}
+
 image_speed = 0.35;
 CursorX = 0;
 CursorY = 0;
 bgx = 0;
 bgy = 0;
 depth = -99;
-PauseMusic = -4;
+PauseMusic = noone;
 
 if (room != realtitlescreen)
 {
@@ -13,5 +22,5 @@ if (room != realtitlescreen)
 }
 
 subtitle = "GO BACK TO MAIN SCREEN";
-optionselected = UnknownEnum.Value_0;
+optionselected = OPTIONSELECTED.back;
 selected = false;

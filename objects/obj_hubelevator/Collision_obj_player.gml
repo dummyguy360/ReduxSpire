@@ -1,6 +1,6 @@
-if (state == states.frozen && other.state != states.comingoutdoor && other.hsp == 0 && other.grounded && other.key_up2)
+if (state == elevatorstates.normal && other.state != states.comingoutdoor && other.hsp == 0 && other.grounded && other.key_up2)
 {
-    state = states.normal;
+    state = elevatorstates.selecting;
     playerID = other.id;
     other.state = states.actor;
     other.key_up2 = 0;
