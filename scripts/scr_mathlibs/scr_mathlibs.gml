@@ -7,7 +7,7 @@ function scr_mathlibs()
         
         if (result < 0)
             result += delta;
-        
+			
         return result + arg1;
     }
     

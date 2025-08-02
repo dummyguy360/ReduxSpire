@@ -223,6 +223,51 @@ enum states
 	tv_expression = 156,
 }
 
+enum baddiestate 
+{
+	idle = 0,
+	charge = 1, 
+	turn = 2, //
+	walk = 3,
+	land = 4,
+	hit = 5,
+	stun = 6,
+	Throw = 7,
+	grabbed = 8,//
+	scared = 9, 
+	frozen = 10,
+	shake = 11,
+	panicwait = 12,
+	secretwait = 13,
+	inhaled = 14,
+	cherrywait = 15,
+	cherryactive = 16,
+	applejimBash = 17,
+	kick = 18,
+	slugidle = 19,
+	slugjump = 20,
+	slugparry = 21,
+	float = 22,
+	theif = 23,
+	eyescreamwait = 24,
+	eyescream = 25,
+	rage = 26,
+	intro = 27,
+}
+
+enum cardtype 
+{
+	up = 0,
+	down = 1,
+	left = 2,
+	right = 3,
+	linear = 4,
+	interp = 5,
+	waving = 6,
+	shake = 7,
+	none = 8,
+}
+
 function scr_playerstate()
 {
     var _stateFunction = undefined;

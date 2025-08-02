@@ -1,6 +1,5 @@
-function tile_layer_show(arg0)
+function tile_layer_show(__depth)
 {
-    var __depth = arg0;
     var __layers = layer_get_all();
     var __numlayers = array_length_1d(__layers);
     

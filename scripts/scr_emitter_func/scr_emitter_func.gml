@@ -1,20 +1,20 @@
-function create_emitter(arg0 = x, arg1 = y, arg2 = 500, arg3 = 1200, arg4 = 2)
+function create_emitter(emitter_x = x, emitter_y = y, falloff_ref = 500, falloff_max = 1200, falloff_factor = 2)
 {
     var myemit = audio_emitter_create();
-    audio_emitter_falloff(myemit, arg2, arg3, arg4);
-    audio_emitter_position(myemit, arg1, arg0, 0);
+    audio_emitter_falloff(myemit, falloff_ref, falloff_max, falloff_factor);
+    audio_emitter_position(myemit, emitter_y, emitter_x, 0);
+    
     return myemit;
 }
 
-function play_sfx(arg0, arg1, arg2 = false, arg3 = 0, arg4 = 1, arg5 = 1)
+function play_sfx(emitter, sound, loop = false, priority = 0, gain = 1, pitch = 1)
 {
-    if (audio_emitter_exists(arg0))
-    {
-        return audio_play_sound_on(arg0, arg1, arg2, arg3, arg4, undefined, arg5);
-    }
+    if audio_emitter_exists(emitter)
+        return audio_play_sound_on(emitter, sound, loop, priority, gain, undefined, pitch)
     else
     {
-        arg0 = create_emitter();
-        return audio_play_sound_on(arg0, arg1, arg2, arg3, arg4, undefined, arg5);
+        emitter = create_emitter()
+        return audio_play_sound_on(emitter, sound, loop, priority, gain, undefined, pitch)
     }
+
 }

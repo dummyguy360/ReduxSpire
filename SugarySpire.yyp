@@ -6,7 +6,10 @@
     {"resourceType":"GMAudioGroup","resourceVersion":"1.3","name":"audiogroup_default","targets":-1,},
   ],
   "configs": {
-    "children": [],
+    "children": [
+      {"children":[],"name":"Dev",},
+      {"children":[],"name":"Playtester",},
+    ],
     "name": "Default",
   },
   "defaultScriptType": 1,

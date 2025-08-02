@@ -2,18 +2,6 @@
 gml_pragma("global", @'global.__rousr_dissonance = -4');
 
 // GameSpecificData Enums
-enum cardtype 
-{
-	up = 0,
-	down = 1,
-	left = 2,
-	right = 3,
-	linear = 4,
-	interp = 5,
-	waving = 6,
-	shake = 7,
-	none = 8,
-}
 
 enum Exclude 
 {

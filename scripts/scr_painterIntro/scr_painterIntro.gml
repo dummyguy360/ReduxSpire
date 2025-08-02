@@ -1,3 +1,4 @@
+//hey alot of this is reaaaaal ass. someone should probably make it alot better in the future! -ket
 function cutscene_painter_start()
 {
     with (obj_player)
@@ -20,8 +21,8 @@ function cutscene_painter_start()
 function scr_paintercut_walk()
 {
     var finished = false;
+	//Move player to Location
     var target_x = 3872;
-    
     with (obj_player)
     {
         image_speed = 0.35;
@@ -66,7 +67,7 @@ function scr_paintercut_walk()
 
 function cutscene_player_land()
 {
-    var _finish = 0;
+    var _finish = false;
     obj_player.vsp = approach(obj_player.vsp, 12, 0.35);
     obj_player.state = states.actor;
     obj_painter.image_speed = 0.35;
@@ -84,7 +85,7 @@ function cutscene_player_land()
         if (animation_end() && sprite_index == spr_player_land)
         {
             sprite_index = spr_player_idle;
-            _finish = 1;
+            _finish = true;
         }
     }
     

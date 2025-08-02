@@ -8,14 +8,18 @@ function defaultSecretState(arg0 = undefined)
     return _p.state;
 }
 
-function portal_activate(arg0, arg1)
+/// @function portal_activate()
+/// @description Activates a secret portal
+/// @param id
+/// @param activate?
+function portal_activate(portal, _bool)
 {
-    with (arg0)
+    with (portal)
     {
         var _activate = !secretActivated;
         
-        if (is_undefined(arg1))
-            _activate = arg1;
+        if (is_undefined(_bool))
+            _activate = _bool;
         
         secretActivated = _activate;
     }
@@ -94,8 +98,7 @@ function cutscene_secretPortal_middle()
 
 function cutscene_secretPortal_preend()
 {
-    static _portal = -4;
-    
+    static _portal = noone;
     var _finished = false;
     var _state = storedState;
     global.combofreeze = 30;
@@ -106,7 +109,7 @@ function cutscene_secretPortal_preend()
         state = states.actor;
         hsp = 0;
         vsp = 0;
-        
+        #region Sprites
         switch (_state)
         {
             case states.mach3:
@@ -125,7 +128,7 @@ function cutscene_secretPortal_preend()
                 sprite_index = spr_bodyslamfall;
                 break;
         }
-        
+        #endregion
         image_speed = 0.35;
         
         if (!instance_exists(obj_fadeout))
@@ -133,9 +136,7 @@ function cutscene_secretPortal_preend()
             scale = approach(scale, 1, 0.05);
             
             if (!instance_exists(_portal))
-            {
                 _portal = instance_create(x, y + 14, obj_secretPortalexit);
-            }
             else if (scale >= 1)
             {
                 scale = 1;

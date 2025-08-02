@@ -1,3 +1,12 @@
+enum OPTION_AUDIOSELECTED 
+{
+	back = 0,
+	master = 1,
+	music = 2,
+	sound = 3,
+	dialogue = 4
+}
+
 ini_open("optionData.ini");
 global.musicVolume = ini_read_real("Settings", "musicvol", 0.6);
 global.dialogueVolume = ini_read_real("Settings", "dialoguevol", 1);

@@ -1,4 +1,4 @@
-function scr_sin(arg0, arg1)
+function scr_sin(range, time)
 {
-    return sin(current_time / (arg1 * 100)) * arg0;
+    return sin(current_time / (time * 100)) * range;
 }

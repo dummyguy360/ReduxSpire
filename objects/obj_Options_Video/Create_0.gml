@@ -1,3 +1,16 @@
+enum OPTION_VIDEOSELECTED 
+{
+	back = 0,
+	fullscreen = 1,
+	resolution = 2,
+	hitstun = 3,
+	smoothcam = 4,
+	screenmelt = 5,
+	screentilt = 6,
+	smoothscale = 7,
+	lowperformance = 8,
+}
+
 optionselected = 0;
 ini_open("optionData.ini");
 global.fullscreen = ini_read_real("Settings", "fullscrn", 0);

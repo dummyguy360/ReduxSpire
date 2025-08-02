@@ -21,13 +21,9 @@ function scr_rocketfist_pizzano()
                 sprite_index = spr_pizzano_mach3;
         }
         else if (movespeed > 16)
-        {
             sprite_index = spr_pizzano_sjumpsidemach4;
-        }
         else if (movespeed <= 16)
-        {
             sprite_index = spr_pizzano_sjumpside;
-        }
         
         movespeed *= 1.5;
         flash = 1;
@@ -40,9 +36,7 @@ function scr_rocketfist_pizzano()
         move = key_left + key_right;
         
         if (movespeed > 12)
-        {
             hsp = xscale * movespeed;
-        }
         else
         {
             hsp = xscale * 12;
@@ -145,36 +139,16 @@ function scr_rocketfist_pizzano()
         }
         
         if (!instance_exists(obj_crazyrunothereffect) && sprite_index == spr_crazyrun)
-        {
-            instance_create(x, y, obj_crazyrunothereffect, 
-            {
-                playerID: id
-            });
-        }
-        
+            instance_create(x, y, obj_crazyrunothereffect, {playerID: id});
+			
         if (!instance_exists(obj_crazyruneffect))
-        {
-            instance_create(x, y, obj_crazyruneffect, 
-            {
-                playerID: id
-            });
-        }
-        
+            instance_create(x, y, obj_crazyruneffect, {playerID: id});
+			
         if (!instance_exists(obj_chargeeffect) && sprite_index != spr_dive)
-        {
-            instance_create(x, y, obj_chargeeffect, 
-            {
-                playerID: id
-            });
-        }
-        
+            instance_create(x, y, obj_chargeeffect, {playerID: id});
+			
         if (!instance_exists(obj_superdashcloud) && grounded)
-        {
-            instance_create(x, y, obj_superdashcloud, 
-            {
-                playerID: id
-            });
-        }
+            instance_create(x, y, obj_superdashcloud, {playerID: id});
     }
     
     image_speed = 0.35;

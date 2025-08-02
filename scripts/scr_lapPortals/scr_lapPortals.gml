@@ -61,8 +61,7 @@ function cutscene_lapPortal_start()
 
 function cutscene_lapPortal_middle()
 {
-    static _portal = -4;
-    
+    static _portal = noone;
     var _finished = false;
     global.combofreeze = 30;
     
@@ -78,9 +77,7 @@ function cutscene_lapPortal_middle()
         if (!instance_exists(obj_fadeout))
         {
             if (!instance_exists(_portal))
-            {
                 _portal = instance_create(x, y + 14, obj_lapPortalexit);
-            }
             else
             {
                 visible = true;

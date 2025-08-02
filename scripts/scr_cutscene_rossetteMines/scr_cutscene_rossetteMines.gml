@@ -1,7 +1,7 @@
 function cutscene_rosetteMines_prestart()
 {
     var finished = false;
-    
+    //Ground Player
     with (obj_player)
     {
         state = states.actor;
@@ -37,7 +37,7 @@ function cutscene_rosetteMines_start()
 {
     var finished = false;
     var target_x = obj_rosette.x - 64;
-    
+    //Move player to Location
     with (obj_player)
     {
         image_speed = 0.35;
@@ -89,6 +89,7 @@ function cutscene_rosetteMines_start()
 
 function cutscene_rosetteMines_middle()
 {
+	//Hand over the stuff
     var finished = false;
     
     with (obj_player)
@@ -116,13 +117,14 @@ function cutscene_rosetteMines_middle()
 
 function cutscene_rosetteMines_grab()
 {
+	//Hand over the stuff
     var finished = false;
     
     with (obj_player)
     {
         image_speed = 0.35;
         sprite_index = spr_player_donutget;
-        
+        //Licks the donut for combotime!!!
         if (floor(image_index) >= 19)
             global.combotime = 60;
         
@@ -136,6 +138,7 @@ function cutscene_rosetteMines_grab()
 
 function cutscene_rosetteMines_end()
 {
+	//Set everything up
     var myButton1 = get_control_string(global.key_shoot);
     global.treat = true;
     scr_controlprompt("[spr_buttonfont]" + myButton1 + "[spr_promptfont] Throw Donut");

@@ -1,3 +1,18 @@
+enum GateState 
+{
+	RAISED,
+	LOWERED,
+	RAISING,
+	LOWERING
+}
+
+enum GateEvent 
+{
+	NONE,
+	LOWER,
+	RAISE
+}
+
 depth = 4;
 image_speed = 0.35;
 logicMap = ds_map_create();

@@ -1,10 +1,10 @@
-function cutscene_shake_actor(arg0, arg1)
+function cutscene_shake_actor(_actor, mag)
 {
-    var _dump = cutscene_get_actor(arg0);
+    var _dump = cutscene_get_actor(_actor);
     
     with (_dump)
     {
-        shake_magx = arg1;
+        shake_magx = mag;
         shake_dir = 1;
         shake_timer = 0;
     }

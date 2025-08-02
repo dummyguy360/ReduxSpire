@@ -12,3 +12,10 @@ drop = 1;
 grounded = 0;
 rubberband = 0;
 state = states.frozen;
+
+enum trainstate 
+{
+	idle,
+	normal,
+	drift
+}

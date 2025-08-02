@@ -1,5 +1,6 @@
 function scr_playercolors()
 {
+	#region Characters
     switch (character)
     {
         case "P":
@@ -27,7 +28,9 @@ function scr_playercolors()
             colorheight = 0;
             break;
     }
-    
+	#endregion
+	
+	//Colorindex (Pratically useless remove later pls)
     colorindex[0] = 0;
     colorindex[1] = 1;
     colorindex[2] = 2;
@@ -39,6 +42,9 @@ function scr_playercolors()
     colorindex[8] = 8;
     colorindex[9] = 9;
     colorindex[10] = 10;
+	
+	//Saved Colors
+	#region Spaghetti
     ini_open("Custom/" + string(characters) + "_" + string(customsavedpalette) + "_palettes.ini");
     
     if (!ini_section_exists(string(characters) + "Colors" + string(colorindex[0])))
@@ -68,7 +74,9 @@ function scr_playercolors()
     }
     
     ini_close();
+	#endregion
     
+	//Colors					    //RED		  //GREEN		 //BLUE
     for (var i = 0; i < colorheight; i++)
         color[i] = make_color_rgb(colored[i][0], colored[i][1], colored[i][2]);
 }
