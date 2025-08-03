@@ -41,10 +41,10 @@ function audio_stop_all_music()
         audio_stop_sound(prevmuID);
         audio_stop_sound(global.secretmusic);
         audio_stop_sound(global.harrymusic);
-        global.music = -4;
-        prevmuID = -4;
-        global.secretmusic = -4;
-        global.harrymusic = -4;
+        global.music = noone;
+        prevmuID = noone;
+        global.secretmusic = noone;
+        global.harrymusic = noone;
     }
 }
 

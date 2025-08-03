@@ -12,12 +12,12 @@ if (room == sucrose_6 || room == sucrose_6_1 || room == sucrose_7 || room == suc
     color_index = 1;
     color = 
     {
-        light: 7490854,
-        dark: 0
+        light: #264d72,
+        dark: #000000
     };
 }
 
-if (content != -4)
+if (content != noone)
 {
     contentspr = object_get_sprite(content);
     

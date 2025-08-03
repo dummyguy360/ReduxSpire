@@ -36,5 +36,5 @@ boundbox = 0;
 hitboxcreate = 0;
 idletimer = 200;
 jumptimer = 100;
-parryid = -4;
+parryid = noone;
 sluggyhitboxcreated = 0;

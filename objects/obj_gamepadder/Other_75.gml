@@ -1,10 +1,10 @@
-show_debug_message("Event = " + ds_map_find_value(async_load, "event_type"));
-show_debug_message("Pad = " + string(ds_map_find_value(async_load, "pad_index")));
+show_debug_message("Event = " + async_load[? "event_type"]);        // Debug code so you can see which event has been
+show_debug_message("Pad = " + string(async_load[? "pad_index"]));   // triggered and the pad associated with it.
 
-switch (ds_map_find_value(async_load, "event_type"))
+switch (async_load[? "event_type"])
 {
     case "gamepad discovered":
-        var padnew = ds_map_find_value(async_load, "pad_index");
+        var padnew = async_load[? "pad_index"];
         
         if (global.player_input_device <= 0)
         {
@@ -18,11 +18,11 @@ switch (ds_map_find_value(async_load, "event_type"))
         break;
     
     case "gamepad lost":
-        var padlost = ds_map_find_value(async_load, "pad_index");
+        var padlost = async_load[? "pad_index"];
         
         if (global.player_input_device == padlost)
         {
-            global.player_input_device = -4;
+            global.player_input_device = noone;
             device_to_reconnect = 1;
         }
         else

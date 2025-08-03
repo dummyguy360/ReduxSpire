@@ -1,2 +1,2 @@
 scr_collision_init();
-shattedBy = -4;
+shattedBy = noone;

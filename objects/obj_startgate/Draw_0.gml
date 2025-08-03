@@ -21,7 +21,7 @@ else
         
         with (_layer)
         {
-            if (func != -4)
+            if (func != noone)
                 func();
             
             drawx += scroll_x;
@@ -42,7 +42,7 @@ else
     
     with (mask)
     {
-        if (func != -4)
+        if (func != noone)
             func();
         
         drawx += scroll_x;
@@ -55,7 +55,7 @@ else
     
     with (gate)
     {
-        if (func != -4)
+        if (func != noone)
             func();
         
         drawx += scroll_x;

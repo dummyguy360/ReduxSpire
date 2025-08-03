@@ -41,7 +41,7 @@ if (ds_list_find_index(global.saveroom, id) == -1)
             break;
     }
     
-    if (set_theme != -4)
+    if (set_theme != noone)
         obj_music.escapemusic = set_theme;
     
     global.combofreeze = 30;

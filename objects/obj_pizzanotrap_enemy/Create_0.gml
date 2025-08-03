@@ -1,3 +1,3 @@
 event_inherited();
-enemyID = -4;
+enemyID = noone;
 threshold_x = 450;

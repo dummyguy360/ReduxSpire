@@ -38,7 +38,7 @@ if (audio_sound_get_gain(prevmuID) <= 0)
 
 if (room != timesuproom && room != rank_room && !instance_exists(obj_endlevelfade))
 {
-    var _new_song = -4;
+    var _new_song = noone;
     
     if (!is_undefined(room_details.my_func))
         _new_song = room_details.my_func();
@@ -52,13 +52,13 @@ if (room != timesuproom && room != rank_room && !instance_exists(obj_endlevelfad
         if (global.lapcount >= 1)
             _new_song = mu_lap;
         
-        if (escapemusic != -4)
+        if (escapemusic != noone)
             _new_song = escapemusic;
         
         unforce_cont = true;
     }
     
-    if (_new_song != -4 && music != _new_song && music != mu_sucrose)
+    if (_new_song != noone && music != _new_song && music != mu_sucrose)
     {
         music = _new_song;
         prevmuID = global.music;
@@ -76,12 +76,10 @@ if (room != timesuproom && room != rank_room && !instance_exists(obj_endlevelfad
             audio_sound_gain(global.music, global.musicVolume, 500);
         }
         else
-        {
             audio_sound_gain(global.music, global.musicVolume, 0);
-        }
         
         audio_stop_sound(global.secretmusic);
         audio_stop_sound(global.harrymusic);
-        global.secretmusic = -4;
+        global.secretmusic = noone;
     }
 }

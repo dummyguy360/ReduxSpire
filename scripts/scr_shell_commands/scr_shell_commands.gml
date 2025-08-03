@@ -219,7 +219,7 @@ function meta_instance_create()
     {
         description: "create an object",
         arguments: ["<x>", "<y>", "<object>"],
-        suggestions: [UnknownEnum.Value_0, UnknownEnum.Value_1, []],
+        suggestions: [mouseArgumentType.worldX, mouseArgumentType.worldY, []],
         argumentDescriptions: ["the X coordinate to create the object at", "the Y coordinate to create the object at", "the object to create"]
     };
 }

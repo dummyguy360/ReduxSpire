@@ -30,11 +30,11 @@ function scr_confecti_normal()
     }
     
     distance = image_xscale * magnitude;
-    var _leader = -4;
-    _leader = !ds_list_find_index(global.FollowerList, id) ? 370 : ds_list_find_value(global.FollowerList, floor(ds_list_find_index(global.FollowerList, id) - 1));
+    var _leader = noone;
+    _leader = !ds_list_find_index(global.FollowerList, id) ? obj_player : ds_list_find_value(global.FollowerList, floor(ds_list_find_index(global.FollowerList, id) - 1));
     
     if (!instance_exists(_leader))
-        _leader = 370;
+        _leader = obj_player;
     
     if (instance_exists(_leader))
     {

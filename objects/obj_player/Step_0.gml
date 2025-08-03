@@ -60,7 +60,7 @@ if (!global.freezeframe && state != states.frozen)
         state = states.normal;
     
     if (!(state == states.grab || state == states.charge || state == states.superslam || state == states.finishingblow))
-        baddiegrabbedID = -4;
+        baddiegrabbedID = noone;
 }
 
 if (character == "P")
@@ -123,7 +123,7 @@ if (global.combotime <= 0 && global.combo != 0)
         scr_queue_tvanim(obj_tv.happytvspr, 200);
     
     global.combo = 0;
-    playComboVariable = -4;
+    playComboVariable = noone;
 }
 
 if (input_buffer_jump < 8)
@@ -243,7 +243,7 @@ if (state == states.pizzanokungfu)
     
     if (blue_aftimg <= 0)
     {
-        create_afterimage(choose(UnknownEnum.Value_4, UnknownEnum.Value_5), xscale, true);
+        create_afterimage(choose(afterimages.solid_blue, afterimages.solid_pink), xscale, true);
         blue_aftimg = 6;
     }
 }
@@ -400,7 +400,7 @@ if (oldComboTitle != _cTitle && _cTitle != 0)
 {
     oldComboTitle = _cTitle;
     instance_destroy(combo_title);
-    combo_title = -4;
+    combo_title = noone;
     combo_title = instance_create(830, 250, obj_combotitle);
     combo_title.title = _cTitle;
     combo_title.image_index = _cTitle;

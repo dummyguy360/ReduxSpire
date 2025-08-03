@@ -4,26 +4,26 @@ function scr_transformationCheck(arg0)
     
     switch (arg0)
     {
-        case UnknownEnum.Value_88:
-        case UnknownEnum.Value_97:
-        case UnknownEnum.Value_98:
+        case states.cotton:
+        case states.cottondrill:
+        case states.cottonroll:
             _transfo = "Cottoncoated";
             break;
         
-        case UnknownEnum.Value_148:
-        case UnknownEnum.Value_150:
-        case UnknownEnum.Value_149:
-        case UnknownEnum.Value_151:
+        case states.rupertnormal:
+        case states.rupertjump:
+        case states.rupertslide:
+        case states.rupertstick:
             _transfo = "Rupert";
             break;
         
-        case UnknownEnum.Value_48:
+        case states.ufofloat:
             _transfo = "UFO";
             break;
         
-        case UnknownEnum.Value_144:
-        case UnknownEnum.Value_145:
-        case UnknownEnum.Value_146:
+        case states.seacream:
+        case states.seacreamjump:
+        case states.seacreamstick:
             _transfo = "SeaCream";
             break;
     }

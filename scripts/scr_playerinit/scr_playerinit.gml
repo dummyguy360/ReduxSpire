@@ -5,7 +5,7 @@ function scr_playerrespawn(arg0 = true)
         if (state != states.gameover && state != states.actor && state != states.fling && !place_meeting(x, y, obj_vertical_hallway) && !instance_exists(obj_fadeout) && room != outer_room2 && room != timesuproom && room != rank_room)
         {
             var _checkpoint = instance_nearest(x, y, obj_checkpoint_invis);
-            var _checkpointReal = -4;
+            var _checkpointReal = noone;
             
             with (obj_checkpoint)
             {
@@ -57,9 +57,7 @@ function scr_playerrespawn(arg0 = true)
         }
     }
     else if (!instance_exists(obj_techdiff))
-    {
         instance_create(x, y, obj_techdiff);
-    }
 }
 
 enum states 

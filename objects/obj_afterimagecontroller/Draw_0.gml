@@ -16,7 +16,7 @@ for (var i = 0; i < ds_list_size(global.afterimage_list); i++)
             }
             else if (instance_exists(identity) && identity.object_index == obj_player)
                 scr_palette_as_player();
-            else if (spr_palette != -4 && paletteselect != -4)
+            else if (spr_palette != noone && paletteselect != noone)
                 pal_swap_set(spr_palette, paletteselect, false);
             
             draw_sprite_ext(sprite_index, image_index, x, y, image_xscale, 1, image_angle, c_white, gonealpha * image_alpha);

@@ -5,7 +5,7 @@ function create_afterimage(arg0, arg1 = image_xscale, arg2 = false)
     
     var parent = object_index;
     var _id = id;
-    var pal = [-4, -4];
+    var pal = [noone, noone];
     var _angle = _id.image_angle;
     
     if (object_get_parent(parent) == obj_baddie)

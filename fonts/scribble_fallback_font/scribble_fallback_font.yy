@@ -9,6 +9,10 @@
   "bold": false,
   "canGenerateBitmap": true,
   "charset": 0,
+  "ConfigValues": {
+    "Dev": {"textureGroupId":"{\"name\":\"Default\",\"path\":\"texturegroups/Default\"}",},
+    "Playtester": {"textureGroupId":"{\"name\":\"Backgrounds\",\"path\":\"texturegroups/Backgrounds\"}",},
+  },
   "first": 0,
   "fontName": "Droid Sans Mono",
   "glyphOperations": 0,

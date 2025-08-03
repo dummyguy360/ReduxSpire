@@ -68,18 +68,18 @@ else
 
 gamepad_set_vibration(global.player_input_device, vibration1, vibration1);
 vibration1 -= vibrationDecay1;
+//card lol
 carddex += 0.3;
-
-if (confirmspr == spr_icescreamer && cardspr != 235)
+if (confirmspr == spr_icescreamer && cardspr != spr_rankcardflipping)
 {
     carddex = 0;
-    cardspr = 235;
+    cardspr = spr_rankcardflipping;
 }
 
-if (cardspr == 235 && carddex >= 6)
-    cardspr = 1214;
+if (cardspr == spr_rankcardflipping && carddex >= 6)
+    cardspr = spr_rankcardflipped;
 
-if (cardspr == 1214 && carddex >= 2)
+if (cardspr == spr_rankcardflipped && carddex >= 2)
 {
     confirmspr = -2;
     gamepad_discovered = 0;

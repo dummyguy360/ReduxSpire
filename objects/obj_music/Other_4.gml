@@ -34,7 +34,7 @@ if (!global.panic && room != rank_room && room != timesuproom && !instance_exist
         
         audio_stop_sound(global.secretmusic);
         audio_stop_sound(global.harrymusic);
-        global.secretmusic = -4;
+        global.secretmusic = noone;
     }
     
     if (instance_exists(obj_gummyharry))
@@ -68,7 +68,7 @@ if (room == rank_room)
     audio_stop_sound(prevmuID);
     audio_stop_sound(global.secretmusic);
     audio_stop_sound(global.harrymusic);
-    global.music = -4;
-    global.secretmusic = -4;
-    global.harrymusic = -4;
+    global.music = noone;
+    global.secretmusic = noone;
+    global.harrymusic = noone;
 }

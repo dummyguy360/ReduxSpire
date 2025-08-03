@@ -26,5 +26,5 @@ bgflash = 0;
 global.ScrollOffset = 0;
 greyscalefade = 0;
 scroll1 = 0;
-RealSurface = -4;
+RealSurface = noone;
 use_war = false;

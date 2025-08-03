@@ -71,10 +71,10 @@ function player_slopeMomentum(arg0, arg1 = arg0)
 {
     var inst = instance_place(x, y + 1, obj_slopePlatform);
     
-    if (instance_place(x, y + 1, obj_slope) != -4)
+    if (instance_place(x, y + 1, obj_slope) != noone)
         inst = instance_place(x, y + 1, obj_slope);
     
-    if (groundedSlope && inst != -4)
+    if (groundedSlope && inst != noone)
     {
         var _xscale = sign(inst.image_xscale);
         var slope_acceleration = abs(inst.image_yscale) / abs(inst.image_xscale);

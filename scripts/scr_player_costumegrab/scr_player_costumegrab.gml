@@ -23,7 +23,7 @@ function state_player_costumegrab()
         jumpstop = 1;
     }
     
-    if (costumeBlock != -4)
+    if (costumeBlock != noone)
     {
         if (key_slap2)
         {
@@ -43,8 +43,8 @@ function state_player_costumegrab()
             }
             
             sprite_index = spr_idle;
-            costumeBlock = -4;
-            costumeBlockDetails = -4;
+            costumeBlock = noone;
+            costumeBlockDetails = noone;
             state = states.costumenormal;
         }
         
@@ -70,9 +70,9 @@ function state_player_costumegrab()
             }
             
             sprite_index = spr_idle;
-            costumeBlock = -4;
-            costumeBlockDetails = -4;
-            dummyBlock = -4;
+            costumeBlock = noone;
+            costumeBlockDetails = noone;
+            dummyBlock = noone;
             state = states.costumenormal;
         }
     }

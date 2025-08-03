@@ -3,7 +3,7 @@ function boss_attack_queue(arg0, arg1)
     ds_queue_enqueue(atkqueue, arg0, arg1);
 }
 
-function boss_create_attack(arg0, arg1, arg2 = 100, arg3 = -4, arg4 = -4)
+function boss_create_attack(arg0, arg1, arg2 = 100, arg3 = noone, arg4 = noone)
 {
     return 
     {
@@ -19,7 +19,7 @@ function boss_next_attack()
 {
     if (ds_queue_empty(atkqueue))
     {
-        var b = 254;
+        var b = obj_bosscontroller;
         var _atk = b.bossmaxhp - b.bosshp;
         var _length = array_length(phase_atks) - 1;
         _atk = clamp(_atk, 0, _length);

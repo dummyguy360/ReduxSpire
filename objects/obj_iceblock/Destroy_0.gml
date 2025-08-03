@@ -8,7 +8,7 @@ if (ds_list_find_index(global.saveroom, id) == -1)
     
     scr_sound(sfx_glassbreak);
     
-    if (content != -4)
+    if (content != noone)
         instance_create(x, y, content);
     
     ds_list_add(global.saveroom, id);

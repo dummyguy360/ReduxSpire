@@ -1,6 +1,6 @@
 function scr_ghostcollectible(arg0 = false)
 {
-    var q = -4;
+    var q = noone;
     var b = id;
     
     with (obj_secretfound)

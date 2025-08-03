@@ -3,17 +3,15 @@ if (flash)
 
 var _y = y;
 
-if (state == states.cheesepepstick)
+if (state == baddiestate.grabbed)
     _y += 8;
 
 draw_sprite(spr_iceblock_bg, color_index, x, _y);
 
-if (contentspr != -4)
+if (contentspr != noone)
 {
     if (!surface_exists(contentsurf))
-    {
         contentsurf = surface_create(64, 64);
-    }
     else
     {
         surface_set_target(contentsurf);

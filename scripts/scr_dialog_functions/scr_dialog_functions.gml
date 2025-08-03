@@ -23,12 +23,12 @@ function reset_dialogue()
 {
     instance_destroy(obj_dialogue);
     instance_destroy(obj_dialogue_choices);
-    global.dialogmsg = -4;
-    global.dialogchoices = -4;
-    global.choiced = -4;
+    global.dialogmsg = noone;
+    global.dialogchoices = noone;
+    global.choiced = noone;
 }
 
-function create_dialogue(arg0, arg1 = -4, arg2 = -4)
+function create_dialogue(arg0, arg1 = noone, arg2 = noone)
 {
     return [arg0, arg1, arg2];
 }

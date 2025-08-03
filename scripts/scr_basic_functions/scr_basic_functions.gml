@@ -218,7 +218,7 @@ function onBeat(arg0, arg1 = false)
     return false;
 }
 
-function solid_in_line(arg0, arg1 = -4, arg2 = self)
+function solid_in_line(arg0, arg1 = noone, arg2 = self)
 {
     var _list = ds_list_create();
     var set_list = collision_line_list(x, y, arg0.x, arg0.y, par_collision, true, true, _list, true);
@@ -230,7 +230,7 @@ function solid_in_line(arg0, arg1 = -4, arg2 = self)
             var obj = ds_list_find_value(_list, i);
             show_debug_message(obj.object_index);
             
-            if (arg1 != -4)
+            if (arg1 != noone)
             {
                 var found_obj = false;
                 
@@ -290,6 +290,6 @@ function gate_createlayer(arg0, arg1, arg2 = 0, arg3 = 0, arg4 = 0)
         drawy: 0,
         scroll_x: arg2,
         scroll_y: arg3,
-        func: -4
+        func: noone
     };
 }

@@ -72,87 +72,87 @@ switch (state)
                 _transfo = false;
                 break;
             
-            case UnknownEnum.Value_68:
-            case UnknownEnum.Value_69:
-            case UnknownEnum.Value_17:
-            case UnknownEnum.Value_71:
-            case UnknownEnum.Value_11:
-            case UnknownEnum.Value_31:
-            case UnknownEnum.Value_67:
-            case UnknownEnum.Value_70:
+            case states.mach1:
+            case states.mach2:
+            case states.handstandjump:
+            case states.machslide:
+            case states.climbwall:
+            case states.machroll:
+            case states.crouchslide:
+            case states.mach3:
                 _transfo = false;
                 var my_mvsp = global.freezeframe ? abs(obj_player.frozenhsp) : abs(obj_player.hsp);
                 
-                if (allstate == UnknownEnum.Value_11)
+                if (allstate == states.climbwall)
                     my_mvsp = global.freezeframe ? abs(obj_player.frozenvsp) : abs(obj_player.vsp);
                 
                 idlespr = mach1tvspr;
                 
-                if (my_mvsp >= 8 || allstate == UnknownEnum.Value_17)
+                if (my_mvsp >= 8 || allstate == states.handstandjump)
                     idlespr = mach2tvspr;
                 
-                if (my_mvsp >= 12 || allstate == UnknownEnum.Value_70)
+                if (my_mvsp >= 12 || allstate == states.mach3)
                     idlespr = mach3tvspr;
                 
                 if (my_mvsp >= 20 || obj_player.sprite_index == obj_player.spr_crazyrun)
                     idlespr = mach4tvspr;
                 
-                if (allstate == UnknownEnum.Value_17 || allstate == UnknownEnum.Value_67)
+                if (allstate == states.handstandjump || allstate == states.crouchslide)
                     idlespr = mach1tvspr;
                 
-                if (allstate == UnknownEnum.Value_31)
+                if (allstate == states.machroll)
                     idlespr = machrolltvspr;
                 
                 break;
             
-            case UnknownEnum.Value_126:
+            case states.hooks:
                 idlespr = hooktvspr;
                 break;
             
-            case UnknownEnum.Value_101:
+            case states.minecart:
                 idlespr = minecarttvspr;
                 break;
             
-            case UnknownEnum.Value_108:
+            case states.fireass:
                 idlespr = firetvspr;
                 break;
             
-            case UnknownEnum.Value_22:
+            case states.bombpep:
                 idlespr = bombtvspr;
                 break;
             
-            case UnknownEnum.Value_88:
-            case UnknownEnum.Value_97:
-            case UnknownEnum.Value_98:
+            case states.cotton:
+            case states.cottondrill:
+            case states.cottonroll:
                 idlespr = cottontvspr;
                 break;
             
-            case UnknownEnum.Value_140:
-            case UnknownEnum.Value_142:
-            case UnknownEnum.Value_141:
-            case UnknownEnum.Value_150:
-            case UnknownEnum.Value_148:
-            case UnknownEnum.Value_149:
-            case UnknownEnum.Value_151:
+            case states.frostburn:
+            case states.frostburnspin:
+            case states.frostburnwallrun:
+            case states.rupertjump:
+            case states.rupertnormal:
+            case states.rupertslide:
+            case states.rupertstick:
                 idlespr = frostburntvspr;
                 break;
             
-            case UnknownEnum.Value_99:
+            case states.fling:
                 idlespr = orbtvspr;
                 break;
             
-            case UnknownEnum.Value_48:
+            case states.ufofloat:
                 idlespr = ufotvspr;
                 break;
             
-            case UnknownEnum.Value_83:
+            case states.barrelcrouch:
                 idlespr = marshdogspr;
                 break;
         }
         
         if (!_transfo)
         {
-            if (allstate == UnknownEnum.Value_73)
+            if (allstate == states.hurt)
                 scr_queue_tvanim(hurttvspr, 60);
             
             if ((global.combo % 3) == 0 && playComboVariable != global.combo && global.combotime > 0 && global.combo > 0)
@@ -217,7 +217,7 @@ switch (state)
         
         if (floor(static_index) >= 4)
         {
-            if (expressionsprite != -4)
+            if (expressionsprite != noone)
             {
                 state = states.tv_expression;
                 sprite_index = expressionsprite;
@@ -238,7 +238,7 @@ switch (state)
         switch (expressionsprite)
         {
             case hurttvspr:
-                if (allstate != UnknownEnum.Value_73)
+                if (allstate != states.hurt)
                     expressiontime--;
                 
                 break;
@@ -251,7 +251,7 @@ switch (state)
         if (expressiontime <= 0)
         {
             state = states.tv_transition;
-            expressionsprite = -4;
+            expressionsprite = noone;
             draw_static = true;
             static_index = 0;
         }
@@ -445,16 +445,16 @@ if (global.combo != 0 && global.combotime > 0)
 {
     switch (combo_state)
     {
-        case UnknownEnum.Value_112:
+        case states.changing:
             combo_vsp++;
             combo_y = approach(combo_y, 40, combo_vsp);
             
             if (combo_y >= 40)
-                combo_state = UnknownEnum.Value_1;
+                combo_state = states.normal;
             
             break;
         
-        case UnknownEnum.Value_1:
+        case states.normal:
             var pct = global.combotime / 60;
             var _shk = 2;
             var _t = 5;
@@ -483,7 +483,7 @@ else
     combo_y = approach(combo_y, -200, 5);
     hand_x = approach(hand_x, 80, 5);
     combo_vsp = 0;
-    combo_state = UnknownEnum.Value_112;
+    combo_state = states.changing;
 }
 
 if (prompt_timer > 0 && !promptappear)

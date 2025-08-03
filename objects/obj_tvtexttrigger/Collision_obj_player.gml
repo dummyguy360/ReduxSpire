@@ -1,6 +1,6 @@
 if ((global.panic == true && panicmode == true) || panicmode == false)
 {
-    if (ds_list_find_index(global.saveroom, id) == -1 && _message != -4 && can_activate == true && activated == false)
+    if (ds_list_find_index(global.saveroom, id) == -1 && _message != noone && can_activate == true && activated == false)
     {
         with (obj_tvtexttrigger)
         {
@@ -14,7 +14,7 @@ if ((global.panic == true && panicmode == true) || panicmode == false)
         instance_destroy();
     }
     
-    if (ds_list_find_index(global.saveroom, id) == -1 && _message_array[0][0] != -4 && can_activate == true && activated == false)
+    if (ds_list_find_index(global.saveroom, id) == -1 && _message_array[0][0] != noone && can_activate == true && activated == false)
     {
         with (obj_tvtexttrigger)
         {

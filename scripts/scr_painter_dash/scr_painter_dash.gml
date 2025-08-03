@@ -40,7 +40,7 @@ function scr_painter_dash()
             intensity--;
         }
         
-        if (subattack_1 != -4 && intensity <= 0 && subattack_1 == true && dist < 20)
+        if (subattack_1 != noone && intensity <= 0 && subattack_1 == true && dist < 20)
         {
             x = target_x;
             state = bossstates.normal;

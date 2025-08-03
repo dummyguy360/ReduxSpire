@@ -4,9 +4,9 @@ shown = false;
 step = 0;
 info = 
 {
-    bginfo: [1178, UnknownEnum.Value_2, UnknownEnum.Value_4, UnknownEnum.Value_8, 0, 0],
-    titleinfo: [495, UnknownEnum.Value_0, UnknownEnum.Value_5, UnknownEnum.Value_6, 672, 160],
-    song: 0
+    bginfo: [spr_entrycard_bg, cardtype.left, cardtype.linear, cardtype.none, 0, 0],
+    titleinfo: [spr_entrycard_title, cardtype.up, cardtype.interp, cardtype.waving, 672, 160],
+    song: mu_entryway_title
 };
 bgX = 0;
 bgY = 0;

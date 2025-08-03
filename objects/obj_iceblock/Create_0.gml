@@ -1,3 +1,6 @@
+// march includes this enum
+// but never uses it
+// probably was intended to replace the baddie states, not sure
 enum iceType 
 {
 	normal,
@@ -11,12 +14,12 @@ color_index = 0;
 color = 
 { 
 	light :	#ffa4a4, 
-	dark :#cc5b5b 
+	dark : #cc5b5b 
 };
 invtime = 0;
 grounded = false;
 flash = false;
-state = states.frozen;
+state = baddiestate.idle;
 substate = 0;
 hsp = 0;
 vsp = 0;
@@ -27,8 +30,8 @@ grav = 0.5;
 grav2 = 0.5;
 xscale = 1;
 touching = 0;
-contentsurf = -4;
-contentspr = -4;
+contentsurf = noone;
+contentspr = noone;
 hp = 0;
 setfordeath = 0;
 grabbedspr = sprite_index;

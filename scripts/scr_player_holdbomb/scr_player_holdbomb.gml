@@ -1,11 +1,9 @@
 function state_player_holdbomb()
 {
-    var _bomb = -4;
+    var _bomb = noone;
     
     if (instance_exists(bombID))
-    {
         _bomb = bombID;
-    }
     else
     {
         state = states.normal;

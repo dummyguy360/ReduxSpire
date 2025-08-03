@@ -5,30 +5,30 @@ if (other.state != states.hooks && other.state != states.frozen && other.state !
         switch (state)
         {
             case states.handstandjump:
-                playerPrevState = UnknownEnum.Value_69;
-                playerPrevSprite = 44;
+                playerPrevState = states.mach2;
+                playerPrevSprite = spr_player_mach2;
                 break;
             
             case states.hurt:
-                playerPrevState = UnknownEnum.Value_69;
-                playerPrevSprite = 44;
+                playerPrevState = states.mach2;
+                playerPrevSprite = spr_player_mach2;
                 break;
             
             case states.machslide:
                 if (sprite_index == spr_machslideboost3)
                 {
-                    playerPrevState = UnknownEnum.Value_70;
+                    playerPrevState = states.mach3;
                     playerPrevSprite = spr_mach3player;
                 }
                 else if (sprite_index == spr_player_machslideboost)
                 {
-                    playerPrevState = UnknownEnum.Value_69;
-                    playerPrevSprite = 44;
+                    playerPrevState = states.mach2;
+                    playerPrevSprite = spr_player_mach2;
                 }
                 else
                 {
-                    playerPrevState = UnknownEnum.Value_71;
-                    playerPrevSprite = 524;
+                    playerPrevState = states.machslide;
+                    playerPrevSprite = spr_player_crouchslide;
                 }
                 
                 break;
@@ -36,13 +36,13 @@ if (other.state != states.hooks && other.state != states.frozen && other.state !
             case states.cotton:
             case states.cottondrill:
             case states.cottonroll:
-                playerPrevState = UnknownEnum.Value_69;
-                playerPrevSprite = 12;
+                playerPrevState = states.mach2;
+                playerPrevSprite = spr_player_mach2jump;
                 break;
             
             case states.tumble:
-                playerPrevState = UnknownEnum.Value_69;
-                playerPrevSprite = 12;
+                playerPrevState = states.mach2;
+                playerPrevSprite = spr_player_mach2jump;
                 break;
             
             default:
@@ -55,9 +55,9 @@ if (other.state != states.hooks && other.state != states.frozen && other.state !
         x = other.x;
         state = states.hooks;
         
-        if (other.hookSubState == UnknownEnum.Value_2)
+        if (other.hookSubState == HookType.right)
             xscale = 1;
-        else if (other.hookSubState == UnknownEnum.Value_1)
+        else if (other.hookSubState == HookType.left)
             xscale = -1;
         
         substate = other.hookSubState;

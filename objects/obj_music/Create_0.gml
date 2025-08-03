@@ -1,6 +1,6 @@
 global.music_map = ds_map_create();
 global.secret_room = false;
-global.secretmusic = -4;
+global.secretmusic = noone;
 
 function add_music(arg0, arg1, arg2, arg3, arg4 = undefined)
 {
@@ -16,12 +16,12 @@ function add_music(arg0, arg1, arg2, arg3, arg4 = undefined)
 
 museffect = 0;
 pausedmusic = 0;
-prevmuID = -4;
+prevmuID = noone;
 target_gain = 1;
 contTrack_pos = 0;
 GummyBear = false;
 music = undefined;
-escapemusic = -4;
+escapemusic = noone;
 default_escapemusic = mu_escape;
 musicGain = 1;
 force_continuous = false;
@@ -31,13 +31,13 @@ hard_force = false;
 musicfadein = 0;
 room_details = 
 {
-    music: -4,
-    secret_music: -4,
+    music: noone,
+    secret_music: noone,
     continuous: false,
     my_func: undefined
 };
 add_music(rm_disclaimer, mu_gummyharry, mu_painter, 0);
-add_music(rm_introVideo, -4, mu_painter, 0);
+add_music(rm_introVideo, noone, mu_painter, 0);
 add_music(devroom, mu_what, mu_painter, 0);
 add_music(rm_missing, mu_void, mu_painter, 0);
 add_music(realtitlescreen, mu_title, mu_painter, 0);

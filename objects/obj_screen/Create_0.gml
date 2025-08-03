@@ -1,5 +1,5 @@
 application_surface_draw_enable(false);
-finalApplicationSurface = -4;
+finalApplicationSurface = noone;
 finalApplicationSurfBuffer = -1;
 
 nextPowTwo = function(arg0)

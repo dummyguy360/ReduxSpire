@@ -4,7 +4,7 @@ if (!instance_exists(obj_pizzano_dance))
     exit;
 }
 
-if (!important && enemyID != -4 && !instance_exists(enemyID) && ds_list_find_index(global.baddieroom, id) == -1)
+if (!important && enemyID != noone && !instance_exists(enemyID) && ds_list_find_index(global.baddieroom, id) == -1)
     ds_list_add(global.baddieroom, id);
 
 var not_in_list = ds_list_find_index(global.baddieroom, id) == -1;

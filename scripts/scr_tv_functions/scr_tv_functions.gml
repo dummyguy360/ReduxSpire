@@ -1,4 +1,4 @@
-function scr_queue_tvanim(arg0 = -4, arg1 = 150)
+function scr_queue_tvanim(arg0 = noone, arg1 = 150)
 {
     with (obj_tv)
     {
@@ -20,11 +20,11 @@ function scr_forceplay_tvanim(arg0 = -4, arg1 = 150)
     ds_queue_clear(global.newhudtvanim);
 }
 
-function scr_queue_message(arg0 = "", arg1 = -4)
+function scr_queue_message(arg0 = "", arg1 = noone)
 {
     ds_queue_enqueue(global.newhudmessage, arg0);
     
-    if (arg1 != -4)
+    if (arg1 != noone)
         scr_queue_tvanim(arg1, 1000);
 }
 
@@ -33,7 +33,7 @@ function scr_controlprompt(arg0 = "[spr_promptfont]No prompt set", arg1 = arg0, 
     arg2 = clamp(arg2, 60, 450);
     var type = 0;
     
-    if (arg1 == -4)
+    if (arg1 == noone)
         type = 1;
     
     if (arg1 == -1)

@@ -1,5 +1,5 @@
 event_inherited();
-sightID = -4;
+sightID = noone;
 timer_countdown = 1;
 firstGumslime = false;
 grav = 0.5;

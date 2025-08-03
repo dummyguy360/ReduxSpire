@@ -13,14 +13,10 @@ if (grabbedPlayer != -4)
     draw_sprite_ext(spr_flingfrogmad, -1, xx, yy, image_xscale, image_yscale, image_angle, image_blend, image_alpha);
 }
 else
-{
     draw_sprite(spr_flingFrog, -1, xstart, ystart);
-}
 
 if (grabbedPlayer != -4)
-{
     draw_sprite(spr_flingfrog_handsmove, -1, x, y);
-}
 else
 {
     draw_sprite(spr_flingFrogGrab, candyindex, x, y);

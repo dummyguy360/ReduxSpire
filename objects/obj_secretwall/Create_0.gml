@@ -6,7 +6,7 @@ revealCondition = function()
 };
 
 secretAlpha = 1;
-secretSurface = -4;
+secretSurface = noone;
 revealActivated = false;
 
 for (var i = 0; i < array_length(layerArray); i++)

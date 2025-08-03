@@ -1,6 +1,6 @@
 image_speed = 0.35;
 active = false;
-storedstate = UnknownEnum.Value_1;
+storedstate = states.normal;
 storedmovespeed = 6;
 storedgrav = 0.5;
 storedimageindex = 0;

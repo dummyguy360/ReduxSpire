@@ -1,5 +1,5 @@
 event_inherited();
-solidid = -4;
+solidid = noone;
 
 if (!(ds_list_find_index(global.saveroom, id) != -1))
 {

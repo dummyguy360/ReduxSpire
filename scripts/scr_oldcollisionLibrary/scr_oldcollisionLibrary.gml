@@ -108,7 +108,7 @@ function scr_collide_player()
     grounded = false;
     groundedSlope = false;
     grinding = false;
-    onMovingPlatform = -4;
+    onMovingPlatform = noone;
     prevHsp = hsp;
     prevVsp = vsp;
     
@@ -177,7 +177,7 @@ function scr_collide_conehead()
 {
     grounded = false;
     groundedSlope = false;
-    onMovingPlatform = -4;
+    onMovingPlatform = noone;
     
     with (obj_movingPlatform)
     {

@@ -9,15 +9,15 @@ if (!surface_exists(finalApplicationSurface))
         buffer_set_surface(finalApplicationSurfBuffer, finalApplicationSurface, 0);
 }
 
-var shader = -4;
+var shader = noone;
 var appa = 1;
 
 if (!global.gamePauseState)
 {
     if (global.panic && global.fill <= 3600)
-        shader = 13;
+        shader = shd_greyscale;
     else
-        shader = -4;
+        shader = noone;
     
     if (global.screenmelt && global.panic)
         appa = lerp(1, 0.5, global.wave / global.maxwave);

@@ -36,7 +36,7 @@ function camera_shake(arg0, arg1)
     return true;
 }
 
-function camera_get_position_struct(arg0, arg1 = -4) constructor
+function camera_get_position_struct(arg0, arg1 = noone) constructor
 {
     var _cam_x = camera_get_view_x(arg0);
     var _cam_y = camera_get_view_y(arg0);
@@ -47,7 +47,7 @@ function camera_get_position_struct(arg0, arg1 = -4) constructor
     cam_x = _cam_x;
     cam_y = _cam_y;
     
-    if (arg1 != -4)
+    if (arg1 != noone)
     {
         centeredcam_x -= arg1[0];
         centeredcam_y -= arg1[1];

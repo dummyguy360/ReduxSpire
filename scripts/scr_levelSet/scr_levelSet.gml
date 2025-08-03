@@ -15,7 +15,7 @@ function scr_levelSet()
     instance_destroy(obj_discoball);
     instance_destroy(obj_discoball);
     instance_destroy(obj_danceoffprank);
-    global.cutsceneManager = -4;
+    global.cutsceneManager = noone;
     
     if (instance_exists(obj_cutsceneManager))
         instance_destroy(obj_cutsceneManager);
@@ -125,14 +125,14 @@ function scr_levelSet()
         image_index = 0;
         sprite_index = spr_walkfront;
         Sjumpcan_doublejump = true;
-        playComboVariable = -4;
+        playComboVariable = noone;
         ResetMusic = false;
         Dashpad_buffer = 0;
         Dashpad_buffer = 0;
         vertical = false;
         verticaloffset = 0;
         supertauntbuffer = 300;
-        supertaunteffect = -4;
+        supertaunteffect = noone;
         supertauntcharged = false;
         scr_characterspr();
         alarm[0] = -1;
@@ -262,7 +262,7 @@ function scr_levelSet()
         contTrack_pos = 0;
         audio_stop_all();
         music = undefined;
-        escapemusic = -4;
+        escapemusic = noone;
         playintro = true;
         nolag = 0;
         fadeoff = 0;
@@ -273,6 +273,6 @@ function scr_levelSet()
         fadeoff = 0;
         unforce_continuous = true;
         music = undefined;
-        escapemusic = -4;
+        escapemusic = noone;
     }
 }

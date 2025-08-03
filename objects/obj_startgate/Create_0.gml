@@ -3,7 +3,7 @@ image_speed = 0.35;
 depth = 49;
 level = "none";
 showtext = false;
-surf = -4;
+surf = noone;
 fadewhite = 1;
 bg_x = array_create(10);
 bg_xscroll = [1, 0.66, 0.33, 0, 0, 0, 0, 0, 0, 0];
@@ -37,7 +37,7 @@ confecti_sprs[4] =
 };
 info = 
 {
-    bginfo: [1178, UnknownEnum.Value_2, UnknownEnum.Value_4, UnknownEnum.Value_8, 0, 0],
-    titleinfo: [495, UnknownEnum.Value_0, UnknownEnum.Value_5, UnknownEnum.Value_6, 672, 160],
-    song: 0
+    bginfo: [spr_entrycard_bg, cardtype.left, cardtype.linear, cardtype.none, 0, 0],
+    titleinfo: [spr_entrycard_title, cardtype.up, cardtype.interp, cardtype.waving, 672, 160],
+    song: mu_entryway_title
 };

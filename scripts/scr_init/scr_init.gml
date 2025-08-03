@@ -44,7 +44,7 @@ scribble_anim_wave(0.5, 3, 0.5);
 pal_swap_init_system(shd_pal_swapper, shd_pal_html_sprite, shd_pal_html_surface);
 //Level Stuff
 global.levelname = "none";
-global.firstlvlRoom = 66;
+global.firstlvlRoom = hub_w1;
 global.secretfound = 0;
 global.showplaytimer = false;
 global.playmiliseconds = 0;
@@ -69,7 +69,7 @@ global.PAUSE_contTrack_pos = 0;
 global.dialogmsg = 0;
 global.dialogchoices = 0;
 global.choiced = 0;
-global.dialogNPC = -4;
+global.dialogNPC = noone;
 
 //Dance off Timer
 global.dancetimer = 0;

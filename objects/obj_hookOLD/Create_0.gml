@@ -1,8 +1,11 @@
 enum HookType 
 {
 	normal,
+	
+	// only left and right are "used" anymore
 	left,
 	right,
+	
 	up,
 	down
 }

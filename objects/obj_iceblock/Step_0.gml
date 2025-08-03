@@ -1,15 +1,15 @@
 if (!global.freezeframe)
     invtime = approach(invtime, 0, 1);
 
-if (obj_player.baddiegrabbedID != id && state == states.cheesepepstick)
-    state = states.frozen;
+if (obj_player.baddiegrabbedID != id && state == baddiestate.grabbed)
+    state = baddiestate.idle;
 
 if (type == "Heavy" && !grounded)
     vsp += 0.2;
 
 if (y > (room_height + 200))
 {
-    state = states.frozen;
+    state = baddiestate.idle;
     x = xstart;
     y = ystart;
     hsp = 0;
@@ -18,7 +18,7 @@ if (y > (room_height + 200))
 
 switch (state)
 {
-    case states.frozen:
+    case baddiestate.idle:
         thrown = false;
         grav = 0.5;
         
@@ -28,19 +28,19 @@ switch (state)
         scr_collision();
         break;
     
-    case states.cheesepep:
+    case baddiestate.stun:
         if (type == "Fragile" && scr_solid(x + hsp, y + vsp))
             instance_destroy();
         
         grav = 0.5;
         
         if (grounded && vsp > 0)
-            state = states.frozen;
+            state = baddiestate.idle;
         
         scr_collision();
         break;
     
-    case states.pistolaim:
+    case baddiestate.frozen:
         scr_enemy_frozen();
         break;
 }
@@ -48,7 +48,7 @@ switch (state)
 if (flash == 1 && alarm[1] <= 0)
     alarm[1] = 0.15 * room_speed;
 
-if ((type == "Normal" || type == "Heavy") && ((state == states.frozen && type == "Heavy") || state == states.cheesepep))
+if ((type == "Normal" || type == "Heavy") && ((state == baddiestate.idle && type == "Heavy") || state == baddiestate.stun))
 {
     instance_destroy(instance_place(x + hsp, y + vsp, obj_baddie));
     instance_destroy(instance_place(x + sign(hsp), y + sign(vsp), obj_baddie));
@@ -61,9 +61,9 @@ if ((type == "Normal" || type == "Heavy") && ((state == states.frozen && type ==
 if (!place_meeting(x, y, obj_dashpad))
     touching = false;
 
-if (!global.freezeframe && place_meeting(x, y, obj_dashpad) && state != states.cheesepepstick && touching == false)
+if (!global.freezeframe && place_meeting(x, y, obj_dashpad) && state != baddiestate.grabbed && touching == false)
 {
-    state = states.cheesepep;
+    state = baddiestate.stun;
     vsp = -7;
     var _pad = instance_place(x, y, obj_dashpad);
     x = _pad.x;
@@ -75,7 +75,7 @@ if (!global.freezeframe && place_meeting(x, y, obj_dashpad) && state != states.c
     touching = true;
 }
 
-if (!global.freezeframe && invtime <= 0 && place_meeting(x, y, obj_player) && state != states.cheesepepstick)
+if (!global.freezeframe && invtime <= 0 && place_meeting(x, y, obj_player) && state != baddiestate.grabbed)
 {
     with (obj_player)
     {
@@ -89,7 +89,7 @@ if (!global.freezeframe && invtime <= 0 && place_meeting(x, y, obj_player) && st
                 sprite_index = spr_enemypuncheffect;
             
             machpunchAnim = true;
-            other.state = states.cheesepep;
+            other.state = baddiestate.stun;
             other.vsp = -11;
             
             if (state == states.mach2)
@@ -122,7 +122,7 @@ if (!global.freezeframe && invtime <= 0 && place_meeting(x, y, obj_player) && st
                 sprite_index = spr_enemypuncheffect;
             
             machpunchAnim = true;
-            other.state = states.cheesepep;
+            other.state = baddiestate.stun;
             other.vsp = vsp;
             
             if (state == states.Sjump)
@@ -149,7 +149,7 @@ if (!global.freezeframe && invtime <= 0 && place_meeting(x, y, obj_player) && st
             
             with (other)
             {
-                state = states.cheesepepstick;
+                state = baddiestate.grabbed;
                 instance_create(x + (other.xscale * 40), y, obj_punchdust);
             }
             

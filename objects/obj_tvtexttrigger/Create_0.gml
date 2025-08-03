@@ -1,7 +1,7 @@
-_message = -4;
-_message_tvspr = -4;
-_message_array[0][0] = -4;
-_message_array[0][1] = -4;
+_message = noone;
+_message_tvspr = noone;
+_message_array[0][0] = noone;
+_message_array[0][1] = noone;
 unid = 0;
 mode = 0;
 activated = false;

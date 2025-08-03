@@ -1,9 +1,9 @@
 function scr_playersounds_init()
 {
-    machSound = -4;
-    grindsnd = -4;
-    suplexsnd = -4;
-    flipsnd = -4;
+    machSound = noone;
+    grindsnd = noone;
+    suplexsnd = noone;
+    flipsnd = noone;
 }
 
 function scr_playersounds()
@@ -26,9 +26,7 @@ function scr_playersounds()
             grindsnd = scr_soundloop(143);
     }
     else if (audio_is_playing(grindsnd))
-    {
         audio_stop_sound(grindsnd);
-    }
     
     if (audio_is_playing(suplexsnd) && state != states.handstandjump)
         audio_stop_sound(suplexsnd);
@@ -36,25 +34,23 @@ function scr_playersounds()
     if (sprite_index == spr_mach2jump)
     {
         if (!audio_is_playing(flipsnd))
-            flipsnd = scr_soundloop(149);
+            flipsnd = scr_soundloop(sfx_flip);
     }
     else if (audio_is_playing(flipsnd))
-    {
         audio_stop_sound(flipsnd);
-    }
     
     if (state == states.mach2 || state == states.mach3 || state == states.climbwall || state == states.climbceiling || state == states.climbdownwall)
     {
-        var machsnd = -4;
+        var machsnd = noone;
         
         if (state == states.mach2 && sprite_index == spr_mach1 && grounded)
-            machsnd = 79;
+            machsnd = sound_dash1;
         else if ((state == states.mach2 && sprite_index == spr_mach2) || (state == states.climbwall || state == states.climbceiling || state == states.climbdownwall))
-            machsnd = 81;
+            machsnd = sound_dash2;
         else if (state == states.mach3 && sprite_index != spr_crazyrun)
-            machsnd = 98;
+            machsnd = sound_dash3;
         else if (sprite_index == spr_crazyrun)
-            machsnd = 146;
+            machsnd = sound_dash4;
         
         if (!audio_is_playing(machsnd))
         {
@@ -63,7 +59,5 @@ function scr_playersounds()
         }
     }
     else if (audio_is_playing(machSound))
-    {
         audio_stop_sound(machSound);
-    }
 }

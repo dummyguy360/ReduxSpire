@@ -71,14 +71,14 @@ function scr_bosscontroller_intro()
 
 function scr_bosscontroller_normal()
 {
-    if (boss_func != -4)
+    if (boss_func != noone)
         self.boss_func();
     
     if (bosshp != lastbosshp)
         lastbosshp = bosshp;
 }
 
-function scr_bosscontroller_draw_health(arg0 = 1520, arg1 = 1, arg2 = playmaxhp, arg3 = playhp, arg4 = 64, arg5 = 50, arg6 = arg2 / 2, arg7 = 54, arg8 = 52, arg9 = playhpindex)
+function scr_bosscontroller_draw_health(arg0 = spr_pizzellehp, arg1 = 1, arg2 = playmaxhp, arg3 = playhp, arg4 = 64, arg5 = 50, arg6 = arg2 / 2, arg7 = 54, arg8 = 52, arg9 = playhpindex)
 {
     for (var i = 0; i < arg2; i++)
     {
@@ -86,7 +86,7 @@ function scr_bosscontroller_draw_health(arg0 = 1520, arg1 = 1, arg2 = playmaxhp,
         var real_x = arg4 + ((i % arg6) * (arg1 * arg7));
         var real_y = arg5 + (floor(i / arg6) * arg8);
         
-        if (arg0 == 1520)
+        if (arg0 == spr_pizzellehp)
             scr_palette_as_player();
         
         draw_sprite_ext(arg0, arg9, real_x, real_y, 1, 1, 0, _color, 1);
