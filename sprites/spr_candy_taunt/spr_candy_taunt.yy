@@ -13,15 +13,15 @@
   "edgeFiltering": false,
   "For3D": false,
   "frames": [
-    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"c3d5b8ca-5476-49ce-9e7b-7f99c06f75a4",},
-    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"b07f6cda-7f73-4032-9854-1ec06ac6aecf",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"518980f9-8c72-4a1e-9332-d662c54f7b7b",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"03abafc9-6a56-4480-b3e5-0803b741bf67",},
   ],
   "gridX": 0,
   "gridY": 0,
   "height": 100,
   "HTile": false,
   "layers": [
-    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"adbd489b-1b74-4154-a42f-09d4759c4482","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
+    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"7e4d7d47-0b48-47c7-bc95-8813b2a7451e","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
   ],
   "nineSlice": null,
   "origin": 4,
@@ -55,8 +55,8 @@
     "timeUnits": 1,
     "tracks": [
       {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","builtinName":-1,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"1.0","Keyframes":[
-            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"c3d5b8ca-5476-49ce-9e7b-7f99c06f75a4","path":"sprites/spr_candy_taunt/spr_candy_taunt.yy",},},},"Disabled":false,"id":"aee58195-43a9-4d4c-82ff-1545f51aeadc","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
-            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"b07f6cda-7f73-4032-9854-1ec06ac6aecf","path":"sprites/spr_candy_taunt/spr_candy_taunt.yy",},},},"Disabled":false,"id":"9fed8f8a-2072-4add-ba29-71e2c7fea757","IsCreationKey":false,"Key":1.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"518980f9-8c72-4a1e-9332-d662c54f7b7b","path":"sprites/spr_candy_taunt/spr_candy_taunt.yy",},},},"Disabled":false,"id":"faadcb6e-8859-442d-930d-28b347137af0","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"03abafc9-6a56-4480-b3e5-0803b741bf67","path":"sprites/spr_candy_taunt/spr_candy_taunt.yy",},},},"Disabled":false,"id":"ff3d09fe-fd4f-46a3-a000-74f3e0f12ed6","IsCreationKey":false,"Key":1.0,"Length":1.0,"Stretch":false,},
           ],},"modifiers":[],"spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange": null,

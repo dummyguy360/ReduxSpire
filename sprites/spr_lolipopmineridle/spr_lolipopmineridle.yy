@@ -13,14 +13,14 @@
   "edgeFiltering": false,
   "For3D": false,
   "frames": [
-    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"35ec1579-6974-46c6-9c74-21e001c82195",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"010535fa-4451-4fc6-b5e0-2ef27f314a85",},
   ],
   "gridX": 0,
   "gridY": 0,
   "height": 150,
   "HTile": false,
   "layers": [
-    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"d86fbb48-b495-40f8-abf9-ef3844bc6891","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
+    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"1f571658-2335-4eb0-8f6d-894ba424f261","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
   ],
   "nineSlice": null,
   "origin": 0,
@@ -54,7 +54,7 @@
     "timeUnits": 1,
     "tracks": [
       {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","builtinName":-1,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"1.0","Keyframes":[
-            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"35ec1579-6974-46c6-9c74-21e001c82195","path":"sprites/spr_lolipopmineridle/spr_lolipopmineridle.yy",},},},"Disabled":false,"id":"6aac6db0-ed55-4efe-9e23-4ff0b55df206","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"010535fa-4451-4fc6-b5e0-2ef27f314a85","path":"sprites/spr_lolipopmineridle/spr_lolipopmineridle.yy",},},},"Disabled":false,"id":"e8a64dcb-1026-4c33-b7d8-17804a84be22","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
           ],},"modifiers":[],"spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange": null,

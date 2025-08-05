@@ -2,9 +2,9 @@
   "resourceType": "GMSprite",
   "resourceVersion": "1.0",
   "name": "_decompiled_ts_tutorial",
-  "bbox_bottom": 1007,
+  "bbox_bottom": 895,
   "bbox_left": 0,
-  "bbox_right": 1007,
+  "bbox_right": 895,
   "bbox_top": 0,
   "bboxMode": 0,
   "collisionKind": 1,
@@ -13,14 +13,14 @@
   "edgeFiltering": false,
   "For3D": false,
   "frames": [
-    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"c3cb9bcc-9184-4aea-b336-960d076b85ee",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"5c20f6bc-7112-4703-9e6f-ac47cc24b016",},
   ],
   "gridX": 0,
   "gridY": 0,
-  "height": 1008,
+  "height": 896,
   "HTile": false,
   "layers": [
-    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"80cd92af-5c26-418f-872c-f66fbfbe3e38","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
+    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"761a2b86-6766-4b79-9ccc-7287c7d3d33e","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
   ],
   "nineSlice": null,
   "origin": 0,
@@ -54,7 +54,7 @@
     "timeUnits": 1,
     "tracks": [
       {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"1.0","Keyframes":[
-            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"c3cb9bcc-9184-4aea-b336-960d076b85ee","path":"sprites/_decompiled_ts_tutorial/_decompiled_ts_tutorial.yy",},},},"Disabled":false,"id":"dc8fcf1f-ca14-4b80-b743-e1cc170441ab","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"5c20f6bc-7112-4703-9e6f-ac47cc24b016","path":"sprites/_decompiled_ts_tutorial/_decompiled_ts_tutorial.yy",},},},"Disabled":false,"id":"4000292a-25aa-4bb2-bec2-3d4f387ff159","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
           ],},"modifiers":[],"spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange": null,
@@ -70,5 +70,5 @@
   },
   "type": 0,
   "VTile": false,
-  "width": 1008,
+  "width": 896,
 }

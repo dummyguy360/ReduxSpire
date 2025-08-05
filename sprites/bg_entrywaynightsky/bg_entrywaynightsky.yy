@@ -13,14 +13,14 @@
   "edgeFiltering": false,
   "For3D": false,
   "frames": [
-    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"3ac3d110-1bfc-4415-a873-8e9db0bc69e3",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"8f6839d2-c55d-4e5f-8b6c-f4b27c55be39",},
   ],
   "gridX": 0,
   "gridY": 0,
   "height": 600,
   "HTile": false,
   "layers": [
-    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"e61f182d-d6e3-4ba9-96d9-4b13bc8d6792","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
+    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"418b3d9c-cd7b-47ca-bd2e-62b4daa666a2","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
   ],
   "nineSlice": null,
   "origin": 0,
@@ -54,7 +54,7 @@
     "timeUnits": 1,
     "tracks": [
       {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","builtinName":-1,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"1.0","Keyframes":[
-            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"3ac3d110-1bfc-4415-a873-8e9db0bc69e3","path":"sprites/bg_entrywaynightsky/bg_entrywaynightsky.yy",},},},"Disabled":false,"id":"6b0d9413-31c4-4e4f-bbc4-d5a14598ea5c","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"8f6839d2-c55d-4e5f-8b6c-f4b27c55be39","path":"sprites/bg_entrywaynightsky/bg_entrywaynightsky.yy",},},},"Disabled":false,"id":"a87a8f3a-27f4-4526-bf5e-644ac6f3058b","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
           ],},"modifiers":[],"spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange": null,

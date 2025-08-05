@@ -2,9 +2,9 @@
   "resourceType": "GMSprite",
   "resourceVersion": "1.0",
   "name": "_decompiled_ts_martian_outside",
-  "bbox_bottom": 1367,
+  "bbox_bottom": 1215,
   "bbox_left": 0,
-  "bbox_right": 1367,
+  "bbox_right": 1215,
   "bbox_top": 0,
   "bboxMode": 0,
   "collisionKind": 1,
@@ -13,14 +13,14 @@
   "edgeFiltering": false,
   "For3D": false,
   "frames": [
-    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"eb12cdf0-5880-4175-802d-c76b71fc5507",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"16077770-c1f6-42f3-86bb-edd00dd80ba0",},
   ],
   "gridX": 0,
   "gridY": 0,
-  "height": 1368,
+  "height": 1216,
   "HTile": false,
   "layers": [
-    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"56c7e670-69a2-43fa-8551-cb8f23590670","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
+    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"75e95b42-f752-4ce3-bbf4-df42af193b85","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
   ],
   "nineSlice": null,
   "origin": 0,
@@ -54,7 +54,7 @@
     "timeUnits": 1,
     "tracks": [
       {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"1.0","Keyframes":[
-            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"eb12cdf0-5880-4175-802d-c76b71fc5507","path":"sprites/_decompiled_ts_martian_outside/_decompiled_ts_martian_outside.yy",},},},"Disabled":false,"id":"021b3f2d-b917-4d44-9c68-0a521da9b770","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"16077770-c1f6-42f3-86bb-edd00dd80ba0","path":"sprites/_decompiled_ts_martian_outside/_decompiled_ts_martian_outside.yy",},},},"Disabled":false,"id":"446ff005-776e-4f15-aec3-e12a3779b148","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
           ],},"modifiers":[],"spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange": null,
@@ -70,5 +70,5 @@
   },
   "type": 0,
   "VTile": false,
-  "width": 1368,
+  "width": 1216,
 }

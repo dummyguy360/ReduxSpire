@@ -2,9 +2,9 @@
   "resourceType": "GMSprite",
   "resourceVersion": "1.0",
   "name": "_decompiled_ts_bee",
-  "bbox_bottom": 1007,
+  "bbox_bottom": 895,
   "bbox_left": 0,
-  "bbox_right": 1007,
+  "bbox_right": 895,
   "bbox_top": 0,
   "bboxMode": 0,
   "collisionKind": 1,
@@ -13,14 +13,14 @@
   "edgeFiltering": false,
   "For3D": false,
   "frames": [
-    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"c927b2ba-b066-470a-b19e-e8617c8c4849",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"277d0412-be0c-4018-8ac0-2d300cbbe75a",},
   ],
   "gridX": 0,
   "gridY": 0,
-  "height": 1008,
+  "height": 896,
   "HTile": false,
   "layers": [
-    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"97fcfe90-be1a-4dec-b6df-346d9d3b4ed1","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
+    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"fcb24ad4-b882-44a3-a075-63daf1d22145","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
   ],
   "nineSlice": null,
   "origin": 0,
@@ -54,7 +54,7 @@
     "timeUnits": 1,
     "tracks": [
       {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"1.0","Keyframes":[
-            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"c927b2ba-b066-470a-b19e-e8617c8c4849","path":"sprites/_decompiled_ts_bee/_decompiled_ts_bee.yy",},},},"Disabled":false,"id":"633c05b9-0fd4-4307-bf83-1de7eabc077f","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"277d0412-be0c-4018-8ac0-2d300cbbe75a","path":"sprites/_decompiled_ts_bee/_decompiled_ts_bee.yy",},},},"Disabled":false,"id":"b902231a-11d1-4ad7-a430-96ad822fec62","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
           ],},"modifiers":[],"spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange": null,
@@ -70,5 +70,5 @@
   },
   "type": 0,
   "VTile": false,
-  "width": 1008,
+  "width": 896,
 }

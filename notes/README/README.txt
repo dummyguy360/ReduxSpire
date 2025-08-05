@@ -1,10 +1,11 @@
-OpenSpire-Remade
-	A Decompilation of Sugary Spire's P rank 1.01 build
+OpenSpire-Remake
+	A Decompilation of the Sugary Spire "P Rank" build
 		by burnedpopcorn180
 
-Original GameMaker Version: 2023.2.0.71
+GameMaker Version Used: 2023.6.0.92
 
-(Note that the original OpenSpire was NOT used during the making of this decomp)
+NOTE THAT THE ORIGINAL OPENSPIRE WAS NOT USED
+DURING THE MAKING OF THIS DECOMPILATION
 
 --------------------------------------------------------
 Project Decompiled by Ultimate_GMS2_Decompiler_v3.csx

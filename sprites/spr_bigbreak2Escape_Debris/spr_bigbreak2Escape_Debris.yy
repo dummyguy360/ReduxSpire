@@ -13,15 +13,15 @@
   "edgeFiltering": false,
   "For3D": false,
   "frames": [
-    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"7c28a529-8070-42bb-bd49-f75e29fa162c",},
-    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"60f9f8b6-f83f-4e92-8cf3-f1f77961da77",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"9f045185-94f3-43b9-8b74-82667a058aa2",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"601977fc-0d20-4662-8e04-71709d93ee75",},
   ],
   "gridX": 0,
   "gridY": 0,
   "height": 64,
   "HTile": false,
   "layers": [
-    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"3b3e0ba0-f07d-4b6e-85c1-4ad1ca62b407","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
+    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"7b0a6661-83c6-4f2c-8a1c-e57ebb44b80b","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
   ],
   "nineSlice": null,
   "origin": 4,
@@ -55,8 +55,8 @@
     "timeUnits": 1,
     "tracks": [
       {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","builtinName":-1,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"1.0","Keyframes":[
-            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"7c28a529-8070-42bb-bd49-f75e29fa162c","path":"sprites/spr_bigbreak2Escape_Debris/spr_bigbreak2Escape_Debris.yy",},},},"Disabled":false,"id":"d908fbd1-0f70-4642-a7e2-f37c3a57936f","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
-            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"60f9f8b6-f83f-4e92-8cf3-f1f77961da77","path":"sprites/spr_bigbreak2Escape_Debris/spr_bigbreak2Escape_Debris.yy",},},},"Disabled":false,"id":"712ff640-c4a0-403b-bc9c-43c03225d8b3","IsCreationKey":false,"Key":1.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"9f045185-94f3-43b9-8b74-82667a058aa2","path":"sprites/spr_bigbreak2Escape_Debris/spr_bigbreak2Escape_Debris.yy",},},},"Disabled":false,"id":"514c06a6-b48c-4ef7-bc15-edeba12abb61","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"601977fc-0d20-4662-8e04-71709d93ee75","path":"sprites/spr_bigbreak2Escape_Debris/spr_bigbreak2Escape_Debris.yy",},},},"Disabled":false,"id":"a8375fab-49cc-474d-bee8-f4e4701ca323","IsCreationKey":false,"Key":1.0,"Length":1.0,"Stretch":false,},
           ],},"modifiers":[],"spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange": null,

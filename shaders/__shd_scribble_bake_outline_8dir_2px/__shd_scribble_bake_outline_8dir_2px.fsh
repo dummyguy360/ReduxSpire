@@ -1,17 +1,12 @@
 //   @jujuadams   v8.0.0   2021-12-15
 precision highp float;
-
 const float PI = 3.14159265359;
-
 varying vec2 v_vTexcoord;
 varying vec4 v_vColor;
-
 uniform vec2 u_vTexel;
 uniform vec3 u_vOutlineColor;
-
 const int  u_iOutlineSamples = 8;
 const int  u_iOutlineSize    = 2;
-
 void main()
 {
     vec4 outlineColor = vec4(u_vOutlineColor, 1.0);

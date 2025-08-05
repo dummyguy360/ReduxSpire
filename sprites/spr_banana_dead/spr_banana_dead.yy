@@ -13,14 +13,14 @@
   "edgeFiltering": false,
   "For3D": false,
   "frames": [
-    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"a5e8ea52-0ddc-4305-bbb1-fce5852a2a46",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"1cd554d7-7723-494a-86f6-162396c71522",},
   ],
   "gridX": 0,
   "gridY": 0,
   "height": 115,
   "HTile": false,
   "layers": [
-    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"877e7af8-0f25-451f-a845-eb82cd1385fd","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
+    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"ffa0de89-1255-43e0-b036-c2beba6294fc","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
   ],
   "nineSlice": null,
   "origin": 4,
@@ -54,7 +54,7 @@
     "timeUnits": 1,
     "tracks": [
       {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","builtinName":-1,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"1.0","Keyframes":[
-            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"a5e8ea52-0ddc-4305-bbb1-fce5852a2a46","path":"sprites/spr_banana_dead/spr_banana_dead.yy",},},},"Disabled":false,"id":"11b1221a-df25-43e5-8a33-ac1cec7f3509","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"1cd554d7-7723-494a-86f6-162396c71522","path":"sprites/spr_banana_dead/spr_banana_dead.yy",},},},"Disabled":false,"id":"38cea04d-71e3-4d2a-a1a6-495f44237836","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
           ],},"modifiers":[],"spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange": null,

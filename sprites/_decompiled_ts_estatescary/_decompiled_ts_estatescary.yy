@@ -2,9 +2,9 @@
   "resourceType": "GMSprite",
   "resourceVersion": "1.0",
   "name": "_decompiled_ts_estatescary",
-  "bbox_bottom": 287,
+  "bbox_bottom": 255,
   "bbox_left": 0,
-  "bbox_right": 287,
+  "bbox_right": 255,
   "bbox_top": 0,
   "bboxMode": 0,
   "collisionKind": 1,
@@ -13,14 +13,14 @@
   "edgeFiltering": false,
   "For3D": false,
   "frames": [
-    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"caa79d78-7318-4488-baa7-ed855015b4ec",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"1b9e9c3c-c003-4f2d-8559-fd3070e1b668",},
   ],
   "gridX": 0,
   "gridY": 0,
-  "height": 288,
+  "height": 256,
   "HTile": false,
   "layers": [
-    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"644d8189-8f54-4c26-abdb-9c0aa1ecf708","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
+    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"eacd9c61-86d2-4a3e-8d1f-8e00a3fa61d9","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
   ],
   "nineSlice": null,
   "origin": 0,
@@ -54,7 +54,7 @@
     "timeUnits": 1,
     "tracks": [
       {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"1.0","Keyframes":[
-            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"caa79d78-7318-4488-baa7-ed855015b4ec","path":"sprites/_decompiled_ts_estatescary/_decompiled_ts_estatescary.yy",},},},"Disabled":false,"id":"4644cf55-94c4-44fe-a26a-c79c1f9545ad","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"1b9e9c3c-c003-4f2d-8559-fd3070e1b668","path":"sprites/_decompiled_ts_estatescary/_decompiled_ts_estatescary.yy",},},},"Disabled":false,"id":"a1b4a878-1c21-4b59-a810-f8cc6439aa04","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
           ],},"modifiers":[],"spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange": null,
@@ -70,5 +70,5 @@
   },
   "type": 0,
   "VTile": false,
-  "width": 288,
+  "width": 256,
 }

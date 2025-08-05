@@ -1,15 +1,12 @@
 //   @jujuadams   v8.0.0   2021-12-15
 precision highp float;
-
 #define PROPORTIONAL_BORDER_SCALE false
 #define PREMULTIPLY_ALPHA false
 #define ROUNDED_BORDERS false
-
 varying vec2  v_vTexcoord;
 varying vec4  v_vColour;
 varying float v_fPixelScale;
 varying float v_fTextScale;
-
 uniform vec2  u_vTexel;
 uniform float u_fMSDFRange;
 uniform float u_fMSDFThicknessOffset;
@@ -19,32 +16,26 @@ uniform vec3  u_vBorderColour;
 uniform float u_fBorderThickness;
 uniform float u_fSecondDraw;
 uniform vec4  u_vFlash;
-
 float median(vec3 v)
 {
     return max(min(v.x, v.y), min(max(v.x, v.y), v.z));
 }
-
 float MSDFSignedDistance(vec4 sample)
 {
     return median(sample.rgb) + u_fMSDFThicknessOffset - 0.5;
 }
-
 float SDFSignedDistance(vec4 sample)
 {
     return sample.a + u_fMSDFThicknessOffset - 0.5;
 }
-
 float MSDFAlpha(float signedDistance, float pixelSize, float outerBorder)
 {
     return clamp(u_fMSDFRange*pixelSize*signedDistance + outerBorder + 0.5, 0.0, 1.0);
 }
-
 float MSDFAlphaSoft(float signedDistance, float pixelSize, float outerBorder, float softness)
 {
     return clamp((u_fMSDFRange*pixelSize*signedDistance + outerBorder)/softness + 0.5, 0.0, 1.0);
 }
-
 void main()
 {
     vec4 sample = texture2D(gm_BaseTexture, v_vTexcoord);

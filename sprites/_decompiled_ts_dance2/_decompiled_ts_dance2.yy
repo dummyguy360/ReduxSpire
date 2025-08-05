@@ -2,9 +2,9 @@
   "resourceType": "GMSprite",
   "resourceVersion": "1.0",
   "name": "_decompiled_ts_dance2",
-  "bbox_bottom": 1259,
+  "bbox_bottom": 1151,
   "bbox_left": 0,
-  "bbox_right": 1259,
+  "bbox_right": 1119,
   "bbox_top": 0,
   "bboxMode": 0,
   "collisionKind": 1,
@@ -13,14 +13,14 @@
   "edgeFiltering": false,
   "For3D": false,
   "frames": [
-    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"041765d4-5d07-405c-9e56-ed7e9fd6c612",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"ab0426f0-5d48-49ae-a307-15bc2696ddfa",},
   ],
   "gridX": 0,
   "gridY": 0,
-  "height": 1296,
+  "height": 1152,
   "HTile": false,
   "layers": [
-    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"5e7f1912-49e3-4a8a-8f1a-d69be4345a37","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
+    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"8ee0b1e6-6e22-4f9e-9ede-7eabb1ec7ef4","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
   ],
   "nineSlice": null,
   "origin": 0,
@@ -54,7 +54,7 @@
     "timeUnits": 1,
     "tracks": [
       {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"1.0","Keyframes":[
-            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"041765d4-5d07-405c-9e56-ed7e9fd6c612","path":"sprites/_decompiled_ts_dance2/_decompiled_ts_dance2.yy",},},},"Disabled":false,"id":"aa231b3b-ca9e-44ed-a412-1f9454fb0cc1","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"ab0426f0-5d48-49ae-a307-15bc2696ddfa","path":"sprites/_decompiled_ts_dance2/_decompiled_ts_dance2.yy",},},},"Disabled":false,"id":"b6b1071b-cc4c-4e54-87de-5a9144b526b1","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
           ],},"modifiers":[],"spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange": null,
@@ -70,5 +70,5 @@
   },
   "type": 0,
   "VTile": false,
-  "width": 1260,
+  "width": 1120,
 }

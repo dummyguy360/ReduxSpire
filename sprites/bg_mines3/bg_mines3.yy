@@ -13,14 +13,14 @@
   "edgeFiltering": false,
   "For3D": false,
   "frames": [
-    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"276d54f2-3236-44e5-8941-bead3ee0cee6",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"2794844a-8027-4f00-921c-c52b67fc2c1f",},
   ],
   "gridX": 0,
   "gridY": 0,
   "height": 700,
   "HTile": false,
   "layers": [
-    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"287a68b9-2c47-49ad-91e9-654030dd72bd","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
+    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"130c2b43-6970-434c-913b-949ba70f0a94","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
   ],
   "nineSlice": null,
   "origin": 0,
@@ -54,7 +54,7 @@
     "timeUnits": 1,
     "tracks": [
       {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","builtinName":-1,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"1.0","Keyframes":[
-            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"276d54f2-3236-44e5-8941-bead3ee0cee6","path":"sprites/bg_mines3/bg_mines3.yy",},},},"Disabled":false,"id":"705463c2-37c7-410f-89b2-30b1aa9e1643","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"2794844a-8027-4f00-921c-c52b67fc2c1f","path":"sprites/bg_mines3/bg_mines3.yy",},},},"Disabled":false,"id":"f02f4c2e-fa6a-4d4f-ad7c-880d488a7517","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
           ],},"modifiers":[],"spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange": null,

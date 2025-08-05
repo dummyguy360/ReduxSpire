@@ -13,14 +13,14 @@
   "edgeFiltering": false,
   "For3D": false,
   "frames": [
-    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"16846ed7-b460-4e0e-ba80-6c4c85eb4825",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"589a8829-2f34-4ecc-8218-5666b97de3bc",},
   ],
   "gridX": 0,
   "gridY": 0,
   "height": 254,
   "HTile": false,
   "layers": [
-    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"2baa0e1d-93a4-4dc9-9291-4f380adfbdf2","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
+    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"c3a70141-9a33-41b5-a5d1-01fba198368c","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
   ],
   "nineSlice": null,
   "origin": 4,
@@ -53,8 +53,8 @@
     "showBackdropImage": false,
     "timeUnits": 1,
     "tracks": [
-      {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"1.0","Keyframes":[
-            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"16846ed7-b460-4e0e-ba80-6c4c85eb4825","path":"sprites/bg_paintersign/bg_paintersign.yy",},},},"Disabled":false,"id":"b54a73b4-449a-4f7f-a90a-df859791f117","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
+      {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","builtinName":-1,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"1.0","Keyframes":[
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"589a8829-2f34-4ecc-8218-5666b97de3bc","path":"sprites/bg_paintersign/bg_paintersign.yy",},},},"Disabled":false,"id":"cab8c3be-768c-40db-b7e1-b39cdccecce7","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
           ],},"modifiers":[],"spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange": null,

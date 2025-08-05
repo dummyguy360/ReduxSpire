@@ -2,9 +2,9 @@
   "resourceType": "GMSprite",
   "resourceVersion": "1.0",
   "name": "_decompiled_ts_entrywayclouds",
-  "bbox_bottom": 1151,
+  "bbox_bottom": 1023,
   "bbox_left": 0,
-  "bbox_right": 1151,
+  "bbox_right": 1023,
   "bbox_top": 0,
   "bboxMode": 0,
   "collisionKind": 1,
@@ -13,14 +13,14 @@
   "edgeFiltering": false,
   "For3D": false,
   "frames": [
-    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"8e3a131b-546b-4487-8663-35746aacfa30",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"6a4acce2-9f66-4bc6-b340-54a2a49f22bb",},
   ],
   "gridX": 0,
   "gridY": 0,
-  "height": 1152,
+  "height": 1024,
   "HTile": false,
   "layers": [
-    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"8d6ef8bb-b66e-4db9-81e4-1930118b4840","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
+    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"fd419a8b-c92f-49a8-b61a-3cf5713b961f","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
   ],
   "nineSlice": null,
   "origin": 0,
@@ -54,7 +54,7 @@
     "timeUnits": 1,
     "tracks": [
       {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"1.0","Keyframes":[
-            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"8e3a131b-546b-4487-8663-35746aacfa30","path":"sprites/_decompiled_ts_entrywayclouds/_decompiled_ts_entrywayclouds.yy",},},},"Disabled":false,"id":"df7a3963-9dbf-4b1a-88b4-3c206d1fd5bc","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"6a4acce2-9f66-4bc6-b340-54a2a49f22bb","path":"sprites/_decompiled_ts_entrywayclouds/_decompiled_ts_entrywayclouds.yy",},},},"Disabled":false,"id":"555cc571-6614-40c3-920f-e3a9beb7fa7f","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
           ],},"modifiers":[],"spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange": null,
@@ -70,5 +70,5 @@
   },
   "type": 0,
   "VTile": false,
-  "width": 1152,
+  "width": 1024,
 }

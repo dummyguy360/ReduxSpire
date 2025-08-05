@@ -2,9 +2,9 @@
   "resourceType": "GMSprite",
   "resourceVersion": "1.0",
   "name": "_decompiled_ts_cavern2",
-  "bbox_bottom": 1619,
+  "bbox_bottom": 1471,
   "bbox_left": 0,
-  "bbox_right": 1619,
+  "bbox_right": 1439,
   "bbox_top": 0,
   "bboxMode": 0,
   "collisionKind": 1,
@@ -13,14 +13,14 @@
   "edgeFiltering": false,
   "For3D": false,
   "frames": [
-    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"714a76c4-70a1-46f5-8e17-1dd485c46d7a",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"fbc3e2da-fa6a-4642-a7bc-20d66f0142fa",},
   ],
   "gridX": 0,
   "gridY": 0,
-  "height": 1656,
+  "height": 1472,
   "HTile": false,
   "layers": [
-    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"a478bda2-e2bd-4d58-a312-8e52bfbb740e","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
+    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"0c76250d-ce9a-4d0f-8b67-30741bac0078","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
   ],
   "nineSlice": null,
   "origin": 0,
@@ -54,7 +54,7 @@
     "timeUnits": 1,
     "tracks": [
       {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"1.0","Keyframes":[
-            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"714a76c4-70a1-46f5-8e17-1dd485c46d7a","path":"sprites/_decompiled_ts_cavern2/_decompiled_ts_cavern2.yy",},},},"Disabled":false,"id":"7f8f3681-b6f3-4d57-b9a7-f3ad96bfc25b","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"fbc3e2da-fa6a-4642-a7bc-20d66f0142fa","path":"sprites/_decompiled_ts_cavern2/_decompiled_ts_cavern2.yy",},},},"Disabled":false,"id":"9bf1818c-6bb5-42f0-bf2d-10dcb061145e","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
           ],},"modifiers":[],"spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange": null,
@@ -70,5 +70,5 @@
   },
   "type": 0,
   "VTile": false,
-  "width": 1620,
+  "width": 1440,
 }

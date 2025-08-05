@@ -13,14 +13,14 @@
   "edgeFiltering": false,
   "For3D": false,
   "frames": [
-    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"034e17c4-16b2-474e-b33c-e5971b741fd2",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"226fbbd8-dec0-4a81-a9fb-09a5d17da1ca",},
   ],
   "gridX": 0,
   "gridY": 0,
   "height": 2048,
   "HTile": false,
   "layers": [
-    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"da547d5b-bafb-4e60-9b6c-8f4f7ae754a7","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
+    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"70fdfc40-6358-4142-abe4-6ecddf3ca105","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
   ],
   "nineSlice": null,
   "origin": 0,
@@ -53,8 +53,8 @@
     "showBackdropImage": false,
     "timeUnits": 1,
     "tracks": [
-      {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"1.0","Keyframes":[
-            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"034e17c4-16b2-474e-b33c-e5971b741fd2","path":"sprites/tile_secret/tile_secret.yy",},},},"Disabled":false,"id":"eee9aa39-f48e-4d4c-970f-82664530af16","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
+      {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","builtinName":-1,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"1.0","Keyframes":[
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"226fbbd8-dec0-4a81-a9fb-09a5d17da1ca","path":"sprites/tile_secret/tile_secret.yy",},},},"Disabled":false,"id":"3ac0711b-ad51-4b15-af15-cb7e348f8cf7","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
           ],},"modifiers":[],"spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange": null,

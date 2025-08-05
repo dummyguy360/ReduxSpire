@@ -13,14 +13,14 @@
   "edgeFiltering": false,
   "For3D": false,
   "frames": [
-    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"b8e1bfe8-0e0e-424c-8971-c4d9345779ca",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"b45a7103-969b-4afa-be52-3c49d70bc71f",},
   ],
   "gridX": 0,
   "gridY": 0,
   "height": 158,
   "HTile": false,
   "layers": [
-    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"a47508be-9b6e-4912-8b07-848f7908f781","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
+    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"35e469ab-6b86-4bed-845c-feb4000ecdb9","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
   ],
   "nineSlice": null,
   "origin": 9,
@@ -54,7 +54,7 @@
     "timeUnits": 1,
     "tracks": [
       {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","builtinName":-1,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"1.0","Keyframes":[
-            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"b8e1bfe8-0e0e-424c-8971-c4d9345779ca","path":"sprites/spr_coneboy_juicewallclimb/spr_coneboy_juicewallclimb.yy",},},},"Disabled":false,"id":"48051318-153f-4e63-8b7f-c2255731c45e","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"b45a7103-969b-4afa-be52-3c49d70bc71f","path":"sprites/spr_coneboy_juicewallclimb/spr_coneboy_juicewallclimb.yy",},},},"Disabled":false,"id":"20f7babb-bb78-4c52-9f75-28458055a94d","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
           ],},"modifiers":[],"spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange": null,

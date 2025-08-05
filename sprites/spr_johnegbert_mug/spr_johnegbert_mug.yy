@@ -13,14 +13,14 @@
   "edgeFiltering": false,
   "For3D": false,
   "frames": [
-    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"aeb6615f-9eac-4b67-ab4b-826c23bdccd5",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"155ef00c-b9c5-4d4a-b52d-f11ebbb6d21a",},
   ],
   "gridX": 0,
   "gridY": 0,
   "height": 183,
   "HTile": false,
   "layers": [
-    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"db9e0aeb-5357-4ff8-826c-829ac1e0db24","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
+    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"838b68f0-e2bd-44f1-9857-cb26593d2ebf","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
   ],
   "nineSlice": null,
   "origin": 0,
@@ -54,7 +54,7 @@
     "timeUnits": 1,
     "tracks": [
       {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","builtinName":-1,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"1.0","Keyframes":[
-            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"aeb6615f-9eac-4b67-ab4b-826c23bdccd5","path":"sprites/spr_johnegbert_mug/spr_johnegbert_mug.yy",},},},"Disabled":false,"id":"6990ef7d-3b97-4ea0-8f9e-0ac5f53f8cbf","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"155ef00c-b9c5-4d4a-b52d-f11ebbb6d21a","path":"sprites/spr_johnegbert_mug/spr_johnegbert_mug.yy",},},},"Disabled":false,"id":"613b2fcd-f91a-433d-82d6-3a61b68b5e79","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
           ],},"modifiers":[],"spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange": null,

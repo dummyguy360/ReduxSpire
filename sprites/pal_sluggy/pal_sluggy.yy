@@ -13,14 +13,14 @@
   "edgeFiltering": false,
   "For3D": false,
   "frames": [
-    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"f61591e9-0131-4998-9788-2cb743b5ae49",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"494b6248-4abb-4546-92c7-6fae5b9ae380",},
   ],
   "gridX": 0,
   "gridY": 0,
   "height": 5,
   "HTile": false,
   "layers": [
-    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"cfcda4f6-c2a2-4cc9-9d65-823b6fea3516","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
+    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"fc046ffb-8a97-4e86-86ad-08a3910c1d8a","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
   ],
   "nineSlice": null,
   "origin": 0,
@@ -54,7 +54,7 @@
     "timeUnits": 1,
     "tracks": [
       {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","builtinName":-1,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"1.0","Keyframes":[
-            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"f61591e9-0131-4998-9788-2cb743b5ae49","path":"sprites/pal_sluggy/pal_sluggy.yy",},},},"Disabled":false,"id":"13308375-41d4-4baf-8498-aa37c747005d","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"494b6248-4abb-4546-92c7-6fae5b9ae380","path":"sprites/pal_sluggy/pal_sluggy.yy",},},},"Disabled":false,"id":"29cd8d04-5294-4e7e-8f8c-2ef7eb512689","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
           ],},"modifiers":[],"spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange": null,

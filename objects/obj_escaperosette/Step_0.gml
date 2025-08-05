@@ -28,7 +28,7 @@ switch (state)
                 sprite_index = spr_polka_fall;
             
             x = xstart;
-            y = camy - 100;
+            y = camera_get_view_y(view_camera[0]) - 100;
         }
         
         break;

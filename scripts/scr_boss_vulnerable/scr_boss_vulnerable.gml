@@ -24,7 +24,7 @@ function scr_boss_vunerable()
         image_index = 0;
     }
     
-    var p = 370;
+    var p = obj_player;
     
     if (place_meeting(x, y, p) && p.state != states.hurt)
     {

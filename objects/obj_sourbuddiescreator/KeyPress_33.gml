@@ -1,1 +1,1 @@
-show_debug_message(solid_in_line(370, [367, 473]));
+show_debug_message(solid_in_line(obj_player, [obj_solid, obj_slope]));

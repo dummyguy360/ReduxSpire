@@ -13,15 +13,15 @@
   "edgeFiltering": false,
   "For3D": false,
   "frames": [
-    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"c3adc838-b241-4f1f-8f16-885aaa23758d",},
-    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"8f88a6f1-c560-4f5a-b195-e69dde70e4e1",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"427d50a6-d68c-43d5-a53e-6e2303ca5682",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"fe5ac774-402a-4469-8b6a-f86d570bcb05",},
   ],
   "gridX": 0,
   "gridY": 0,
   "height": 100,
   "HTile": false,
   "layers": [
-    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"73326bcb-1ec4-47e1-b895-aa43b45423e3","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
+    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"32f51e68-c0b3-4f34-be54-c89ac0d5469a","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
   ],
   "nineSlice": null,
   "origin": 9,
@@ -55,8 +55,8 @@
     "timeUnits": 1,
     "tracks": [
       {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","builtinName":-1,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"1.0","Keyframes":[
-            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"c3adc838-b241-4f1f-8f16-885aaa23758d","path":"sprites/spr_gummyworm_taunt/spr_gummyworm_taunt.yy",},},},"Disabled":false,"id":"16a1bbd7-2e36-4727-86a3-950e9f84ca5d","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
-            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"8f88a6f1-c560-4f5a-b195-e69dde70e4e1","path":"sprites/spr_gummyworm_taunt/spr_gummyworm_taunt.yy",},},},"Disabled":false,"id":"ba04b477-7536-4868-9f9f-4c182c61bfe2","IsCreationKey":false,"Key":1.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"427d50a6-d68c-43d5-a53e-6e2303ca5682","path":"sprites/spr_gummyworm_taunt/spr_gummyworm_taunt.yy",},},},"Disabled":false,"id":"dcdc67f3-31f4-4f22-bfe1-5b8a394bc54b","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"fe5ac774-402a-4469-8b6a-f86d570bcb05","path":"sprites/spr_gummyworm_taunt/spr_gummyworm_taunt.yy",},},},"Disabled":false,"id":"3e85f8fd-f3dd-4f80-8042-2a9fcb72b5ba","IsCreationKey":false,"Key":1.0,"Length":1.0,"Stretch":false,},
           ],},"modifiers":[],"spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange": null,

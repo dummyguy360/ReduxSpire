@@ -13,14 +13,14 @@
   "edgeFiltering": false,
   "For3D": false,
   "frames": [
-    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"7d4c1561-80a0-4abe-87c4-6b3c2212dcc7",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"58b8b1cd-b897-47f2-b8b2-d509d8dbcc86",},
   ],
   "gridX": 0,
   "gridY": 0,
   "height": 540,
   "HTile": false,
   "layers": [
-    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"c7a94bf9-df07-4cdc-ae6c-a367a9c15664","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
+    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"1c84f7a3-4386-4816-913a-6b567be26568","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
   ],
   "nineSlice": null,
   "origin": 0,
@@ -54,7 +54,7 @@
     "timeUnits": 1,
     "tracks": [
       {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","builtinName":-1,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"1.0","Keyframes":[
-            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"7d4c1561-80a0-4abe-87c4-6b3c2212dcc7","path":"sprites/sky_esc_screaming_ships/sky_esc_screaming_ships.yy",},},},"Disabled":false,"id":"2ebd4653-651f-43c8-b6c4-0cfff71aa9bd","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"58b8b1cd-b897-47f2-b8b2-d509d8dbcc86","path":"sprites/sky_esc_screaming_ships/sky_esc_screaming_ships.yy",},},},"Disabled":false,"id":"1d53a074-53d5-4c4e-8877-32e886e4fc41","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
           ],},"modifiers":[],"spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange": null,

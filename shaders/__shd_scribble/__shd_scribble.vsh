@@ -1,8 +1,6 @@
 //   @jujuadams   v8.0.0   2021-12-15
 precision highp float;
-
 #define BLEND_SPRITES true
-
 const int MAX_EFFECTS = 11;
 #define SPRITE_FLAG   flagArray[ 0]
 #define WAVE_FLAG     flagArray[ 1]
@@ -15,7 +13,6 @@ const int MAX_EFFECTS = 11;
 #define JITTER_FLAG   flagArray[ 8]
 #define BLINK_FLAG    flagArray[ 9]
 #define SLANT_FLAG    flagArray[10]
-
 const int MAX_ANIM_FIELDS = 21;
 #define WAVE_AMPLITUDE    u_aDataFields[ 0]
 #define WAVE_FREQUENCY    u_aDataFields[ 1]
@@ -38,7 +35,6 @@ const int MAX_ANIM_FIELDS = 21;
 #define JITTER_MAXIMUM    u_aDataFields[18]
 #define JITTER_SPEED      u_aDataFields[19]
 #define SLANT_GRADIENT    u_aDataFields[20]
-
 const int EASE_METHOD_COUNT = 15;
 #define EASE_NONE         0
 #define EASE_LINEAR       1
@@ -55,28 +51,18 @@ const int EASE_METHOD_COUNT = 15;
 #define EASE_CUSTOM_1    12
 #define EASE_CUSTOM_2    13
 #define EASE_CUSTOM_3    14
-
 const float MAX_LINES = 1000.0; //Change __SCRIBBLE_MAX_LINES in scribble_init() if you change this value!
-
 const int WINDOW_COUNT = 3;
-
 const float PI = 3.14159265359;
-
-
-
 //--------------------------------------------------------------------------------------------------------
 // Attributes, Varyings, and Uniforms
-
-
 attribute vec3  in_Position;     //{X, Y, Packed character & line index}
 attribute vec3  in_Normal;       //{dX, Sprite data, Bitpacked effect flags}
 attribute vec4  in_Colour;       //Colour. This attribute is used for sprite data if this character is a sprite
 attribute vec2  in_TextureCoord; //UVs
 attribute vec2  in_Colour2;      //{Scale, dY}
-
 varying vec2 v_vTexcoord;
 varying vec4 v_vColour;
-
 uniform vec4  u_vColourBlend;                           //4
 uniform vec4  u_vGradient;                              //4
 uniform vec2  u_vSkew;                                  //2
@@ -86,7 +72,6 @@ uniform float u_fTime;                                  //1
 uniform float u_aDataFields[MAX_ANIM_FIELDS];           //21
 uniform vec2  u_aBezier[3];                             //6
 uniform float u_fBlinkState;                            //1
-
 uniform int   u_iTypewriterMethod;                      //1
 uniform int   u_iTypewriterCharMax;                     //1
 uniform float u_fTypewriterWindowArray[2*WINDOW_COUNT]; //6
@@ -95,20 +80,16 @@ uniform vec2  u_vTypewriterStartPos;                    //2
 uniform vec2  u_vTypewriterStartScale;                  //2
 uniform float u_fTypewriterStartRotation;               //1
 uniform float u_fTypewriterAlphaDuration;               //1
-
 float flagArray[MAX_EFFECTS];
-
 //--------------------------------------------------------------------------------------------------------
 // Functions
 // Scroll all the way down to see the main() function for the vertex shader
-
 //*That* randomisation function.
 //I haven't found a better method yet, and this is sufficient for our purposes
 float rand(vec2 co)
 {
     return fract(sin(dot(co.xy ,vec2(12.9898,78.233))) * 43758.5453);
 }
-
 //Rotate by vector
 vec2 rotate_by_vector(vec2 position, vec2 centre, vec2 vector)
 {
@@ -116,50 +97,42 @@ vec2 rotate_by_vector(vec2 position, vec2 centre, vec2 vector)
     vec2 delta = position - centre;
     return centre + vec2(delta.x*vector.x - delta.y*vector.y, delta.x*vector.y + delta.y*vector.x);
 }
-
 //Rotate the character
 vec2 rotate(vec2 position, vec2 centre, float angle)
 {
     return rotate_by_vector(position, centre, vec2(cos(0.00872664625*angle), -sin(0.00872664625*angle)));
 }
-
 //Scale the character
 vec2 scale(vec2 position, vec2 centre, float scale)
 {
     return centre + scale*(position - centre);
 }
-
 vec2 scale(vec2 position, vec2 centre, vec2 scale)
 {
     return centre + scale*(position - centre);
 }
-
 //Oscillate the character
 vec2 wave(vec2 position, float characterIndex)
 {
     return vec2(position.x, position.y + WAVE_FLAG*WAVE_AMPLITUDE*sin(WAVE_FREQUENCY*characterIndex + WAVE_SPEED*u_fTime));
 }
-
 //Wheel the character around
 vec2 wheel(vec2 position, float characterIndex)
 {
     float time = WHEEL_FREQUENCY*characterIndex + WHEEL_SPEED*u_fTime;
     return position.xy + WHEEL_FLAG*WHEEL_AMPLITUDE*vec2(cos(time), -sin(time));
 }
-
 //Wobble the character by rotating around its central point
 vec2 wobble(vec2 position, vec2 centre)
 {
     return rotate(position, centre, WOBBLE_FLAG*WOBBLE_ANGLE*sin(WOBBLE_FREQUENCY*u_fTime));
 }
-
 //Pulse the character by scaling it up and down
 vec2 pulse(vec2 position, vec2 centre, float characterIndex)
 {
     float adjustedScale = 1.0 +  PULSE_FLAG*PULSE_SCALE*(0.5 + 0.5*sin(PULSE_SPEED*(250.0*characterIndex + u_fTime)));
     return scale(position, centre, adjustedScale);
 }
-
 //Shake the character along the x/y axes
 //We use integer time steps so that at low speeds characters don't jump around too much
 //Lots of magic numbers in here to try to get a nice-looking shake
@@ -175,7 +148,6 @@ vec2 shake(vec2 position, float characterIndex)
     
     return position + SHAKE_FLAG*SHAKE_AMPLITUDE*merge*(2.0*delta - 1.0);
 }
-
 //Jitter the character scale, using a similar method to above
 vec2 jitter(vec2 position, vec2 centre, float characterIndex)
 {
@@ -186,7 +158,6 @@ vec2 jitter(vec2 position, vec2 centre, float characterIndex)
     
     return scale(position, centre, mix(JITTER_MINIMUM, JITTER_MAXIMUM, delta));
 }
-
 float filterSprite(float spriteData)
 {
     float imageSpeed = floor(spriteData / 4096.0);
@@ -196,7 +167,6 @@ float filterSprite(float spriteData)
     float displayImage = floor(mod(imageSpeed*u_fTime/1024.0, imageMax));
     return ((abs(image-displayImage) < 1.0/255.0)? 1.0 : 0.0);
 }
-
 //HSV->RGB conversion function
 vec3 hsv2rgb(vec3 c)
 {
@@ -204,7 +174,6 @@ vec3 hsv2rgb(vec3 c)
     vec3 P = abs(fract(c.xxx + K.xyz) * 6.0 - K.www);
     return c.z * mix(K.xxx, clamp(P - K.xxx, 0.0, 1.0), c.y);
 }
-
 //Colour cycling for the rainbow effect
 vec4 rainbow(float characterIndex, vec4 colour)
 {
@@ -248,7 +217,6 @@ vec4 cycle(float characterIndex, vec4 colour)
     
     return vec4(mix(rgbA, rgbB, fract(h)), 1.0);
 }
-
 //Fade effect for typewriter etc.
 float fade(float windowArray[2*WINDOW_COUNT], float smoothness, float index, bool invert)
 {
@@ -280,74 +248,57 @@ float fade(float windowArray[2*WINDOW_COUNT], float smoothness, float index, boo
     
     return result;
 }
-
 vec2 bezier(float t, vec2 p1, vec2 p2, vec2 p3)
 {
     float inv_t = 1.0 - t;
     return 3.0*inv_t*inv_t*t*p1 + 3.0*inv_t*t*t*p2 + t*t*t*p3;
 }
-
 vec2 bezierDerivative(float t, vec2 p1, vec2 p2, vec2 p3)
 {
     float inv_t = 1.0 - t;
     return 3.0*inv_t*inv_t*p1 + 6.0*inv_t*t*(p2 - p1) + 3.0*t*t*(p3 - p2);
 }
-
-
-
 //--------------------------------------------------------------------------------------------------------
-
-
-
 float easeQuad(float time)
 {
 	return time*time;
 }
-
 float easeCubic(float time)
 {
 	return time*time*time;
 }
-
 float easeQuart(float time)
 {
 	return time*time*time*time;
 }
-
 float easeQuint(float time)
 {
 	return time*time*time*time*time;
 }
-
 float easeSine(float time)
 {
     return 1.0 - cos(0.5*(time*PI));
 }
-
 float easeExpo(float time)
 {
     if (time == 0.0) return 0.0;
     return pow(2.0, 10.0*time - 10.0);
 }
-
 float easeCirc(float time)
 {
     return 1.0 - sqrt(1.0 - time*time);
 }
-
 float easeBack(float time)
 {
     float param = 1.70158;
 	return time*time*((param + 1.0)*time - param);
 }
-
 float easeElastic(float time)
 {
     if (time == 0.0) return 0.0;
     if (time == 1.0) return 1.0;
     return -pow(2.0, 10.0*time - 10.0) * sin((time*10.0 - 10.75) * (2.0*PI) / 3.0);
 }
-
 float easeBounce(float time)
 {
 	float n1 = 7.5625;
@@ -375,13 +326,7 @@ float easeBounce(float time)
 		return 1.0 - (n1*time*time + 0.984375);
 	}
 }
-
-
-
 //--------------------------------------------------------------------------------------------------------
-
-
-
 void main()
 {
     //Unpack character/line index

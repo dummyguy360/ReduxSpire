@@ -13,15 +13,15 @@
   "edgeFiltering": false,
   "For3D": false,
   "frames": [
-    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"1395080a-23af-4759-816f-53046fee061e",},
-    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"f4b11c07-713c-4b0a-bfc8-3dbff9161984",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"7e0a0d7b-a117-4f90-b010-718f1c62fba7",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"ab90a625-0aff-4683-9849-ed1637e7102e",},
   ],
   "gridX": 0,
   "gridY": 0,
   "height": 183,
   "HTile": false,
   "layers": [
-    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"ff731a62-3dfb-43b8-afa4-1c8319845c36","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
+    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"93e9453e-cd22-4175-9d51-398d4288ca25","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
   ],
   "nineSlice": null,
   "origin": 0,
@@ -55,8 +55,8 @@
     "timeUnits": 1,
     "tracks": [
       {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","builtinName":-1,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"1.0","Keyframes":[
-            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"1395080a-23af-4759-816f-53046fee061e","path":"sprites/countdown_scaredhams/countdown_scaredhams.yy",},},},"Disabled":false,"id":"8618f732-fb2a-465a-9110-8fc78a544453","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
-            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"f4b11c07-713c-4b0a-bfc8-3dbff9161984","path":"sprites/countdown_scaredhams/countdown_scaredhams.yy",},},},"Disabled":false,"id":"12e0b508-4fb1-4a93-98f1-69a0367b2e69","IsCreationKey":false,"Key":1.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"7e0a0d7b-a117-4f90-b010-718f1c62fba7","path":"sprites/countdown_scaredhams/countdown_scaredhams.yy",},},},"Disabled":false,"id":"bfc3f9ca-de48-47b2-8769-2b2e63e52ebf","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"ab90a625-0aff-4683-9849-ed1637e7102e","path":"sprites/countdown_scaredhams/countdown_scaredhams.yy",},},},"Disabled":false,"id":"e0976464-0a01-402a-b815-589a17674b88","IsCreationKey":false,"Key":1.0,"Length":1.0,"Stretch":false,},
           ],},"modifiers":[],"spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange": null,

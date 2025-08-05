@@ -13,14 +13,14 @@
   "edgeFiltering": false,
   "For3D": false,
   "frames": [
-    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"9274951c-688f-4734-9fce-06adeed9b69b",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"db624eed-aac3-44f1-8a2a-4109e2c8642d",},
   ],
   "gridX": 0,
   "gridY": 0,
   "height": 1024,
   "HTile": false,
   "layers": [
-    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"4d20aba8-7f78-4eaf-830e-f29cc5e60cc4","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
+    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"4e5765bb-c170-4567-a89a-6014504a13f1","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
   ],
   "nineSlice": null,
   "origin": 0,
@@ -54,7 +54,7 @@
     "timeUnits": 1,
     "tracks": [
       {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","builtinName":-1,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"1.0","Keyframes":[
-            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"9274951c-688f-4734-9fce-06adeed9b69b","path":"sprites/hubrosette/hubrosette.yy",},},},"Disabled":false,"id":"b768d5af-8089-4a7e-8006-947f4506dfe8","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"db624eed-aac3-44f1-8a2a-4109e2c8642d","path":"sprites/hubrosette/hubrosette.yy",},},},"Disabled":false,"id":"1662af10-9a00-4307-a02e-ada2055b9deb","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
           ],},"modifiers":[],"spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange": null,

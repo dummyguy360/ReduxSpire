@@ -13,15 +13,15 @@
   "edgeFiltering": false,
   "For3D": false,
   "frames": [
-    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"236c1925-cedc-4f13-a9c9-e67e146e61fc",},
-    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"faecbe30-cfea-453e-8062-7119e8470c08",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"2643b7fc-4d50-448b-8d9c-44fba0c1c3ef",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"10c68be8-1d97-4b8a-81ec-d00f95443792",},
   ],
   "gridX": 0,
   "gridY": 0,
   "height": 64,
   "HTile": false,
   "layers": [
-    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"1b83cee4-51b9-4a09-ad15-9fcd435965d9","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
+    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"943a76e5-65af-4b7b-bee1-e99247bd570b","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
   ],
   "nineSlice": null,
   "origin": 4,
@@ -55,8 +55,8 @@
     "timeUnits": 1,
     "tracks": [
       {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","builtinName":-1,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"1.0","Keyframes":[
-            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"236c1925-cedc-4f13-a9c9-e67e146e61fc","path":"sprites/spr_iceblock_fragile/spr_iceblock_fragile.yy",},},},"Disabled":false,"id":"4342e965-70d2-420a-9349-103e30cfb704","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
-            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"faecbe30-cfea-453e-8062-7119e8470c08","path":"sprites/spr_iceblock_fragile/spr_iceblock_fragile.yy",},},},"Disabled":false,"id":"2974d395-1189-4844-ac0b-3a945f2dbe36","IsCreationKey":false,"Key":1.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"2643b7fc-4d50-448b-8d9c-44fba0c1c3ef","path":"sprites/spr_iceblock_fragile/spr_iceblock_fragile.yy",},},},"Disabled":false,"id":"d2834d60-0f94-4589-b79a-4a2044964603","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"10c68be8-1d97-4b8a-81ec-d00f95443792","path":"sprites/spr_iceblock_fragile/spr_iceblock_fragile.yy",},},},"Disabled":false,"id":"b079fcbd-b44e-4d12-befb-30faae9a1ab5","IsCreationKey":false,"Key":1.0,"Length":1.0,"Stretch":false,},
           ],},"modifiers":[],"spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange": null,

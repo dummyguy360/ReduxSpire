@@ -2,9 +2,9 @@
   "resourceType": "GMSprite",
   "resourceVersion": "1.0",
   "name": "_decompiled_ts_hub2",
-  "bbox_bottom": 1079,
+  "bbox_bottom": 959,
   "bbox_left": 0,
-  "bbox_right": 1079,
+  "bbox_right": 959,
   "bbox_top": 0,
   "bboxMode": 0,
   "collisionKind": 1,
@@ -13,14 +13,14 @@
   "edgeFiltering": false,
   "For3D": false,
   "frames": [
-    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"23202778-5745-486a-b572-09378f077e5b",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"8076a58d-2868-4198-8f58-339d4e219372",},
   ],
   "gridX": 0,
   "gridY": 0,
-  "height": 1080,
+  "height": 960,
   "HTile": false,
   "layers": [
-    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"df54ae5a-b1d1-4710-8618-939d322b6bd0","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
+    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"7239e35d-a67c-49a0-a593-c388552f8cef","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
   ],
   "nineSlice": null,
   "origin": 0,
@@ -54,7 +54,7 @@
     "timeUnits": 1,
     "tracks": [
       {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"1.0","Keyframes":[
-            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"23202778-5745-486a-b572-09378f077e5b","path":"sprites/_decompiled_ts_hub2/_decompiled_ts_hub2.yy",},},},"Disabled":false,"id":"bbdfab6f-a3d3-491b-a8fc-9f732cff09f3","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"8076a58d-2868-4198-8f58-339d4e219372","path":"sprites/_decompiled_ts_hub2/_decompiled_ts_hub2.yy",},},},"Disabled":false,"id":"c28fcf64-7a8e-42be-ab84-dbf183b0a980","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
           ],},"modifiers":[],"spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange": null,
@@ -70,5 +70,5 @@
   },
   "type": 0,
   "VTile": false,
-  "width": 1080,
+  "width": 960,
 }

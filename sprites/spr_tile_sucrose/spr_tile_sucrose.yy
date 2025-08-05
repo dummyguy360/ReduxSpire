@@ -13,14 +13,14 @@
   "edgeFiltering": false,
   "For3D": false,
   "frames": [
-    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"8d9fc744-df43-48c0-8e03-9ad52b4c58e5",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"cba96d34-b9a4-4b19-bf7a-a7ecd328c58f",},
   ],
   "gridX": 0,
   "gridY": 0,
   "height": 1380,
   "HTile": false,
   "layers": [
-    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"41ce7cbf-ee8f-481c-aa41-4b47963e5d35","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
+    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"0b3d5f98-fcc1-4b08-84ae-3177d749e9fc","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
   ],
   "nineSlice": null,
   "origin": 0,
@@ -53,8 +53,8 @@
     "showBackdropImage": false,
     "timeUnits": 1,
     "tracks": [
-      {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"1.0","Keyframes":[
-            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"8d9fc744-df43-48c0-8e03-9ad52b4c58e5","path":"sprites/spr_tile_sucrose/spr_tile_sucrose.yy",},},},"Disabled":false,"id":"c6fa16ff-5b83-4ffc-a01b-28d932b7d2a2","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
+      {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","builtinName":-1,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"1.0","Keyframes":[
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"cba96d34-b9a4-4b19-bf7a-a7ecd328c58f","path":"sprites/spr_tile_sucrose/spr_tile_sucrose.yy",},},},"Disabled":false,"id":"9773829c-3699-4afe-8d7a-8cb65ac7af0b","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
           ],},"modifiers":[],"spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange": null,

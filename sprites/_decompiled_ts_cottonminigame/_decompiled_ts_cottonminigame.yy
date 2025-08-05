@@ -2,9 +2,9 @@
   "resourceType": "GMSprite",
   "resourceVersion": "1.0",
   "name": "_decompiled_ts_cottonminigame",
-  "bbox_bottom": 159,
+  "bbox_bottom": 127,
   "bbox_left": 0,
-  "bbox_right": 159,
+  "bbox_right": 127,
   "bbox_top": 0,
   "bboxMode": 0,
   "collisionKind": 1,
@@ -13,14 +13,14 @@
   "edgeFiltering": false,
   "For3D": false,
   "frames": [
-    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"5270e5df-93eb-4eb2-a301-923dc3fd687f",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"0a7df195-549d-4d25-a739-3385e6f1ef67",},
   ],
   "gridX": 0,
   "gridY": 0,
-  "height": 160,
+  "height": 128,
   "HTile": false,
   "layers": [
-    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"a817d283-b627-4862-8da4-9fc09216ff64","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
+    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"5f0d5ccf-6d59-4939-ae16-635022fc2cdc","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
   ],
   "nineSlice": null,
   "origin": 0,
@@ -54,7 +54,7 @@
     "timeUnits": 1,
     "tracks": [
       {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"1.0","Keyframes":[
-            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"5270e5df-93eb-4eb2-a301-923dc3fd687f","path":"sprites/_decompiled_ts_cottonminigame/_decompiled_ts_cottonminigame.yy",},},},"Disabled":false,"id":"16b1ff04-e34e-414c-8008-2ac29fa56cf2","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"0a7df195-549d-4d25-a739-3385e6f1ef67","path":"sprites/_decompiled_ts_cottonminigame/_decompiled_ts_cottonminigame.yy",},},},"Disabled":false,"id":"c69e6d6c-0568-4679-bf0d-39d483550309","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
           ],},"modifiers":[],"spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange": null,
@@ -70,5 +70,5 @@
   },
   "type": 0,
   "VTile": false,
-  "width": 160,
+  "width": 128,
 }

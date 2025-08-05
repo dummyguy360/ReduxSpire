@@ -1,2 +1,2 @@
-scr_hurtplayer(370);
+scr_hurtplayer(obj_player);
 instance_destroy();

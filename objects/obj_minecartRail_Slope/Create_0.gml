@@ -1,18 +1,18 @@
 depth = 4;
 
-canCollide = function(arg0 = 370)
+canCollide = function(arg0 = obj_player)
 {
     switch (arg0)
     {
-        case 370:
-        case 578:
+        case obj_player:
+        case obj_player2:
             var _state = global.freezeframe ? arg0.frozenstate : arg0.state;
             return _state == states.minecart;
             break;
         
-        case 290:
-        case 1:
-        case 511:
+        case obj_minecart:
+        case obj_minedummycart:
+        case obj_train:
             return true;
             break;
         

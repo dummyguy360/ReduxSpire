@@ -13,14 +13,14 @@
   "edgeFiltering": false,
   "For3D": false,
   "frames": [
-    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"d568481f-1879-489c-afb3-f7d56857326a",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"6d58311f-ca9b-4b88-be78-9bf3511b3228",},
   ],
   "gridX": 0,
   "gridY": 0,
   "height": 1,
   "HTile": false,
   "layers": [
-    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"b1c51475-b493-48b9-98d1-72027613ff33","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
+    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"f5287821-4897-4bae-827f-34e92522b162","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
   ],
   "nineSlice": null,
   "origin": 0,
@@ -54,7 +54,7 @@
     "timeUnits": 1,
     "tracks": [
       {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","builtinName":-1,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"1.0","Keyframes":[
-            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"d568481f-1879-489c-afb3-f7d56857326a","path":"sprites/spr_pixel/spr_pixel.yy",},},},"Disabled":false,"id":"d3dbe79a-387f-4ec2-a411-8479af312ffa","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"6d58311f-ca9b-4b88-be78-9bf3511b3228","path":"sprites/spr_pixel/spr_pixel.yy",},},},"Disabled":false,"id":"32a5c23e-892c-40ed-974c-fbaf16a5162f","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
           ],},"modifiers":[],"spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange": null,

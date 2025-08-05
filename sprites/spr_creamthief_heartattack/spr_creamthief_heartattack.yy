@@ -13,14 +13,14 @@
   "edgeFiltering": false,
   "For3D": false,
   "frames": [
-    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"53cfbf6d-1561-4ead-b10a-e16fe933d8e8",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"c6f28a04-777f-48a8-87fa-66554e0e3811",},
   ],
   "gridX": 0,
   "gridY": 0,
   "height": 100,
   "HTile": false,
   "layers": [
-    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"2dc0b7dd-3441-485f-b680-357f6730f95f","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
+    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"20d46a53-e1c5-4983-800b-c658c30b8d7d","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
   ],
   "nineSlice": null,
   "origin": 4,
@@ -54,7 +54,7 @@
     "timeUnits": 1,
     "tracks": [
       {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","builtinName":-1,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"1.0","Keyframes":[
-            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"53cfbf6d-1561-4ead-b10a-e16fe933d8e8","path":"sprites/spr_creamthief_heartattack/spr_creamthief_heartattack.yy",},},},"Disabled":false,"id":"cf5edb56-5105-48b2-99dd-cd58ca139413","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"c6f28a04-777f-48a8-87fa-66554e0e3811","path":"sprites/spr_creamthief_heartattack/spr_creamthief_heartattack.yy",},},},"Disabled":false,"id":"bb23f60e-4735-4969-b4d2-2548c8e7a800","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
           ],},"modifiers":[],"spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange": null,

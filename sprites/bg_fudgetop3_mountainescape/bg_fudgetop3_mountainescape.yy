@@ -13,14 +13,14 @@
   "edgeFiltering": false,
   "For3D": false,
   "frames": [
-    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"c38f9208-0ebe-44a8-9c7e-d34799d02721",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"d151c232-9f20-44f8-9d59-5390d5d89437",},
   ],
   "gridX": 0,
   "gridY": 0,
   "height": 540,
   "HTile": false,
   "layers": [
-    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"aefd20df-8658-4384-93ed-b303c488e340","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
+    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"0edd052c-6fb3-4e5a-8c76-5585ca18b310","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
   ],
   "nineSlice": null,
   "origin": 0,
@@ -54,7 +54,7 @@
     "timeUnits": 1,
     "tracks": [
       {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","builtinName":-1,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"1.0","Keyframes":[
-            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"c38f9208-0ebe-44a8-9c7e-d34799d02721","path":"sprites/bg_fudgetop3_mountainescape/bg_fudgetop3_mountainescape.yy",},},},"Disabled":false,"id":"a43e0f05-9605-4429-a82d-493e216960f4","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"d151c232-9f20-44f8-9d59-5390d5d89437","path":"sprites/bg_fudgetop3_mountainescape/bg_fudgetop3_mountainescape.yy",},},},"Disabled":false,"id":"9565f69f-a34b-45d3-bf51-2fe7f32ed483","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
           ],},"modifiers":[],"spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange": null,

@@ -1,16 +1,16 @@
 depth = 4;
 
-canCollide = function(arg0 = 370)
+canCollide = function(arg0 = obj_player)
 {
     switch (arg0)
     {
-        case 370:
-        case 578:
+        case obj_player:
+        case obj_player2:
             var _state = global.freezeframe ? arg0.frozenstate : arg0.state;
             return _state != states.noclip && _state != states.cotton && _state != states.cottondrill && _state != states.cottonroll && _state != states.tumble && _state != states.machroll && _state != states.frostburnbump && _state != states.crouchslide && _state != states.backbreaker && _state != states.bump && _state != states.actor && _state != states.frozen;
             break;
         
-        case 298:
+        case obj_creamThief:
             return true;
             break;
         

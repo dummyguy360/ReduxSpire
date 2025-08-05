@@ -2,9 +2,9 @@
   "resourceType": "GMSprite",
   "resourceVersion": "1.0",
   "name": "_decompiled_ts_clock",
-  "bbox_bottom": 1403,
+  "bbox_bottom": 1247,
   "bbox_left": 0,
-  "bbox_right": 1403,
+  "bbox_right": 1247,
   "bbox_top": 0,
   "bboxMode": 0,
   "collisionKind": 1,
@@ -13,14 +13,14 @@
   "edgeFiltering": false,
   "For3D": false,
   "frames": [
-    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"c75b795e-da7e-4924-9a00-4f92792e24e7",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"fd6c9484-dd96-46f9-a008-d92f6ebd4c65",},
   ],
   "gridX": 0,
   "gridY": 0,
-  "height": 1404,
+  "height": 1248,
   "HTile": false,
   "layers": [
-    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"b2aa9c9d-28d9-4b42-b6dd-c35dd1c724f3","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
+    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"916179fc-26fa-415b-bf94-35a4a0dcdef3","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
   ],
   "nineSlice": null,
   "origin": 0,
@@ -54,7 +54,7 @@
     "timeUnits": 1,
     "tracks": [
       {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"1.0","Keyframes":[
-            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"c75b795e-da7e-4924-9a00-4f92792e24e7","path":"sprites/_decompiled_ts_clock/_decompiled_ts_clock.yy",},},},"Disabled":false,"id":"44924125-599c-4847-9efc-4ddaff1e2a92","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"fd6c9484-dd96-46f9-a008-d92f6ebd4c65","path":"sprites/_decompiled_ts_clock/_decompiled_ts_clock.yy",},},},"Disabled":false,"id":"a92fb10a-4a99-4ea7-9e36-76168854c7c0","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
           ],},"modifiers":[],"spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange": null,
@@ -70,5 +70,5 @@
   },
   "type": 0,
   "VTile": false,
-  "width": 1404,
+  "width": 1248,
 }

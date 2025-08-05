@@ -13,14 +13,14 @@
   "edgeFiltering": false,
   "For3D": false,
   "frames": [
-    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"89f1d4aa-1aaa-4316-83e6-254789ffb0f4",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"9a5eb616-03c2-469f-9ae0-6b48e89e9590",},
   ],
   "gridX": 0,
   "gridY": 0,
   "height": 540,
   "HTile": false,
   "layers": [
-    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"4081dd40-b996-4f27-9fca-9e0396eaa4df","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
+    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"84abe8cc-50cf-45c3-9d7e-9d192aeff7ab","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
   ],
   "nineSlice": null,
   "origin": 0,
@@ -54,7 +54,7 @@
     "timeUnits": 1,
     "tracks": [
       {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","builtinName":-1,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"1.0","Keyframes":[
-            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"89f1d4aa-1aaa-4316-83e6-254789ffb0f4","path":"sprites/bg_martian_outsideSky/bg_martian_outsideSky.yy",},},},"Disabled":false,"id":"0f53473c-c2fa-4eea-81be-5c4225f5ddec","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"9a5eb616-03c2-469f-9ae0-6b48e89e9590","path":"sprites/bg_martian_outsideSky/bg_martian_outsideSky.yy",},},},"Disabled":false,"id":"dde6599b-9e52-4f91-af1e-c799fdfef252","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
           ],},"modifiers":[],"spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange": null,

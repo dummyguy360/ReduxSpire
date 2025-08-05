@@ -17,7 +17,7 @@ if (place_meeting(x, y, obj_donutShitted))
     instance_destroy();
 
 if (place_meeting(x, y, obj_player))
-    scr_hurtplayer(370);
+    scr_hurtplayer(obj_player);
 
 if (place_meeting(x, y, obj_solid) || place_meeting(x, y, obj_slope))
 {

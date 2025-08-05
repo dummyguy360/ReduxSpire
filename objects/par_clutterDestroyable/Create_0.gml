@@ -1,4 +1,4 @@
-canCollide = function(arg0 = 370)
+canCollide = function(arg0 = obj_player)
 {
     return !place_meeting(x, y, arg0);
 };

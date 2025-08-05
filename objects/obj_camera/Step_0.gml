@@ -135,7 +135,7 @@ if (instance_exists(obj_player) && (obj_player.state != states.timesup && obj_pl
     
     if (!global.freezeframe)
     {
-        var _player = 370;
+        var _player = obj_player;
         var _targetcharge = 0;
         var _tspeed = 0;
         

@@ -13,15 +13,15 @@
   "edgeFiltering": false,
   "For3D": false,
   "frames": [
-    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"47e649c4-1863-4ad1-9198-f8ac2fae117d",},
-    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"81685625-b185-4270-89f9-4c48029d11d2",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"9fa1a758-88c0-4851-826d-92f71abe8b4f",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"dcb156f1-a654-47be-ae9f-e73552c0c979",},
   ],
   "gridX": 0,
   "gridY": 0,
   "height": 540,
   "HTile": false,
   "layers": [
-    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"df8db984-d100-4281-8267-434ca7e0ce45","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
+    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"d591de2a-04d0-4146-b927-4e6fb7c28849","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
   ],
   "nineSlice": null,
   "origin": 0,
@@ -55,9 +55,9 @@
     "timeUnits": 1,
     "tracks": [
       {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"1.0","Keyframes":[
-            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"47e649c4-1863-4ad1-9198-f8ac2fae117d","path":"sprites/bg_exitwaygraffitiwall/bg_exitwaygraffitiwall.yy",},},},"Disabled":false,"id":"4e37c103-7cb1-4696-be8d-ee030f482ec7","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
-            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"81685625-b185-4270-89f9-4c48029d11d2","path":"sprites/bg_exitwaygraffitiwall/bg_exitwaygraffitiwall.yy",},},},"Disabled":false,"id":"5c3263be-6fc4-4bee-925b-53dc30d33626","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
-          ],},"modifiers":[],"spriteId":null,"trackColour":65535,"tracks":[],"traits":0,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"9fa1a758-88c0-4851-826d-92f71abe8b4f","path":"sprites/bg_exitwaygraffitiwall/bg_exitwaygraffitiwall.yy",},},},"Disabled":false,"id":"7b86668c-b4a1-4552-9c15-1a2f117bb33a","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"dcb156f1-a654-47be-ae9f-e73552c0c979","path":"sprites/bg_exitwaygraffitiwall/bg_exitwaygraffitiwall.yy",},},},"Disabled":false,"id":"e7d7327f-e444-4012-b245-0131b9a1fc0f","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
+          ],},"modifiers":[],"spriteId":null,"trackColour":16776960,"tracks":[],"traits":0,},
     ],
     "visibleRange": null,
     "volume": 1.0,

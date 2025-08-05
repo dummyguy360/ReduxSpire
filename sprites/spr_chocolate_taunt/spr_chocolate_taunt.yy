@@ -13,15 +13,15 @@
   "edgeFiltering": false,
   "For3D": false,
   "frames": [
-    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"80243d0d-c40b-40b9-ad1c-d80eeb3320ec",},
-    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"58176b0d-180b-4497-bdba-901e22146f8f",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"ccb5efc7-b938-4ba1-b5f8-9a2cfc584782",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"9fafb95a-b8ad-4329-acf6-00a5b9013fe3",},
   ],
   "gridX": 0,
   "gridY": 0,
   "height": 100,
   "HTile": false,
   "layers": [
-    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"567a2905-4267-4375-bf4c-c70c65ecfc2e","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
+    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"16dc6317-9f99-4801-b7ef-fb9be6640725","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
   ],
   "nineSlice": null,
   "origin": 4,
@@ -55,8 +55,8 @@
     "timeUnits": 1,
     "tracks": [
       {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","builtinName":-1,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"1.0","Keyframes":[
-            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"80243d0d-c40b-40b9-ad1c-d80eeb3320ec","path":"sprites/spr_chocolate_taunt/spr_chocolate_taunt.yy",},},},"Disabled":false,"id":"aaebcbd4-d0d9-4550-97c7-1094d3b18af1","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
-            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"58176b0d-180b-4497-bdba-901e22146f8f","path":"sprites/spr_chocolate_taunt/spr_chocolate_taunt.yy",},},},"Disabled":false,"id":"4611594a-dff8-4226-8763-5118dc7f879e","IsCreationKey":false,"Key":1.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"ccb5efc7-b938-4ba1-b5f8-9a2cfc584782","path":"sprites/spr_chocolate_taunt/spr_chocolate_taunt.yy",},},},"Disabled":false,"id":"e3099f2f-b202-48e2-9474-54e02847cd00","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"9fafb95a-b8ad-4329-acf6-00a5b9013fe3","path":"sprites/spr_chocolate_taunt/spr_chocolate_taunt.yy",},},},"Disabled":false,"id":"5373ccc8-197e-46c1-8b80-902a442bc355","IsCreationKey":false,"Key":1.0,"Length":1.0,"Stretch":false,},
           ],},"modifiers":[],"spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange": null,

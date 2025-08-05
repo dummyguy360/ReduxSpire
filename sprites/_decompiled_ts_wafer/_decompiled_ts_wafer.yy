@@ -2,9 +2,9 @@
   "resourceType": "GMSprite",
   "resourceVersion": "1.0",
   "name": "_decompiled_ts_wafer",
-  "bbox_bottom": 971,
+  "bbox_bottom": 863,
   "bbox_left": 0,
-  "bbox_right": 971,
+  "bbox_right": 863,
   "bbox_top": 0,
   "bboxMode": 0,
   "collisionKind": 1,
@@ -13,14 +13,14 @@
   "edgeFiltering": false,
   "For3D": false,
   "frames": [
-    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"76ad62f1-5802-42a0-843e-0cc7522a7f69",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"e586ca03-8dd9-4b11-9719-d7962d507ee4",},
   ],
   "gridX": 0,
   "gridY": 0,
-  "height": 972,
+  "height": 864,
   "HTile": false,
   "layers": [
-    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"ba5872df-841c-40f2-b8b8-0d5bada3080a","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
+    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"891a63f9-5c70-4005-9eb7-db8218b4b20d","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
   ],
   "nineSlice": null,
   "origin": 0,
@@ -54,7 +54,7 @@
     "timeUnits": 1,
     "tracks": [
       {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"1.0","Keyframes":[
-            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"76ad62f1-5802-42a0-843e-0cc7522a7f69","path":"sprites/_decompiled_ts_wafer/_decompiled_ts_wafer.yy",},},},"Disabled":false,"id":"f50b68b0-fbdb-40fe-9769-ddd33bbe5e49","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"e586ca03-8dd9-4b11-9719-d7962d507ee4","path":"sprites/_decompiled_ts_wafer/_decompiled_ts_wafer.yy",},},},"Disabled":false,"id":"421517fe-cf28-4e69-b73a-26bf9ec3f34f","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
           ],},"modifiers":[],"spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange": null,
@@ -70,5 +70,5 @@
   },
   "type": 0,
   "VTile": false,
-  "width": 972,
+  "width": 864,
 }

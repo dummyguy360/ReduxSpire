@@ -13,14 +13,14 @@
   "edgeFiltering": false,
   "For3D": false,
   "frames": [
-    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"e8b5b0fa-77cb-4ae3-a7bf-6e24fd5160fb",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"3375707e-9adf-46b7-bfba-521123d0546d",},
   ],
   "gridX": 0,
   "gridY": 0,
   "height": 540,
   "HTile": false,
   "layers": [
-    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"88cc9bbb-46d8-4f85-a83d-9b1efc421737","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
+    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"00c5f57c-8ad3-47aa-a01f-8954fb74b2b0","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
   ],
   "nineSlice": null,
   "origin": 0,
@@ -54,7 +54,7 @@
     "timeUnits": 1,
     "tracks": [
       {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","builtinName":-1,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"1.0","Keyframes":[
-            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"e8b5b0fa-77cb-4ae3-a7bf-6e24fd5160fb","path":"sprites/entryway_endroomescape5/entryway_endroomescape5.yy",},},},"Disabled":false,"id":"108a9e30-7afa-49fc-93d9-eb57d9fb33a6","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"3375707e-9adf-46b7-bfba-521123d0546d","path":"sprites/entryway_endroomescape5/entryway_endroomescape5.yy",},},},"Disabled":false,"id":"bb5b706f-1cc6-49f2-a868-f9e33d20b92c","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
           ],},"modifiers":[],"spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange": null,

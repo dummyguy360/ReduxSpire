@@ -2,9 +2,9 @@
   "resourceType": "GMSprite",
   "resourceVersion": "1.0",
   "name": "_decompiled_ts_sucrose2",
-  "bbox_bottom": 1475,
+  "bbox_bottom": 1343,
   "bbox_left": 0,
-  "bbox_right": 1475,
+  "bbox_right": 1311,
   "bbox_top": 0,
   "bboxMode": 0,
   "collisionKind": 1,
@@ -13,14 +13,14 @@
   "edgeFiltering": false,
   "For3D": false,
   "frames": [
-    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"1fbfa7e3-57fe-4629-9e91-24756795c33c",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"67dae01f-0fe1-47e9-9c8b-0c9f3b3bbcd4",},
   ],
   "gridX": 0,
   "gridY": 0,
-  "height": 1512,
+  "height": 1344,
   "HTile": false,
   "layers": [
-    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"d443b9f4-5e58-4ea8-beac-ecc2131165a0","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
+    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"25173179-7547-413b-ba57-2e48c970829b","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
   ],
   "nineSlice": null,
   "origin": 0,
@@ -54,7 +54,7 @@
     "timeUnits": 1,
     "tracks": [
       {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"1.0","Keyframes":[
-            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"1fbfa7e3-57fe-4629-9e91-24756795c33c","path":"sprites/_decompiled_ts_sucrose2/_decompiled_ts_sucrose2.yy",},},},"Disabled":false,"id":"7082f30c-d54e-44b3-b581-70b3cd0a3a8d","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"67dae01f-0fe1-47e9-9c8b-0c9f3b3bbcd4","path":"sprites/_decompiled_ts_sucrose2/_decompiled_ts_sucrose2.yy",},},},"Disabled":false,"id":"c648371f-6099-4dd2-8152-5bc908e41973","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
           ],},"modifiers":[],"spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange": null,
@@ -70,5 +70,5 @@
   },
   "type": 0,
   "VTile": false,
-  "width": 1476,
+  "width": 1312,
 }

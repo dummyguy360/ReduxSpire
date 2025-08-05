@@ -1,4 +1,4 @@
-function scr_hurtplayer(arg0 = 370, arg1)
+function scr_hurtplayer(arg0 = obj_player, arg1)
 {
     if (!global.freezeframe && arg0.state != states.actor && arg0.state != states.parry && arg0.state != states.hurt)
     {

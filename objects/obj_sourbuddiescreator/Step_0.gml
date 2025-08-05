@@ -1,6 +1,6 @@
 var dist = point_in_rectangle(obj_player.x, obj_player.y, x - 400, y - 400, x + 400, y);
 
-if (dist && !solid_in_line(370, [367]))
+if (dist && !solid_in_line(obj_player, [obj_solid]))
 {
     if (sourbuddyspawn > 0)
     {

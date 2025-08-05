@@ -2081,9 +2081,9 @@
   "tileAnimationFrames": [],
   "tileAnimationSpeed": 1000000.0,
   "tileHeight": 32,
-  "tilehsep": 4,
-  "tilevsep": 4,
+  "tilehsep": 0,
+  "tilevsep": 0,
   "tileWidth": 32,
-  "tilexoff": 2,
-  "tileyoff": 2,
+  "tilexoff": 0,
+  "tileyoff": 0,
 }
