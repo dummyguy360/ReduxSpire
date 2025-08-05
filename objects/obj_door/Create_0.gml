@@ -4,5 +4,5 @@ targetDoor = "A";
 depth = 8;
 TrueVisible = true;
 lightIndex = 0;
-sprDoorlight = 831;
+sprDoorlight = spr_doorlight;
 sprite_index = spr_doorvisited;

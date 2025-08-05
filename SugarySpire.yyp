@@ -3975,7 +3975,6 @@
     {"id":{"name":"_decompiled_ts_mountain1_night","path":"sprites/_decompiled_ts_mountain1_night/_decompiled_ts_mountain1_night.yy",},},
     {"id":{"name":"_decompiled_ts_entrywayclouds","path":"sprites/_decompiled_ts_entrywayclouds/_decompiled_ts_entrywayclouds.yy",},},
     {"id":{"name":"_decompiled_ts_dance2","path":"sprites/_decompiled_ts_dance2/_decompiled_ts_dance2.yy",},},
-    {"id":{"name":"_GLOBAL_INIT","path":"scripts/_GLOBAL_INIT/_GLOBAL_INIT.yy",},},
   ],
   "RoomOrderNodes": [
     {"roomId":{"name":"rm_preinitializer","path":"rooms/rm_preinitializer/rm_preinitializer.yy",},},

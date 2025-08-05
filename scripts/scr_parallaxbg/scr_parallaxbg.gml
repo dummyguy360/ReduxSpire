@@ -1,10 +1,10 @@
+//Init
 global.bgSurfaceBuffer = -1;
-
 function scr_parallaxbg_init()
 {
-    var layernum = 0;
-    var a = layer_get_all();
-    var layers;
+    var layers, layernum = 0;
+    //Loop through all layers to find if they are a background layer or an asset layer
+	var a = layer_get_all();
     
     for (var i = 0; i < array_length(a); i++)
     {
@@ -13,16 +13,16 @@ function scr_parallaxbg_init()
         if (back_id != -1 && !layer_get_depth(a[i]) <= 0 && layer_get_visible(a[i]) == true)
             layers[layernum++] = a[i];
     }
-    
-    if (!layernum)
-        exit;
-    
-    var _f = function(arg0, arg1)
-    {
-        return -(layer_get_depth(arg0) - layer_get_depth(arg1));
-    };
-    
-    array_sort(layers, _f);
+	//If no layers are found get out
+	if (!layernum)
+	    return;
+	//Sort Array
+    var _f = function(elm1, elm2) 
+	{
+		return -(layer_get_depth(elm1) - layer_get_depth(elm2));
+	}
+	array_sort(layers, _f);
+	
     var bottom_id = layers[0];
     var top_id = layers[layernum - 1];
     
@@ -32,7 +32,7 @@ function scr_parallaxbg_init()
     layer_script_begin(bottom_id, scr_parallaxbg_start);
     layer_script_end(top_id, scr_parallaxbg_end);
 }
-
+//Start
 function scr_parallaxbg_start()
 {
     if (!surface_exists(global.parallaxbg_surface))
@@ -58,7 +58,7 @@ function scr_parallaxbg_start()
         }
     }
 }
-
+//End
 function scr_parallaxbg_end()
 {
     if (event_type == ev_draw && event_number == 0)

@@ -9,7 +9,12 @@ bg_x = array_create(10);
 bg_xscroll = [1, 0.66, 0.33, 0, 0, 0, 0, 0, 0, 0];
 bg_y = array_create(10);
 bg_yscroll = array_create(10, 0);
-details = [gate_createlayer(spr_default_startgate, 0), gate_createlayer(spr_default_startgate, 1), gate_createlayer(1451, 0, 1, 1)];
+details = 
+[
+	gate_createlayer(spr_default_startgate, 0), 
+	gate_createlayer(spr_default_startgate, 1), 
+	gate_createlayer(bg_thumbnail_cone, 0, 1, 1)
+];
 confecti_sprs[0] = 
 {
     sprite: spr_marshmellow_taunt,

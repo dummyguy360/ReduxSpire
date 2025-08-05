@@ -11,30 +11,36 @@ blue_aftimg = 0;
 mach_aftimg = 0;
 my_pal_surface = noone;
 my_pal_buffer = noone;
+
 my_palettes = [];
-new_palette("Default", c_white, 13150344);
-new_palette("Sugar", 8441896, 6066975);
-new_palette("Gremlin", 8446200, 1607896);
-new_palette("Golden", 1489391, 25527, 1489391, 25527, 25527, 1489391);
-new_palette("Purple", 16273560, 16273560);
-new_palette("Cream n' Chips", 1874, 13150344);
-new_palette("Valiant Hero", 1445, 13150344);
-new_palette("Dead Man's Treats", 1583, 13150344);
-new_palette("Candy Cane", 739, 13150344);
-new_palette("Sweet Apple", 816, 13150344);
-new_palette("Space Cream", 1702, 13150344);
-new_palette("Sourness", 1126, 13150344);
-new_palette("Neapolitan", 1657, 13150344);
-new_palette("Cookie Cutter", 1972, 13150344);
-new_palette("MissingTexture", 1677, 13150344);
-new_palette("Solid", 1762, 13150344);
-new_palette("Cotton Candy", 1788, 13150344);
+new_palette("Default", #ffffff, #88a8c8)
+new_palette("Sugar", #28d080, #1f935c)
+new_palette("Gremlin", #f8e080, #d88818)
+new_palette("Golden", #efb916, #b76300, #efb916, #b76300, #b76300, #efb916)
+new_palette("Purple", #9850f8, #9850f8)
+new_palette("Cream n' Chips", spr_pattern0, #88a8c8)
+new_palette("Valiant Hero", spr_pattern1, #88a8c8)
+new_palette("Dead Man's Treats", spr_pattern2, #88a8c8)
+new_palette("Candy Cane", spr_pattern3, #88a8c8)
+new_palette("Sweet Apple", spr_pattern4, #88a8c8)
+new_palette("Space Cream", spr_pattern5, #88a8c8)
+new_palette("Sourness", spr_pattern6, #88a8c8)
+new_palette("Neapolitan", spr_pattern7, #88a8c8)
+new_palette("Cookie Cutter", spr_pattern8, #88a8c8)
+new_palette("MissingTexture", spr_pattern9, #88a8c8)
+new_palette("Solid", spr_pattern10, #88a8c8)
+// found commented out in march, still not used in p rank
+// but the texture still exists, so you could add it
+// new_palette("Chocoa", spr_pattern11, #88a8c8)
+new_palette("Cotton Candy", spr_pattern12, #88A8C8);
+
 combo_title = noone;
 scr_initinput();
 scr_getinput();
-playerSound = audio_emitter_create();
+playerSound = audio_emitter_create(); //everything related to this was stolen from antonblast :(
+//Stored Stuff
 frozenstate = 0;
-frozenspriteindex = 311;
+frozenspriteindex = spr_file2;
 frozenimageindex = 0;
 frozenimagespeed = 0.35;
 frozenmovespeed = 0;
@@ -54,6 +60,7 @@ frozenalarm[7] = -1;
 frozenalarm[8] = -1;
 frozenalarm[9] = -1;
 frozenalarm[10] = -1;
+
 costumeBlock = noone;
 costumeBlockDetails = 0;
 costumegrabdelay = 10;
@@ -62,25 +69,34 @@ dummyBlock = noone;
 bombID = noone;
 shaketime = 3;
 breezecooldown = 25;
+
 secretPortal = false;
 is_inSecretPortal = false;
 global.dialogmsg = ds_queue_create();
+
 sourbuddycnt = 0;
 chuckcooldown = 120;
 secreteye = 0;
 ufovsp = 0;
+//Generic Input Buffer variable
 ridingmarsh = 0;
 input_buffer = 0;
+//Cone block stuff
 global.coneblock = false;
+//Sjumpcancel
 scale = 1;
 Sjumpcan_doublejump = true;
 firetrailbuffer = 0;
 playComboVariable = noone;
+//Variable that Resets contTrack_pos
 ResetMusic = false;
+//Variable that makes the Dashpad not suck
 Dashpad_buffer = 0;
+//Supertaunt
 supertauntbuffer = 300;
 supertaunteffect = noone;
 supertauntcharged = false;
+//Vertical hallway
 vertical = false;
 verticaloffset = 0;
 stateName = "";
@@ -103,7 +119,7 @@ crouchslipbuffer = 0;
 stop = 0;
 storedhsp = 0;
 depth = -7;
-movespeed = 19;
+movespeed = 19; //???
 jumpstop = 0;
 storedinhalebaddie = 0;
 visible = true;
@@ -138,6 +154,7 @@ flash = 0;
 kungfutrail = 5;
 walljump = false;
 walljump_buffer = 0;
+//Heateffect
 heataftereffect_id = noone;
 parryid = noone;
 global.key_inv = 0;
@@ -224,6 +241,7 @@ roomstartx = xstart;
 roomstarty = ystart;
 hallway = 0;
 box = 0;
+//pizzano variables
 airkung = 0;
 kungtime = 0;
 pummelani = 0;
@@ -241,13 +259,14 @@ sour_buddies = ds_list_create();
 sour_buddies_timer = 60;
 unlatchcount = 0;
 unlatchtimer = 0;
+//New Palette
 surf_width = 2;
 surf_height = 10;
 surf_pallete = -1;
 
 if (!surface_exists(surf_pallete))
     surf_pallete = surface_create(surf_width, surf_height);
-
+//CustomPaletteChoosyFILE
 actor = false;
 customsavedpalette = 1;
 oldcustomsavedpalette = 1;
@@ -270,6 +289,7 @@ playedjumpsound = 0;
 doublejump = 0;
 playerPrevState = 0;
 playerPrevSprite = spr_idle;
+//Achievment stuff
 kungaircount = 0;
 kungairtime = 0;
 disguisetimer = 0;
@@ -281,8 +301,9 @@ ufotimer = 0;
 ufomaxspeed = 0;
 additionalspeedvar = 0;
 pattern = false;
-patternspr = 1874;
+patternspr = spr_pattern0;
 patternnumb = 0;
+
 u_mask = shader_get_uniform(shd_pattern, "u_MaskColour");
 u_spr = shader_get_uniform(shd_pattern, "u_SprRect");
 u_pat = shader_get_uniform(shd_pattern, "u_PatRect");

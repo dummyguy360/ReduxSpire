@@ -91,36 +91,36 @@ if (showtext)
     }
     
     var _rank = ini_read_string("Ranks", string(level), 0);
-    var _rankspr = 375;
+    var _rankspr = spr_null;
     
     switch (_rank)
     {
         case "p":
-            _rankspr = 1398;
+            _rankspr = spr_rankbubble_pfilled;
             break;
         
         case "s":
-            _rankspr = 434;
+            _rankspr = spr_rankbubble_sfilled;
             break;
         
         case "a":
-            _rankspr = 701;
+            _rankspr = spr_rankbubble_a;
             break;
         
         case "b":
-            _rankspr = 1334;
+            _rankspr = spr_rankbubble_b;
             break;
         
         case "c":
-            _rankspr = 1003;
+            _rankspr = spr_rankbubble_c;
             break;
         
         case "d":
-            _rankspr = 1973;
+            _rankspr = spr_rankbubble_d;
             break;
         
         default:
-            _rankspr = 375;
+            _rankspr = spr_null;
             break;
     }
     

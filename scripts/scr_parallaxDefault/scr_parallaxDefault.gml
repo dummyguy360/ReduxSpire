@@ -1,4 +1,4 @@
-function scr_default_parallax(arg0 = false)
+function scr_default_parallax(overwrite = false)//arg is unused
 {
     scr_addParallaxLayer("Backgrounds_1", defaultParallax, [0.25, 0.25]);
     scr_addParallaxLayer("Assets_2BG1", defaultParallax, [0.25, 0.25]);
@@ -10,6 +10,7 @@ function scr_default_parallax(arg0 = false)
     scr_addParallaxLayer("Assets_2BG4", defaultParallax, [0.005, 0.005]);
     scr_addParallaxLayer("Backgrounds_5", defaultParallax, [0.0005, 0.0005]);
     scr_addParallaxLayer("Assets_2BG5", defaultParallax, [0.0005, 0.0005]);
+	
     scr_addParallaxLayer("Backgrounds_foregroundLow", defaultParallaxGround, [-0.15, -0.25]);
     scr_addParallaxLayer("Backgrounds_foreground", defaultParallax, [-0.15, -0.15]);
     scr_addParallaxLayer("Backgrounds_Ground1", defaultParallaxGround, [0.25, 0.25]);
@@ -41,7 +42,9 @@ function scr_default_parallax(arg0 = false)
     scr_addParallaxLayer("Assets_BG", defaultParallax, [0.1, 0.1]);
     scr_addParallaxLayer("Assets_BG1", defaultParallax, [0.05, 0.05]);
     scr_addParallaxLayer("Assets_BG2", defaultParallax, [0.1, 0.1]);
+	
     scr_addParallaxLayer("Assets_HBG", defaultParallax, [0.15, 0]);
+	
     scr_addParallaxLayer("Backgrounds_zigzag1", parallaxZigZagV, [5, 5]);
     scr_addParallaxLayer("Backgrounds_far2_zigzag", parallaxZigZagVFar, [0.15, 0.15]);
 }
