@@ -1,10 +1,10 @@
-if (sprite_index != spr_confectiboxopen && other.state == states.titlescreen)
+if (sprite_index != spr_confectiboxopen && other.state == thiefstate.grab)
 {
     with (other)
     {
         sprite_index = spr_creamthief_grab;
         image_index = 0;
-        state = states.frozen;
+        state = thiefstate.idle;
     }
     
     with (obj_creamThiefLoseTrigger)

@@ -24,13 +24,9 @@ if (global.gamePauseState == 0)
             rousr_dissonance_set_state(string(global.collect) + " Points | Rank " + string(global.rpcrank) + " | Lap " + string(global.lapcount));
     }
     else if (room == rank_room)
-    {
         rousr_dissonance_set_state("Rank " + string(global.rpcrank));
-    }
     else
-    {
         rousr_dissonance_set_state("");
-    }
     
     switch (obj_player.character)
     {

@@ -4,5 +4,5 @@ function scr_confecti_taunt()
     drawxscale = image_xscale;
     
     if (obj_player.sprite_index != obj_player.spr_player_taunt)
-        state = states.frozen;
+        state = confectistate.normal;
 }

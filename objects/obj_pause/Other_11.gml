@@ -17,6 +17,4 @@ if (global.levelname != "none")
     }
 }
 else
-{
     scr_sound(sound_enemythrow);
-}

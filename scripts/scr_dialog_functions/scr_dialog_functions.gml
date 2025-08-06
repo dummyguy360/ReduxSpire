@@ -10,11 +10,11 @@ function queue_dialogue(arg0, instant = false)
     
     with (obj_dialogue)
     {
-        if (obj_dialogue.state == states.normal)
-            obj_dialogue.state = states.frozen;
+        if (obj_dialogue.state == dialogstate.outro)
+            obj_dialogue.state = dialogstate.intro;
         
         if (instant)
-            obj_dialogue.state = states.titlescreen;
+            obj_dialogue.state = dialogstate.normal;
         
         obj_dialogue.curmsg = 0;
     }

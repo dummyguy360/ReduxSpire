@@ -1,6 +1,6 @@
 condition = function()
 {
-    return ds_list_find_index(global.saveroom, 113857) != -1;
+    return ds_list_find_index(global.saveroom, inst_40ABBBDF) != -1;
 };
 
 output = function()

@@ -27,7 +27,7 @@ if (global.hurtcounter >= global.hurtmilestone && global.hurtcounter >= 5)
     else
         character = "Pizzano";
     
-    scr_controlprompt("You have hurt " + string(character) + " " + string(global.hurtmilestone) + " times...", -4, 150);
+    scr_controlprompt("You have hurt " + string(character) + " " + string(global.hurtmilestone) + " times...", noone, 150);
     global.hurtmilestone += 5;
 }
 

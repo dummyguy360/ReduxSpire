@@ -10,13 +10,9 @@ function scr_confecti_normal()
                 sprite_index = spr_runpanic;
         }
         else if (global.panic == 0)
-        {
             sprite_index = spr_idle;
-        }
         else
-        {
             sprite_index = spr_panic;
-        }
     }
     
     if (obj_player.hsp == 0 && obj_player.state != states.door && obj_player.grounded && image_xscale == obj_player.xscale)
@@ -25,9 +21,7 @@ function scr_confecti_normal()
             magnitude += 0.5;
     }
     else if (magnitude > 0)
-    {
         magnitude -= 0.5;
-    }
     
     distance = image_xscale * magnitude;
     var _leader = noone;
@@ -67,7 +61,7 @@ function scr_confecti_normal()
     if (obj_player.state == states.backbreaker && obj_player.sprite_index == obj_player.spr_taunt && state != states.normal)
     {
         instance_create(x, y, obj_confectitaunt);
-        state = states.normal;
+        state = confectistate.taunt;
         image_index = choose(0, 1);
     }
 }

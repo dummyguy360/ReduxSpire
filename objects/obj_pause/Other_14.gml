@@ -1,18 +1,18 @@
 selected = 0;
-playerPauseSprite = 1113;
+playerPauseSprite = spr_pizzelle_pause;
 
 switch (obj_player.character)
 {
     case "N":
-        playerPauseSprite = 1476;
+        playerPauseSprite = spr_pizzano_pause;
         break;
     
     case "G":
-        playerPauseSprite = 1594;
+        playerPauseSprite = spr_gumbob_pause;
         break;
     
     case "C":
-        playerPauseSprite = 1113;
+        playerPauseSprite = spr_pizzelle_pause;
         break;
 }
 

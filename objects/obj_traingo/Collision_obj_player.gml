@@ -12,6 +12,6 @@ if (instance_exists(obj_train))
         
         vsp = 0;
         movespeed = 10;
-        state = states.normal;
+        state = trainstate.normal;
     }
 }

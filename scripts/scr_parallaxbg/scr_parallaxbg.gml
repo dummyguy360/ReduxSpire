@@ -5,7 +5,6 @@ function scr_parallaxbg_init()
     var layers, layernum = 0;
     //Loop through all layers to find if they are a background layer or an asset layer
 	var a = layer_get_all();
-    
     for (var i = 0; i < array_length(a); i++)
     {
         var back_id = layer_background_get_id_fixed(layer_get_name(a[i]));

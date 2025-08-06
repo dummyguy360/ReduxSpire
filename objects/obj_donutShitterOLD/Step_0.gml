@@ -1,6 +1,6 @@
 switch (state)
 {
-    case states.frozen:
+    case DONUTSHITTERSTATES.normal:
         if (donutNumber < 5)
         {
             if (place_meeting(x, y, par_donut))
@@ -12,7 +12,7 @@ switch (state)
                 {
                     for (var i = 0; i < _num; i++)
                     {
-                        with (ds_list_find_value(_list, i))
+                        with (_list[| i])
                         {
                             if (shattedBy != other.id)
                             {
@@ -42,7 +42,7 @@ switch (state)
         
         break;
     
-    case states.normal:
+    case DONUTSHITTERSTATES.shitting:
         if (sprite_index == spr_donutShitterSwallowing && animation_end())
         {
             image_index = 0;
@@ -68,7 +68,7 @@ switch (state)
             if (donutNumber <= 0 && animation_end())
             {
                 sprite_index = spr_donutShitter;
-                state = states.frozen;
+                state = DONUTSHITTERSTATES.normal;
             }
         }
         

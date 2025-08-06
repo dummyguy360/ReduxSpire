@@ -1,17 +1,17 @@
 //Functions - making sure
-global.ParallaxMap = ds_map_create();
+//global.ParallaxMap = ds_map_create();//this causes parallax to not work, so dont add it back
 
 /// @desc This function passes a layer and an associated function.
 /// @param {any*} lay_id ID or name of the layer to store.
 /// @param {any*} function Function to be run along side the layer.
 /// @param {array} [args] Arguments to be passed to the function.
 
-function scr_addParallaxLayer(lay_id, func, args = []) 
+function scr_addParallaxLayer(lay_id, _func, _args = []) 
 {
 	global.ParallaxMap[? lay_id] = 
 	{ 
-		func : func, 
-		args : args 
+		func : _func, 
+		args : _args 
 	};
 	return;
 }

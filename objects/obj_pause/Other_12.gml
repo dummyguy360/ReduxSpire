@@ -46,6 +46,4 @@ else if (room == hub_w1 || room == outer_room1 || room == outer_room2 || room ==
     }
 }
 else
-{
     scr_sound(sound_enemythrow);
-}

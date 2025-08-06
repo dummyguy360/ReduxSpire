@@ -1,3 +1,4 @@
+#region Enums
 enum states 
 {
 	frozen = 0,
@@ -203,6 +204,7 @@ enum cardtype
 	shake = 7,
 	none = 8,
 }
+#endregion
 
 function scr_playerrespawn(usetechdiff = true)
 {
@@ -238,7 +240,7 @@ function scr_playerrespawn(usetechdiff = true)
                 instance_create(roomstartx, roomstarty, obj_poofeffect);
             }
             
-            if (instance_exists(obj_train))
+            if (instance_exists(obj_train)) //Train Restart
             {
                 with (obj_train)
                 {
@@ -249,7 +251,7 @@ function scr_playerrespawn(usetechdiff = true)
                     sprite_index = spr_spray;
                     vsp = 0;
                     movespeed = 10;
-                    state = states.frozen;
+                    state = trainstate.idle;
                 }
             }
             

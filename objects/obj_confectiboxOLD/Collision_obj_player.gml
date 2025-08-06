@@ -4,7 +4,7 @@ if (sprite_index != spr_confectiboxopen)
     {
         hsp = 0;
         vsp = 0;
-        state = states.frozen;
+        state = thiefstate.idle;
         sprite_index = spr_creamthief_lose;
     }
     

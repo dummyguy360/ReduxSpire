@@ -1,20 +1,23 @@
+/// @description Obtain Information on the BG Layers
+
+//Foreground Depth Fixing
 var lay_id = layer_get_id("Backgrounds_foreground");
 layer_depth(lay_id, -50);
 lay_id = layer_get_id("Backgrounds_foregroundLow");
 layer_depth(lay_id, -50);
+
+#region Loop through all layers to find if they are a Background layer or Asset Layer
 layerNum = 0;
 assetNum = 0;
 asset_sprites = 0;
 layerArray = [];
-var a = layer_get_all();
-var i = 0;
-var z = 0;
+var a = layer_get_all(), z = 0;
 
-while (i < array_length(a))
+for (var i = 0; i < array_length(a); i++)
 {
     var back_id = layer_background_get_id(a[i]);
     var asset_id = layer_asset_get_id_fixed(a[i]);
-    
+    // If background layer, add to background layer array.
     if ((back_id != -1 || asset_id != -1) && layer_get_visible(a[i]))
     {
         layerArray[z++] = 
@@ -38,8 +41,8 @@ while (i < array_length(a))
             var name = layer_get_name(a[i]);
             var vals = [0, 0];
             
-            if (!is_undefined(ds_map_find_value(global.ParallaxMap, name)))
-                vals = ds_map_find_value(global.ParallaxMap, name).args;
+            if (!is_undefined(global.ParallaxMap[? name]))
+                vals = global.ParallaxMap[? name].args;
             
             var all_assets = layer_get_all_elements(a[i]);
             
@@ -65,10 +68,13 @@ while (i < array_length(a))
             }
         }
     }
-    
-    i++;
 }
+#endregion
 
+#region //stupid filter stufgf lol
 var filt_id = layer_get_id("Effect_1");
 layer_depth(filt_id, -200);
+#endregion
+
+//Setup Surface Stuff
 scr_parallaxbg_init();

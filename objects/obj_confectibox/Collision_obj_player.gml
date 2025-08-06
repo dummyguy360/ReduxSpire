@@ -4,7 +4,7 @@ if (sprite_index != spr_confectiboxopen)
     {
         hsp = 0;
         vsp = 0;
-        state = states.frozen;
+        state = thiefstate.idle;
         sprite_index = spr_creamthief_lose;
     }
     
@@ -22,10 +22,10 @@ if (sprite_index != spr_confectiboxopen)
         helptimer = -1;
         
         if (global.toppintotal < 5)
-            scr_controlprompt("[spr_promptfont]You are missing " + string(5 - global.toppintotal) + " confecti!", -4, 200);
+            scr_controlprompt("[spr_promptfont]You are missing " + string(5 - global.toppintotal) + " confecti!", noone, 200);
         
         if (global.toppintotal == 5)
-            scr_controlprompt("[spr_promptfont]You have found all 5 confecti!", -4, 200);
+            scr_controlprompt("[spr_promptfont]You have found all 5 confecti!", noone, 200);
         
         obj_tv.showtext = 1;
         obj_tv.alarm[0] = 200;

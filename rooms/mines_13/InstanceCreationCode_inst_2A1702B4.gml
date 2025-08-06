@@ -11,6 +11,7 @@ output = function()
 {
     if (obj_player.x >= obj_train.x)
     {
+		//Fail Condition
         with (obj_player)
         {
             sprite_index = spr_player_mach3hitwall;
@@ -37,12 +38,13 @@ output = function()
             state = states.bump;
         }
     }
+	//Win Condition
     else
     {
-        with (108720)
+        with (inst_67382D88)//Spawn Collectables
             alarm[1] = 1;
         
-        with (108723)
+        with (inst_2FD4AD0B)//Destroy Wall
             instance_destroy();
         
         has_won = true;

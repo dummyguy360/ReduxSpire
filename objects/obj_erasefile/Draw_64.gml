@@ -7,9 +7,7 @@ draw_text(480, 190, "ARE YOU SURE YOU WANT\nTO ERASE YOUR SAVE FILE!");
 draw_option(400, 300, "NO", optionselected == 0);
 
 if (optionselected == 1)
-{
     draw_text_colour(560, 300, "YES", c_red, c_red, c_red, c_red, 1);
-}
 else
 {
     draw_text_colour(560, 300, "YES", c_black, c_black, c_black, c_black, 1);

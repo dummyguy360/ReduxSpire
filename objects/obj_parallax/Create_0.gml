@@ -1,3 +1,6 @@
+/// @description Initialize Required Variables
+
+//Remove Duplicate obj_parallax if any - making sure
 if (instance_number(obj_parallax) > 1)
 {
     var _first = instance_find(obj_parallax, 0);
@@ -8,11 +11,10 @@ if (instance_number(obj_parallax) > 1)
         exit;
     }
 }
-
+//Initialize array
 var i = 5;
-
 repeat (5)
-    layers[i--] = -4;
+    layers[i--] = noone;
 
 asset_layers = array_create(5, undefined);
 asset_sprites = array_create(5, undefined);

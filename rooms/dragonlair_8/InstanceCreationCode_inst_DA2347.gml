@@ -1,5 +1,5 @@
 output = function()
 {
-    with (110090)
+    with (inst_43B8F872)
         instance_destroy();
 };
