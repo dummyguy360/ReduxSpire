@@ -1,8 +1,9 @@
-function scr_destroy_tile(arg0)
+function scr_destroy_tile(_layer)
 {
-    var lay_id = layer_get_id(arg0);
+    var lay_id = layer_get_id(_layer);
     var map_id = layer_tilemap_get_id(lay_id);
     
+	//Better and Scalable Secret Destroyables
     for (var i = 0; i < floor(sprite_width / tilemap_get_tile_width(map_id)); i++)
     {
         for (var z = 0; z < floor(sprite_height / tilemap_get_tile_height(map_id)); z++)

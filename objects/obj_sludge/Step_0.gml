@@ -19,6 +19,4 @@ if (grounded)
     }
 }
 else
-{
     once = false;
-}

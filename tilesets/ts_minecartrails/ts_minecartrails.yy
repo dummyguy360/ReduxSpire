@@ -16,8 +16,8 @@
     "path": "folders/Tile Sets.yy",
   },
   "spriteId": {
-    "name": "_decompiled_ts_minecartrails",
-    "path": "sprites/_decompiled_ts_minecartrails/_decompiled_ts_minecartrails.yy",
+    "name": "spr_ts_minecartrails",
+    "path": "sprites/spr_ts_minecartrails/spr_ts_minecartrails.yy",
   },
   "spriteNoExport": true,
   "textureGroupId": {

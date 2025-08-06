@@ -1,9 +1,9 @@
-function defaultSecretState(arg0 = undefined)
+function defaultSecretState(o = undefined)
 {
     var _p = obj_player;
     
-    if (!is_undefined(arg0))
-        _p = arg0;
+    if (!is_undefined(o))
+        _p = o;
     
     return _p.state;
 }

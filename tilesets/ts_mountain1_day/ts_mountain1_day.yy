@@ -16,8 +16,8 @@
     "path": "folders/Tile Sets.yy",
   },
   "spriteId": {
-    "name": "_decompiled_ts_mountain1_day",
-    "path": "sprites/_decompiled_ts_mountain1_day/_decompiled_ts_mountain1_day.yy",
+    "name": "spr_ts_mountain1_day",
+    "path": "sprites/spr_ts_mountain1_day/spr_ts_mountain1_day.yy",
   },
   "spriteNoExport": true,
   "textureGroupId": {

@@ -30,9 +30,7 @@ function state_player_grab()
                 movespeed = 6;
         }
         else
-        {
             movespeed = 0;
-        }
         
         if (movespeed > 6)
             movespeed -= 0.1;
@@ -50,9 +48,7 @@ function state_player_grab()
                 image_speed = 0.6;
         }
         else
-        {
             image_speed = 0.35;
-        }
     }
     
     if (!grounded)
@@ -209,7 +205,7 @@ function state_player_grab()
         {
             with (baddiegrabbedID)
             {
-                state = states.cheesepep;
+                state = baddiestate.stun;
                 image_index = 0;
                 x = other.x;
                 y = other.y;

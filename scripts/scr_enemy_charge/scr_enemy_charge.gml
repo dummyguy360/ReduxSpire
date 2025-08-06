@@ -6,7 +6,7 @@ function scr_enemy_charge()
         
         if (place_meeting(x + hsp, y, obj_solid))
         {
-            state = states.cheesepep;
+            state = baddiestate.stun;
             stunned = 100;
         }
     }

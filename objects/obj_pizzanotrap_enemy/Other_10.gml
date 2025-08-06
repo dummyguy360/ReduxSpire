@@ -21,7 +21,7 @@ with (instance_create(x, y, enemy))
         invincible = false;
         visible = true;
         flash = true;
-        state = states.cheesepep;
+        state = baddiestate.stun;
         sprite_index = stunfallspr;
         image_index = 0;
     }

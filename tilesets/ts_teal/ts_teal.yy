@@ -16,8 +16,8 @@
     "path": "folders/Tile Sets.yy",
   },
   "spriteId": {
-    "name": "_decompiled_ts_teal",
-    "path": "sprites/_decompiled_ts_teal/_decompiled_ts_teal.yy",
+    "name": "spr_ts_teal",
+    "path": "sprites/spr_ts_teal/spr_ts_teal.yy",
   },
   "spriteNoExport": true,
   "textureGroupId": {

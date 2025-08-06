@@ -3,9 +3,7 @@ function scr_enemy_stun()
     stunned--;
     
     if (!thrown && !throw_hit)
-    {
         sprite_index = stunfallspr;
-    }
     else
     {
         sprite_index = deadspr;
@@ -87,9 +85,7 @@ function scr_enemy_stun()
         if (!eliteEnemy || eliteHP <= 0)
         {
             if (destroyable)
-            {
                 instance_destroy();
-            }
             else
             {
                 repeat (2)
@@ -110,7 +106,7 @@ function scr_enemy_stun()
         {
             hsp *= 1.5;
             stunned = 0;
-            state = states.Nhookshot;
+            state = baddiestate.walk;
         }
     }
     else if (f != throw_hit && f)
@@ -139,34 +135,34 @@ function scr_enemy_stun()
         if (object_index != obj_charger && object_index != obj_swedishfish)
         {
             movespeed = 1;
-            state = states.Nhookshot;
+            state = baddiestate.walk;
             sprite_index = walkspr;
         }
         else if (object_index == obj_babybear)
         {
             movespeed = 5;
-            state = states.Nhookshot;
+            state = baddiestate.walk;
             sprite_index = walkspr;
             vsp -= 8;
         }
         else if (object_index == obj_fizz || object_index == obj_froth)
         {
             movespeed = 5;
-            state = states.bombpep;
+            state = baddiestate.float;
             sprite_index = walkspr;
             vsp -= 8;
         }
         else if (object_index == obj_creamtheifOLD)
         {
             movespeed = 2;
-            state = states.grabbing;
+            state = baddiestate.theif;
             sprite_index = walkspr;
             theifsubstate = 0;
         }
         else
         {
             sprite_index = idlespr;
-            state = states.frozen;
+            state = baddiestate.idle;
         }
     }
 }

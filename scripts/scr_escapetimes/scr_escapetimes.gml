@@ -1,9 +1,9 @@
-function scr_escapetimes(arg0 = room)
+function scr_escapetimes(_room = room)
 {
     var seconds = 0;
     var minutes = 0;
     
-    switch (arg0)
+    switch (_room)
     {
         case 35:
             minutes = 4;
@@ -72,12 +72,12 @@ function scr_escapetimes(arg0 = room)
     return time_array;
 }
 
-function scr_laptimes(arg0 = room)
+function scr_laptimes(_room = room)
 {
     var seconds = 0;
     var minutes = 0;
     
-    switch (arg0)
+    switch (_room)
     {
         case 153:
             minutes = 0;

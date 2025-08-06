@@ -70,7 +70,7 @@ function scr_grab_boss()
         }
     }
     
-    state = states.cheesepepstick;
+    state = baddiestate.grabbed;
     image_xscale = -obj_player.xscale;
     sprite_index = grabbedspr;
 }

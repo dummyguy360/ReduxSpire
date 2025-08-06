@@ -16,7 +16,7 @@ function scr_enemy_slugparry()
         {
             substate = 0;
             bombreset = 100;
-            state = states.Nhookshot;
+            state = baddiestate.walk;
             sprite_index = spr_meloncoolwalk;
             movespeed = 1;
         }
@@ -32,7 +32,7 @@ function scr_enemy_slugparry()
         {
             substate = 0;
             bombreset = 100;
-            state = states.Nhookshot;
+            state = baddiestate.walk;
             sprite_index = spr_meloncoolwalk;
             movespeed = 1;
         }

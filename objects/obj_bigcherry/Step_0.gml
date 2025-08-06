@@ -1,4 +1,4 @@
-if (state == states.cheesepep && stunned > 40 && birdcreated == 0)
+if (state == baddiestate.stun && stunned > 40 && birdcreated == 0)
 {
     birdcreated = 1;
     
@@ -6,22 +6,22 @@ if (state == states.cheesepep && stunned > 40 && birdcreated == 0)
         ID = other.id;
 }
 
-if (state != states.cheesepep && state != states.pistolaim)
+if (state != baddiestate.stun && state != baddiestate.frozen)
     birdcreated = 0;
 
 if (flash == 1 && alarm[2] <= 0)
     alarm[2] = 0.15 * room_speed;
 
-if (state != states.cheesepepstick)
+if (state != baddiestate.grabbed)
     depth = 0;
 
-if (state != states.cheesepep && state != states.pistolaim)
+if (state != baddiestate.stun && state != baddiestate.frozen)
     thrown = 0;
 
-if (state == states.Nhookshot)
+if (state == baddiestate.walk)
     movespeed = 4;
 
-if (boundbox == 0 && state != states.portal)
+if (boundbox == 0 && state != baddiestate.inhaled)
 {
     with (instance_create(x, y, obj_baddiecollisionbox, 
     {

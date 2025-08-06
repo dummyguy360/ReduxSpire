@@ -8,9 +8,7 @@ function scr_enemy_slugjump()
         movespeed = 0;
     }
     else
-    {
         movespeed = approach(movespeed, 2, 1);
-    }
     
     if (animation_end() && sprite_index == spr_sluggy_jumpstart)
     {
@@ -30,7 +28,7 @@ function scr_enemy_slugjump()
     
     if (sprite_index == spr_sluggy_land && animation_end())
     {
-        state = states.Nhookshot;
+        state = baddiestate.walk;
         sprite_index = walkspr;
         movespeed = 1;
     }

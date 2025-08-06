@@ -10,7 +10,7 @@ if (bosshpindex > sprite_get_number(bosshpspr))
 
 switch (state)
 {
-    case states.highjump:
+    case baddiestate.intro:
         scr_bosscontroller_intro();
         break;
     

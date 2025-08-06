@@ -1,7 +1,7 @@
-if (point_in_circle(x, y, obj_player.x + (75 * obj_player.xscale), obj_player.y, 125) && obj_player.inhaling && state != states.portal)
-    state = states.portal;
+if (point_in_circle(x, y, obj_player.x + (75 * obj_player.xscale), obj_player.y, 125) && obj_player.inhaling && state != baddiestate.inhaled)
+    state = baddiestate.inhaled;
 
-if (state == states.cheesepep && stunned > 40 && birdcreated == 0)
+if (state == baddiestate.stun && stunned > 40 && birdcreated == 0)
 {
     birdcreated = 1;
     
@@ -9,7 +9,7 @@ if (state == states.cheesepep && stunned > 40 && birdcreated == 0)
         ID = other.id;
 }
 
-if (state != states.cheesepep && state != states.pistolaim)
+if (state != baddiestate.stun && state != baddiestate.frozen)
     birdcreated = 0;
 
 if (bombreset > 0)
@@ -18,14 +18,14 @@ if (bombreset > 0)
 scr_commonenemy();
 scr_scareenemy();
 
-if (((obj_player.x > (x - 400) && obj_player.x < (x + 400)) && (y <= (obj_player.y + 60) && y >= (obj_player.y - 60))) && obj_player.state != states.cotton && obj_player.state != states.cottondrill && obj_player.state != states.door && obj_player.state != states.cottonroll && obj_player.state != 112)
+if (((obj_player.x > (x - 400) && obj_player.x < (x + 400)) && (y <= (obj_player.y + 60) && y >= (obj_player.y - 60))) && obj_player.state != states.cotton && obj_player.state != states.cottondrill && obj_player.state != states.door && obj_player.state != states.cottonroll && obj_player.state != states.changing)
 {
-    if (state != states.boxxedpep && state != states.cheeseball && bombreset <= 0 && obj_player.state != states.cotton)
+    if (state != baddiestate.scared && state != baddiestate.Throw && bombreset <= 0 && obj_player.state != states.cotton)
     {
-        if (state == states.Nhookshot || state == states.frozen)
+        if (state == baddiestate.walk || state == baddiestate.idle)
         {
             image_index = 0;
-            state = states.cheeseball;
+            state = baddiestate.Throw;
             
             if (x != obj_player.x)
                 image_xscale = -sign(x - obj_player.x);
@@ -38,13 +38,13 @@ if (((obj_player.x > (x - 400) && obj_player.x < (x + 400)) && (y <= (obj_player
 if (flash == 1 && alarm[2] <= 0)
     alarm[2] = 0.15 * room_speed;
 
-if (state != states.cheesepepstick)
+if (state != baddiestate.grabbed)
     depth = 0;
 
-if (state != states.cheesepep && state != states.pistolaim)
+if (state != baddiestate.stun && state != baddiestate.frozen)
     thrown = 0;
 
-if (boundbox == 0 && state != states.portal)
+if (boundbox == 0 && state != baddiestate.inhaled)
 {
     with (instance_create(x, y, obj_baddiecollisionbox, 
     {

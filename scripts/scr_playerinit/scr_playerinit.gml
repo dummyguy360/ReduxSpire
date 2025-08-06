@@ -1,65 +1,3 @@
-function scr_playerrespawn(arg0 = true)
-{
-    if (!arg0)
-    {
-        if (state != states.gameover && state != states.actor && state != states.fling && !place_meeting(x, y, obj_vertical_hallway) && !instance_exists(obj_fadeout) && room != outer_room2 && room != timesuproom && room != rank_room)
-        {
-            var _checkpoint = instance_nearest(x, y, obj_checkpoint_invis);
-            var _checkpointReal = noone;
-            
-            with (obj_checkpoint)
-            {
-                if (Checkpointactivated == true)
-                    _checkpointReal = id;
-            }
-            
-            if (instance_exists(_checkpoint) && _checkpoint.Checkpointactivated == true)
-            {
-                x = _checkpoint.x;
-                y = _checkpoint.y;
-                instance_create(_checkpoint.x, _checkpoint.y, obj_poofeffect);
-            }
-            else if (instance_exists(_checkpointReal) && _checkpointReal.Checkpointactivated == true)
-            {
-                x = _checkpointReal.x;
-                y = _checkpointReal.y;
-                instance_create(_checkpointReal.x, _checkpointReal.y, obj_poofeffect);
-            }
-            else
-            {
-                x = roomstartx;
-                y = roomstarty;
-                instance_create(roomstartx, roomstarty, obj_poofeffect);
-            }
-            
-            if (instance_exists(obj_train))
-            {
-                with (obj_train)
-                {
-                    x = xstart;
-                    y = ystart;
-                    image_xscale = start_xscale;
-                    image_index = 0;
-                    sprite_index = spr_spray;
-                    vsp = 0;
-                    movespeed = 10;
-                    state = states.frozen;
-                }
-            }
-            
-            state = states.hurt;
-            alarm[8] = 30;
-            alarm[7] = 60;
-            hurted = 1;
-            sprite_index = spr_hurt;
-            movespeed = 0;
-            vsp = -3;
-        }
-    }
-    else if (!instance_exists(obj_techdiff))
-        instance_create(x, y, obj_techdiff);
-}
-
 enum states 
 {
 	frozen = 0,
@@ -264,6 +202,68 @@ enum cardtype
 	waving = 6,
 	shake = 7,
 	none = 8,
+}
+
+function scr_playerrespawn(usetechdiff = true)
+{
+    if (!usetechdiff)
+    {
+        if (state != states.gameover && state != states.actor && state != states.fling && !place_meeting(x, y, obj_vertical_hallway) && !instance_exists(obj_fadeout) && room != outer_room2 && room != timesuproom && room != rank_room)
+        {
+            var _checkpoint = instance_nearest(x, y, obj_checkpoint_invis);
+            var _checkpointReal = noone;
+            
+            with (obj_checkpoint)
+            {
+                if (Checkpointactivated == true)
+                    _checkpointReal = id;
+            }
+            
+            if (instance_exists(_checkpoint) && _checkpoint.Checkpointactivated == true)
+            {
+                x = _checkpoint.x;
+                y = _checkpoint.y;
+                instance_create(_checkpoint.x, _checkpoint.y, obj_poofeffect);
+            }
+            else if (instance_exists(_checkpointReal) && _checkpointReal.Checkpointactivated == true)
+            {
+                x = _checkpointReal.x;
+                y = _checkpointReal.y;
+                instance_create(_checkpointReal.x, _checkpointReal.y, obj_poofeffect);
+            }
+            else
+            {
+                x = roomstartx;
+                y = roomstarty;
+                instance_create(roomstartx, roomstarty, obj_poofeffect);
+            }
+            
+            if (instance_exists(obj_train))
+            {
+                with (obj_train)
+                {
+                    x = xstart;
+                    y = ystart;
+                    image_xscale = start_xscale;
+                    image_index = 0;
+                    sprite_index = spr_spray;
+                    vsp = 0;
+                    movespeed = 10;
+                    state = states.frozen;
+                }
+            }
+            
+            state = states.hurt;
+            alarm[8] = 30;
+            alarm[7] = 60;
+            hurted = 1;
+            sprite_index = spr_hurt;
+            movespeed = 0;
+            vsp = -3;
+        }
+    }
+    else if (!instance_exists(obj_techdiff))
+        instance_create(x, y, obj_techdiff);
 }
 
 function scr_playerstate()

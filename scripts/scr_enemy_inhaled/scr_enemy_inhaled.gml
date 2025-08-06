@@ -9,7 +9,7 @@ function scr_enemy_inhaled()
     
     if (obj_player.state != states.coneboyinhale)
     {
-        state = states.cheesepep;
+        state = baddiestate.stun;
         grav = 0.35;
         boundbox = 1;
     }

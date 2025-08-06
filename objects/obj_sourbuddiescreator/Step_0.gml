@@ -3,9 +3,7 @@ var dist = point_in_rectangle(obj_player.x, obj_player.y, x - 400, y - 400, x + 
 if (dist && !solid_in_line(obj_player, [obj_solid]))
 {
     if (sourbuddyspawn > 0)
-    {
         sourbuddyspawn--;
-    }
     else
     {
         with (instance_create(x, y, obj_sourbuddy))
@@ -21,6 +19,4 @@ if (dist && !solid_in_line(obj_player, [obj_solid]))
     }
 }
 else
-{
     sourbuddyspawn = 20;
-}

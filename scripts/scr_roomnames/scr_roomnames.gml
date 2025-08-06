@@ -1,8 +1,8 @@
-function scr_roomnames(arg0 = room)
+function scr_roomnames(room_id = room)
 {
     var room_name = "NO ROOMNAME FOUND-1265";
     
-    switch (arg0)
+    switch (room_id)
     {
         case 63:
             room_name = "MISSING ROOM LMAO";

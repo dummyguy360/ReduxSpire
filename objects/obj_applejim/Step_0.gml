@@ -1,19 +1,19 @@
 bashcooldown--;
 
-if (state == states.Nhookshot)
+if (state == baddiestate.walk)
     movespeed = 0;
 
-if (state == states.handstandjump)
+if (state == baddiestate.applejimBash)
     movespeed = 5;
 
 if (bashcooldown == 0)
 {
     sprite_index = spr_applejim_charge;
-    state = states.handstandjump;
+    state = baddiestate.applejimBash;
     bashcooldown = 200;
 }
 
-if (state == states.cheesepep && stunned > 40 && birdcreated == 0)
+if (state == baddiestate.stun && stunned > 40 && birdcreated == 0)
 {
     birdcreated = 1;
     
@@ -24,13 +24,13 @@ if (state == states.cheesepep && stunned > 40 && birdcreated == 0)
 if (hp == 0)
     instance_destroy();
 
-if (state != states.cheesepep && state != states.pistolaim)
+if (state != baddiestate.stun && state != baddiestate.frozen)
     birdcreated = 0;
 
 if (flash == 1 && alarm[2] <= 0)
     alarm[2] = 0.15 * room_speed;
 
-if (state != states.cheesepepstick)
+if (state != baddiestate.grabbed)
     depth = 0;
 
 instance_destroy(obj_baddiethrow);

@@ -5,9 +5,7 @@ function scr_enemy_cherrywait()
     vsp = 20;
     
     if (global.panic == 0)
-    {
         sprite_index = spr_charcherry_wait;
-    }
     else if (global.panic == 1 && grounded && sprite_index != spr_charcherry_popout && ((obj_player.x > (x - 400) && obj_player.x < (x + 400)) && (y <= (obj_player.y + 60) && y >= (obj_player.y - 60))))
     {
         image_index = 0;
@@ -16,7 +14,7 @@ function scr_enemy_cherrywait()
     
     if (sprite_index == spr_charcherry_popout && animation_end())
     {
-        state = states.chainsawbump;
+        state = baddiestate.cherryactive;
         sprite_index = spr_charcherry_run;
         movespeed = 8;
         vsp = 0;

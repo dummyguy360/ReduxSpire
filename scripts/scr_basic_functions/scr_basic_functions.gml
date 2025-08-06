@@ -1,6 +1,11 @@
-function approach(arg0, arg1, arg2)
+function approach(value, target, amount)
 {
-    return arg0 + clamp(arg1 - arg0, -arg2, arg2);
+	// approach(value, target, amount)
+	/// @description Approach the target provided
+	/// @param value The value to be changed.
+	/// @param target The value targetted.
+	/// @param amount The amount to change.
+    return value + clamp(target - value, -amount, amount);
 }
 
 function instance_random(arg0)
@@ -24,15 +29,23 @@ function get_panic()
     return global.panic && (!global.secret_room || (instance_exists(obj_tv) && obj_tv.sucroseTimer));
 }
 
-function chance(arg0)
+function chance(percent)
 {
-    return arg0 > random(1);
+	/// @description Returns true or false depending on RNG
+	/// @param percent 
+    return percent > random(1);
 }
 
-function wave(arg0, arg1, arg2, arg3, arg4 = current_time)
+/// @description Returns a value that will wave back and forth between [from-to] over [duration] seconds
+/// @param from 	
+/// @param to
+/// @param duration
+/// @param offset
+/// @param time
+function wave(from, to, duration, offset, time = current_time)
 {
-    var a4 = (arg1 - arg0) * 0.5;
-    return arg0 + a4 + (sin((((arg4 * 0.001) + (arg2 * arg3)) / arg2) * (2 * pi)) * a4);
+    var a4 = (to - from) * 0.5;
+    return from + a4 + (sin((((time * 0.001) + (duration * offset)) / duration) * (2 * pi)) * a4);
 }
 
 function loop(arg0, arg1, arg2, arg3 = 0, arg4 = current_time / 1000)
@@ -47,23 +60,37 @@ function loop(arg0, arg1, arg2, arg3 = 0, arg4 = current_time / 1000)
 
 function wrap(arg0, arg1, arg2)
 {
+	/// @description wrap(value, min, max)
+	/// @function wrap
+	/// @param value The value to wrap into the bounds
+	/// @param min Minimum bound, inclusive
+	/// @param max Maximum bound, inclusive
+	// Returns the value wrapped to the range [min, max] (min and max can be swapped).
+	// Calls floor() on reals, but GML's modulo is doing something weird and original_wrap just hangs indefinitely on some values anyways so oh well.
+
     var value = floor(arg0);
     var _min = floor(min(arg1, arg2));
     var _max = floor(max(arg1, arg2));
-    var range = (_max - _min) + 1;
+    var range = (_max - _min) + 1; // + 1 is because max bound is inclusive
     return ((((value - _min) % range) + range) % range) + _min;
 }
 
-function animation_end(arg0 = floor(image_index), arg1 = image_number - 1)
+/// @description animation_end(value, endpoint)
+/// @function animation_end
+/// @param value The Value to check
+/// @param endpoint The Value considered the end
+function animation_end(value = floor(image_index), endpoint = image_number - 1)
 {
-    return arg0 >= arg1;
+    return value >= endpoint;
 }
 
-function rank_checker(arg0 = global.rank)
+/// @description Returns Rank Value
+/// @function rank_checker
+function rank_checker(rank = global.rank)
 {
     var value = 0;
     
-    switch (arg0)
+    switch (rank)
     {
         case "p":
             value = 5;
@@ -97,45 +124,62 @@ function rank_checker(arg0 = global.rank)
     return value;
 }
 
-function string_extract(arg0, arg1, arg2)
+/// string_extract(str,sep,index)
+//
+//  Returns the element at the given index within a string of elements.
+//
+//  eg. string_extract("cat,dog,mouse", "," ,1) == "dog"
+//
+//      str         elements, string
+//      sep         element separator, string
+//      index       element to return, [0..N-1], real
+//
+/// GMLscripts.com/license
+function string_extract(str, sep, index)
 {
-    var len = string_length(arg1) - 1;
+    var len = string_length(sep) - 1;
     
-    repeat (arg2)
-        arg0 = string_delete(arg0, 1, string_pos(arg1, arg0) + len);
+    repeat (index)
+        str = string_delete(str, 1, string_pos(sep, str) + len);
     
-    arg0 = string_delete(arg0, string_pos(arg1, arg0), string_length(arg0));
-    return arg0;
+    str = string_delete(str, string_pos(sep, str), string_length(str));
+    return str;
 }
 
-function create_small_number(arg0, arg1, arg2, arg3 = 0)
+/// @function create_small_number(x, y, number, color)
+/// @description creates a small number effect	
+/// @param x
+/// @param y 
+/// @param number 
+/// @param color
+function create_small_number(_x, _y, _number, _color = 0)
 {
-    var _smallnumber = instance_create(arg0, arg1, obj_smallnumber);
+    var _smallnumber = instance_create(_x, _y, obj_smallnumber);
     
     with (_smallnumber)
     {
-        number = string(arg2);
-        color = arg3;
+        number = string(_number);
+        color = _color;
     }
     
     return _smallnumber;
 }
 
-function string_get_split(arg0, arg1)
+function string_get_split(input, delimiter)
 {
     var slot = 0;
-    var splits = [];
-    var str2 = "";
+    var splits = []; //array to hold all splits
+    var str2 = ""; //var to hold the current split we're working on building
     
-    for (var i = 1; i < (string_length(arg0) + 1); i++)
+    for (var i = 1; i < (string_length(input) + 1); i++)
     {
-        var currStr = string_char_at(arg0, i);
+        var currStr = string_char_at(input, i);
         
-        if (currStr == arg1)
+        if (currStr == delimiter)
         {
-            if (str2 != "")
+            if (str2 != "")// Make sure we don't include the delimiter
             {
-                splits[slot] = str2;
+                splits[slot] = str2;//add this split to the array of all splits
                 slot++;
             }
             
@@ -147,61 +191,93 @@ function string_get_split(arg0, arg1)
             splits[slot] = str2;
         }
     }
-    
+    // If we ended on our delimiter character, include an empty string as the final split
     if (str2 == "")
         splits[slot] = str2;
     
     return splits;
 }
 
-function draw_sprite_ext_flash(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8)
+/// @function draw_sprite_ext_flash
+/// @param sprite
+/// @param subimg
+/// @param x 
+/// @param y
+/// @param xscale
+/// @param yscale
+/// @param rot
+/// @param col
+/// @param alpha
+function draw_sprite_ext_flash(spr, ind, xx, yy, xsc, ysc, ang, col, alp) 
 {
-    gpu_set_fog(true, arg7, 0, 1);
-    draw_sprite_ext(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
+	gpu_set_fog(true, col, 0, 1);
+    draw_sprite_ext(spr, ind, xx, yy, xsc, ysc, ang, col, alp);
     gpu_set_fog(false, c_black, 0, 0);
-    exit;
+    return;
 }
 
-function draw_self_flash(arg0)
+/// @function draw_self_flash
+/// @param col
+function draw_self_flash(col)
 {
-    gpu_set_fog(true, arg0, 0, 1);
+    gpu_set_fog(true, col, 0, 1);
     draw_self();
     gpu_set_fog(false, c_black, 0, 0);
     exit;
 }
 
-function string_contains(arg0, arg1)
+/// @desc This function returns if whether or not a certain string contains the given substring.
+/// @param {string} str The String.
+/// @param {string} substr The substring to look for in the string.
+/// @returns {bool}
+function string_contains(str, substr)
 {
-    if (string_length(arg1) > string_length(arg0))
+    if (string_length(substr) > string_length(str))
         return false;
     
-    return string_pos(arg1, arg0) != 0;
+    return (string_pos(substr, str) != 0);
 }
 
-function string_startswith(arg0, arg1)
+/// @desc This function returns if whether or not a certain string begins with the substring.
+/// @param {string} str The String.
+/// @param {string} substr The substring to look for in the string.
+/// @returns {bool}
+function string_startswith(str, substr)
 {
-    if (string_length(arg1) > string_length(arg0))
+    if (string_length(substr) > string_length(str))
         return false;
     
-    return string_pos(arg1, arg0) == 1;
+    return (string_pos(substr, str) == 1);
 }
 
-function string_endswith(arg0, arg1)
+/// @desc This function returns if whether or not a certain string ends with the substring.
+/// @param {string} str The String.
+/// @param {string} substr The substring to look for in the string.
+/// @returns {bool}
+function string_endswith(str, substr)
 {
-    if (string_length(arg1) > string_length(arg0))
+    if (string_length(substr) > string_length(str))
         return false;
     
-    return string_pos(arg1, arg0) == ((string_length(arg0) - string_length(arg1)) + 1);
+    return (string_pos(substr, str) == ((string_length(str) - string_length(substr)) + 1));
 }
 
-function time_in_frames(arg0, arg1)
+/// @desc   Converts Minutes and Seconds to Frames for Global.Fill
+/// @param  {real}      mins          Minutes to convert
+/// @param  {real}      secs          Seconds to convert
+/// @returns {real}
+function time_in_frames(mins, secs)
 {
-    return ((arg0 * 60) + arg1) * 60;
+    return ((mins * 60) + secs) * 60;
 }
 
-function onBeat(arg0, arg1 = false)
+/// @desc   Returns true if on beat 
+/// @param  {real}      bpm          BPM to sync to
+/// @param  {bool}      use_fps      Whether the beat sync changes with Game FPS
+/// @returns {bool}
+function onBeat(bpm, use_fps = false)//use_fps is unused
 {
-    var bps = arg0 / 60;
+    var bps = bpm / 60;
     var spb = 1 / bps;
     var songTimer = audio_sound_get_track_position(global.music);
     var _fps = 60;
@@ -218,10 +294,10 @@ function onBeat(arg0, arg1 = false)
     return false;
 }
 
-function solid_in_line(arg0, arg1 = noone, arg2 = self)
+function solid_in_line(target, exclude_array = noone, start_obj = self)//start_obj is unused
 {
     var _list = ds_list_create();
-    var set_list = collision_line_list(x, y, arg0.x, arg0.y, par_collision, true, true, _list, true);
+    var set_list = collision_line_list(x, y, target.x, target.y, par_collision, true, true, _list, true);
     
     if (set_list > 0)
     {
@@ -230,13 +306,13 @@ function solid_in_line(arg0, arg1 = noone, arg2 = self)
             var obj = ds_list_find_value(_list, i);
             show_debug_message(obj.object_index);
             
-            if (arg1 != noone)
+            if (exclude_array != noone)
             {
                 var found_obj = false;
                 
-                for (var b = 0; b < array_length(arg1); b++)
+                for (var b = 0; b < array_length(exclude_array); b++)
                 {
-                    var arr = arg1[b];
+                    var arr = exclude_array[b];
                     show_debug_message(arr);
                     
                     if (obj.object_index == arr)
@@ -274,22 +350,22 @@ function angle_rotate(arg0, arg1, arg2)
     return arg1;
 }
 
-function gate_createlayer(arg0, arg1, arg2 = 0, arg3 = 0, arg4 = 0)
+function gate_createlayer(sprite, index, xscroll = 0, yscroll = 0, imgspd = 0)
 {
     return 
     {
-        drawSpr: arg0,
-        drawIndex: arg1,
+        drawSpr: sprite,
+        drawIndex: index,
         drawXscale: 1,
         drawYscale: 1,
-        drawImgSpd: arg4,
+        drawImgSpd: imgspd,
         drawAlpha: 1,
         drawBlend: c_white,
         drawRot: 0,
         drawx: 0,
         drawy: 0,
-        scroll_x: arg2,
-        scroll_y: arg3,
+        scroll_x: xscroll,
+        scroll_y: yscroll,
         func: noone
     };
 }

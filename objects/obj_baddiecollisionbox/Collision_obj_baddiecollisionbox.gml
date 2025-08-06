@@ -3,9 +3,9 @@ if (!instance_exists(baddieID) || !instance_exists(other.baddieID))
 
 with (other.id)
 {
-    if ((instance_exists(baddieID) && !other.baddieID.invincible && instance_exists(other.baddieID) && baddieID != other.id) && baddieID.state != states.cheesepepstick)
+    if ((instance_exists(baddieID) && !other.baddieID.invincible && instance_exists(other.baddieID) && baddieID != other.id) && baddieID.state != baddiestate.grabbed)
     {
-        if (baddieID.state == states.cheesepep && baddieID.thrown == 1)
+        if (baddieID.state == baddiestate.stun && baddieID.thrown == 1)
             instance_destroy(other.baddieID);
     }
 }

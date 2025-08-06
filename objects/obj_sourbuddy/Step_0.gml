@@ -1,4 +1,4 @@
-if (state == states.Nhookshot)
+if (state == baddiestate.walk)
 {
     scr_collision();
     sprite_index = sourbuddywalkspr;
@@ -10,13 +10,13 @@ if (state == states.Nhookshot)
     
     if (place_meeting(x, y, obj_player))
     {
-        state = states.cheeseball;
+        state = baddiestate.Throw;
         persistent = true;
         ds_list_add(obj_player.sour_buddies, id);
     }
 }
 
-if (state == states.cheeseball)
+if (state == baddiestate.Throw)
 {
     x = obj_player.x + (offsetx * image_xscale);
     y = obj_player.y + offsety;
@@ -25,9 +25,7 @@ if (state == states.cheeseball)
     sprite_index = sourbuddyattachspr;
     
     if (shake_delay > 0)
-    {
         shake_delay--;
-    }
     else
     {
         shakemag = random_range(-4, 4);

@@ -1,4 +1,4 @@
-if (state == states.cheesepep && stunned > 40 && birdcreated == 0)
+if (state == baddiestate.stun && stunned > 40 && birdcreated == 0)
 {
     birdcreated = 1;
     
@@ -6,18 +6,18 @@ if (state == states.cheesepep && stunned > 40 && birdcreated == 0)
         ID = other.id;
 }
 
-if (state != states.cheesepep && state != states.pistolaim)
+if (state != baddiestate.stun && state != baddiestate.frozen)
     birdcreated = 0;
 
 if (bombreset > 0)
     bombreset--;
 
-if (state != states.cheeseball && bombreset == 0)
+if (state != baddiestate.Throw && bombreset == 0)
 {
-    if (state == states.Nhookshot || state == states.frozen)
+    if (state == baddiestate.walk || state == baddiestate.idle)
     {
         image_index = 0;
-        state = states.cheeseball;
+        state = baddiestate.Throw;
         sprite_index = spr_throw;
     }
 }
@@ -25,10 +25,10 @@ if (state != states.cheeseball && bombreset == 0)
 if (flash == 1 && alarm[2] <= 0)
     alarm[2] = 0.15 * room_speed;
 
-if (state != states.cheesepepstick)
+if (state != baddiestate.grabbed)
     depth = 0;
 
-if (state != states.cheesepep && state != states.pistolaim)
+if (state != baddiestate.stun && state != baddiestate.frozen)
     thrown = 0;
 
 if (boundbox == 0)

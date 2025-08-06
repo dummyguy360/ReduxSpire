@@ -9,8 +9,6 @@ if (squashedx == true)
         squashedx = false;
 }
 else if (squashedx == false)
-{
     squashvalx = approach(squashvalx, 0, 0.05);
-}
 
 scr_collide();

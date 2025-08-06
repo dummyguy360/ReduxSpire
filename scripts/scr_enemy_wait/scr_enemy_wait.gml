@@ -26,7 +26,7 @@ function scr_enemy_panicWait()
                 invincible = false;
                 visible = true;
                 flash = true;
-                state = states.cheesepep;
+                state = baddiestate.stun;
                 sprite_index = stunfallspr;
                 image_index = 0;
             }
@@ -53,18 +53,18 @@ function scr_enemy_secretWait()
         squashvalx = 0;
         stunned = 3;
         vsp = -8;
-        state = states.cheesepep;
+        state = baddiestate.stun;
         sprite_index = walkspr;
     }
 }
 
-function scr_enemyDestroyableCheck(arg0 = xstart, arg1 = ystart)
+function scr_enemyDestroyableCheck(xx = xstart, yy = ystart)
 {
-    if (place_meeting(arg0, arg1, obj_bigdestructibles))
+    if (place_meeting(xx, yy, obj_bigdestructibles))
     {
-        xstart = arg0;
-        ystart = arg1;
-        state = states.knightpepslopes;
+        xstart = xx;
+        ystart = yy;
+        state = baddiestate.secretwait;
         return true;
     }
     

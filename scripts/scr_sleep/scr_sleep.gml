@@ -1,16 +1,14 @@
-function scr_sleep(arg0 = undefined)
+function scr_sleep(amount = undefined)
 {
     with (obj_camera)
     {
         if (global.hitstunalarm <= -1 && !global.freezeframe)
         {
-            if (is_undefined(arg0))
-            {
+            if (is_undefined(amount))
                 freezetype = false;
-            }
             else
             {
-                freezeval = arg0;
+                freezeval = amount;
                 freezetype = true;
             }
             

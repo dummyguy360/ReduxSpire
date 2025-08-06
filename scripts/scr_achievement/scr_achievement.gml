@@ -1,5 +1,6 @@
 function scr_hatScript()
 {
+	//Hat Achievements
     ini_open("saveData.ini");
     var entryway = ini_read_string("Ranks", "entryway", "none");
     var steamy = ini_read_string("Ranks", "steamy", "none");
@@ -22,6 +23,7 @@ function scr_hatScript()
         ini_write_real("HatsUnlock", "World1", true);
     
     ini_close();
+	//Perma unlock hats for use in D3
     ini_open("optionData.ini");
     
     if (ini_read_real("HatsUnlock", "Entryway", false) == false && entryway == "s")
@@ -44,6 +46,7 @@ function scr_hatScript()
 
 function scr_normalAchievments()
 {
+	//Hat Achievements
     ini_open("optionData.ini");
     
     if (global.kungairtime == 0 && kungairtime >= 50)

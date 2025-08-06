@@ -16,8 +16,8 @@
     "path": "folders/Tile Sets.yy",
   },
   "spriteId": {
-    "name": "_decompiled_ts_clock",
-    "path": "sprites/_decompiled_ts_clock/_decompiled_ts_clock.yy",
+    "name": "spr_ts_clock",
+    "path": "sprites/spr_ts_clock/spr_ts_clock.yy",
   },
   "spriteNoExport": true,
   "textureGroupId": {

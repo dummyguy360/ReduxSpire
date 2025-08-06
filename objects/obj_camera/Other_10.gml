@@ -32,7 +32,7 @@ if (global.hitstunEnabled != 0)
         
         with (obj_baddie)
         {
-            if (state != states.pistolaim)
+            if (state != baddiestate.frozen)
             {
                 frozenstate = state;
                 frozenspriteindex = sprite_index;
@@ -42,13 +42,13 @@ if (global.hitstunEnabled != 0)
                 frozengrav = grav;
                 frozenhsp = hsp;
                 frozenvsp = vsp;
-                state = states.pistolaim;
+                state = baddiestate.frozen;
             }
         }
         
         with (obj_iceblock)
         {
-            if (state != states.pistolaim)
+            if (state != baddiestate.frozen)
             {
                 frozenstate = state;
                 frozenspriteindex = sprite_index;
@@ -58,7 +58,7 @@ if (global.hitstunEnabled != 0)
                 frozengrav = grav;
                 frozenhsp = hsp;
                 frozenvsp = vsp;
-                state = states.pistolaim;
+                state = baddiestate.frozen;
             }
         }
         

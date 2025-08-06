@@ -1,6 +1,6 @@
 if (global.panic == 1)
 {
-    if (state != states.secondjump)
+    if (state != baddiestate.cherrywait)
     {
         instance_destroy();
         instance_create(x, y, obj_bombexplosion);
@@ -11,7 +11,5 @@ if (global.panic == 1)
         instance_create(x, y, obj_bombexplosioncherry);
     }
     else if (other.instakillmove && sprite_index == spr_charcherry_popout)
-    {
         instance_destroy();
-    }
 }

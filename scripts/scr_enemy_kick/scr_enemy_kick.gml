@@ -17,7 +17,7 @@ function scr_enemy_kick()
     
     if (floor(image_index) == (image_number - 1))
     {
-        state = states.Nhookshot;
+        state = baddiestate.walk;
         sprite_index = spr_crackerkicker_walk;
         movespeed = 1;
     }

@@ -33,8 +33,8 @@
   "nineSlice": null,
   "origin": 4,
   "parent": {
-    "name": "Sprites",
-    "path": "folders/Sprites.yy",
+    "name": "Added in P rank",
+    "path": "folders/Sprites/Added in P rank.yy",
   },
   "preMultiplyAlpha": false,
   "sequence": {
@@ -61,7 +61,7 @@
     "showBackdropImage": false,
     "timeUnits": 1,
     "tracks": [
-      {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","builtinName":-1,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"1.0","Keyframes":[
+      {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"1.0","Keyframes":[
             {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"d33c20e6-18cd-445b-9dd3-3def83996de5","path":"sprites/spr_tvbgescape/spr_tvbgescape.yy",},},},"Disabled":false,"id":"3130ce0f-6c9e-491f-b4c9-3e1e9da5d1a3","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
             {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"a082b922-b7cf-4fd3-8890-9165fff553e5","path":"sprites/spr_tvbgescape/spr_tvbgescape.yy",},},},"Disabled":false,"id":"5f9b884f-9c5f-4c3b-9622-8e51dd43f5c5","IsCreationKey":false,"Key":1.0,"Length":1.0,"Stretch":false,},
             {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"54f39420-e707-48a9-b1a6-0a8b797f6f94","path":"sprites/spr_tvbgescape/spr_tvbgescape.yy",},},},"Disabled":false,"id":"9219bfc9-1deb-4fc0-8928-4ca9bd16b0b8","IsCreationKey":false,"Key":2.0,"Length":1.0,"Stretch":false,},

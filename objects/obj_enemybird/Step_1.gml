@@ -1,2 +1,2 @@
-if (!instance_exists(ID) || ID.state != states.cheesepep)
+if (!instance_exists(ID) || ID.state != baddiestate.stun)
     instance_destroy();

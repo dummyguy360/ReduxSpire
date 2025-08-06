@@ -1,9 +1,9 @@
 movespeed = 5;
 
-if (point_in_circle(x, y, obj_player.x + (75 * obj_player.xscale), obj_player.y, 125) && obj_player.inhaling && state != states.portal)
-    state = states.portal;
+if (point_in_circle(x, y, obj_player.x + (75 * obj_player.xscale), obj_player.y, 125) && obj_player.inhaling && state != baddiestate.inhaled)
+    state = baddiestate.inhaled;
 
-if (state == states.cheesepep && stunned > 40 && birdcreated == 0)
+if (state == baddiestate.stun && stunned > 40 && birdcreated == 0)
 {
     birdcreated = 1;
     
@@ -11,16 +11,16 @@ if (state == states.cheesepep && stunned > 40 && birdcreated == 0)
         ID = other.id;
 }
 
-if (state != states.cheesepep && state != states.pistolaim)
+if (state != baddiestate.stun && state != baddiestate.frozen)
     birdcreated = 0;
 
 if (flash == 1 && alarm[2] <= 0)
     alarm[2] = 0.15 * room_speed;
 
-if (state != states.cheesepepstick)
+if (state != baddiestate.grabbed)
     depth = 0;
 
-if (state != states.cheesepep && state != states.pistolaim)
+if (state != baddiestate.stun && state != baddiestate.frozen)
     thrown = 0;
 
 if (ragereset > 0)
@@ -28,9 +28,9 @@ if (ragereset > 0)
 
 if (point_in_rectangle(obj_player.x, obj_player.y, x - 200, y - 50, x + 200, y + 50) && obj_player.state != states.door && obj_player.state != states.comingoutdoor)
 {
-    if (state != states.stunned && state == states.Nhookshot && ragereset <= 0)
+    if (state != baddiestate.rage && state == baddiestate.walk && ragereset <= 0)
     {
-        state = states.stunned;
+        state = baddiestate.rage;
         sprite_index = ragespr;
         
         if (x != obj_player.x)
@@ -45,7 +45,7 @@ if (point_in_rectangle(obj_player.x, obj_player.y, x - 200, y - 50, x + 200, y +
     }
 }
 
-if (boundbox == 0 && state != states.portal)
+if (boundbox == 0 && state != baddiestate.inhaled)
 {
     with (instance_create(x, y, obj_baddiecollisionbox, 
     {
@@ -59,7 +59,7 @@ if (boundbox == 0 && state != states.portal)
     }
 }
 
-if (hitboxcreate == 0 && animation_end(undefined, 10) && state == states.stunned)
+if (hitboxcreate == 0 && animation_end(undefined, 10) && state == baddiestate.rage)
 {
     hitboxcreate = 1;
     
@@ -75,7 +75,7 @@ if (hitboxcreate == 0 && animation_end(undefined, 10) && state == states.stunned
     }
 }
 
-if (grounded && state != states.stunned)
+if (grounded && state != baddiestate.rage)
     scr_scareenemy();
 
 scr_commonenemy();

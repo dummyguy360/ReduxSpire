@@ -1,3 +1,6 @@
+/// @function								scr_sound(sound...)
+/// @param {Asset.GMSound}  sound					The soundeffect to play
+/// @description							Plays soundeffect.
 function scr_sound()
 {
     var snd = audio_play_sound(argument[irandom(argument_count - 1)], 1, false);
@@ -5,6 +8,9 @@ function scr_sound()
     return snd;
 }
 
+/// @function								scr_soundloop(sound...)
+/// @param {Asset.GMSound}  sound					The soundeffect to play
+/// @description							Plays soundeffect but looped.
 function scr_soundloop()
 {
     var snd = audio_play_sound(argument[irandom(argument_count - 1)], 1, true);
@@ -12,6 +18,9 @@ function scr_soundloop()
     return snd;
 }
 
+/// @function								scr_dialogue(sound...)
+/// @param {asset}  sound					The sound to play
+/// @description							Plays dialogue.
 function scr_dialogue()
 {
     var snd = audio_play_sound(argument[irandom(argument_count - 1)], 1, false);
@@ -19,16 +28,24 @@ function scr_dialogue()
     return snd;
 }
 
-function scr_music(arg0, arg1 = 0, arg2 = undefined)
+/// @function								scr_music(sound, loop_begin, loop_end)
+/// @param {real}  sound					The Music to play
+/// @param {real}  loop_begin_inSeconds		Where the loop starts
+/// @param {real}  loop_end_inSeconds		Where the loop ends
+/// @description							Plays music.
+function scr_music(snd, loop_begin = 0, loop_end = undefined)// so it actually does jack shit
 {
-    var _snd = audio_play_sound(arg0, 10, true);
+    var _snd = audio_play_sound(snd, 10, true);
     audio_sound_gain(_snd, global.musicVolume, 0);
     return _snd;
 }
 
-function scr_musicnoloop(arg0)
+/// @function								scr_musicnoloop(sound)
+/// @param {real}  sound					The Music to play
+/// @description							Plays music with no loops.
+function scr_musicnoloop(snd)
 {
-    global.music = audio_play_sound(arg0, 10, false);
+    global.music = audio_play_sound(snd, 10, false);
     audio_sound_gain(global.music, global.musicVolume, 0);
     return global.music;
 }
@@ -48,34 +65,33 @@ function audio_stop_all_music()
     }
 }
 
-function force_song(arg0, arg1, arg2 = true, arg3 = 0, arg4 = undefined)
+function force_song(_song, _secret_song, reset_on_room_change = true, _loop_begin = 0, _loop_end = undefined)
 {
     with (obj_music)
     {
         room_details = 
         {
             rm: devroom,
-            song: arg0,
-            secret_song: arg1,
+            song: _song,
+            secret_song: _secret_song,
             continuous: false,
-            loop_begin: arg3,
-            loop_end: arg4
+            loop_begin: _loop_begin,
+            loop_end: _loop_end
         };
         ignore_change = true;
-        hard_force = arg2;
+        hard_force = reset_on_room_change;
         unforce_continuous = true;
         event_perform(ev_other, ev_room_start);
     }
-    
-    exit;
+    return;
 }
 
-function scr_get_music_loop(arg0)
+function scr_get_music_loop(snd)
 {
-    if (!audio_is_playing(arg0))
+    if (!audio_is_playing(snd))
         return 0;
     
-    var file = asset_get_index(audio_get_name(arg0));
+    var file = asset_get_index(audio_get_name(snd));
     
     switch (file)
     {
@@ -83,7 +99,7 @@ function scr_get_music_loop(arg0)
             return 0;
             break;
         
-        case 53:
+        case mu_sucrose:
             return 8.15;
             break;
     }

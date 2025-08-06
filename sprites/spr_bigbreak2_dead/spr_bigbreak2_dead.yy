@@ -33,8 +33,8 @@
   "nineSlice": null,
   "origin": 4,
   "parent": {
-    "name": "Sprites",
-    "path": "folders/Sprites.yy",
+    "name": "Added in P rank",
+    "path": "folders/Sprites/Added in P rank.yy",
   },
   "preMultiplyAlpha": false,
   "sequence": {
@@ -61,7 +61,7 @@
     "showBackdropImage": false,
     "timeUnits": 1,
     "tracks": [
-      {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","builtinName":-1,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"1.0","Keyframes":[
+      {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"1.0","Keyframes":[
             {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"f7a1968e-0f04-4782-a0bd-44daf80bbbbc","path":"sprites/spr_bigbreak2_dead/spr_bigbreak2_dead.yy",},},},"Disabled":false,"id":"dc3555fb-8dc9-439a-889c-27cdef8a8b7c","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
             {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"2f2a13ea-0361-4cf9-ab06-f3666cc45967","path":"sprites/spr_bigbreak2_dead/spr_bigbreak2_dead.yy",},},},"Disabled":false,"id":"beb17aa0-5b72-481f-b098-97ec701cacae","IsCreationKey":false,"Key":1.0,"Length":1.0,"Stretch":false,},
             {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"c297d54f-2b2d-43b5-b8a9-40e65f0a506e","path":"sprites/spr_bigbreak2_dead/spr_bigbreak2_dead.yy",},},},"Disabled":false,"id":"cceeddcf-4883-4219-94b7-da6dfe1f489d","IsCreationKey":false,"Key":2.0,"Length":1.0,"Stretch":false,},

@@ -9,5 +9,5 @@ else
     image_index = 0;
     hsp = 0;
     bombreset = 0;
-    state = states.cheeseball;
+    state = baddiestate.Throw;
 }

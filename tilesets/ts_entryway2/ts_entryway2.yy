@@ -16,8 +16,8 @@
     "path": "folders/Tile Sets.yy",
   },
   "spriteId": {
-    "name": "_decompiled_ts_entryway2",
-    "path": "sprites/_decompiled_ts_entryway2/_decompiled_ts_entryway2.yy",
+    "name": "spr_ts_entryway2",
+    "path": "sprites/spr_ts_entryway2/spr_ts_entryway2.yy",
   },
   "spriteNoExport": true,
   "textureGroupId": {

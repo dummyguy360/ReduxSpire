@@ -1,7 +1,7 @@
-if (point_in_circle(x, y, obj_player.x + (75 * obj_player.xscale), obj_player.y, 125) && obj_player.inhaling && state != states.portal)
-    state = states.portal;
+if (point_in_circle(x, y, obj_player.x + (75 * obj_player.xscale), obj_player.y, 125) && obj_player.inhaling && state != baddiestate.inhaled)
+    state = baddiestate.inhaled;
 
-if (state == states.cheesepep && stunned > 40 && birdcreated == 0)
+if (state == baddiestate.stun && stunned > 40 && birdcreated == 0)
 {
     birdcreated = 1;
     
@@ -9,19 +9,19 @@ if (state == states.cheesepep && stunned > 40 && birdcreated == 0)
         ID = other.id;
 }
 
-if (state != states.cheesepep && state != states.pistolaim)
+if (state != baddiestate.stun && state != baddiestate.frozen)
     birdcreated = 0;
 
 if (flash == 1 && alarm[2] <= 0)
     alarm[2] = 0.15 * room_speed;
 
-if (state != states.cheesepepstick)
+if (state != baddiestate.grabbed)
     depth = 0;
 
-if (state != states.cheesepep && state != states.pistolaim)
+if (state != baddiestate.stun && state != baddiestate.frozen)
     thrown = 0;
 
-if (boundbox == 0 && state != states.portal)
+if (boundbox == 0 && state != baddiestate.inhaled)
 {
     with (instance_create(x, y, obj_baddiecollisionbox, 
     {
@@ -38,23 +38,23 @@ if (boundbox == 0 && state != states.portal)
 if (bombreset > 0)
     bombreset--;
 
-if (state == states.cheesepep)
+if (state == baddiestate.stun)
     grav = 0.5;
 else
     grav = 0;
 
-if (state == states.Nhookshot)
-    state = states.bombpep;
+if (state == baddiestate.walk)
+    state = baddiestate.float;
 
 scr_commonenemy();
 
-if (state != states.bombpep || substate == 0)
+if (state != baddiestate.float || substate == 0)
     scr_scareenemy();
 
-if (state != states.bombpep)
+if (state != baddiestate.float)
     substate = 0;
 
-if (place_meeting(x, y + 1, obj_player) && state == states.bombpep && substate == 1 && sprite_index == spr_snowclouddiveboil)
+if (place_meeting(x, y + 1, obj_player) && state == baddiestate.float && substate == 1 && sprite_index == spr_snowclouddiveboil)
 {
     with (obj_player)
     {

@@ -52,7 +52,7 @@ function scr_enemy_rage()
                 
                 if (animation_end())
                 {
-                    state = states.Nhookshot;
+                    state = baddiestate.walk;
                     movespeed = 1;
                     bombreset = 200;
                 }
@@ -68,7 +68,7 @@ function scr_enemy_rage()
             
             if (animation_end())
             {
-                state = states.Nhookshot;
+                state = baddiestate.walk;
                 sprite_index = walkspr;
             }
             
@@ -82,7 +82,7 @@ function scr_enemy_rage()
             
             if (movespeed <= 0)
             {
-                state = states.Nhookshot;
+                state = baddiestate.walk;
                 sprite_index = walkspr;
                 movespeed = 1;
                 hsp = 0;

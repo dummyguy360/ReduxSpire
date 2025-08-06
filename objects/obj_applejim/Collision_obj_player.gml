@@ -1,12 +1,12 @@
-if (obj_player.state == states.handstandjump && state != states.cheesepep && state != states.handstandjump)
+if (obj_player.state == states.handstandjump && state != baddiestate.stun && state != baddiestate.applejimBash)
 {
-    state = states.cheesepep;
+    state = baddiestate.stun;
     obj_player.state = states.normal;
     hp -= 1;
     stunned = 100;
 }
 
-if (state == states.handstandjump)
+if (state == baddiestate.applejimBash)
 {
     with (obj_player)
     {

@@ -29,7 +29,7 @@ with (obj_baddie)
         draw_x = _drawx + (46 * squashvaly);
         draw_y = _drawy + (46 * squashvalx);
         
-        if (object_index == obj_pillarenem && state == states.cheesepepstick)
+        if (object_index == obj_pillarenem && state == baddiestate.grabbed)
             draw_y -= 75;
         
         pal_swap_set(spr_palette, paletteselect, false);

@@ -30,9 +30,7 @@ if (get_panic() && !global.freezeframe)
         global.greyscalefade = approach(global.greyscalefade, 0.45, 0.005);
     }
     else
-    {
         global.greyscalefade = approach(global.greyscalefade, 0, 0.005);
-    }
     
     if (global.screentilt)
         camera_set_view_angle(view_camera[0], scr_sin(3.5 * clamp(global.wave / global.maxwave, 0, 1), 65 - (5 * clamp(global.wave / global.maxwave, 0, 1))));
@@ -162,13 +160,9 @@ if (instance_exists(obj_player) && (obj_player.state != states.timesup && obj_pl
             chargecamera = approach(chargecamera, _targetcharge, _tspeed);
         }
         else if (_player.state == states.machslide)
-        {
             chargecamera = approach(chargecamera, 0, 10);
-        }
         else
-        {
             chargecamera = approach(chargecamera, 0, 6);
-        }
     }
     
     _cam_x += chargecamera;
@@ -209,21 +203,13 @@ else
 Collectshake = approach(Collectshake, 0, 20 / room_speed);
 
 if (global.collect < global.crank)
-{
     global.currentrank = "D";
-}
 else if (global.collect < global.brank)
-{
     global.currentrank = "C";
-}
 else if (global.collect < global.arank)
-{
     global.currentrank = "B";
-}
 else if (global.collect < global.srank)
-{
     global.currentrank = "A";
-}
 else if (global.collect >= global.srank)
 {
     if (global.combolost == 0 && global.secretfound > 2 && global.lapcount >= 1 && global.treasure)

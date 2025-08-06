@@ -6,10 +6,8 @@ if (instance_exists(ID))
     image_index = ID.image_index;
     var _x = x + (sign(image_xscale) * 150);
     
-    if (place_meeting(x, y, obj_player) && ID.alarm[3] < 0 && ID.state != states.cheeseball && !ID.alarmed)
+    if (place_meeting(x, y, obj_player) && ID.alarm[3] < 0 && ID.state != baddiestate.Throw && !ID.alarmed)
         ID.alarm[3] = 60;
 }
 else
-{
     instance_destroy();
-}

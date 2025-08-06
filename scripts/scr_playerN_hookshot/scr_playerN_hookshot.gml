@@ -46,7 +46,7 @@ function scr_playerN_hookshot()
             if (grounded && bbox_in_camera(view_camera[0]))
             {
                 image_index = 0;
-                state = states.frozen;
+                state = baddiestate.idle;
                 vsp = -7;
                 hsp = 0;
             }
@@ -64,9 +64,7 @@ function scr_playerN_hookshot()
             movespeed = 8;
     }
     else
-    {
         movespeed = 0;
-    }
     
     image_speed = 0.35;
 }

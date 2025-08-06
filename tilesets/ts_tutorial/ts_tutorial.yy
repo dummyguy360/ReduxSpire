@@ -16,8 +16,8 @@
     "path": "folders/Tile Sets.yy",
   },
   "spriteId": {
-    "name": "_decompiled_ts_tutorial",
-    "path": "sprites/_decompiled_ts_tutorial/_decompiled_ts_tutorial.yy",
+    "name": "spr_ts_tutorial",
+    "path": "sprites/spr_ts_tutorial/spr_ts_tutorial.yy",
   },
   "spriteNoExport": true,
   "textureGroupId": {

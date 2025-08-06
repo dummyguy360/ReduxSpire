@@ -16,8 +16,8 @@
     "path": "folders/Tile Sets.yy",
   },
   "spriteId": {
-    "name": "_decompiled_ts_bee",
-    "path": "sprites/_decompiled_ts_bee/_decompiled_ts_bee.yy",
+    "name": "spr_ts_bee",
+    "path": "sprites/spr_ts_bee/spr_ts_bee.yy",
   },
   "spriteNoExport": true,
   "textureGroupId": {

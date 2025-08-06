@@ -21,12 +21,12 @@ function scr_enemy_throw()
             case obj_fizz:
             case obj_froth:
             case obj_conedrone:
-                state = states.bombpep;
+                state = baddiestate.float;
                 sprite_index = walkspr;
                 break;
             
             default:
-                state = states.Nhookshot;
+                state = baddiestate.walk;
                 sprite_index = walkspr;
                 break;
         }

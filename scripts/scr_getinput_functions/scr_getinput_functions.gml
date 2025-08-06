@@ -1,5 +1,6 @@
 function scr_getinput()
 {
+	#region Setup Variables
     key_up = false;
     key_up2 = false;
     key_right = false;
@@ -23,10 +24,11 @@ function scr_getinput()
     key_start2 = false;
     key_escape = false;
     stickpressed = false;
-    
+	#endregion
+    //Stop If Console open
     if (global.shellactivate)
         exit;
-    
+    //Reset Binds
     if (keyboard_check_pressed(vk_f1))
         scr_resetinput();
     
@@ -65,151 +67,105 @@ function scr_getinput()
     return true;
 }
 
-function scr_keyname(arg0)
+function scr_keyname(key) 
 {
-    if (arg0 == 37)
-        return "LEFT";
-    
-    if (arg0 == 39)
-        return "RIGHT";
-    
-    if (arg0 == 38)
-        return "UP";
-    
-    if (arg0 == 40)
-        return "DOWN";
-    
-    if (arg0 == 13)
-        return "ENTER";
-    
-    if (arg0 == 27)
-        return "ESCAPE";
-    
-    if (arg0 == 32)
-        return "SPACE";
-    
-    if (arg0 == 16)
-        return "SHIFT";
-    
-    if (arg0 == 17)
-        return "CONTROL";
-    
-    if (arg0 == 18)
-        return "ALT";
-    
-    if (arg0 == 8)
-        return "BACKSPACE";
-    
-    if (arg0 == 9)
-        return "TAB";
-    
-    if (arg0 == 36)
-        return "HOME";
-    
-    if (arg0 == 35)
-        return "END";
-    
-    if (arg0 == 46)
-        return "DELETE";
-    
-    if (arg0 == 45)
-        return "INSERT";
-    
-    if (arg0 == 33)
-        return "PAGE UP";
-    
-    if (arg0 == 34)
-        return "PAGE DOWN";
-    
-    if (arg0 == 19)
-        return "PAUSE";
-    
-    if (arg0 == 44)
-        return "PRINTSCREEN";
-    
-    if (arg0 == 112)
-        return "F1";
-    
-    if (arg0 == 113)
-        return "F2";
-    
-    if (arg0 == 114)
-        return "F3";
-    
-    if (arg0 == 115)
-        return "F4";
-    
-    if (arg0 == 116)
-        return "F5";
-    
-    if (arg0 == 117)
-        return "F6";
-    
-    if (arg0 == 118)
-        return "F7";
-    
-    if (arg0 == 119)
-        return "F8";
-    
-    if (arg0 == 120)
-        return "F9";
-    
-    if (arg0 == 121)
-        return "F10";
-    
-    if (arg0 == 122)
-        return "F11";
-    
-    if (arg0 == 123)
-        return "F12";
-    
-    if (arg0 == 96)
-        return "NUMPAD 0";
-    
-    if (arg0 == 97)
-        return "NUMPAD 1";
-    
-    if (arg0 == 98)
-        return "NUMPAD 2";
-    
-    if (arg0 == 99)
-        return "NUMPAD 3";
-    
-    if (arg0 == 100)
-        return "NUMPAD 4";
-    
-    if (arg0 == 101)
-        return "NUMPAD 5";
-    
-    if (arg0 == 102)
-        return "NUMPAD 6";
-    
-    if (arg0 == 103)
-        return "NUMPAD 7";
-    
-    if (arg0 == 104)
-        return "NUMPAD 8";
-    
-    if (arg0 == 105)
-        return "NUMPAD 9";
-    
-    if (arg0 == 106)
-        return "MULTIPLY";
-    
-    if (arg0 == 111)
-        return "DIVIDE";
-    
-    if (arg0 == 107)
-        return "ADD";
-    
-    if (arg0 == 109)
-        return "SUBTRACT";
-    
-    if (arg0 == 110)
-        return "DECIMAL";
-    
-    if (arg0 == -1)
-        return "PRESS KEY";
-    
-    return chr(arg0);
+	//To Do: Clean up
+	if key == vk_left
+		return "LEFT";
+	if key == vk_right
+		return "RIGHT";
+	if key == vk_up
+		return "UP";
+	if key == vk_down
+		return "DOWN";
+	if key == vk_enter
+	    return "ENTER";
+	if key == vk_escape
+	    return "ESCAPE";
+	if key == vk_space
+	    return "SPACE";
+	if key == vk_shift
+	    return "SHIFT";
+	if key == vk_control
+	    return "CONTROL";
+	if key == vk_alt
+	    return "ALT";
+	if key == vk_backspace
+	    return "BACKSPACE";
+	if key == vk_tab
+	    return "TAB";
+	if key == vk_home
+	    return "HOME";
+	if key == vk_end
+	    return "END";
+	if key == vk_delete
+	    return "DELETE";
+	if key == vk_insert
+	    return "INSERT";
+	if key == vk_pageup
+	    return "PAGE UP";
+	if key == vk_pagedown
+	    return "PAGE DOWN";
+	if key == vk_pause
+	    return "PAUSE";
+	if key == vk_printscreen
+	    return "PRINTSCREEN";
+	if key == vk_f1
+	    return "F1";
+	if key == vk_f2
+	    return "F2";
+	if key == vk_f3
+	    return "F3";
+	if key == vk_f4
+	    return "F4";
+	if key == vk_f5
+	    return "F5";
+	if key == vk_f6
+	    return "F6";
+	if key == vk_f7
+	    return "F7";
+	if key == vk_f8
+	    return "F8";
+	if key == vk_f9
+	    return "F9";
+	if key == vk_f10
+	    return "F10";
+	if key == vk_f11
+	    return "F11";
+	if key == vk_f12
+	    return "F12";
+	if key == vk_numpad0
+	    return "NUMPAD 0";
+	if key == vk_numpad1
+	    return "NUMPAD 1";
+	if key == vk_numpad2
+	    return "NUMPAD 2";
+	if key == vk_numpad3
+		return "NUMPAD 3";
+	if key == vk_numpad4
+	    return "NUMPAD 4";
+	if key == vk_numpad5
+		return "NUMPAD 5";
+	if key == vk_numpad6
+		return "NUMPAD 6";
+	if key == vk_numpad7
+		return "NUMPAD 7";
+	if key == vk_numpad8
+	    return "NUMPAD 8";
+	if key == vk_numpad9
+	    return "NUMPAD 9";
+	if key == vk_multiply
+	    return "MULTIPLY";
+	if key == vk_divide
+	    return "DIVIDE";
+	if key == vk_add
+	    return "ADD";
+	if key == vk_subtract
+		return "SUBTRACT";
+	if key == vk_decimal
+	    return "DECIMAL";
+	if key == -1
+	    return "PRESS KEY";
+
+	return chr(key);
 }

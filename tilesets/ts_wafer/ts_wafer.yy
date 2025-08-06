@@ -16,8 +16,8 @@
     "path": "folders/Tile Sets.yy",
   },
   "spriteId": {
-    "name": "_decompiled_ts_wafer",
-    "path": "sprites/_decompiled_ts_wafer/_decompiled_ts_wafer.yy",
+    "name": "spr_ts_wafer",
+    "path": "sprites/spr_ts_wafer/spr_ts_wafer.yy",
   },
   "spriteNoExport": true,
   "textureGroupId": {

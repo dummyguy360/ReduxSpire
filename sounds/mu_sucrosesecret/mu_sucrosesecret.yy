@@ -12,8 +12,8 @@
   "conversionMode": 0,
   "duration": 50.442448,
   "parent": {
-    "name": "Sounds",
-    "path": "folders/Sounds.yy",
+    "name": "Added in P rank",
+    "path": "folders/Sounds/Added in P rank.yy",
   },
   "preload": true,
   "sampleRate": 44100,

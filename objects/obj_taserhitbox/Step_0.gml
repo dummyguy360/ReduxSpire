@@ -12,7 +12,7 @@ if (instance_exists(ID))
     {
         if (object_index == obj_officerwhoopiepie)
         {
-            if (state != states.frozen && state != states.Nhookshot)
+            if (state != baddiestate.idle && state != baddiestate.walk)
             {
                 hitboxcreate = 0;
                 instance_destroy(other.id);

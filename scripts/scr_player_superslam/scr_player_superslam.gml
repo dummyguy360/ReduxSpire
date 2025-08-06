@@ -103,7 +103,7 @@ function state_player_superslam()
                 vsp = -10;
                 hp = 0;
                 thrown = true;
-                state = states.cheesepep;
+                state = baddiestate.stun;
                 
                 if (object_index == obj_painter)
                 {
@@ -145,9 +145,7 @@ function state_player_superslam()
             movespeed = 6;
     }
     else
-    {
         movespeed = 0;
-    }
     
     if (movespeed > 6)
         movespeed -= 0.1;

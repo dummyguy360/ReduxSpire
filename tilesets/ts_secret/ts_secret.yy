@@ -16,8 +16,8 @@
     "path": "folders/Tile Sets.yy",
   },
   "spriteId": {
-    "name": "_decompiled_ts_secret",
-    "path": "sprites/_decompiled_ts_secret/_decompiled_ts_secret.yy",
+    "name": "spr_ts_secret",
+    "path": "sprites/spr_ts_secret/spr_ts_secret.yy",
   },
   "spriteNoExport": true,
   "textureGroupId": {

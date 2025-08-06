@@ -69,7 +69,7 @@ function state_player_finishingblow()
                 hsp = hithsp;
                 vsp = hitvsp;
                 linethrown = true;
-                state = states.cheesepep;
+                state = baddiestate.stun;
                 stunned = 500;
             }
         }

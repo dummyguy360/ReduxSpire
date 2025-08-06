@@ -87,7 +87,7 @@ if (DestroyedBy.object_index == obj_player)
                     vsp = -10;
                     hp = 0;
                     thrown = true;
-                    state = states.cheesepep;
+                    state = baddiestate.stun;
                     
                     if (object_index == obj_painter)
                     {
@@ -104,6 +104,4 @@ if (DestroyedBy.object_index == obj_player)
     instance_destroy();
 }
 else
-{
     instance_destroy();
-}

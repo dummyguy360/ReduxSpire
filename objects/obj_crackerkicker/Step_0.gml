@@ -1,7 +1,7 @@
-if (point_in_circle(x, y, obj_player.x + (75 * obj_player.xscale), obj_player.y, 125) && obj_player.inhaling && state != states.portal)
-    state = states.portal;
+if (point_in_circle(x, y, obj_player.x + (75 * obj_player.xscale), obj_player.y, 125) && obj_player.inhaling && state != baddiestate.inhaled)
+    state = baddiestate.inhaled;
 
-if (state == states.cheesepep && stunned > 40 && birdcreated == 0)
+if (state == baddiestate.stun && stunned > 40 && birdcreated == 0)
 {
     birdcreated = 1;
     
@@ -9,19 +9,19 @@ if (state == states.cheesepep && stunned > 40 && birdcreated == 0)
         ID = other.id;
 }
 
-if (state != states.cheesepep && state != states.pistolaim)
+if (state != baddiestate.stun && state != baddiestate.frozen)
     birdcreated = 0;
 
 if (flash == 1 && alarm[2] <= 0)
     alarm[2] = 0.15 * room_speed;
 
-if (state != states.cheesepepstick)
+if (state != baddiestate.grabbed)
     depth = 0;
 
-if (state != states.cheesepep && state != states.pistolaim)
+if (state != baddiestate.stun && state != baddiestate.frozen)
     thrown = 0;
 
-if (boundbox == 0 && state != states.portal)
+if (boundbox == 0 && state != baddiestate.inhaled)
 {
     with (instance_create(x, y, obj_baddiecollisionbox, 
     {
@@ -37,7 +37,7 @@ if (boundbox == 0 && state != states.portal)
 
 scr_commonenemy();
 
-if (state != states.cheeseball)
+if (state != baddiestate.Throw)
     scr_scareenemy();
 
 if (bombreset > 0)
@@ -48,16 +48,16 @@ if (ragereset > 0)
 
 var targetplayer = instance_nearest(x, y, obj_player);
 
-if (x != targetplayer.x && state != states.cheeseball && targetplayer.state != states.tumble && bombreset <= 0 && grounded)
+if (x != targetplayer.x && state != baddiestate.Throw && targetplayer.state != states.tumble && bombreset <= 0 && grounded)
 {
     if (targetplayer.x > (x - 80) && targetplayer.x < (x + 80) && y <= (targetplayer.y + 100) && y >= (targetplayer.y - 100))
     {
-        if (state == states.Nhookshot)
+        if (state == baddiestate.walk)
         {
             image_index = 0;
             sprite_index = spr_throw;
             image_xscale = -sign(x - targetplayer.x);
-            state = states.cheeseball;
+            state = baddiestate.Throw;
         }
     }
 }

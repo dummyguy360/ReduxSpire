@@ -16,8 +16,8 @@
     "path": "folders/Tile Sets.yy",
   },
   "spriteId": {
-    "name": "_decompiled_ts_steamtest",
-    "path": "sprites/_decompiled_ts_steamtest/_decompiled_ts_steamtest.yy",
+    "name": "spr_ts_steamtest",
+    "path": "sprites/spr_ts_steamtest/spr_ts_steamtest.yy",
   },
   "spriteNoExport": true,
   "textureGroupId": {

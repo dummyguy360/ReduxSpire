@@ -17,9 +17,7 @@ function state_player_mini()
         movespeed = 5;
     }
     else
-    {
         movespeed = 0;
-    }
     
     if (movespeed != 0 && grounded && sprite_index != spr_minizelle_run && sprite_index != spr_minizelle_land)
         sprite_index = spr_minizelle_walk;

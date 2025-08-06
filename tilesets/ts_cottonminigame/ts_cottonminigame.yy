@@ -16,8 +16,8 @@
     "path": "folders/Tile Sets.yy",
   },
   "spriteId": {
-    "name": "_decompiled_ts_cottonminigame",
-    "path": "sprites/_decompiled_ts_cottonminigame/_decompiled_ts_cottonminigame.yy",
+    "name": "spr_ts_cottonminigame",
+    "path": "sprites/spr_ts_cottonminigame/spr_ts_cottonminigame.yy",
   },
   "spriteNoExport": true,
   "textureGroupId": {

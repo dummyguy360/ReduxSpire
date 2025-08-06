@@ -16,8 +16,8 @@
     "path": "folders/Tile Sets.yy",
   },
   "spriteId": {
-    "name": "_decompiled_ts_martian_outside",
-    "path": "sprites/_decompiled_ts_martian_outside/_decompiled_ts_martian_outside.yy",
+    "name": "spr_ts_martian_outside",
+    "path": "sprites/spr_ts_martian_outside/spr_ts_martian_outside.yy",
   },
   "spriteNoExport": true,
   "textureGroupId": {

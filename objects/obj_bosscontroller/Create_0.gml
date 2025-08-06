@@ -39,4 +39,4 @@ boss_intro = spr_painterbossintro;
 portaitx = -500;
 portrait_spd = 0;
 portrait_shake = 0;
-state = states.highjump;
+state = baddiestate.intro;

@@ -1,4 +1,4 @@
-if (instance_exists(baddieID) && baddieID.state != states.cheesepepstick && baddieID.invtime <= 0)
+if (instance_exists(baddieID) && baddieID.state != baddiestate.grabbed && baddieID.invtime <= 0)
 {
     with (obj_player)
     {
@@ -47,6 +47,6 @@ if (instance_exists(baddieID) && baddieID.state != states.cheesepepstick && badd
         jumpstop = 0;
         kungtime += 10;
         other.baddieID.stunned = 200;
-        other.baddieID.state = states.cheesepep;
+        other.baddieID.state = baddiestate.stun;
     }
 }

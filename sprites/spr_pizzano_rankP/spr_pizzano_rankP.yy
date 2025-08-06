@@ -86,8 +86,8 @@
   "nineSlice": null,
   "origin": 9,
   "parent": {
-    "name": "Sprites",
-    "path": "folders/Sprites.yy",
+    "name": "Added in P rank",
+    "path": "folders/Sprites/Added in P rank.yy",
   },
   "preMultiplyAlpha": false,
   "sequence": {
@@ -114,7 +114,7 @@
     "showBackdropImage": false,
     "timeUnits": 1,
     "tracks": [
-      {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","builtinName":-1,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"1.0","Keyframes":[
+      {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"1.0","Keyframes":[
             {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"943d421b-6bd4-4502-8b58-f6b4d7ab6f2d","path":"sprites/spr_pizzano_rankP/spr_pizzano_rankP.yy",},},},"Disabled":false,"id":"0fcad2ae-5c73-4d35-a728-86b302fdbd6a","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
             {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"705438dc-8586-418f-bdbd-28964688f5fb","path":"sprites/spr_pizzano_rankP/spr_pizzano_rankP.yy",},},},"Disabled":false,"id":"d7d4143d-f282-4f4c-b7d8-d62b6f167fd4","IsCreationKey":false,"Key":1.0,"Length":1.0,"Stretch":false,},
             {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"bc4b4611-986d-4f64-a603-dea88dbf610a","path":"sprites/spr_pizzano_rankP/spr_pizzano_rankP.yy",},},},"Disabled":false,"id":"6cffdfc9-9acf-401e-bd3c-e20aa6ca9f1e","IsCreationKey":false,"Key":2.0,"Length":1.0,"Stretch":false,},

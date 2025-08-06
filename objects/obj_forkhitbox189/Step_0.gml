@@ -12,7 +12,7 @@ if (instance_exists(ID))
     {
         if (object_index == obj_sluggy)
         {
-            if (obj_sluggy.state == states.knightpepattack && obj_player.state != states.parry)
+            if (obj_sluggy.state == baddiestate.slugjump && obj_player.state != states.parry)
             {
                 sluggyhitboxcreated = 0;
                 instance_destroy(other.id);

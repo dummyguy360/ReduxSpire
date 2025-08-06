@@ -16,8 +16,8 @@
     "path": "folders/Tile Sets.yy",
   },
   "spriteId": {
-    "name": "_decompiled_tile_hub",
-    "path": "sprites/_decompiled_tile_hub/_decompiled_tile_hub.yy",
+    "name": "spr_tile_hub",
+    "path": "sprites/spr_tile_hub/spr_tile_hub.yy",
   },
   "spriteNoExport": true,
   "textureGroupId": {

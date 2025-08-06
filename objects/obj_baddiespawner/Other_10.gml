@@ -4,7 +4,7 @@ if (object_exists(content))
     {
         other.baddieid = id;
         image_xscale = sign(other.image_xscale);
-        state = states.cheesepep;
+        state = baddiestate.stun;
         squashedx = true;
         squashvalx = 0;
         stunned = 50;

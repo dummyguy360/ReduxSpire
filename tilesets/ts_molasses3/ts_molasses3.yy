@@ -16,8 +16,8 @@
     "path": "folders/Tile Sets.yy",
   },
   "spriteId": {
-    "name": "_decompiled_ts_molasses3",
-    "path": "sprites/_decompiled_ts_molasses3/_decompiled_ts_molasses3.yy",
+    "name": "spr_ts_molasses3",
+    "path": "sprites/spr_ts_molasses3/spr_ts_molasses3.yy",
   },
   "spriteNoExport": true,
   "textureGroupId": {

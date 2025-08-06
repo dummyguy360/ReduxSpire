@@ -7,7 +7,7 @@ function scr_enemy_slugidle()
     
     if (floor(image_index) == (image_number - 1) && sprite_index == spr_sluggy_idle)
     {
-        state = states.Nhookshot;
+        state = baddiestate.walk;
         sprite_index = spr_sluggy;
         movespeed = 1;
         visible = 1;

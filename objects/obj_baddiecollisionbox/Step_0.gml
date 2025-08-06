@@ -12,7 +12,7 @@ if (instance_exists(baddieID))
 
 if (instance_exists(baddieID) && !baddieID.invincible && place_meeting(x, y, obj_player) && obj_player.cutscene == 0 && obj_player.state != states.hurt)
 {
-    if (baddieID.state != states.cheesepepstick)
+    if (baddieID.state != baddiestate.grabbed)
     {
         with (obj_player)
         {
@@ -41,7 +41,7 @@ if (instance_exists(baddieID) && !baddieID.invincible && place_meeting(x, y, obj
                 other.baddieID.vsp = -10;
                 other.baddieID.sprite_index = bID.deadspr;
                 other.baddieID.flash = true;
-                other.baddieID.state = states.cheesepep;
+                other.baddieID.state = baddiestate.stun;
                 bID.stunned = 200;
                 other.baddieID.invtime = 20;
                 other.baddieID.throw_hit = 1;
@@ -90,7 +90,7 @@ if (instance_exists(baddieID) && !baddieID.invincible && place_meeting(x, y, obj
                     scr_sound(sound_bump);
                 
                 other.baddieID.stuntouch = 50;
-                other.baddieID.state = states.cheesepep;
+                other.baddieID.state = baddiestate.stun;
                 
                 if (other.baddieID.stunned < 100)
                     other.baddieID.stunned = 100;
@@ -124,7 +124,7 @@ if (instance_exists(baddieID) && !baddieID.invincible && place_meeting(x, y, obj
                         other.baddieID.vsp = -5;
                         other.baddieID.hsp = -other.baddieID.image_xscale * 3;
                         instance_create(x, y + 50, obj_stompeffect);
-                        other.baddieID.state = states.cheesepep;
+                        other.baddieID.state = baddiestate.stun;
                         stompAnim = 1;
                         other.baddieID.image_index = 0;
                         vsp = -14;
@@ -135,7 +135,7 @@ if (instance_exists(baddieID) && !baddieID.invincible && place_meeting(x, y, obj
                         other.baddieID.vsp = -5;
                         other.baddieID.hsp = -other.baddieID.image_xscale * 3;
                         instance_create(x, y + 50, obj_stompeffect);
-                        other.baddieID.state = states.cheesepep;
+                        other.baddieID.state = baddiestate.stun;
                         stompAnim = 1;
                         other.baddieID.image_index = 0;
                         vsp = -9;
@@ -156,7 +156,7 @@ if (instance_exists(baddieID) && !baddieID.invincible && place_meeting(x, y, obj
                     thrown = true;
                     hsp = obj_player.xscale * 20;
                     vsp = -6;
-                    state = states.cheesepep;
+                    state = baddiestate.stun;
                     stunned = 500;
                 }
             }
@@ -188,7 +188,7 @@ if (instance_exists(baddieID) && !baddieID.invincible && place_meeting(x, y, obj
                 if (x != other.baddieID.x)
                     other.baddieID.image_xscale = -sign(other.baddieID.x - x);
                 
-                other.baddieID.state = states.cheesepep;
+                other.baddieID.state = baddiestate.stun;
                 image_index = 0;
                 sprite_index = spr_canehit;
                 state = states.tackle;
@@ -230,7 +230,7 @@ if (instance_exists(baddieID) && !baddieID.invincible && place_meeting(x, y, obj
                 other.baddieID.image_index = 0;
                 machpunchAnim = true;
                 other.baddieID.stunned = 200;
-                other.baddieID.state = states.cheesepep;
+                other.baddieID.state = baddiestate.stun;
                 bID.invtime = 5;
                 
                 if (!grounded && state != states.freefall && key_jump2)
@@ -241,7 +241,7 @@ if (instance_exists(baddieID) && !baddieID.invincible && place_meeting(x, y, obj
                 }
             }
             
-            if (instance_exists(other.baddieID) && state == states.pizzanopummel && other.baddieID.state != states.cheesepepstick && other.baddieID.invtime <= 0)
+            if (instance_exists(other.baddieID) && state == states.pizzanopummel && other.baddieID.state != baddiestate.grabbed && other.baddieID.invtime <= 0)
             {
                 global.combotime = 60;
                 instance_create(other.baddieID.x, other.baddieID.y, obj_slapstar);
@@ -286,10 +286,10 @@ if (instance_exists(baddieID) && !baddieID.invincible && place_meeting(x, y, obj
                 other.baddieID.image_index = 0;
                 machpunchAnim = true;
                 other.baddieID.stunned = 200;
-                other.baddieID.state = states.cheesepep;
+                other.baddieID.state = baddiestate.stun;
             }
             
-            if (instance_exists(other.baddieID) && !other.baddieID.throw_hit && other.baddieID.state != states.normal && attacking == 0 && state != states.tackle && state != states.hurt && !y < other.baddieID.y && !y > other.baddieID.y && grabbing == 0 && other.baddieID.state != states.cheesepep && state != states.handstandjump && state != states.Nhookshot)
+            if (instance_exists(other.baddieID) && !other.baddieID.throw_hit && other.baddieID.state != baddiestate.charge && attacking == 0 && state != states.tackle && state != states.hurt && !y < other.baddieID.y && !y > other.baddieID.y && grabbing == 0 && other.baddieID.state != baddiestate.stun && state != states.handstandjump && state != states.Nhookshot)
             {
                 if (x != other.baddieID.x)
                 {
@@ -307,20 +307,23 @@ if (instance_exists(baddieID) && !baddieID.invincible && place_meeting(x, y, obj
                 other.baddieID.hsp = -other.baddieID.image_xscale * 4;
                 other.baddieID.vsp = -4;
                 
-                if (other.baddieID.state == states.Nhookshot || other.baddieID.state == states.titlescreen)
-                    other.baddieID.state = states.cheesepep;
+                if (other.baddieID.state == baddiestate.walk || other.baddieID.state == baddiestate.turn)
+                    other.baddieID.state = baddiestate.stun;
                 
+				//even march source has it as 87 lmao
+				//aka this is old unused code
                 if (other.baddieID.state == 87)
                 {
                     stunned = 30;
-                    other.baddieID.state = states.cheesepep;
+                    other.baddieID.state = baddiestate.stun;
                 }
                 
                 image_index = 0;
                 state = states.bump;
                 
+				//same here
                 if (other.baddieID.state == 96)
-                    other.baddieID.state = states.cheesepep;
+                    other.baddieID.state = baddiestate.stun;
             }
             
             if (state == states.handstandjump && other.baddieID.object_index != obj_charcherry)
@@ -330,7 +333,7 @@ if (instance_exists(baddieID) && !baddieID.invincible && place_meeting(x, y, obj
                 
                 with (other.baddieID)
                 {
-                    state = states.cheesepepstick;
+                    state = baddiestate.grabbed;
                     instance_create(x + (other.xscale * 40), y, obj_punchdust);
                 }
                 

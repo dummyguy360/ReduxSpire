@@ -13,14 +13,14 @@ if (instance_exists(ID))
         switch (object_index)
         {
             case obj_knight:
-                if (state != states.frozen && state != states.Nhookshot)
+                if (state != baddiestate.idle && state != baddiestate.walk)
                 {
                     hitboxcreate = 0;
                     instance_destroy(other.id);
                 }
             
             case obj_bee:
-                if (state != states.frozen && state != states.Nhookshot)
+                if (state != baddiestate.idle && state != baddiestate.walk)
                 {
                     hitboxcreate = 0;
                     instance_destroy(other.id);
@@ -29,7 +29,7 @@ if (instance_exists(ID))
                 break;
             
             case obj_sluggy:
-                if (state != states.knightpepattack && state != states.stunned)
+                if (state != baddiestate.slugjump && state != baddiestate.rage)
                 {
                     hitboxcreate = 0;
                     instance_destroy(other.id);
@@ -38,7 +38,7 @@ if (instance_exists(ID))
                 break;
             
             case obj_charger:
-                if (state != states.normal && sprite_index != spr_banana_charge)
+                if (state != baddiestate.charge && sprite_index != spr_banana_charge)
                 {
                     hitboxcreate = 0;
                     instance_destroy(other.id);
@@ -47,14 +47,14 @@ if (instance_exists(ID))
                 break;
             
             case obj_swedishfish:
-                if (state != states.charge)
+                if (state != baddiestate.hit)
                 {
                     hitboxcreate = 0;
                     instance_destroy(other.id);
                 }
             
             case obj_melon:
-                if (state != states.meteorpep)
+                if (state != baddiestate.slugparry)
                 {
                     hitboxcreate = 0;
                     instance_destroy(other.id);
@@ -69,7 +69,7 @@ if (instance_exists(ID))
                 break;
             
             case obj_babybear:
-                if (state != states.stunned && state != states.frozen)
+                if (state != baddiestate.rage && state != baddiestate.idle)
                     instance_destroy(other.id);
                 
                 break;

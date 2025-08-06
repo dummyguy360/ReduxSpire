@@ -10,9 +10,7 @@ if (squashedx == true)
         squashedx = false;
 }
 else if (squashedx == false)
-{
     squashvalx = approach(squashvalx, 0, 0.05);
-}
 
 if (squashedy == true)
 {
@@ -22,14 +20,12 @@ if (squashedy == true)
         squashedy = false;
 }
 else if (squashedy == false)
-{
     squashvaly = approach(squashvaly, 0, 0.05);
-}
 
-if (state != states.cheesepepstick && state != states.climbdownwall && state != states.knightpepslopes)
+if (state != baddiestate.grabbed && state != baddiestate.panicwait && state != baddiestate.secretwait)
     scr_collide();
 
-if (state == states.cheesepepstick)
+if (state == baddiestate.grabbed)
 {
     vsp = 0;
     hsp = 0;

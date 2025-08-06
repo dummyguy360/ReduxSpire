@@ -8,7 +8,7 @@ function scr_enemy_idle()
     
     if (floor(image_index) == (image_number - 1) && roaming == 1 && grounded)
     {
-        state = states.Nhookshot;
+        state = baddiestate.walk;
         image_index = 0;
     }
     
@@ -24,7 +24,7 @@ function scr_enemy_idle()
     
     if (animation_end() && sprite_index == spr_beesoldier_intro)
     {
-        state = states.cheeseball;
+        state = baddiestate.Throw;
         sprite_index = spr_throw;
         image_index = 0;
     }

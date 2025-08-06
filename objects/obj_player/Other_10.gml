@@ -1,6 +1,6 @@
 global.GMLIVE_realroom = room;
 var yoffset = 160;
-var _door = 119;
+var _door = obj_doortrigger_parent;
 
 with (obj_doortrigger_parent)
 {
@@ -27,9 +27,7 @@ if (instance_exists(_door))
     show_debug_message("Door Trigger \"" + string(targetDoor) + "\" found");
 }
 else
-{
     show_debug_message("Door Trigger Instance not found");
-}
 
 if (place_meeting(x, y, obj_exitgate))
 {

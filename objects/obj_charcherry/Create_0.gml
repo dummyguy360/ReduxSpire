@@ -4,7 +4,7 @@ countdown = 100;
 hsp = 0;
 vsp = 0;
 movespeed = 1;
-state = states.secondjump;
+state = baddiestate.cherrywait;
 
 if (global.panic == false)
     sprite_index = spr_charcherry_wait;

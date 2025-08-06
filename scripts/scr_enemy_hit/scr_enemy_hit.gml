@@ -21,7 +21,7 @@ function scr_enemy_hit()
     if (grounded && floor(vsp) > 0)
     {
         instance_create(x, y, obj_landcloud);
-        state = states.cheesepep;
+        state = baddiestate.stun;
         image_index = 0;
     }
     

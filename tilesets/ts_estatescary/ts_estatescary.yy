@@ -16,8 +16,8 @@
     "path": "folders/Tile Sets.yy",
   },
   "spriteId": {
-    "name": "_decompiled_ts_estatescary",
-    "path": "sprites/_decompiled_ts_estatescary/_decompiled_ts_estatescary.yy",
+    "name": "spr_ts_estatescary",
+    "path": "sprites/spr_ts_estatescary/spr_ts_estatescary.yy",
   },
   "spriteNoExport": true,
   "textureGroupId": {

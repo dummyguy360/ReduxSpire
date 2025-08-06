@@ -138,13 +138,9 @@ if (global.levelname != "none" && !(room == timesuproom || room == rank_room || 
             draw_sprite_ext(spr_rankbubble_bg, bubbleframe, surface_get_width(rankbubblesurface) / 2, (surface_get_height(rankbubblesurface) / 2) + DrawY, 1, 1, 0, c_white, 1);
             
             if (global.currentrank == "P")
-            {
                 draw_sprite_ext(spr_rankbubble_pfilled, -1, 16, 16 + DrawY, 1, 1, 0, c_white, 1);
-            }
             else if (global.currentrank == "S")
-            {
                 draw_sprite_ext(spr_rankbubble_sfilled, -1, 16, 16 + DrawY, 1, 1, 0, c_white, 1);
-            }
             else
             {
                 draw_sprite_ext(bubbleempty, -1, 16, 16 + DrawY, 1, 1, 0, c_white, 1);

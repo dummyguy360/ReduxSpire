@@ -1,6 +1,6 @@
 if (!global.freezeframe)
 {
-    if (state != states.secondjump)
+    if (state != baddiestate.cherrywait)
         instance_destroy();
     
     if (other.object_index != obj_donutShitted)

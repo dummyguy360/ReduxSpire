@@ -41,7 +41,7 @@ function scr_commonenemy()
     if (eliteHP > eliteHPMax)
         eliteHPMax = eliteHP;
     
-    if (global.freezeframe == true && state != states.pistolaim)
+    if (global.freezeframe == true && state != baddiestate.frozen)
     {
         frozenstate = state;
         frozenspriteindex = sprite_index;
@@ -51,7 +51,7 @@ function scr_commonenemy()
         frozengrav = grav;
         frozenhsp = hsp;
         frozenvsp = vsp;
-        state = states.pistolaim;
+        state = baddiestate.frozen;
     }
 }
 

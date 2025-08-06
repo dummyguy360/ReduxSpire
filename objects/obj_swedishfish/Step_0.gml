@@ -1,4 +1,4 @@
-if (state == states.cheesepep && stunned > 100 && birdcreated == 0)
+if (state == baddiestate.stun && stunned > 100 && birdcreated == 0)
 {
     birdcreated = 1;
     
@@ -6,19 +6,17 @@ if (state == states.cheesepep && stunned > 100 && birdcreated == 0)
         ID = other.id;
 }
 
-if (state != states.cheesepep && state != states.pistolaim)
+if (state != baddiestate.stun && state != baddiestate.frozen)
     birdcreated = 0;
 
-if (state == states.Nhookshot && y > ystart && !scr_solid(x, y - 1))
+if (state == baddiestate.walk && y > ystart && !scr_solid(x, y - 1))
     y--;
 
-if (state == states.Nhookshot && y < ystart && !scr_solid(x, y + 1))
+if (state == baddiestate.walk && y < ystart && !scr_solid(x, y + 1))
     y++;
 
-if (state == states.cheesepep)
-{
+if (state == baddiestate.stun)
     grav = 0.5;
-}
 else
 {
     grav = 0;
@@ -28,14 +26,12 @@ else
 if (flash == 1 && alarm[2] <= 0)
     alarm[2] = 0.15 * room_speed;
 
-if (state != states.cheesepepstick)
+if (state != baddiestate.grabbed)
     depth = 0;
 
-if (obj_player.x > (x - 400) && obj_player.x < (x + 400) && y <= (obj_player.y + 60) && y >= (obj_player.y - 60))
-{
-}
+if (obj_player.x > (x - 400) && obj_player.x < (x + 400) && y <= (obj_player.y + 60) && y >= (obj_player.y - 60)) { }
 
-if (hitboxcreate == 0 && state == states.normal && sprite_index == spr_swed_charge)
+if (hitboxcreate == 0 && state == baddiestate.charge && sprite_index == spr_swed_charge)
 {
     hitboxcreate = 1;
     
@@ -60,12 +56,12 @@ if (sprite_index == spr_swed_chargestart && floor(image_index) == (image_number 
 if (bombreset > 0)
     bombreset--;
 
-if (obj_player.bushdetection == 0 && ((obj_player.x > (x - 400) && obj_player.x < (x + 400)) && (y <= (obj_player.y + 60) && y >= (obj_player.y - 60))) && state == states.Nhookshot && bombreset == 0)
+if (obj_player.bushdetection == 0 && ((obj_player.x > (x - 400) && obj_player.x < (x + 400)) && (y <= (obj_player.y + 60) && y >= (obj_player.y - 60))) && state == baddiestate.walk && bombreset == 0)
 {
-    if (state != states.normal || state != states.cheesepep)
-        state = states.normal;
+    if (state != baddiestate.charge || state != baddiestate.stun)
+        state = baddiestate.charge;
     
-    if (state == states.normal && sprite_index != spr_swed_charge && sprite_index != scaredspr)
+    if (state == baddiestate.charge && sprite_index != spr_swed_charge && sprite_index != scaredspr)
     {
         sprite_index = spr_swed_chargestart;
         image_index = 0;

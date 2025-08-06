@@ -1,110 +1,110 @@
 switch (state)
 {
-    case states.frozen:
+    case baddiestate.idle:
         scr_enemy_idle();
         break;
     
-    case states.titlescreen:
+    case baddiestate.turn:
         scr_enemy_turn();
         break;
     
-    case states.Nhookshot:
+    case baddiestate.walk:
         scr_enemy_walk();
         break;
     
-    case states.slap:
+    case baddiestate.land:
         scr_enemy_land();
         break;
     
-    case states.charge:
+    case baddiestate.hit:
         scr_enemy_hit();
         break;
     
-    case states.normal:
+    case baddiestate.charge:
         scr_enemy_charge();
         break;
     
-    case states.cheesepep:
+    case baddiestate.stun:
         scr_enemy_stun();
         break;
     
-    case states.pistolaim:
+    case baddiestate.frozen:
         scr_enemy_frozen();
         break;
     
-    case states.climbwall:
+    case baddiestate.shake:
         scr_enemy_shake();
         break;
     
-    case states.bombpep:
+    case baddiestate.float:
         scr_enemy_float();
         break;
     
-    case states.grabbing:
+    case baddiestate.theif:
         scr_enemy_theif();
         break;
     
-    case states.climbdownwall:
+    case baddiestate.panicwait:
         scr_enemy_panicWait();
         break;
     
-    case states.knightpepslopes:
+    case baddiestate.secretwait:
         scr_enemy_secretWait();
         break;
     
-    case states.cheeseball:
+    case baddiestate.Throw:
         scr_enemy_throw();
         break;
     
-    case states.cheesepepstick:
+    case baddiestate.grabbed:
         scr_enemy_grabbed();
         break;
     
-    case states.boxxedpep:
+    case baddiestate.scared:
         scr_enemy_scared();
         break;
     
-    case states.portal:
+    case baddiestate.inhaled:
         scr_enemy_inhaled();
         break;
     
-    case states.secondjump:
+    case baddiestate.cherrywait:
         scr_enemy_cherrywait();
         break;
     
-    case states.chainsawbump:
+    case baddiestate.cherryactive:
         scr_enemy_charcherry();
         break;
     
-    case states.knightpep:
+    case baddiestate.slugidle:
         scr_enemy_slugidle();
         break;
     
-    case states.knightpepattack:
+    case baddiestate.slugjump:
         scr_enemy_slugjump();
         break;
     
-    case states.meteorpep:
+    case baddiestate.slugparry:
         scr_enemy_slugparry();
         break;
     
-    case states.gottreasure:
+    case baddiestate.kick:
         scr_enemy_kick();
         break;
     
-    case states.chainsawpogo:
+    case baddiestate.eyescreamwait:
         scr_enemy_eyescreamwait();
         break;
     
-    case states.shotgunjump:
+    case baddiestate.eyescream:
         scr_enemy_eyescream();
         break;
     
-    case states.stunned:
+    case baddiestate.rage:
         scr_enemy_rage();
         break;
     
-    case states.handstandjump:
+    case baddiestate.applejimBash:
         scr_applejim_bash();
         break;
 }
@@ -112,7 +112,7 @@ switch (state)
 if (y > (room_height + 64))
     instance_destroy();
 
-if (state != states.boxxedpep)
+if (state != baddiestate.scared)
     ScareBuffer = 0;
 
 if (tauntBuffer == true)
@@ -140,5 +140,5 @@ if (tauntBuffer == true)
         tauntBuffer = false;
 }
 
-if (place_meeting_solid(x, y) && state == states.cheesepep && thrown)
+if (place_meeting_solid(x, y) && state == baddiestate.stun && thrown)
     instance_destroy();

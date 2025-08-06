@@ -16,8 +16,8 @@
     "path": "folders/Tile Sets.yy",
   },
   "spriteId": {
-    "name": "_decompiled_ts_devroom",
-    "path": "sprites/_decompiled_ts_devroom/_decompiled_ts_devroom.yy",
+    "name": "spr_ts_devroom",
+    "path": "sprites/spr_ts_devroom/spr_ts_devroom.yy",
   },
   "spriteNoExport": true,
   "textureGroupId": {

@@ -12,9 +12,7 @@ function scr_enemy_walk()
             hsp = (image_xscale * _movespeed) + 5;
     }
     else
-    {
         hsp = 0;
-    }
     
     image_speed = 0.35 + (global.stylethreshold * 0.05);
     
@@ -25,7 +23,7 @@ function scr_enemy_walk()
     {
         if (object_index == obj_knight)
         {
-            state = states.titlescreen;
+            state = baddiestate.turn;
             hsp = 0;
         }
         else
@@ -45,7 +43,7 @@ function scr_enemy_walk()
             {
                 if (object_index == obj_knight)
                 {
-                    state = states.titlescreen;
+                    state = baddiestate.turn;
                     hsp = 0;
                 }
                 else
@@ -65,13 +63,11 @@ function scr_enemy_walk()
         {
             if (object_index == obj_knight)
             {
-                state = states.titlescreen;
+                state = baddiestate.turn;
                 hsp = 0;
             }
             else if (object_index == obj_sluggy && (scr_solid(_bbox_side + image_xscale, y + 32) || scr_solid(_bbox_side + image_xscale, y + 64) || scr_solid(_bbox_side + image_xscale, y + 79)))
-            {
                 vsp = -3;
-            }
             else
             {
                 image_xscale *= -1;

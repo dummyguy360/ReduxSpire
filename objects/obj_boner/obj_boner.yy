@@ -6,8 +6,8 @@
   "managed": true,
   "overriddenProperties": [],
   "parent": {
-    "name": "Objects",
-    "path": "folders/Objects.yy",
+    "name": "Added in P rank",
+    "path": "folders/Objects/Added in P rank.yy",
   },
   "parentObjectId": null,
   "persistent": false,

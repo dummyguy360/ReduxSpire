@@ -1,7 +1,7 @@
-if (point_in_circle(x, y, obj_player.x + (75 * obj_player.xscale), obj_player.y, 125) && obj_player.inhaling && state != states.portal)
-    state = states.portal;
+if (point_in_circle(x, y, obj_player.x + (75 * obj_player.xscale), obj_player.y, 125) && obj_player.inhaling && state != baddiestate.inhaled)
+    state = baddiestate.inhaled;
 
-if (state == states.cheesepep && stunned > 40 && birdcreated == 0)
+if (state == baddiestate.stun && stunned > 40 && birdcreated == 0)
 {
     birdcreated = 1;
     
@@ -9,19 +9,17 @@ if (state == states.cheesepep && stunned > 40 && birdcreated == 0)
         ID = other.id;
 }
 
-if (state != states.cheesepep && state != states.pistolaim)
+if (state != baddiestate.stun && state != baddiestate.frozen)
     birdcreated = 0;
 
 if (flash == 1 && alarm[2] <= 0)
     alarm[2] = 0.15 * room_speed;
 
 if (bombreset > 0)
-{
     bombreset--;
-}
-else if (state == states.Nhookshot)
+else if (state == baddiestate.walk)
 {
-    state = states.meteorpep;
+    state = baddiestate.slugparry;
     substate = 0;
     taunttimer = 40;
     
@@ -32,7 +30,7 @@ else if (state == states.Nhookshot)
     image_index = choose(0, 1, 2);
 }
 
-if (hitboxcreate == 0 && state == states.meteorpep)
+if (hitboxcreate == 0 && state == baddiestate.slugparry)
 {
     hitboxcreate = 1;
     
@@ -48,13 +46,13 @@ if (hitboxcreate == 0 && state == states.meteorpep)
     }
 }
 
-if (state != states.cheesepepstick)
+if (state != baddiestate.grabbed)
     depth = 0;
 
-if (state != states.cheesepep && state != states.pistolaim)
+if (state != baddiestate.stun && state != baddiestate.frozen)
     thrown = 0;
 
-if (boundbox == 0 && state != states.portal && state != states.meteorpep)
+if (boundbox == 0 && state != baddiestate.inhaled && state != baddiestate.slugparry)
 {
     with (instance_create(x, y, obj_baddiecollisionbox, 
     {

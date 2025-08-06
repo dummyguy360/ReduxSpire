@@ -23,13 +23,13 @@ with (obj_pickaxe)
 
 with (obj_baddie)
 {
-    if (distance_to_object(other.id) < 64 && (object_index != obj_charcherry || (object_index == obj_charcherry && state == states.chainsawbump)))
+    if (distance_to_object(other.id) < 64 && (object_index != obj_charcherry || (object_index == obj_charcherry && state == baddiestate.cherryactive)))
     {
         scr_sleep();
         hsp = obj_player.xscale * 25;
         vsp = 0;
         grav = 0;
-        state = states.cheesepep;
+        state = baddiestate.stun;
         hp = 0;
         thrown = 1;
     }

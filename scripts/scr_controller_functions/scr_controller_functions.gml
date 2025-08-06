@@ -1,9 +1,9 @@
-function p1Vibration(arg0, arg1)
+function p1Vibration(intensity, decay)
 {
     with (obj_gamepadder)
     {
-        vibration1 = arg0;
-        vibrationDecay1 = arg1;
+        vibration1 = intensity;
+        vibrationDecay1 = decay;
     }
     
     gamepad_set_vibration(global.player_input_device, obj_gamepadder.vibration1, obj_gamepadder.vibration1);

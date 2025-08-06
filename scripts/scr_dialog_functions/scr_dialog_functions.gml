@@ -1,4 +1,7 @@
-function queue_dialogue(arg0, arg1 = false)
+/// @desc - Queues an array of dialog to run through the NPC Dialog handler
+/// @param argument0 - Array which contains all the dialog to run
+/// @param {bool} [instant] - Whether to set the NPC's id when running functions (dunno if it matters lol)
+function queue_dialogue(arg0, instant = false)
 {
     reset_dialogue();
     
@@ -10,7 +13,7 @@ function queue_dialogue(arg0, arg1 = false)
         if (obj_dialogue.state == states.normal)
             obj_dialogue.state = states.frozen;
         
-        if (arg1)
+        if (instant)
             obj_dialogue.state = states.titlescreen;
         
         obj_dialogue.curmsg = 0;
@@ -19,6 +22,7 @@ function queue_dialogue(arg0, arg1 = false)
     global.dialogmsg = arg0;
 }
 
+/// @desc - Deletes all dialog and choices, mainly used to reset dialog before queueing new one to prevent crashes
 function reset_dialogue()
 {
     instance_destroy(obj_dialogue);
@@ -28,27 +32,51 @@ function reset_dialogue()
     global.choiced = noone;
 }
 
-function create_dialogue(arg0, arg1 = noone, arg2 = noone)
+/// @desc - Creates array of dialogs used for Dialog Handler
+/// @param {any*} - Text to write out in dialog
+/// @param {real} [sprite] - Background sprite for the bubble
+/// @param {real} [func] - Function to run when this message is done
+/// @returns {array} - Array that dialog handler uses to process options for the message
+function create_dialogue(text, sprite = noone, func = noone)
 {
-    return [arg0, arg1, arg2];
+    return [text, sprite, func];
 }
 
-function create_choice(arg0, arg1)
+/// @desc - Creates array of choice used for Choice Handler
+/// @param {any*} text - Text for the option that is shown when selecting
+/// @param {any*} func - Function to run when selecting respective choice
+/// @returns {array} - Array that choice handler uses to process options for the message
+function create_choice(text, func)
 {
-    return [arg0, arg1];
+    return [text, func];
 }
 
-function queue_choices(arg0, arg1)
+/// @desc - Queues array of choices to be ran through Dialog Choice Handler
+/// @param {any*} argument0 - Array input that has all the choices that will be queued
+/// @param {any*} text - Text that describes what exactly the choices are for
+function queue_choices(arg0, text)
 {
     reset_dialogue();
     
     with (instance_create(x, y, obj_dialogue_choices))
-        msg_text = arg1;
+        msg_text = text;
     
     global.dialogchoices = arg0;
     show_debug_message(global.dialogchoices);
 }
 
+/// string_wordwrap_width(string,width,break,split)
+//
+//  Returns a given string, word wrapped to a pixel width,
+//  with line break characters inserted between words.
+//  Uses the currently defined font to determine text width.
+//
+//      string      text to word wrap, string
+//      width       maximum pixel width before a line break, real
+//      break       line break characters to insert into text, string
+//      split       split words that are longer than the maximum, bool
+//
+/// GMLscripts.com/license
 function text_wrap(arg0, arg1, arg2, arg3)
 {
     var pos_space = -1;

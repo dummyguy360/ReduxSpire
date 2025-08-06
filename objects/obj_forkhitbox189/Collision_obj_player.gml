@@ -50,9 +50,7 @@ with (obj_player)
             instance_create(x, y, obj_pizzaloss);
         }
         else if (obj_player.shotgunAnim == 1)
-        {
             obj_player.shotgunAnim = 0;
-        }
         
         instance_create(x, y, obj_spikehurteffect);
         state = states.hurt;
@@ -64,9 +62,9 @@ with (obj_player)
 
 with (instance_nearest(x, y, obj_sluggy))
 {
-    if (obj_sluggy.state != states.meteorpep)
+    if (obj_sluggy.state != baddiestate.slugparry)
     {
-        state = states.meteorpep;
+        state = baddiestate.slugparry;
         sprite_index = spr_sluggy_parry;
         image_index = 0;
         movespeed = -8;

@@ -1,13 +1,11 @@
 switch (state)
 {
-    case states.highjump:
+    case baddiestate.intro:
         firey--;
         draw_sprite_tiled(spr_versusbg, 0, 0, firey);
         
         if (!surface_exists(player_surface))
-        {
             player_surface = surface_create(480, 540);
-        }
         else
         {
             surface_set_target(player_surface);
@@ -26,9 +24,7 @@ switch (state)
         }
         
         if (!surface_exists(boss_surface))
-        {
             boss_surface = surface_create(480, 540);
-        }
         else
         {
             surface_set_target(boss_surface);

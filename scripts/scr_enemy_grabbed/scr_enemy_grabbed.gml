@@ -40,7 +40,7 @@ function scr_enemy_grabbed()
             other.stuntouch = 50;
             other.x = x;
             other.y = y;
-            other.state = states.cheesepep;
+            other.state = baddiestate.stun;
             other.image_index = 0;
         }
     }
@@ -62,7 +62,7 @@ function scr_enemy_grabbed()
         x = obj_player.x;
         vsp = 0;
         y = obj_player.y;
-        state = states.cheesepep;
+        state = baddiestate.stun;
         hsp = -image_xscale * 25;
         grav = 0;
         global.combotime = 60;
@@ -91,7 +91,7 @@ function scr_enemy_grabbed()
         thrown = 1;
         x = obj_player.x;
         y = obj_player.y;
-        state = states.cheesepep;
+        state = baddiestate.stun;
         image_xscale *= -1;
         hsp = -image_xscale * 20;
         vsp = -7;
@@ -116,7 +116,7 @@ function scr_enemy_grabbed()
         thrown = 1;
         x = obj_player.x;
         y = obj_player.y;
-        state = states.cheesepep;
+        state = baddiestate.stun;
         hsp = -image_xscale * 10;
         vsp = -10;
         global.combotime = 60;
@@ -139,7 +139,7 @@ function scr_enemy_grabbed()
         thrown = 1;
         x = obj_player.x;
         y = obj_player.y;
-        state = states.cheesepep;
+        state = baddiestate.stun;
         hsp = -image_xscale * 10;
         vsp = -10;
     }

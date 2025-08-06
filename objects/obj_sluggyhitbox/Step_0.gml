@@ -10,7 +10,7 @@ if (instance_exists(ID))
     
     with (ID)
     {
-        if (state != states.knightpepattack && state != states.cheesepep)
+        if (state != baddiestate.slugjump && state != baddiestate.stun)
         {
             hitboxcreate = 0;
             instance_destroy(other.id);

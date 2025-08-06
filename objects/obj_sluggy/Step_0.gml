@@ -1,7 +1,7 @@
-if (state != states.stunned && state != states.knightpepattack && grounded && !pizzano)
+if (state != baddiestate.rage && state != baddiestate.slugjump && grounded && !pizzano)
     scr_scareenemy();
 
-if (state == states.cheesepep && stunned > 40 && birdcreated == 0)
+if (state == baddiestate.stun && stunned > 40 && birdcreated == 0)
 {
     birdcreated = 1;
     
@@ -9,16 +9,16 @@ if (state == states.cheesepep && stunned > 40 && birdcreated == 0)
         ID = other.id;
 }
 
-if (state != states.cheesepep && state != states.pistolaim)
+if (state != baddiestate.stun && state != baddiestate.frozen)
     birdcreated = 0;
 
 if (flash == 1 && alarm[2] <= 0)
     alarm[2] = 0.15 * room_speed;
 
-if (state != states.cheesepepstick)
+if (state != baddiestate.grabbed)
     depth = 0;
 
-if (state != states.cheesepep && state != states.pistolaim)
+if (state != baddiestate.stun && state != baddiestate.frozen)
     thrown = 0;
 
 if (boundbox == 0)
@@ -35,7 +35,7 @@ if (boundbox == 0)
     }
 }
 
-if (hitboxcreate == 0 && (state == states.knightpepattack || state == states.stunned))
+if (hitboxcreate == 0 && (state == baddiestate.slugjump || state == baddiestate.rage))
 {
     hitboxcreate = 1;
     
@@ -49,7 +49,7 @@ if (hitboxcreate == 0 && (state == states.knightpepattack || state == states.stu
         image_index = other.image_index;
         depth = -1;
         
-        if (other.state != states.stunned)
+        if (other.state != baddiestate.rage)
         {
             mask_index = spr_sluggy_jumphitbox;
             sprite_index = spr_sluggy_jumphitbox;
@@ -57,24 +57,24 @@ if (hitboxcreate == 0 && (state == states.knightpepattack || state == states.stu
     }
 }
 
-if (state != states.frozen && state != states.boxxedpep && state != states.cheesepep && state != states.cheesepepstick && state != states.chainsawbump && state != states.knightpepattack && state != states.meteorpep && idletimer > 0)
+if (state != baddiestate.idle && state != baddiestate.scared && state != baddiestate.stun && state != baddiestate.grabbed && state != baddiestate.cherryactive && state != baddiestate.slugjump && state != baddiestate.slugparry && idletimer > 0)
     idletimer--;
 
-if (state != states.frozen && state != states.boxxedpep && state != states.cheesepep && state != states.cheesepepstick && state != states.chainsawbump && state != states.knightpepattack && state != states.meteorpep && jumptimer > 0)
+if (state != baddiestate.idle && state != baddiestate.scared && state != baddiestate.stun && state != baddiestate.grabbed && state != baddiestate.cherryactive && state != baddiestate.slugjump && state != baddiestate.slugparry && jumptimer > 0)
     jumptimer--;
 
 var _isplayerpresent = jumptimer <= 0 && (obj_player.x > (x - 250) && obj_player.x < (x + 250) && y <= (obj_player.y + 200) && y >= (obj_player.y - 16));
 
 if (grounded && (!use_heat() || ragereset <= 0) && (_isplayerpresent || (scr_solid(x + (image_xscale * 32), y, true) && !scr_solid(x + (image_xscale * 32), y - 100, true) && !scr_slope_ext(x + (image_xscale * 32), y) && !scr_slope_ext(x, y + 1))))
 {
-    if (state == states.Nhookshot)
+    if (state == baddiestate.walk)
     {
         if (!use_heat())
         {
             if (_isplayerpresent)
                 image_xscale = -sign(x - obj_player.x);
             
-            state = states.knightpepattack;
+            state = baddiestate.slugjump;
             ragereset = 200;
             sprite_index = spr_sluggy_jumpstart;
             image_index = 0;
@@ -87,7 +87,7 @@ if (grounded && (!use_heat() || ragereset <= 0) && (_isplayerpresent || (scr_sol
             if (_isplayerpresent)
                 image_xscale = -sign(x - obj_player.x);
             
-            state = states.stunned;
+            state = baddiestate.rage;
             ragereset = 100;
             sprite_index = spr_cotton_attack;
             image_index = 0;
