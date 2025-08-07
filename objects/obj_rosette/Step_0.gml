@@ -9,9 +9,7 @@ if (!instance_exists(obj_cutsceneManager))
             sprite_index = spr_rosettegavetreatIDLE;
     }
     else
-    {
         sprite_index = spr_rosette;
-    }
 }
 
 if (animation_end() && sprite_index == spr_rosettegavetreat)

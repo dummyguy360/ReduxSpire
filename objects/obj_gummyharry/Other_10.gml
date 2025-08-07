@@ -47,12 +47,8 @@ if (DestroyedBy.object_index == obj_player)
             }
         }
         else
-        {
             instance_destroy();
-        }
     }
 }
 else
-{
     instance_destroy();
-}

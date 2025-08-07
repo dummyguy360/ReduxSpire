@@ -39,4 +39,4 @@ with (obj_player)
     }
 }
 
-ini_close();
+ini_close();//why is this here???

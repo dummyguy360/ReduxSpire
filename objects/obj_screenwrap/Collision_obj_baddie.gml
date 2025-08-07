@@ -13,9 +13,7 @@ if (!receiver)
                 p.y = y + offset;
             }
             else
-            {
                 p.y = y;
-            }
         }
     }
 }

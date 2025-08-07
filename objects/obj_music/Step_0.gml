@@ -15,9 +15,7 @@ if (instance_exists(obj_gummyharry))
         GummyBear = p;
 }
 else
-{
     GummyBear = 0;
-}
 
 if (_oldGummyBear != GummyBear)
 {

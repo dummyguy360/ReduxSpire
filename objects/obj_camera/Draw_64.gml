@@ -67,8 +67,8 @@ if (global.levelname != "none" && !(room == timesuproom || room == rank_room || 
 {
     if (!instance_exists(obj_startgate))
     {
-        var bubbleempty = 1973;
-        var bubblefilled = 1467;
+        var bubbleempty = spr_rankbubble_d;
+        var bubblefilled = spr_rankbubble_dfilled;
         var local_rank = global.crank;
         var minus_moment = 0;
         var bubbleframe = 0;
@@ -76,47 +76,47 @@ if (global.levelname != "none" && !(room == timesuproom || room == rank_room || 
         switch (global.currentrank)
         {
             case "P":
-                bubbleempty = 558;
-                bubblefilled = 1398;
+                bubbleempty = spr_rankbubble_p;
+                bubblefilled = spr_rankbubble_pfilled;
                 local_rank = global.srank;
                 minus_moment = global.srank;
                 bubbleframe = 0;
             
             case "S":
-                bubbleempty = 949;
-                bubblefilled = 434;
+                bubbleempty = spr_rankbubble_s;
+                bubblefilled = spr_rankbubble_sfilled;
                 local_rank = global.srank;
                 minus_moment = global.arank;
                 bubbleframe = 0;
                 break;
             
             case "A":
-                bubbleempty = 701;
-                bubblefilled = 492;
+                bubbleempty = spr_rankbubble_a;
+                bubblefilled = spr_rankbubble_afilled;
                 local_rank = global.srank;
                 minus_moment = global.arank;
                 bubbleframe = 1;
                 break;
             
             case "B":
-                bubbleempty = 1334;
-                bubblefilled = 2028;
+                bubbleempty = spr_rankbubble_b;
+                bubblefilled = spr_rankbubble_bfilled;
                 local_rank = global.arank;
                 minus_moment = global.brank;
                 bubbleframe = 2;
                 break;
             
             case "C":
-                bubbleempty = 1003;
-                bubblefilled = 402;
+                bubbleempty = spr_rankbubble_c;
+                bubblefilled = spr_rankbubble_cfilled;
                 local_rank = global.brank;
                 minus_moment = global.crank;
                 bubbleframe = 3;
                 break;
             
             default:
-                bubbleempty = 1973;
-                bubblefilled = 1467;
+                bubbleempty = spr_rankbubble_d;
+                bubblefilled = spr_rankbubble_dfilled;
                 local_rank = global.crank;
                 minus_moment = 0;
                 bubbleframe = 4;
@@ -128,9 +128,7 @@ if (global.levelname != "none" && !(room == timesuproom || room == rank_room || 
         var rankpercent = (global.collect - minus_moment) / (local_rank - minus_moment);
         
         if (!surface_exists(rankbubblesurface))
-        {
             rankbubblesurface = surface_create(96, 96);
-        }
         else if (surface_exists(rankbubblesurface))
         {
             surface_set_target(rankbubblesurface);

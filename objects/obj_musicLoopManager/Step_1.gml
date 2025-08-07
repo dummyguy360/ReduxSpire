@@ -6,6 +6,4 @@ if (audio_is_playing(Audio))
         audio_sound_set_track_position(Audio, LoopBegin);
 }
 else
-{
     instance_destroy();
-}

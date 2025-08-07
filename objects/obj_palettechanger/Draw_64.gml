@@ -69,8 +69,6 @@ if (input_text == true)
     draw_text_color(480 + length, yi, cursor, c_black, c_black, c_black, c_black, 1);
 }
 else
-{
     draw_text_color(480, yi, string(palettename), c_black, c_black, c_black, c_black, 1);
-}
 
 draw_set_valign(fa_top);

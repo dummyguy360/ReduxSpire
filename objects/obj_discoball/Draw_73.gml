@@ -7,9 +7,7 @@ if (idraw)
     var cam_middle = obj_player.x - cam_x;
     
     if (!surface_exists(darkSurf))
-    {
         darkSurf = surface_create(cam_width, cam_height);
-    }
     else
     {
         surface_set_target(darkSurf);

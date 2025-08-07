@@ -30,19 +30,19 @@ switch (colorchannel)
     case 0:
         draw_x = 682;
         draw_y = 334;
-        draw_color = 255;
+        draw_color = #FF0000;
         break;
     
     case 1:
         draw_x = 682;
         draw_y = 382;
-        draw_color = 32768;
+        draw_color = #008000;
         break;
     
     case 2:
         draw_x = 682;
         draw_y = 430;
-        draw_color = 16711680;
+        draw_color = #0000FF;
         break;
 }
 
@@ -65,9 +65,7 @@ if (mouse_check_button_pressed(mb_left) && input_text == false && obj_palettecha
         selected = true;
 }
 else if (!mouse_check_button(mb_left) && input_text == false)
-{
     selected = false;
-}
 
 if (selected == 1)
 {

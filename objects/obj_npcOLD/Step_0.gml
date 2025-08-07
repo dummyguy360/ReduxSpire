@@ -17,9 +17,7 @@ if (shake_magx > 0)
     shake_magx = approach(shake_magx, 0, shake_magx_acc);
     
     if (shake_timer > 0)
-    {
         shake_timer--;
-    }
     else
     {
         shake_dir *= -1;

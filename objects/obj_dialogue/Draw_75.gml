@@ -31,9 +31,7 @@ if (active)
             boxstate = 1;
     }
     else
-    {
         boxy = approach(boxy, 30 + wave(-2, 2, 4, 0), 2);
-    }
 }
 else
 {

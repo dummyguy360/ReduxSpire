@@ -5,9 +5,7 @@ if (afterimagebuffer > 0)
 
 squishscale = approach(squishscale, 1, 0.1);
 
-if ((scr_solid(x + sign(hsp), y) && !(scr_slope() && !scr_solid(x + sign(hsp), y - 2)) && !place_meeting(x + hsp, y, obj_destructibles)) || movespeed <= 0 || distance_to_object(playerID) > 500)
-{
-}
+if ((scr_solid(x + sign(hsp), y) && !(scr_slope() && !scr_solid(x + sign(hsp), y - 2)) && !place_meeting(x + hsp, y, obj_destructibles)) || movespeed <= 0 || distance_to_object(playerID) > 500) { }
 
 if (afterimagebuffer <= 0)
 {
@@ -38,9 +36,7 @@ if (scr_slope() && vsp >= 0)
                     other.image_xscale = -sign(image_xscale);
             }
             else if (other.movespeed < 20 && other.image_xscale == -sign(image_xscale))
-            {
                 other.movespeed += (0.25 * slope_acceleration);
-            }
         }
     }
     
@@ -59,9 +55,7 @@ if (scr_slope() && vsp >= 0)
                     other.image_xscale = -sign(image_xscale);
             }
             else if (other.movespeed < 20 && other.image_xscale == -sign(image_xscale))
-            {
                 other.movespeed += (0.25 * slope_acceleration);
-            }
         }
     }
 }

@@ -39,7 +39,7 @@ with (obj_baddie)
             draw_sprite_ext_flash(sprite_index, image_index, draw_x, draw_y, draw_xscale, draw_yscale, image_angle, c_white, image_alpha);
         
         if (cottoned)
-            draw_sprite_ext_flash(sprite_index, image_index, draw_x, draw_y, draw_xscale, draw_yscale, image_angle, 16681727, 0.6);
+            draw_sprite_ext_flash(sprite_index, image_index, draw_x, draw_y, draw_xscale, draw_yscale, image_angle, #FF8AFE, 0.6);
         
         pal_swap_reset();
         
@@ -92,8 +92,8 @@ with (obj_player)
                 {
                     surface_set_target(my_pal_surface);
                     draw_clear_alpha(c_white, 0);
-                    pal_swap_draw_palette(782, 0, 0, 0);
-                    pal_swap_draw_palette(782, 1, 1, 0);
+                    pal_swap_draw_palette(spr_pal2, 0, 0, 0);
+                    pal_swap_draw_palette(spr_pal2, 1, 1, 0);
                     
                     for (var i = 0; i < array_length(my_color_array); i++)
                         draw_point_color(1, i, my_color_array[i]);
@@ -129,7 +129,7 @@ with (obj_player)
             draw_sprite_ext_flash(sprite_index, image_index, x + _x_shake, y + _y_shake, xscale * scale, yscale * scale, draw_angle, c_white, image_alpha);
         
         if (is_inSecretPortal)
-            draw_sprite_ext_flash(sprite_index, image_index, x + _x_shake, y + _y_shake, xscale * scale, yscale * scale, draw_angle, 9251145, image_alpha * (1.5 - scale));
+            draw_sprite_ext_flash(sprite_index, image_index, x + _x_shake, y + _y_shake, xscale * scale, yscale * scale, draw_angle, #49298D, image_alpha * (1.5 - scale));
         
         if (global.debugmode == 1)
         {

@@ -10,6 +10,4 @@ if (floor(image_index) == 9 && !madedebris)
     madedebris = true;
 }
 else if (floor(image_index) != 9)
-{
     madedebris = false;
-}

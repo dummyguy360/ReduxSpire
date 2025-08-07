@@ -36,9 +36,7 @@ if (other.Dashpad_buffer <= 0)
                 while (try_y <= 16)
                 {
                     if (scr_solid(x, other.y - try_y))
-                    {
                         try_y++;
-                    }
                     else
                     {
                         y = other.y - try_y;
@@ -63,9 +61,7 @@ if (other.Dashpad_buffer <= 0)
                 while (try_y <= 16)
                 {
                     if (scr_solid(x, other.y - try_y))
-                    {
                         try_y++;
-                    }
                     else
                     {
                         y = other.y - try_y;

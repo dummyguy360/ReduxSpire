@@ -46,9 +46,7 @@ if (global.smoothscale)
     gpu_set_tex_filter(false);
 }
 else
-{
     draw_surface_stretched_ext(finalApplicationSurface, 0, 0, surfW, surfH, c_white, 1);
-}
 
 if (!buffer_exists(finalApplicationSurfBuffer))
     finalApplicationSurfBuffer = buffer_create(surfW * surfH * 4, buffer_fixed, 1);

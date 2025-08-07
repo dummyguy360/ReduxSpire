@@ -111,6 +111,4 @@ else if (DestroyedBy.object_index == obj_donutShitted)
     instance_destroy();
 }
 else
-{
     instance_destroy();
-}

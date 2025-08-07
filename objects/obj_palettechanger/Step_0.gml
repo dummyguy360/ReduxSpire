@@ -163,9 +163,7 @@ if (((player.key_jump2 || keyboard_check_pressed(vk_enter)) || player.key_slap2)
         ini_close();
     }
     else
-    {
         input = palettename;
-    }
 }
 
 if (input_text == true)
@@ -209,9 +207,7 @@ if (showtext == true)
 if (showtext == false)
 {
     if (_draw_y > -64)
-    {
         _draw_y -= 1;
-    }
     else
     {
         _message = "";

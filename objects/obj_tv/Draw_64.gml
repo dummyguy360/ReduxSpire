@@ -85,7 +85,7 @@ if (global.panic == 1 || global.starrmode == 1)
     
     if (!sucroseTimer)
     {
-        if (coneball_sprite != 1485)
+        if (coneball_sprite != spr_bartimer_showtime)
         {
             draw_sprite_ext(spr_bartimer_normalBack, coneball_index, timerx, timery, 1, 1, 0, c_white, 1);
             draw_sprite_part(spr_bartimer_strip, 0, 0, 0, dist + 45, 113, timerx - 184, timery - 56);
@@ -101,8 +101,8 @@ if (global.panic == 1 || global.starrmode == 1)
         draw_set_halign(fa_left);
         var _tmr_spr = oldTimer_sprite;
         
-        if (_tmr_spr == 1411 && gaining_time)
-            _tmr_spr = 698;
+        if (_tmr_spr == spr_timer && gaining_time)
+            _tmr_spr = spr_timer_gain;
         
         draw_sprite_ext(oldBall_sprite, oldBall_index, timerx, timery, 1, 1, 0, c_white, 1);
         draw_sprite_ext(_tmr_spr, oldTimer_index, timerx, timery, 1, 1, 0, c_white, 1);
@@ -110,7 +110,7 @@ if (global.panic == 1 || global.starrmode == 1)
         if (mins < 10)
             display_mins = "0" + display_mins;
         
-        if (oldTimer_sprite != 1219)
+        if (oldTimer_sprite != spr_timer_timesup)
         {
             draw_set_color(gaining_time ? #60D048 : #F80000);
             draw_text(minsx, minsy, display_mins);
@@ -157,13 +157,13 @@ if (shownewtext == true)
     draw_set_color(c_white);
     _new_message = new_message;
     
-    if (textbubblesprites == 1580)
+    if (textbubblesprites == spr_tv_bubble)
     {
         var _length = -(floor(string_width(_new_message)) + 5);
         
         if (floor(text_x) <= _length)
         {
-            textbubblesprites = 835;
+            textbubblesprites = spr_tv_bubbleclose;
             textbubbleframes = 0;
         }
         
@@ -175,7 +175,7 @@ if (shownewtext == true)
     if (surface_exists(textpromptsurface))
         draw_surface(textpromptsurface, 283, -10);
     
-    if (textbubblesprites == 1580)
+    if (textbubblesprites == spr_tv_bubble)
         draw_sprite(spr_tv_bubblefade, -1, 448, 45);
 }
 

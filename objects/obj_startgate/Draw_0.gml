@@ -13,9 +13,8 @@ else
     draw_clear_alpha(c_black, 0);
     draw_set_color(c_white);
     draw_rectangle(0, 0, sprite_width, sprite_height, false);
-    var i = array_length(details) - 1;
     
-    while (i > 1)
+    for (var i = array_length(details) - 1; i > 1; i--)
     {
         var _layer = details[i];
         
@@ -29,8 +28,6 @@ else
             drawIndex += drawImgSpd;
             draw_sprite_tiled_ext(drawSpr, drawIndex, drawx, drawy, drawXscale, drawYscale, drawBlend, drawAlpha);
         }
-        
-        i--;
     }
     
     draw_set_alpha(fade);

@@ -34,6 +34,4 @@ if (stopped == true)
     }
 }
 else
-{
     stopSpeed = approach(stopSpeed, 0, stopSpeedDecc);
-}

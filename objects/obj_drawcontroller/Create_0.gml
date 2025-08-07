@@ -4,8 +4,18 @@ var cam_x = camx;
 var cam_y = camy;
 depth = -25;
 sucrose_lighting = false;
-sucrose_color = 7490854;
-sucrose_color_array = [327, 171, 435, 353, 555, 118, 508, 308];
+sucrose_color = #264D72;
+sucrose_color_array = 
+[
+	par_follower, 
+	obj_baddiespawner, 
+	par_collect, 
+	obj_rocketdud, 
+	obj_dashpad, 
+	obj_gigacherrydead, 
+	obj_chocofrog, 
+	par_logicobjects
+];
 dance_lighting = false;
 dance_palette = 0;
 sucrose_surface = surface_create(cam_width, cam_height);

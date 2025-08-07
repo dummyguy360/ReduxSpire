@@ -60,9 +60,7 @@ switch (state)
                 idlespr = panictvspr;
         }
         else
-        {
             idlespr = secrettvspr;
-        }
         
         var _transfo = true;
         
@@ -259,13 +257,13 @@ switch (state)
         break;
 }
 
-if (textbubblesprites == 78 && floor(textbubbleframes) >= (sprite_get_number(spr_tv_bubbleopen) - 1))
-    textbubblesprites = 1580;
+if (textbubblesprites == spr_tv_bubbleopen && floor(textbubbleframes) >= (sprite_get_number(spr_tv_bubbleopen) - 1))
+    textbubblesprites = spr_tv_bubble;
 
-if (textbubblesprites == 1580)
+if (textbubblesprites == spr_tv_bubble)
     text_x += -3;
 
-if (textbubblesprites == 835 && floor(textbubbleframes) >= (sprite_get_number(spr_tv_bubbleclose) - 1))
+if (textbubblesprites == spr_tv_bubbleclose && floor(textbubbleframes) >= (sprite_get_number(spr_tv_bubbleclose) - 1))
 {
     new_message = "";
     shownewtext = false;
@@ -328,26 +326,26 @@ switch (obj_player.state)
 switch (obj_player.character)
 {
     case "P":
-        voice1 = 208;
-        voice2 = 65;
-        voice3 = 75;
-        voice4 = 130;
-        voice5 = 34;
-        voice6 = 16;
-        voice7 = 140;
-        voice8 = 209;
+        voice1 = sfx_combovoice1p;
+        voice2 = sfx_combovoice2p;
+        voice3 = sfx_combovoice3p;
+        voice4 = sfx_combovoice4p;
+        voice5 = sfx_combovoice5p;
+        voice6 = sfx_combovoice6p;
+        voice7 = sfx_combovoice7p;
+        voice8 = sfx_combovoice8p;
         break;
     
     case "N":
     default:
-        voice1 = 194;
-        voice2 = 40;
-        voice3 = 8;
-        voice4 = 178;
-        voice5 = 27;
-        voice6 = 55;
-        voice7 = 207;
-        voice8 = 156;
+        voice1 = sfx_combovoice1n;
+        voice2 = sfx_combovoice2n;
+        voice3 = sfx_combovoice3n;
+        voice4 = sfx_combovoice4n;
+        voice5 = sfx_combovoice5n;
+        voice6 = sfx_combovoice6n;
+        voice7 = sfx_combovoice7n;
+        voice8 = sfx_combovoice8n;
         break;
 }
 
@@ -355,11 +353,11 @@ propindex += 0.5;
 statindex += 0.3;
 
 if (global.key_inv == 1)
-    invsprite = 596;
+    invsprite = spr_invkey;
 else if (global.treat == 1 && global.key_inv != 1)
-    invsprite = 954;
+    invsprite = spr_invdonut;
 else
-    invsprite = 593;
+    invsprite = spr_invempty;
 
 var timeinsecs = floor(target_fill / 60);
 var secs = max(timeinsecs % 60, 0);
@@ -394,15 +392,15 @@ if (global.panic)
     }
     else
     {
-        if (oldBall_sprite == 494)
+        if (oldBall_sprite == spr_timer_coneball_idle)
         {
-            oldBall_sprite = 179;
+            oldBall_sprite = spr_timer_coneball;
             oldBall_index = 0;
         }
         
-        if (coneball_sprite == 35)
+        if (coneball_sprite == spr_bartimer_normalFront)
         {
-            coneball_sprite = 1485;
+            coneball_sprite = spr_bartimer_showtime;
             coneball_index = 0;
         }
         
@@ -429,9 +427,9 @@ else
     timer_y = 150;
     timer_out = 220;
     timer_in = 60;
-    oldTimer_sprite = 1411;
-    oldBall_sprite = 494;
-    coneball_sprite = 35;
+    oldTimer_sprite = spr_timer;
+    oldBall_sprite = spr_timer_coneball_idle;
+    coneball_sprite = spr_bartimer_normalFront;
 }
 
 var tgtY = 1 - (global.combotime / 60);

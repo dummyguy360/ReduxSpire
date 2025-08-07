@@ -6,8 +6,6 @@ if (DestroyedBy.object_index == obj_player)
     instance_destroy();
 }
 else
-{
     instance_destroy();
-}
 
 p1Vibration(25, 25);

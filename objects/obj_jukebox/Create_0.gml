@@ -1,3 +1,10 @@
 active = 0;
 selected = 0;
-music = [[175, "Titlescreen", "Jessie Productions"], [134, "Welcome Back!", "idk"], [135, "Down - To - Noise", "Rodmod"], [179, "there's a secret inside my breakfast?", "Rodmod"], [137, "Steamy Cotton Candy", "Rodmod"]];
+music = 
+[
+	[mu_title, "Titlescreen", "Jessie Productions"], 
+	[mu_hubw1, "Welcome Back!", "idk"], 
+	[mu_waffle, "Down - To - Noise", "Rodmod"], 
+	[mu_wafflesecret, "there's a secret inside my breakfast?", "Rodmod"], 
+	[mu_steamy, "Steamy Cotton Candy", "Rodmod"]
+];

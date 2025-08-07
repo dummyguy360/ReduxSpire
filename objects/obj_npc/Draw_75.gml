@@ -25,9 +25,7 @@ if (active)
             boxstate = 1;
     }
     else
-    {
         boxy = lerp(boxy, 30 + wave(-2, 2, 4, 0), 0.2);
-    }
 }
 else
 {

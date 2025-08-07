@@ -10,6 +10,4 @@ if (place_meeting(x, y, obj_parryhitbox))
     }
 }
 else
-{
     once = false;
-}

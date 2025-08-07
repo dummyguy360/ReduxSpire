@@ -153,7 +153,7 @@ else
 
 var _machslideCheck = sprite_index == spr_machslideboost3 || sprite_index == spr_machslideboost3FallStart || sprite_index == spr_machslideboost3Fall;
 
-if ((state == states.mach3 || (state == states.machslide && _machslideCheck) || state == states.slipnslide || state == states.rupertslide || state == states.rupertnormal || (state == states.rupertjump && vsp > 0) || (state == states.tumble && sprite_index != spr_tumblestart && sprite_index != spr_tumbleend) || (state == states.climbwall && (verticalMovespeed > 8 || mach2 >= 100)) || (state == states.climbceiling && (movespeed > 8 || mach2 >= 100)) || (state == states.climbdownwall && (verticalMovespeed > 8 || mach2 >= 100)) || state == states.frostburnspin || state == states.pizzanokungfu || (state == states.cottonroll && movespeed > 8) || state == states.bottlerocket || state == states.machtumble || state == states.minecart || state == states.fireass || state == states.puddle || state == states.Nhookshot || state == states.skateboard || state == 28 || state == states.freefall || state == states.Sjump || (state == states.machroll && movespeed >= 12) || state == states.machfreefall || state == states.charge || (state == states.superslam && sprite_index == spr_piledriver) || (state == states.superslam && sprite_index == spr_player_piledriverstart) || state == states.knightpep || state == states.knightpepattack || state == states.knightpepslopes || state == states.boxxedpep || state == states.cheesepep || state == states.cheeseball) || state == states.uppercut || state == states.pizzanomach || state == states.ufodash)
+if ((state == states.mach3 || (state == states.machslide && _machslideCheck) || state == states.slipnslide || state == states.rupertslide || state == states.rupertnormal || (state == states.rupertjump && vsp > 0) || (state == states.tumble && sprite_index != spr_tumblestart && sprite_index != spr_tumbleend) || (state == states.climbwall && (verticalMovespeed > 8 || mach2 >= 100)) || (state == states.climbceiling && (movespeed > 8 || mach2 >= 100)) || (state == states.climbdownwall && (verticalMovespeed > 8 || mach2 >= 100)) || state == states.frostburnspin || state == states.pizzanokungfu || (state == states.cottonroll && movespeed > 8) || state == states.bottlerocket || state == states.machtumble || state == states.minecart || state == states.fireass || state == states.puddle || state == states.Nhookshot || state == states.skateboard || state == states.chainsaw || state == states.freefall || state == states.Sjump || (state == states.machroll && movespeed >= 12) || state == states.machfreefall || state == states.charge || (state == states.superslam && sprite_index == spr_piledriver) || (state == states.superslam && sprite_index == spr_player_piledriverstart) || state == states.knightpep || state == states.knightpepattack || state == states.knightpepslopes || state == states.boxxedpep || state == states.cheesepep || state == states.cheeseball) || state == states.uppercut || state == states.pizzanomach || state == states.ufodash)
     instakillmove = 1;
 else
     instakillmove = 0;
@@ -214,9 +214,7 @@ if (state == states.mach3 || state == states.Nhookshot || state == states.mach2 
     }
 }
 else
-{
     mach_aftimg = 0;
-}
 
 if (state != states.bump && state != states.cottonroll && state != states.crouch && state != states.boxxedpep && state != states.pistol && state != states.tumble && sprite_index != spr_player_crouchshoot && sprite_index != spr_player_skatecrouch && state != states.Sjumpprep && state != states.chainsaw && state != states.machroll && state != states.hurt && state != states.crouchslide && state != states.crouchjump && sprite_index != spr_pizzano_crouchslide)
     mask_index = spr_player_mask;
@@ -230,12 +228,7 @@ if (((place_meeting(x, y, obj_door) && !place_meeting(x, y, obj_doorblocked)) ||
     instance_create(x, y, obj_uparrow);
 
 if (((state == states.mach2 && sprite_index != spr_mach1) || state == states.mach3) && !instance_exists(obj_speedlines))
-{
-    instance_create(x, y, obj_speedlines, 
-    {
-        playerID: id
-    });
-}
+    instance_create(x, y, obj_speedlines, { playerID: id });
 
 if (state == states.pizzanokungfu)
 {
@@ -248,9 +241,7 @@ if (state == states.pizzanokungfu)
     }
 }
 else
-{
     blue_aftimg = 0;
-}
 
 if (state != states.backbreaker)
 {
@@ -273,12 +264,7 @@ if (state != states.backbreaker)
     if (supertauntcharged == true && room != rank_room)
     {
         if (!instance_exists(supertaunteffect))
-        {
-            supertaunteffect = instance_create(x, y, obj_supertaunteffect, 
-            {
-                playerID: other.id
-            });
-        }
+            supertaunteffect = instance_create(x, y, obj_supertaunteffect, { playerID: other.id });
     }
 }
 
@@ -322,9 +308,7 @@ if (place_meeting(x, y + 3, obj_icyGround) && grounded)
         slideHsp += (0.25 * slopeMomentum_acceleration());
 }
 else if (grounded)
-{
     slideHsp = approach(slideHsp, 0, 0.35);
-}
 
 if (!grounded)
     slideHsp = approach(slideHsp, 0, 0.6);
@@ -417,9 +401,7 @@ if (!ds_list_empty(sour_buddies))
     hsp /= sourreduction;
     
     if (sour_buddies_timer > 0)
-    {
         sour_buddies_timer--;
-    }
     else if (key_jump || key_slap2 || key_right2 || key_left2 || key_attack2 || state == states.mach3)
     {
         var _range = irandom_range(0, _size);

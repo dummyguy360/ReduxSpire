@@ -10,6 +10,4 @@ if (_condition || (stopFadeBackIn && revealActivated))
     revealActivated = true;
 }
 else
-{
     secretAlpha = approach(secretAlpha, 1, 0.15);
-}

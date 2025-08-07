@@ -85,21 +85,13 @@ if (countpoint >= global.srank)
         dex = 4;
 }
 else if (countpoint >= global.arank && countpoint < global.srank)
-{
     dex = 3;
-}
 else if (countpoint >= global.brank && countpoint < global.arank)
-{
     dex = 2;
-}
 else if (countpoint >= global.crank && countpoint < global.brank)
-{
     dex = 1;
-}
 else if (countpoint < global.crank)
-{
     dex = 0;
-}
 
 flash = 0;
 pshake = false;

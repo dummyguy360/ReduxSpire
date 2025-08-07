@@ -14,7 +14,5 @@ if (reciever)
         }
     }
     else
-    {
         sprite_index = spr_teleporterexit;
-    }
 }

@@ -11,6 +11,4 @@ if (obj_player.state == states.costumegrab)
     y = obj_player.y - 75;
 }
 else
-{
     instance_destroy();
-}

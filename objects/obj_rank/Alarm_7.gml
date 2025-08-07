@@ -9,11 +9,7 @@ if (floor(image_index) >= (image_number - 1))
         alarm[7] = -1;
     }
     else
-    {
         alarm[7] = 30;
-    }
 }
 else
-{
     alarm[7] = 30;
-}

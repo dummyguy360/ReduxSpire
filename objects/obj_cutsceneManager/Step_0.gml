@@ -30,7 +30,5 @@ if (!is_undefined(Event))
         }
     }
     else
-    {
         Event();
-    }
 }

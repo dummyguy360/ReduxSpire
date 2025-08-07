@@ -7,9 +7,7 @@ switch (state)
         y = approach(y, ystart, 6);
         
         if (cooldown > 0)
-        {
             cooldown--;
-        }
         else if (point_distance(x, 0, obj_player.x, 0) <= threshold_x && point_distance(0, y, 0, obj_player.y) <= threshold_y && y == ystart)
         {
             state = states.Throw;
@@ -30,9 +28,7 @@ switch (state)
     
     case states.Throw:
         if (attack_buffer > 0)
-        {
             attack_buffer--;
-        }
         else
         {
             with (obj_pizzano_dance)

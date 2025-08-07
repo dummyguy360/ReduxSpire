@@ -24,7 +24,7 @@ if ((ds_list_find_index(global.baddieroom, id) == -1 && inhaleddestroyvar == fal
     }
     
     if (chance(0.05))
-        scr_sound(191, 66, 21, 28, 183, 176);
+        scr_sound(sfx_scream1, sfx_scream2, sfx_scream3, sfx_scream4, sfx_scream5, sfx_scream6);
     
     var combob = clamp(global.combo, 1, 4);
     var combobsnd = asset_get_index("sound_combo" + string(combob));

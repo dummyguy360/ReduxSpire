@@ -16,6 +16,4 @@ if (input_text == true)
     draw_text(bottom_x + 8 + sprite_get_xoffset(spr_palettechanger_textbox) + length + 5, draw_y - 5, cursor);
 }
 else
-{
     draw_text(bottom_x + 8 + sprite_get_xoffset(spr_palettechanger_textbox), draw_y - 5, string(round(colorvalue * 255)));
-}

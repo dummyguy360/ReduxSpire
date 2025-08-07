@@ -82,9 +82,7 @@ if (grabbedPlayer != -4)
                 movespeed += 0.25;
         }
         else
-        {
             movespeed = 0;
-        }
     }
     
     old_hsp = approach(old_hsp, 0, 0.2);

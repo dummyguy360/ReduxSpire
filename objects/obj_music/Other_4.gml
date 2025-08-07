@@ -1,4 +1,4 @@
-var cur_stuff = ds_map_find_value(global.music_map, room);
+var cur_stuff = global.music_map[? room];
 
 if (!is_undefined(cur_stuff))
     room_details = cur_stuff;
@@ -28,9 +28,7 @@ if (!global.panic && room != rank_room && room != timesuproom && !instance_exist
             audio_sound_gain(global.music, global.musicVolume, 500);
         }
         else
-        {
             audio_sound_gain(global.music, global.musicVolume, 0);
-        }
         
         audio_stop_sound(global.secretmusic);
         audio_stop_sound(global.harrymusic);

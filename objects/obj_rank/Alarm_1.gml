@@ -12,9 +12,7 @@ switch (sevent)
             carddex1 = 0;
         }
         else
-        {
             cshake1 = true;
-        }
         
         alarm[1] = 25;
         break;
@@ -26,9 +24,7 @@ switch (sevent)
             carddex2 = 0;
         }
         else
-        {
             cshake2 = true;
-        }
         
         alarm[1] = 25;
         break;
@@ -40,9 +36,7 @@ switch (sevent)
             carddex3 = 0;
         }
         else
-        {
             cshake3 = true;
-        }
         
         alarm[1] = 25;
         break;

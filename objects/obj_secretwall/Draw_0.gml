@@ -15,6 +15,4 @@ if (!surface_exists(secretSurface))
     surface_reset_target();
 }
 else if (surface_exists(secretSurface))
-{
     draw_surface_ext(secretSurface, 0, 0, 1, 1, 0, c_white, secretAlpha);
-}

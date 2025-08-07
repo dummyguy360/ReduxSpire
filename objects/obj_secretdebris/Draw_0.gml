@@ -18,9 +18,7 @@ if (point_in_rectangle(x, y, camx - 64, camy - 64, camx + camw + 64, camy + camh
             }
         }
         else
-        {
             draw_sprite_tiled(blendsprite, 0, 0, 0);
-        }
         
         gpu_set_blendmode(bm_normal);
         surface_reset_target();

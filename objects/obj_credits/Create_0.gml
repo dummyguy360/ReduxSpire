@@ -1,5 +1,5 @@
 can_goUp = true;
-sceneBackground = 1639;
+sceneBackground = bg_thumbnail_entryway;
 DrawX = 0;
 DrawY = 0;
 DrawHspeed = 0;

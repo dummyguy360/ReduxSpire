@@ -5,9 +5,7 @@ for (var i = 0; i < array_length(global.secret_layers); i++)
     if (layer_exists(global.secret_layers[i].nm))
     {
         if (!surface_exists(a.surf))
-        {
             a.surf = surface_create(960, 540);
-        }
         else
         {
             surface_set_target(a.surf);

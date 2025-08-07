@@ -17,9 +17,7 @@ switch (state)
         image_index = 0;
         
         if (cooldown > 0)
-        {
             cooldown--;
-        }
         else if (!instance_exists(enemyID) && point_distance(x, 0, obj_player.x, 0) <= threshold_x && point_distance(0, y, 0, obj_player.y) <= threshold_y && (important || not_in_list))
         {
             state = states.Throw;
@@ -33,9 +31,7 @@ switch (state)
         image_speed = 0.35;
         
         if (attack_buffer > 0)
-        {
             attack_buffer--;
-        }
         else
         {
             with (obj_pizzano_dance)

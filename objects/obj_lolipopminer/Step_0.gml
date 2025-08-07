@@ -1,6 +1,6 @@
 pickthrowtime -= 0.5;
 
-if (((obj_player.x > (x - 300) && obj_player.x < (x + 300)) && (y <= (obj_player.y + 200) && y >= (obj_player.y - 200))) && obj_player.state != states.cotton && obj_player.state != states.cottondrill && obj_player.state != states.door && obj_player.state != states.cottonroll && obj_player.state != 112)
+if (((obj_player.x > (x - 300) && obj_player.x < (x + 300)) && (y <= (obj_player.y + 200) && y >= (obj_player.y - 200))) && obj_player.state != states.cotton && obj_player.state != states.cottondrill && obj_player.state != states.door && obj_player.state != states.cottonroll && obj_player.state != states.changing)
 {
     sprite_index = spr_lolipopmineranger;
     
@@ -13,6 +13,4 @@ if (((obj_player.x > (x - 300) && obj_player.x < (x + 300)) && (y <= (obj_player
     }
 }
 else
-{
     sprite_index = spr_lolipopmineridle;
-}

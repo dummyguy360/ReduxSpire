@@ -55,11 +55,11 @@ add_music(molasses_6b, mu_swamp2, mu_swampsecret, 1);
 add_music(mines_1, mu_mineshaft1, mu_minessecret, 0, function()
 {
     if (global.minesProgress && obj_player.state == states.victory)
-        return 99;
+        return mu_void;
     else if (global.minesProgress)
-        return 184;
+        return mu_mineshaft2;
     else
-        return 39;
+        return mu_mineshaft1;
 });
 add_music(mines_6, mu_mineshaft2, mu_minessecret, 0);
 add_music(mineshaft_1, mu_mineshaft1, mu_minessecret, 0);

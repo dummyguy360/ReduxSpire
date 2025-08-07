@@ -28,9 +28,7 @@ switch (state)
         image_speed = 0.35;
         
         if (attack_buffer > 0)
-        {
             attack_buffer--;
-        }
         else
         {
             with (obj_pizzano_dance)
