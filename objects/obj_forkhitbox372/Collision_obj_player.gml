@@ -7,7 +7,7 @@ if (instance_place(x, y, obj_melon).sprite_index != spr_meloncoolparry)
 {
     with (instance_place(x, y, obj_melon))
     {
-        state = states.meteorpep;
+        state = baddiestate.slugparry;
         substate = 1;
         image_index = 0;
         sprite_index = spr_meloncoolparry;

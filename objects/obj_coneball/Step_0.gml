@@ -9,9 +9,7 @@ if (image_alpha == 1)
     }
 }
 else
-{
     image_alpha += 0.01;
-}
 
 var pid = instance_place(x, y, obj_player);
 

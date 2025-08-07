@@ -23,7 +23,7 @@ if (ds_list_find_index(global.baddieroom, id) == -1 || important)
         var i = random_range(0, 100);
         
         if (i >= 95)
-            scr_sound(191, 66, 21, 28, 183, 176);
+            scr_sound(sfx_scream1, sfx_scream2, sfx_scream3, sfx_scream4, sfx_scream5, sfx_scream6);
         
         switch (global.combo)
         {

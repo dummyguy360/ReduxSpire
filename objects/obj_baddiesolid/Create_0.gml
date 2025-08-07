@@ -4,7 +4,7 @@ canCollide = function(arg0 = obj_player)
     {
         case obj_player:
         case obj_player2:
-        case 68:
+        case obj_painter:
             return true;
             break;
         

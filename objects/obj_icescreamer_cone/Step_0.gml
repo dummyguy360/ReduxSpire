@@ -14,9 +14,7 @@ if (place_meeting_collision(x, y + image_yscale, Exclude.PLATFORMS))
     }
 }
 else
-{
     oncev = false;
-}
 
 if (place_meeting_collision(x + image_xscale, y, Exclude.PLATFORMS))
 {
@@ -31,9 +29,7 @@ if (place_meeting_collision(x + image_xscale, y, Exclude.PLATFORMS))
     }
 }
 else
-{
     onceh = false;
-}
 
 x += hsp;
 y += vsp;
