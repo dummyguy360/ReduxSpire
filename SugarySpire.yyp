@@ -366,7 +366,7 @@
   "isEcma": false,
   "LibraryEmitters": [],
   "MetaData": {
-    "IDEVersion": "2023.6.0.92",
+    "IDEVersion": "2023.2.0.71",
   },
   "resources": [
     {"id":{"name":"mu_entryway_title","path":"sounds/mu_entryway_title/mu_entryway_title.yy",},},
