@@ -23,7 +23,7 @@ function scr_enemy_float()
     
     if (sprite_index == spr_thundercloud_throw)
         sprite_index = walkspr;
-    
+    // Froth Diving
     if (object_index == obj_froth)
     {
         var _dir = obj_player.x - x;

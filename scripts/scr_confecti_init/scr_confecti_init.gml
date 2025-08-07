@@ -1,9 +1,11 @@
 function scr_confecti_init()
 {
+	//Follower List
     ds_list_add(global.FollowerList, id);
-    
+    //Confecti Sprite
     switch (object_index)
     {
+		//Mallow and Default
         default:
             spr_idle = spr_marshmellow_idle;
             spr_run = spr_marshemellow_run;

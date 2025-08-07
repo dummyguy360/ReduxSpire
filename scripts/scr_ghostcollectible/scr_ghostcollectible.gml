@@ -1,4 +1,4 @@
-function scr_ghostcollectible(arg0 = false)
+function scr_ghostcollectible(_candysona = false)
 {
     var q = noone;
     var b = id;
@@ -14,7 +14,7 @@ function scr_ghostcollectible(arg0 = false)
             image_number: b.image_number,
             image_alpha: 0.5,
             image_index: 0,
-            candysona: arg0
+            candysona: _candysona
         };
         trace(q);
         ds_list_add(collectiblelist, q);

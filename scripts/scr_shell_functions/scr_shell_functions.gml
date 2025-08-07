@@ -21,9 +21,9 @@ function scr_shell_closeconsole()
     global.shellactivate = false;
 }
 
-function scr_fartcommand(arg0 = "BALLS")
+function scr_fartcommand(fartstring = "BALLS")
 {
-    switch (arg0)
+    switch (fartstring)
     {
         case "fart":
         case "poop":

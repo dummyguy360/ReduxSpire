@@ -1,3 +1,2 @@
-function scr_painter_arena()
-{
-}
+//unused
+function scr_painter_arena() { }

@@ -14,9 +14,7 @@ function scr_boss_vunerable()
         sprite_index = vulnerable_spr;
     
     if (intensity >= 0)
-    {
         intensity--;
-    }
     else
     {
         sprite_index = normal_spr;
@@ -32,6 +30,7 @@ function scr_boss_vunerable()
         
         with (p)
         {
+			// Instakill
             if (instakillmove || state == states.uppercut)
             {
                 o.xscale = -xscale;
@@ -54,7 +53,7 @@ function scr_boss_vunerable()
                 camera_shake(30, 15);
                 scr_sleep(700);
             }
-            
+            // Grab
             if (state == states.handstandjump)
             {
                 scr_sound(sound_slaphit);

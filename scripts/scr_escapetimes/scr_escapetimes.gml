@@ -5,57 +5,57 @@ function scr_escapetimes(_room = room)
     
     switch (_room)
     {
-        case 35:
+        case steamy_12:
             minutes = 4;
             seconds = 0;
             break;
         
-        case 20:
+        case entryway_11:
             minutes = 3;
             seconds = 0;
             break;
         
-        case 50:
+        case molasses_9:
             minutes = 5;
             seconds = 0;
             break;
         
-        case 84:
+        case mines_11:
             minutes = 4;
             seconds = 50;
             break;
         
-        case 95:
+        case dragonlair_2:
             minutes = 15;
             seconds = 30;
             break;
         
-        case 116:
+        case mountain_11:
             minutes = 5;
             seconds = 0;
             break;
         
-        case 11:
+        case entryway_1:
             minutes = 5;
             seconds = 0;
             break;
         
-        case 134:
+        case sucrose_2:
             minutes = 7;
             seconds = 30;
             break;
         
-        case 208:
+        case dance_pillar:
             minutes = 4;
             seconds = 0;
             break;
         
-        case 209:
+        case estate_7:
             minutes = 4;
             seconds = 55;
             break;
         
-        case 231:
+        case bee_12:
             minutes = 4;
             seconds = 0;
             break;
@@ -79,27 +79,27 @@ function scr_laptimes(_room = room)
     
     switch (_room)
     {
-        case 153:
+        case entryway_portal:
             minutes = 0;
             seconds = 45;
             break;
         
-        case 155:
+        case steamy_portal:
             minutes = 1;
             seconds = 0;
             break;
         
-        case 42:
+        case molasses_1:
             minutes = 1;
             seconds = 20;
             break;
         
-        case 67:
+        case mines_1:
             minutes = 1;
             seconds = 45;
             break;
         
-        case 164:
+        case sucrose_portal:
             minutes = 2;
             seconds = 30;
             break;

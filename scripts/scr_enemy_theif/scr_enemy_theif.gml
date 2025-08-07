@@ -2,6 +2,7 @@ function scr_enemy_theif()
 {
     if (theifsubstate == 0)
     {
+		//walk
         hsp = image_xscale * movespeed;
         
         if (theifkeyinv == 0)
@@ -27,6 +28,7 @@ function scr_enemy_theif()
     
     if (theifsubstate == 1)
     {
+		//idle, keyidle, keyget
         movespeed = 0;
         hsp = 0;
         

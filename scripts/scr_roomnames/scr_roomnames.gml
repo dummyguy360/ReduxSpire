@@ -4,361 +4,361 @@ function scr_roomnames(room_id = room)
     
     switch (room_id)
     {
-        case 63:
+        case rm_missing:
             room_name = "MISSING ROOM LMAO";
             break;
         
-        case 4:
-        case 60:
-        case 59:
+        case outer_room1:
+        case outer_room2:
+        case scootercutsceneidk:
             room_name = "Welcome To Sugary Spire!";
             break;
         
-        case 66:
+        case hub_w1:
             room_name = "Enjoy Your Stay!";
             break;
         
-        case 5:
+        case tutorial_1:
             room_name = "The Parlor";
             break;
         
-        case 21:
+        case entryway_secret_1:
             room_name = "Hidden behind some walls.";
             break;
         
-        case 22:
+        case entryway_secret_2:
             room_name = "Wet Floor";
             break;
         
-        case 23:
+        case entryway_secret_3:
             room_name = "Slip and Fall";
             break;
         
-        case 11:
+        case entryway_1:
             room_name = "Welcome to Sugary Spire!";
             break;
         
-        case 12:
+        case entryway_2:
             room_name = "Hard Hat Required";
             break;
         
-        case 13:
+        case entryway_3:
             room_name = "Orange City";
             break;
         
-        case 14:
+        case entryway_4:
             room_name = "Construction Conglomerate";
             break;
         
-        case 15:
+        case entryway_5:
             room_name = "Had A Joke But I'm Still Working On It";
             break;
         
-        case 16:
+        case entryway_6:
             room_name = "Down And Around";
             break;
         
-        case 17:
+        case entryway_7:
             room_name = "Wires And Boxes";
             break;
         
-        case 18:
+        case entryway_8:
             room_name = "City Outskirts";
             break;
         
-        case 19:
+        case entryway_9:
             room_name = "Nailed It";
             break;
         
-        case 61:
+        case entryway_10:
             room_name = "Operation Crunch Creak Construct";
             break;
         
-        case 20:
+        case entryway_11:
             room_name = "Beary Careful";
             break;
         
-        case 38:
+        case steamy_secret_1:
             room_name = "Gumslime Paradise?";
             break;
         
-        case 39:
+        case steamy_secret_2:
             room_name = "Digging For Cotton";
             break;
         
-        case 40:
+        case steamy_secret_3:
             room_name = "High Speed Cotton";
             break;
         
-        case 24:
+        case steamy_1:
             room_name = "Steamtown Spire";
             break;
         
-        case 25:
+        case steamy_2:
             room_name = "Welcome to Cottontown!";
             break;
         
-        case 26:
+        case steamy_3:
             room_name = "Boiler Room";
             break;
         
-        case 27:
+        case steamy_4:
             room_name = "Steamy Cotton Candy";
             break;
         
-        case 28:
+        case steamy_5:
             room_name = "Skyhigh";
             break;
         
-        case 29:
+        case steamy_6:
             room_name = "Park Tricks";
             break;
         
-        case 127:
+        case steamy_7:
             room_name = "The Great Clock Tower";
             break;
         
-        case 30:
+        case steamy_8:
             room_name = "Grand Gateau";
             break;
         
-        case 31:
+        case steamy_9:
             room_name = "Like Clockwork";
             break;
         
-        case 32:
+        case steamy_10:
             room_name = "Race Around The Clock";
             break;
         
-        case 33:
+        case steamy_11:
             room_name = "Froghop";
             break;
         
-        case 34:
+        case steamy_11_1:
             room_name = "Top of the Clock";
             break;
         
-        case 35:
+        case steamy_12:
             room_name = "Beary Break Room";
             break;
         
-        case 36:
+        case steamy_13:
             room_name = "Secret Side Room";
             break;
         
-        case 37:
+        case steamy_14:
             room_name = "Slow and Steady";
             break;
         
-        case 42:
+        case molasses_1:
             room_name = "The Swamp of the Spire";
             break;
         
-        case 43:
+        case molasses_2:
             room_name = "Big Stump";
             break;
         
-        case 44:
+        case molasses_3:
             room_name = "Bubbly Swamp Water";
             break;
         
-        case 45:
+        case molasses_4:
             room_name = "Sticky and Wet";
             break;
         
-        case 46:
+        case molasses_5:
             room_name = "Drowning in Molasses";
             break;
         
-        case 47:
+        case molasses_6:
             room_name = "The Sweet Smell of Death";
             break;
         
-        case 91:
+        case molasses_6b:
             room_name = "The Ancient Temple Entrance";
             break;
         
-        case 89:
+        case molasses_6c:
             room_name = "Ancient Hallways";
             break;
         
-        case 90:
+        case molasses_6d:
             room_name = "Meet the Fling Frog!";
             break;
         
-        case 48:
+        case molasses_7:
             room_name = "Falling and Flinging";
             break;
         
-        case 49:
+        case molasses_8:
             room_name = "This Used to be the Gallery";
             break;
         
-        case 64:
+        case molasses_8b:
             room_name = "Molasses Everywhere!";
             break;
         
-        case 50:
+        case molasses_9:
             room_name = "Gummy Harry in the Ancient Temple";
             break;
         
-        case 51:
+        case molasses_10:
             room_name = "Don't look down!";
             break;
         
-        case 52:
+        case molasses_11:
             room_name = "Unstationary Ground";
             break;
         
-        case 53:
+        case molasses_12:
             room_name = "Froghop Strikes Back!";
             break;
         
-        case 65:
+        case molasses_13:
             room_name = "The Temple of Goop";
             break;
         
-        case 54:
+        case molasses_secret_1:
             room_name = "Groundpound to go higher!";
             break;
         
-        case 56:
+        case molasses_secret_2:
             room_name = "and this used to be the Bathroom...";
             break;
         
-        case 55:
+        case molasses_secret_3:
             room_name = "Frog Den";
             break;
         
-        case 67:
+        case mines_1:
             room_name = "Sugary Spire Underground";
             break;
         
-        case 74:
+        case mines_14:
             room_name = "Demolition Men Ahead";
             break;
         
-        case 68:
+        case mines_2:
             room_name = "Excavation Site";
             break;
         
-        case 69:
+        case mines_3:
             room_name = "Miner Problem";
             break;
         
-        case 70:
+        case mines_4:
             room_name = "Rossette's Humble Shoppe";
             break;
         
-        case 71:
+        case mines_5:
             room_name = "Minecart Troubles";
             break;
         
-        case 77:
+        case mines_6:
             room_name = "Cobalt Caverns";
             break;
         
-        case 78:
+        case mines_7:
             room_name = "Jawbreaker Centre";
             break;
         
-        case 81:
+        case mines_8:
             room_name = "RUN AWAY!!";
             break;
         
-        case 79:
+        case mines_8B:
             room_name = "Mining for Confecti";
             break;
         
-        case 80:
+        case mines_9:
             room_name = "Journey to the Center of the Jawbreaker";
             break;
         
-        case 82:
+        case mines_10:
             room_name = "Even Straighter Drop";
             break;
         
-        case 84:
+        case mines_11:
             room_name = "Beary Dark Cave";
             break;
         
-        case 85:
+        case mines_12:
             room_name = "Claustrophic Darkness";
             break;
         
-        case 86:
+        case mines_13:
             room_name = "The Great Train Escape";
             break;
         
-        case 72:
+        case mines_secret_1:
             room_name = "Jawbreaking Secret";
             break;
         
-        case 73:
+        case mines_secret_2:
             room_name = "Do you Smell Something Burning?";
             break;
         
-        case 83:
+        case mines_secret_3:
             room_name = "Mineykarting";
             break;
         
-        case 171:
+        case mountain_intro:
             room_name = "Mt. Sugary Spire";
             break;
         
-        case 103:
+        case mountain_1:
             room_name = "Slippery Slopes";
             break;
         
-        case 104:
+        case mountain_2:
             room_name = "Broken Down Path";
             break;
         
-        case 105:
+        case mountain_3:
             room_name = "Frozen Frenzy";
             break;
         
-        case 172:
+        case mountain_3b:
             room_name = "Stayin' Frosty";
             break;
         
-        case 108:
+        case mountain_4:
             room_name = "Prince Rupert's Drop";
             break;
         
-        case 107:
+        case mountain_5:
             room_name = "Freezer-Fridge-inator";
             break;
         
-        case 109:
+        case mountain_6:
             room_name = "Sugar Honey Iced Tea";
             break;
         
-        case 110:
+        case mountain_7:
             room_name = "14 Steps to Heaven";
             break;
         
-        case 112:
+        case mountain_8:
             room_name = "Rise and Shine";
             break;
         
-        case 113:
+        case mountain_9:
             room_name = "Heaven's Door";
             break;
         
-        case 115:
+        case mountain_10:
             room_name = "Land of Dreams";
             break;
         
-        case 116:
+        case mountain_11:
             room_name = "Eerie Event";
             break;
         
-        case 123:
+        case mountain_escape1:
             room_name = "A Nightmare in Dreamland";
             break;
         
-        case 124:
+        case mountain_escape2:
             room_name = "The Cold don't bother me!";
             break;
         

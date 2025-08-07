@@ -1,4 +1,4 @@
-function scr_commonenemy()
+function scr_commonenemy()//idk if this already exists but if it does move everything there
 {
     if (invtime > 0 && global.freezeframe == false)
         invtime -= 1;

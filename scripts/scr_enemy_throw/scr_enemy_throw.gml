@@ -248,4 +248,5 @@ function scr_enemy_throw()
                 break;
         }
     }
+	//this will cause a memory leak later. Too Bad!
 }

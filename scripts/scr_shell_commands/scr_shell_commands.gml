@@ -1,11 +1,16 @@
+#region Roomnames
 for (var i = 0; room_exists(i); i++)
     global.roomlist[i] = room_get_name(i);
+#endregion
 
-function sh_escape(arg0_)
+///////////////
+
+#region Escape
+function sh_escape(args)
 {
-    var arg0 = string(arg0_[1]);
-    var arg1 = arg0_[2];
-    var arg2 = arg0_[3];
+    var arg0 = string(args[1]);
+    var arg1 = args[2];
+    var arg2 = args[3];
     
     switch (arg0)
     {
@@ -45,10 +50,12 @@ function meta_escape()
         argumentDescriptions: ["activate/deactivate escape", "set minutes", "set seconds"]
     };
 }
+#endregion
 
-function sh_toggle_collisions(arg0)
+#region Toggle Collisions
+function sh_toggle_collisions(args)
 {
-    var arg1 = arg0[1];
+    var arg1 = args[1];
     
     switch (arg1)
     {
@@ -87,49 +94,49 @@ function toggle_collision_function()
     if (!variable_global_exists("showcollisionarray"))
     {
         i = 0;
-        global.showcollisionarray[i++] = 367;
-        global.showcollisionarray[i++] = 104;
-        global.showcollisionarray[i++] = 473;
-        global.showcollisionarray[i++] = 152;
-        global.showcollisionarray[i++] = 510;
-        global.showcollisionarray[i++] = 167;
-        global.showcollisionarray[i++] = 513;
-        global.showcollisionarray[i++] = 41;
-        global.showcollisionarray[i++] = 506;
-        global.showcollisionarray[i++] = 503;
-        global.showcollisionarray[i++] = 284;
-        global.showcollisionarray[i++] = 354;
-        global.showcollisionarray[i++] = 234;
-        global.showcollisionarray[i++] = 490;
-        global.showcollisionarray[i++] = 359;
-        global.showcollisionarray[i++] = 591;
-        global.showcollisionarray[i++] = 258;
-        global.showcollisionarray[i++] = 28;
-        global.showcollisionarray[i++] = 429;
-        global.showcollisionarray[i++] = 46;
-        global.showcollisionarray[i++] = 121;
-        global.showcollisionarray[i++] = 482;
-        global.showcollisionarray[i++] = 216;
-        global.showcollisionarray[i++] = 107;
-        global.showcollisionarray[i++] = 119;
-        global.showcollisionarray[i++] = 2;
-        global.showcollisionarray[i++] = 477;
-        global.showcollisionarray[i++] = 478;
-        global.showcollisionarray[i++] = 480;
-        global.showcollisionarray[i++] = 222;
-        global.showcollisionarray[i++] = 169;
-        global.showcollisionarray[i++] = 74;
-        global.showcollisionarray[i++] = 338;
-        global.showcollisionarray[i++] = 96;
-        global.showcollisionarray[i++] = 117;
-        global.showcollisionarray[i++] = 93;
+        global.showcollisionarray[i++] = obj_solid;
+        global.showcollisionarray[i++] = obj_cameraRegion;
+        global.showcollisionarray[i++] = obj_slope;
+        global.showcollisionarray[i++] = obj_slopePlatform;
+        global.showcollisionarray[i++] = obj_platform;
+        global.showcollisionarray[i++] = obj_sidePlatform;
+        global.showcollisionarray[i++] = obj_cottonplatform;
+        global.showcollisionarray[i++] = obj_traingo;
+        global.showcollisionarray[i++] = obj_traindestroy;
+        global.showcollisionarray[i++] = obj_trainTurnTrigger;
+        global.showcollisionarray[i++] = obj_trainSlowDownTrigger;
+        global.showcollisionarray[i++] = obj_trainSpeedUpTrigger;
+        global.showcollisionarray[i++] = obj_movingPlatformTrigger;
+        global.showcollisionarray[i++] = obj_movingPlatform_attach;
+        global.showcollisionarray[i++] = obj_secretdestroyable;
+        global.showcollisionarray[i++] = obj_secretdestroyable_Point;
+        global.showcollisionarray[i++] = obj_secretdestroyable_big;
+        global.showcollisionarray[i++] = obj_secretdestroyable_bigPoint;
+        global.showcollisionarray[i++] = obj_secretdestroyable_metal;
+        global.showcollisionarray[i++] = obj_secretdestroyable_tiles2;
+        global.showcollisionarray[i++] = obj_secretdestroyable_tiles3;
+        global.showcollisionarray[i++] = obj_secretdestroyable_tiles4;
+        global.showcollisionarray[i++] = obj_secretdestroyable_tiles5;
+        global.showcollisionarray[i++] = obj_eventtrigger;
+        global.showcollisionarray[i++] = obj_doortrigger_parent;
+        global.showcollisionarray[i++] = obj_doorS;
+        global.showcollisionarray[i++] = obj_doorA;
+        global.showcollisionarray[i++] = obj_doorB;
+        global.showcollisionarray[i++] = obj_doorC;
+        global.showcollisionarray[i++] = obj_doorD;
+        global.showcollisionarray[i++] = obj_doorE;
+        global.showcollisionarray[i++] = obj_doorP;
+        global.showcollisionarray[i++] = obj_grindRail;
+        global.showcollisionarray[i++] = obj_grindRail_Slope;
+        global.showcollisionarray[i++] = obj_minecartRail;
+        global.showcollisionarray[i++] = obj_minecartRail_Slope;
     }
     
     var array = global.showcollisionarray;
     var length = array_length(array);
-    var i = length - 1;
+	//Start from the end to the start (more optimized)
     
-    while (i >= 0)
+    for (var i = length - 1; i >= 0; i--)
     {
         with (array[i])
         {
@@ -141,14 +148,14 @@ function toggle_collision_function()
                     image_alpha = 0.6;
             }
         }
-        
-        i--;
     }
 }
+#endregion
 
-function sh_toggle_debugmode(arg0)
+#region Debug Mode
+function sh_toggle_debugmode(args)
 {
-    var arg1 = arg0[1];
+    var arg1 = args[1];
     
     switch (arg1)
     {
@@ -180,16 +187,18 @@ function meta_toggle_debugmode()
         argumentDescriptions: ["toggles debugmode"]
     };
 }
+#endregion
 
-function sh_room_goto(arg0)
+#region Room Goto
+function sh_room_goto(args)
 {
-    var arg1 = asset_get_index(arg0[1]);
-    var arg2 = arg0[2];
-    
-    if (asset_get_type(arg0[1]) != 3)
-        return "Can't find room " + string(arg0[1]);
-    
-    if (asset_get_type(arg0[1]) == 3)
+    var arg1 = asset_get_index(args[1]);
+    var arg2 = args[2];
+    //Error Check 
+    if (asset_get_type(args[1]) != 3)
+        return "Can't find room " + string(args[1]);//Shamelessy took this from Ethgaming
+    //Go to Room
+    if (asset_get_type(args[1]) == 3)
     {
         obj_player.targetRoom = arg1;
         obj_player.targetDoor = arg2;
@@ -207,10 +216,12 @@ function meta_room_goto()
         argumentDescriptions: ["sets targetRoom", "sets targetDoor"]
     };
 }
+#endregion
 
-function sh_instance_create(arg0)
+#region Instance_Create
+function sh_instance_create(args)
 {
-    instance_create(arg0[1], arg0[2], asset_get_index(arg0[3]));
+    instance_create(args[1], args[2], asset_get_index(args[3]));
 }
 
 function meta_instance_create()
@@ -223,8 +234,10 @@ function meta_instance_create()
         argumentDescriptions: ["the X coordinate to create the object at", "the Y coordinate to create the object at", "the object to create"]
     };
 }
+#endregion
 
-function sh_noclip(arg0)
+#region Noclip
+function sh_noclip(args)
 {
     if (obj_player.state != states.noclip)
         obj_player.state = states.noclip;
@@ -242,12 +255,14 @@ function meta_noclip()
         argumentDescriptions: []
     };
 }
+#endregion
 
-function sh_fuckyou(arg0)
+#region Fuck You
+function sh_fuckyou(args)
 {
     audio_stop_sound(sound_youfuckindick);
     audio_stop_sound(sound_BITCH);
-    scr_sound(sound_youfuckindick, 190);
+    scr_sound(sound_youfuckindick, sound_BITCH);
 }
 
 function meta_fuckyou()
@@ -262,8 +277,10 @@ function meta_fuckyou()
         deferred: false
     };
 }
+#endregion
 
-function sh_give_all(arg0)
+#region Give All
+function sh_give_all(args)
 {
     for (var numb = 1; numb < 6; numb++)
     {
@@ -313,3 +330,4 @@ function meta_give_all()
         argumentDescriptions: []
     };
 }
+#endregion

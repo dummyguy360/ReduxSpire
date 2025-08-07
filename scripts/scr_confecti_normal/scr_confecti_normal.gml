@@ -15,6 +15,7 @@ function scr_confecti_normal()
             sprite_index = spr_panic;
     }
     
+	#region Confecti Distancing
     if (obj_player.hsp == 0 && obj_player.state != states.door && obj_player.grounded && image_xscale == obj_player.xscale)
     {
         if (magnitude < 32 && (scr_solid(x - distance, bbox_bottom + 1) || (!place_meeting(x, y, obj_platform) && place_meeting(x, bbox_bottom + 1, obj_platform))) && !scr_solid(x - image_xscale, y))
@@ -24,6 +25,8 @@ function scr_confecti_normal()
         magnitude -= 0.5;
     
     distance = image_xscale * magnitude;
+	#endregion
+	
     var _leader = noone;
     _leader = !ds_list_find_index(global.FollowerList, id) ? obj_player : ds_list_find_value(global.FollowerList, floor(ds_list_find_index(global.FollowerList, id) - 1));
     

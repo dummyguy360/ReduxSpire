@@ -1,17 +1,21 @@
-function boss_attack_queue(arg0, arg1)
+function boss_attack_queue(state, timer)
 {
-    ds_queue_enqueue(atkqueue, arg0, arg1);
+    ds_queue_enqueue(atkqueue, state, timer);
 }
 
-function boss_create_attack(arg0, arg1, arg2 = 100, arg3 = noone, arg4 = noone)
+// too lazy to write proper doc
+// sets State, Intesity of Attack, and time between attacks
+// Arg3 and arg4 are dependent based on state, ex: in Painter Dash, arg 3 sets if the attack ends in painter being stunned
+// For the vunerable state, intensity is how long boss is vulnerable
+function boss_create_attack(state, intensity, timer = 100, sub1 = noone, sub2 = noone)
 {
     return 
     {
-        atk: arg0,
-        diff: arg1,
-        time: arg2,
-        suba_1: arg3,
-        suba_2: arg4
+        atk: state,
+        diff: intensity,
+        time: timer,
+        suba_1: sub1,
+        suba_2: sub2
     };
 }
 
@@ -49,9 +53,9 @@ function face_center_room()
     return dir;
 }
 
-function face_obj(arg0)
+function face_obj(object)
 {
-    var dir = sign(arg0.x - x);
+    var dir = sign(object.x - x);
     return dir;
 }
 
