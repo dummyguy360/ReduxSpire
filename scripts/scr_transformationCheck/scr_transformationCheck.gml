@@ -1,8 +1,9 @@
-function scr_transformationCheck(arg0)
+/// @desc Checks state if it is a transformation.
+function scr_transformationCheck(state)
 {
     var _transfo = undefined;
     
-    switch (arg0)
+    switch (state)
     {
         case states.cotton:
         case states.cottondrill:

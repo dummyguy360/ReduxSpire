@@ -1,5 +1,6 @@
 function state_player_puddle()
 {
+	//Zetare Code
     hsp = xscale * movespeed;
     
     if (scr_solid(x + xscale, y, true) && !place_meeting(x + xscale, y, obj_destructibles) && !place_meeting(x + xscale, y, obj_metalblock))
@@ -9,20 +10,19 @@ function state_player_puddle()
         sprite_index = spr_player_outofcontrolfall;
     }
     
+	//Slope Speed up and slowdown
     var _xscale = xscale;
-    
     if (scr_slope_ext(x, y + 1) && !scr_solid_slope(x, y + 1) && vsp >= 0)
     {
+		#region Object
         with (instance_place(x, y + 1, obj_slope))
         {
             var slope_acceleration = abs(image_yscale) / abs(image_xscale);
-            
+            //Roll Momentum
             if (_xscale == sign(image_xscale))
             {
                 if (other.movespeed > 0)
-                {
                     other.movespeed -= (0.5 * slope_acceleration);
-                }
                 else
                 {
                     other.movespeed = 0;
@@ -39,13 +39,11 @@ function state_player_puddle()
         with (instance_place(x, y + 1, obj_slopePlatform))
         {
             var slope_acceleration = abs(image_yscale) / abs(image_xscale);
-            
+            //Roll Momentum
             if (_xscale == sign(image_xscale))
             {
                 if (other.movespeed > 0)
-                {
                     other.movespeed -= (0.5 * slope_acceleration);
-                }
                 else
                 {
                     other.movespeed = 0;
@@ -58,6 +56,7 @@ function state_player_puddle()
                     other.movespeed += (0.5 * slope_acceleration);
             }
         }
+		#endregion
     }
     
     if (sprite_index == spr_player_slipnslidestart || sprite_index == spr_player_outofcontrolfall)

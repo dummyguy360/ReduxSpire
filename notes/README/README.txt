@@ -11,7 +11,9 @@ You can change the Config to change how the game starts up (present in the leake
 	"Playtester" will send you to a Playtester Disclaimer Screen, which then sends you to the dev room
 		(The Playtester Config was the one orginally used when the P rank build was first compiled)
 	
-"Dev" and "Playtester" Configs also enable some Debug features, such as the ability to screenshot while pausing
+"Dev" and "Playtester" Configs also enable some Debug features
+	such as the ability to screenshot while pausing
+	or changing characters/palettes by pressing (taunt + up/down)
 
 To change Configs, press the target button on the top right of the gamemaker window
 (same button where you change what platform you want to compile for)

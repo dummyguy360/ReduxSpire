@@ -121,9 +121,7 @@ function state_player_seacreamstick()
     if (move != 0 && move != xscale)
     {
         if (seacream_stick_buffer > 0)
-        {
             seacream_stick_buffer--;
-        }
         else
         {
             state = states.seacream;
@@ -133,7 +131,5 @@ function state_player_seacreamstick()
         }
     }
     else
-    {
         seacream_stick_buffer = 20;
-    }
 }

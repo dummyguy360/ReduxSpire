@@ -1,5 +1,6 @@
 function state_player_crouchslide()
 {
+	// Unused State
     if (!place_meeting(x, y + 1, obj_railh) && !place_meeting(x, y + 1, obj_railh2))
         hsp = xscale * movespeed;
     else if (place_meeting(x, y + 1, obj_railh))
@@ -67,21 +68,20 @@ function state_player_crouchslide()
         image_index = 0;
         idle = spr_player_machpunch2;
     }
-    
+	
+    //Slope Speed up and slowdown
     var _xscale = xscale;
-    
     if (scr_slope_ext(x, y + 1) && !scr_solid_slope(x, y + 1))
     {
+		#region Object
         with (instance_place(x, y + 1, obj_slope))
         {
             var slope_acceleration = abs(image_yscale) / abs(image_xscale);
-            
+            //Roll Momentum
             if (_xscale == sign(image_xscale))
             {
                 if (other.movespeed > 0)
-                {
                     other.movespeed -= (0.25 * slope_acceleration);
-                }
                 else
                 {
                     other.movespeed = 0;
@@ -98,13 +98,11 @@ function state_player_crouchslide()
         with (instance_place(x, y + 1, obj_slopePlatform))
         {
             var slope_acceleration = abs(image_yscale) / abs(image_xscale);
-            
+            //Roll Momentum
             if (_xscale == sign(image_xscale))
             {
                 if (other.movespeed > 0)
-                {
                     other.movespeed -= (0.25 * slope_acceleration);
-                }
                 else
                 {
                     other.movespeed = 0;
@@ -117,6 +115,7 @@ function state_player_crouchslide()
                     other.movespeed += (0.25 * slope_acceleration);
             }
         }
+		#endregion
     }
     
     if (!instance_exists(obj_slidecloud) && grounded && movespeed > 5)

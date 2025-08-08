@@ -1,3 +1,4 @@
+/// @description Start Music
 if (floor(image_index) >= (image_number - 1))
 {
     if (!audio_is_playing(asset_get_index("mu_rank" + global.rank)))

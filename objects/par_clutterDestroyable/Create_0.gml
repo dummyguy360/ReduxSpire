@@ -1,6 +1,6 @@
-canCollide = function(arg0 = obj_player)
+canCollide = function(callingObject = obj_player)
 {
-    return !place_meeting(x, y, arg0);
+    return !place_meeting(x, y, callingObject);
 };
 
 event_inherited();

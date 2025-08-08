@@ -1,6 +1,6 @@
-function scr_levelstart(arg0, arg1)
+function scr_levelstart(level, first_room)
 {
-    switch (arg0)
+    switch (level)
     {
         case "entryway":
             global.srank = 19500;
@@ -42,7 +42,7 @@ function scr_levelstart(arg0, arg1)
             break;
     }
     
-    global.firstlvlRoom = arg1;
+    global.firstlvlRoom = first_room;
     global.arank = global.srank - (global.srank / 4);
     global.brank = global.srank - ((global.srank / 4) * 2);
     global.crank = global.srank - ((global.srank / 4) * 3);

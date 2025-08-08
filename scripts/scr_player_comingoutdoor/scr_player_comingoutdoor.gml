@@ -15,7 +15,7 @@ function state_player_comingoutdoor()
     vsp = 0;
     sprite_index = spr_walkfront;
     image_speed = 0.35;
-    
+    //Come out from Black
     if (place_meeting(x, y, obj_door) || place_meeting(x, y, obj_exitgate) || place_meeting(x, y, obj_keydoor) || place_meeting(x, y, obj_keydoorclock))
     {
         darkColor = image_index / image_number;

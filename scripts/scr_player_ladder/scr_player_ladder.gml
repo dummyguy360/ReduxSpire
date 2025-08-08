@@ -60,14 +60,14 @@ function state_player_ladder()
     {
         if (sprite_index == spr_pizzano_ladderup)
         {
-            if (image_index > 3 && image_index < 10)
+            if (image_index > 3 && image_index < 10)//facing camera
                 sprite_index = spr_pizzano_ladder2;
             else if (sprite_index != spr_pizzano_ladder)
                 sprite_index = spr_pizzano_ladder;
         }
         else if (sprite_index == spr_pizzano_ladderdown)
         {
-            if (image_index > 2 && image_index < 8)
+            if (image_index > 2 && image_index < 8)//facing camera
                 sprite_index = spr_pizzano_ladder2;
             else if (sprite_index != spr_pizzano_ladder)
                 sprite_index = spr_pizzano_ladder;

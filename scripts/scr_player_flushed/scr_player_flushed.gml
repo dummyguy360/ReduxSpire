@@ -1,3 +1,2 @@
-function state_player_flushed()
-{
-}
+//unused
+function state_player_flushed() { }

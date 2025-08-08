@@ -1,3 +1,4 @@
+/// @description Leave To Hub
 scr_hatScript();
 scr_levelSet();
 global.levelname = "none";

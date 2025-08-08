@@ -1,6 +1,6 @@
-canCollide = function(arg0 = obj_player)
+canCollide = function(callingObject = obj_player)
 {
-    switch (arg0)
+    switch (callingObject)
     {
         case obj_player:
         case obj_player2:

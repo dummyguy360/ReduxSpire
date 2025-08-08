@@ -2,7 +2,7 @@ function state_player_trick()
 {
     hsp = movespeed * xscale;
     sprite_index = spr_player_trick;
-    
+    // Bumping / Snap Up
     if (key_attack && ((!grounded || slopeCheck(x + xscale, y)) && scr_solid(x + xscale, y, true) && !place_meeting(x + xscale, y, obj_destructibles)) && (character == "P" || character == "N"))
     {
         verticalMovespeed = movespeed;
@@ -20,9 +20,7 @@ function state_player_trick()
         _ledge += slope_check_down(x + xscale, y, 3);
         
         if (_ledge != 0)
-        {
             y += _ledge;
-        }
         else if (_ledge <= 0)
         {
             state = states.bump;
@@ -30,7 +28,7 @@ function state_player_trick()
             sprite_index = spr_splat;
         }
     }
-    
+    // Land
     if (grounded)
     {
         scr_sound(sound_rollgetup);

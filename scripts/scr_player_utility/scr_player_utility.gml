@@ -32,7 +32,7 @@ function do_grab()
 {
     if (key_slap2 && !key_down && !suplexmove && shotgunAnim == 0)
     {
-        if (global.treat)
+        if (global.treat) // Throw Donut
         {
             if (state == states.crouch || state == states.normal)
             {
@@ -40,15 +40,13 @@ function do_grab()
                     movespeed = 0;
             }
             else
-            {
                 vsp = -3;
-            }
             
             state = states.donut;
             image_index = 0;
             sprite_index = spr_player_throwDonut;
             
-            with (instance_create(x, y + 25, obj_donutShitted))
+            with (instance_create(x, y + 25, obj_donutShitted))// To Do: Add a charged shot
             {
                 var _angle = (other.xscale > 0) ? 0 : 180;
                 Hmovespeed = lengthdir_x(20, _angle);
@@ -56,7 +54,7 @@ function do_grab()
                 shattedBy = other.id;
             }
         }
-        else if (!key_up)
+        else if (!key_up) // Grabdash
         {
             if (character == "P")
             {
@@ -93,28 +91,19 @@ function do_grab()
                     sprite_index = choose(spr_pizzano_kungfuair1start, spr_pizzano_kungfuair2start, spr_pizzano_kungfuair3start);
                 }
                 else
-                {
                     sprite_index = choose(spr_pizzano_kungfu1, spr_pizzano_kungfu2, spr_pizzano_kungfu3, spr_pizzano_kungfu4, spr_pizzano_kungfu5);
-                }
                 
                 instance_create(x, y, obj_crazyrunothereffect);
                 
                 if (!instance_exists(obj_superdashcloud) && grounded)
-                {
-                    instance_create(x, y, obj_superdashcloud, 
-                    {
-                        playerID: id
-                    });
-                }
+                    instance_create(x, y, obj_superdashcloud, { playerID: id });
                 
                 p1Vibration(30, 5);
                 image_index = 0;
             }
         }
         else if (key_up)
-        {
             do_uppercut();
-        }
     }
 }
 

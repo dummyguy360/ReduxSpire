@@ -57,9 +57,7 @@ function state_player_boxxedpep()
             movespeed = 8;
     }
     else
-    {
         movespeed = 0;
-    }
     
     if (movespeed > 8)
         movespeed -= 0.1;
@@ -80,9 +78,7 @@ function state_player_boxxedpep()
                 sprite_index = spr_boxxedpep_idle;
         }
         else
-        {
             sprite_index = spr_boxxedpep_air;
-        }
     }
     
     if (!instance_exists(obj_cloudeffect) && grounded && move != 0 && (floor(image_index) == 4 || floor(image_index) == 10))

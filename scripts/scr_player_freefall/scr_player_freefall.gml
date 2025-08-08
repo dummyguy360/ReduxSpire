@@ -7,12 +7,7 @@ function state_player_freefall()
         verticalMovespeed += 0.5;
         
         if (verticalMovespeed > 17 && !instance_exists(obj_piledrivereffect))
-        {
-            instance_create(x, y, obj_piledrivereffect, 
-            {
-                playerID: id
-            });
-        }
+            instance_create(x, y, obj_piledrivereffect, { playerID: id });
     }
     
     verticalMovespeed += grav;
@@ -81,6 +76,7 @@ function state_player_freefall()
     
     if (grounded && (freefallsmash < 10 || !place_meeting(x, y + vsp, obj_metalblock)) && !place_meeting(x, y + vsp, obj_destructibles))
     {
+		// Land On Slopes.
         if (slopeCheck(x, y) && !place_meeting(x, y, obj_dashpad))
         {
             state = states.machroll;
@@ -96,6 +92,7 @@ function state_player_freefall()
             with (instance_create(x, y, obj_jumpdust))
                 image_xscale = other.xscale;
         }
+		// Otherwise.
         else
         {
             scr_sound(sound_maximumspeedland);
@@ -141,11 +138,6 @@ function state_player_freefall()
     if (freefallsmash >= 10)
     {
         if (!instance_exists(groundpoundEffect))
-        {
-            groundpoundEffect = instance_create(x, y, obj_groundpoundeffect, 
-            {
-                playerID: id
-            });
-        }
+            groundpoundEffect = instance_create(x, y, obj_groundpoundeffect, { playerID: id });
     }
 }

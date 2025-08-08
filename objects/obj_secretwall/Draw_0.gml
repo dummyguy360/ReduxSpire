@@ -1,5 +1,7 @@
+/// @description Draw Secret Wall Surface.
 if (!surface_exists(secretSurface))
 {
+	// To Do: Make this smaller please (use camera values)
     secretSurface = surface_create(room_width, room_height);
     surface_set_target(secretSurface);
     draw_clear_alpha(c_white, 0);

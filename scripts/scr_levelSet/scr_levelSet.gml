@@ -1,5 +1,6 @@
 function scr_levelSet()
 {
+	// Mines TNT Blocks
 	global.MinesFlags[GnomeFlags.PROGRESS] = false;
 	global.MinesFlags[GnomeFlags.RED] = false;
 	global.MinesFlags[GnomeFlags.GREEN] = false;
@@ -7,6 +8,7 @@ function scr_levelSet()
 	global.MinesFlags[GnomeFlags.YELLOW] = false;
 	global.MinesFlags[GnomeFlags.WHITE] = false;
 	global.MinesFlags[GnomeFlags.PURPLE] = false;
+	
     instance_destroy(obj_endlevelfade);
     instance_destroy(obj_fadeout);
     instance_destroy(obj_cutsceneManager);
@@ -15,8 +17,9 @@ function scr_levelSet()
     instance_destroy(obj_discoball);
     instance_destroy(obj_discoball);
     instance_destroy(obj_danceoffprank);
+	
+	//Aborts all Cutscenes
     global.cutsceneManager = noone;
-    
     if (instance_exists(obj_cutsceneManager))
         instance_destroy(obj_cutsceneManager);
     
@@ -50,6 +53,8 @@ function scr_levelSet()
     ds_list_clear(global.saveroom);
     ds_list_clear(global.escaperoom);
     ds_list_clear(global.baddieroom);
+	
+	#region Confecti
     instance_destroy(obj_confectimallow);
     instance_destroy(obj_confecticrack);
     instance_destroy(obj_confectichoco);
@@ -57,25 +62,32 @@ function scr_levelSet()
     instance_destroy(obj_confecticandy);
     instance_destroy(obj_rudejanitor);
     instance_destroy(obj_lapjanitor);
+	
     ds_list_clear(global.FollowerList);
     global.mallowfollow = false;
     global.crackfollow = false;
     global.chocofollow = false;
     global.wormfollow = false;
     global.candyfollow = false;
+	
     global.janitorRudefollow = false;
     global.janitorLapfollow = false;
     global.treasure = 0;
     global.lapcount = 0;
     global.lapmusic = false;
+	#endregion
+	
     ini_open("saveData.ini");
     var ranks = ini_read_string("Ranks", string(global.levelname), "none");
     ini_close();
+	#region //Achievements
     ini_open("saveData.ini");
+	//Pizzano
     global.kungairtime = ini_read_string("achievments", "kungairtime", 0);
     ini_close();
-    global.showplaytimer = ranks != "none";
-    
+	#endregion
+    global.showplaytimer = (ranks != "none");
+    #region Camera Reset
     with (obj_camera)
     {
         NextFreeze = false;
@@ -87,10 +99,13 @@ function scr_levelSet()
         var _cam_x = target.x - (camw / 2);
         var _cam_y = target.y - (camh / 2);
         chargecamera = 0;
+		
+		//Clamp the Position to within the room
         _cam_x = clamp(_cam_x, Camera_xorigin, (Camera_xorigin + Camera_width) - camw);
         _cam_y = clamp(_cam_y, Camera_yorigin, (Camera_yorigin + Camera_height) - camh);
         _cam_x = clamp(_cam_x, 0, room_width - camw);
         _cam_y = clamp(_cam_y, 0, room_height - camh);
+		
         Cam_x = _cam_x;
         Cam_y = _cam_y;
         cam_langle = 0;
@@ -99,7 +114,7 @@ function scr_levelSet()
         cam_zoom = 1;
         Collectshake = 0;
     }
-    
+    #endregion
     with (obj_player)
     {
         scr_playersounds_init();
@@ -121,16 +136,20 @@ function scr_levelSet()
         groundedSlope = false;
         targetDoor = "A";
         firetrailbuffer = 0;
+		//State Reset
         state = states.comingoutdoor;
         image_index = 0;
         sprite_index = spr_walkfront;
         Sjumpcan_doublejump = true;
         playComboVariable = noone;
         ResetMusic = false;
+		//Variable that makes the Dashpad not suck
         Dashpad_buffer = 0;
         Dashpad_buffer = 0;
+		//Vertical hallway
         vertical = false;
         verticaloffset = 0;
+		//Supertaunt
         supertauntbuffer = 300;
         supertaunteffect = noone;
         supertauntcharged = false;
@@ -263,6 +282,7 @@ function scr_levelSet()
         audio_stop_all();
         music = undefined;
         escapemusic = noone;
+		//Sucrose
         playintro = true;
         nolag = 0;
         fadeoff = 0;

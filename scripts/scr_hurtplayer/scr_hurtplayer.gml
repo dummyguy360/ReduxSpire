@@ -1,8 +1,12 @@
-function scr_hurtplayer(arg0 = obj_player, arg1)
+/// @desc Hurts player. Returns whether or not player is in hurt state after function is called.
+/// @param {id} [player] 
+/// @param {real} [movespeed]
+/// @returns {bool} whether or not player is in hurt state
+function scr_hurtplayer(player = obj_player, mspeed)
 {
-    if (!global.freezeframe && arg0.state != states.actor && arg0.state != states.parry && arg0.state != states.hurt)
+    if (!global.freezeframe && player.state != states.actor && player.state != states.parry && player.state != states.hurt)
     {
-        with (arg0)
+        with (player)
         {
             if (cutscene == 1)
                 continue;
@@ -34,18 +38,10 @@ function scr_hurtplayer(arg0 = obj_player, arg1)
                     }
                 }
             }
-            else if (state == states.bombpep && hurted == 0)
-            {
-            }
-            else if (state == states.boxxedpep)
-            {
-            }
-            else if (state == states.bottlerocket || (state == states.pizzanokungfu && flash))
-            {
-            }
-            else if (state == states.frostburnspin)
-            {
-            }
+            else if (state == states.bombpep && hurted == 0) { }
+            else if (state == states.boxxedpep) { }
+            else if (state == states.bottlerocket || (state == states.pizzanokungfu && flash)) { }
+            else if (state == states.frostburnspin) { }
             else if (state != states.hurt && state != states.backbreaker && hurted == 0 && cutscene == 0 && state != states.bump && state != states.tumble)
             {
                 scr_sound(sound_touchspike);
@@ -60,8 +56,8 @@ function scr_hurtplayer(arg0 = obj_player, arg1)
                 else
                     sprite_index = spr_hurt;
                 
-                if (!is_undefined(arg1))
-                    movespeed = arg1;
+                if (!is_undefined(mspeed))
+                    movespeed = mspeed;
                 else
                     movespeed = 8;
                 

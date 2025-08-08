@@ -1,5 +1,6 @@
 function state_player_costumenormal()
 {
+	//movement
     sprite_index = spr_costume_idle;
     move = key_left + key_right;
     hsp = movespeed;
@@ -20,9 +21,7 @@ function state_player_costumenormal()
         if (key_jump)
         {
             if (grounded)
-            {
                 vsp = -12;
-            }
             else if (substate == 0)
             {
                 vsp = -8;
@@ -35,7 +34,7 @@ function state_player_costumenormal()
             vsp /= 20;
             jumpstop = 1;
         }
-        
+        //breeze
         if (key_shoot2)
         {
             state = states.costumebreeze;
@@ -69,7 +68,7 @@ function state_player_costumenormal()
             vsp = 0;
         }
     }
-    
+    //SMB2 Grab
     if (substate == 2)
     {
         hsp = 0;

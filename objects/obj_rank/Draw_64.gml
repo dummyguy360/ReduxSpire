@@ -1,3 +1,4 @@
+#region //BG Sprite
 pal_swap_set(rankpal, bgdex, 0);
 
 if (goup)
@@ -5,8 +6,9 @@ if (goup)
 
 draw_sprite_tiled_ext(bgspr, bgdex, bgx, bgy, 1, 1, c_white, totalalpha);
 shader_reset();
+#endregion
+#region //P rank afterimages n palettes
 scr_palette_as_player();
-
 if (goup)
 {
     afterimagesetup();
@@ -20,7 +22,11 @@ shader_reset();
 draw_set_alpha(flash);
 draw_rectangle(0, 0, 960, 540, false);
 draw_set_alpha(1);
+#endregion
+#region //clipboard
 draw_sprite_ext(spr_rankclipboard, 0, 716, 271 + clipy, 1, 1, 0, c_white, 1);
+#endregion
+#region //Highest Combo
 var i = 0;
 var _string = round(string(global.highestcombo));
 var _string_length = string_length(_string);
@@ -35,19 +41,24 @@ for (i = 0; i < _string_length; i++)
     draw_text(_xx, 105 + clipy, string_char_at(_string, i + 1));
     shader_reset();
 }
-
+#endregion
+#region //secrets
 draw_sprite_ext(card1spr, carddex1, 649 + (cshake1 ? irandom_range(-2, 2) : 0), 325 + (cshake1 ? irandom_range(-2, 2) : 0) + clipy, 1, 1, 0, c_white, 1);
 draw_sprite_ext(card2spr, carddex2, 723 + (cshake2 ? irandom_range(-2, 2) : 0), 325 + (cshake2 ? irandom_range(-2, 2) : 0) + clipy, 1, 1, 0, c_white, 1);
 draw_sprite_ext(card3spr, carddex3, 798 + (cshake3 ? irandom_range(-2, 2) : 0), 327 + (cshake3 ? irandom_range(-2, 2) : 0) + clipy, 1, 1, 0, c_white, 1);
-
+#endregion
+#region //janitor icon
 if (jandraw == 1)
     draw_sprite_ext(janspr, 0, 558, 88 + clipy, janscale, janscale, 0, c_white, 1);
-
+#endregion
+#region //confecti
 draw_sprite_ext(spr_confecti1rank, global.mallowfollow, 514 + (shake1 ? irandom_range(-2, 2) : 0), 190 + (shake1 ? irandom_range(-2, 2) : 0) + clipy, 1, 1, 0, c_white, 1);
 draw_sprite_ext(spr_confecti2rank, global.chocofollow, 594 + (shake2 ? irandom_range(-2, 2) : 0), 186 + (shake2 ? irandom_range(-2, 2) : 0) + clipy, 1, 1, 0, c_white, 1);
 draw_sprite_ext(spr_confecti3rank, global.crackfollow, 677 + (shake3 ? irandom_range(-2, 2) : 0), 187 + (shake3 ? irandom_range(-2, 2) : 0) + clipy, 1, 1, 0, c_white, 1);
 draw_sprite_ext(spr_confecti4rank, global.wormfollow, 754 + (shake4 ? irandom_range(-2, 2) : 0), 195 + (shake4 ? irandom_range(-2, 2) : 0) + clipy, 1, 1, 0, c_white, 1);
 draw_sprite_ext(spr_confecti5rank, global.candyfollow, 828 + (shake5 ? irandom_range(-2, 2) : 0), 199 + (shake5 ? irandom_range(-2, 2) : 0) + clipy, 1, 1, 0, c_white, 1);
+#endregion
+#region //points
 draw_sprite_ext(spr_rankcake, cakedex, 499 + (pshake ? irandom_range(-4, 4) : 0), 430 + (pshake ? irandom_range(-2, 2) : 0) + clipy, 1, 1, 0, c_white, 1);
 i = 0;
 _string = round(string(countpoint));
@@ -76,12 +87,14 @@ for (i = 0; i < _string_length; i++)
     draw_text(_xx, _yy + _yyoffset + clipy, string_char_at(_string, i + 1));
     shader_reset();
 }
-
+#endregion
+#region //rank
 draw_sprite_ext(spr_rankletter, rankdex, 725, 108 + clipy, rscale, rscale, 0, c_white, 1);
 
 if (stampani == 1)
     draw_sprite_ext(spr_rankstamp, stampdex, 480, 270 + clipy, 1, 1, 0, c_white, 1);
-
+#endregion
+#region //Speedrun Timer
 var tiny = ":";
 var tinier = ":";
 var tinyish = ":";
@@ -99,3 +112,4 @@ draw_set_color(c_white);
 draw_set_halign(fa_left);
 draw_set_font(global.smallfont);
 draw_text(823, 512, string_hash_to_newline(string(global.playhour) + string(tinyish) + string(global.playminutes) + string(tiny) + string(global.playseconds) + string(tinier) + string(global.playmiliseconds)));
+#endregion

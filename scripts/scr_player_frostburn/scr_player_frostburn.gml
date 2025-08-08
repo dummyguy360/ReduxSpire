@@ -10,9 +10,7 @@ function state_player_frostburn()
                 sprite_index = spr_player_skate;
         }
         else if (!key_down && !place_meeting_collision(x, y - 16))
-        {
             sprite_index = spr_player_skate;
-        }
     }
     
     move = key_left + key_right;
@@ -36,6 +34,7 @@ function state_player_frostburn()
     if (move == -xscale && movespeed > minMVSP)
         movespeed -= 0.05;
     
+	//Clamp Movespeed
     if (movespeed > 18 && !groundedSlope)
         movespeed -= 0.5;
     
@@ -78,6 +77,7 @@ function state_player_frostburn()
         }
     }
     
+	// Anim Ends
     if (sprite_index == spr_player_skatejumpstart && animation_end())
         sprite_index = spr_player_skatejump;
     

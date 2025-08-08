@@ -17,7 +17,5 @@ function state_player_barrelslipnslide()
         flash = 1;
     }
     else
-    {
         image_speed = 0.35;
-    }
 }

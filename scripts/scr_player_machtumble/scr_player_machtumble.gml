@@ -12,6 +12,7 @@ function state_player_machtumble()
     
     if (scr_solid(x + xscale, y, true) && !place_meeting(x + xscale, y, obj_destructibles))
     {
+		#region Bump Wall
         scr_sound(sound_maximumspeedland);
         
         with (obj_camera)
@@ -43,6 +44,7 @@ function state_player_machtumble()
         mach2 = 0;
         image_index = 0;
         instance_create(x + (10 * xscale), y + 10, obj_bumpeffect);
+		#endregion
     }
     
     if (key_slap2)
@@ -70,6 +72,7 @@ function state_player_machtumble()
         }
     }
     
+	//Return to
     if (animation_end())
     {
         if (key_attack)
@@ -104,6 +107,7 @@ function state_player_machtumble()
     
     image_speed = 0.35;
     
+	//attack after effect
     if (attack_afterimagetimer > 0)
         attack_afterimagetimer--;
     

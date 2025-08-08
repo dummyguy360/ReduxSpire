@@ -8,16 +8,16 @@ function state_player_mach2()
     move = key_right + key_left;
     move2 = key_right2 + key_left2;
     crouchslideAnim = 1;
-    
+    // Jump.
     if (key_jump)
         input_buffer_jump = 0;
-    
+    // Jumpstop.
     if (!key_jump2 && jumpstop == 0 && vsp < 0.5)
     {
         vsp /= 20;
         jumpstop = 1;
     }
-    
+    // Jumping.
     if (character == "P")
     {
         if (grounded && vsp > 0)
@@ -46,9 +46,9 @@ function state_player_mach2()
             vsp = -12;
         }
     }
-    
+	
+    // Animations.
     var mach_sprite = (movespeed >= 8) ? spr_mach2 : spr_mach1;
-    
     if (grounded)
     {
         if (machpunchAnim == 0 && sprite_index != mach_sprite && sprite_index != spr_mach3player)
@@ -81,7 +81,7 @@ function state_player_mach2()
     
     if (!grounded)
         machpunchAnim = 0;
-    
+    // Movement and Mach 3
     if (grounded)
     {
         if (slopeCheck(x, y) && hsp != 0 && movespeed > 8)
@@ -90,7 +90,7 @@ function state_player_mach2()
         if (movespeed < 12)
             movespeed += 0.1;
         
-        if (abs(hsp) >= 12 && sprite_index != spr_suplexdash)
+        if (abs(hsp) >= 12 && sprite_index != spr_suplexdash)// Mach 3.
         {
             machhitAnim = 0;
             trace("Jerked off");
@@ -104,15 +104,13 @@ function state_player_mach2()
             if (sprite_index != spr_rollgetup)
                 sprite_index = spr_mach3player;
             
-            instance_create(x, y, obj_jumpdust, 
-            {
-                playerID: id
-            });
+            instance_create(x, y, obj_jumpdust, { playerID: id });
         }
     }
-    
-    if (movespeed >= 8)
+    // Machslide/Drifting.
+    if (movespeed >= 8)// Mach 2
     {
+		// Machslide.
         if (!key_attack && grounded)
         {
             scr_sound(sound_break);
@@ -120,7 +118,7 @@ function state_player_mach2()
             image_index = 0;
             state = states.machslide;
         }
-        
+        // Drifting. 
         if (move == -xscale && grounded)
         {
             scr_sound(sound_maximumspeedstop);
@@ -129,18 +127,20 @@ function state_player_mach2()
             state = states.machslide;
         }
     }
-    else if (movespeed < 8)
+    else if (movespeed < 8)// Mach 1
     {
+		// Machslide.
         if (!key_attack && grounded)
             state = states.normal;
-        
+        // Drifting. 
         if (move == -xscale && grounded)
         {
             xscale *= -1;
             movespeed = 6;
         }
     }
-    
+	
+    // Machroll.
     if (key_down && !place_meeting(x, y, obj_dashpad))
     {
         flash = 0;
@@ -154,6 +154,7 @@ function state_player_mach2()
         vsp = 10;
     }
     
+	// Wallrun.
     if (((!grounded || slopeCheck(x + xscale, y)) && scr_solid(x + xscale, y, true) && !place_meeting(x + xscale, y, obj_destructibles)) && (character == "P" || character == "N"))
     {
         if (!upsideDownJump)
@@ -186,17 +187,14 @@ function state_player_mach2()
         _ledge += slope_check_down(x + xscale, y, 3);
         
         if (_ledge != 0)
-        {
             y += _ledge;
-        }
         else
         {
-            if (movespeed < 8)
-            {
+            if (movespeed < 8)// Mach 1
                 state = states.normal;
-            }
             else
             {
+				// Mach 2
                 state = states.bump;
                 image_index = 0;
                 sprite_index = spr_splat;
@@ -206,6 +204,7 @@ function state_player_mach2()
         }
     }
     
+	// Donut Shoot.
     if (key_shoot2 && global.treat)
     {
         vsp = -5;
@@ -232,12 +231,10 @@ function state_player_mach2()
         }
     }
     
+	// Dash Cloud.
     if (!instance_exists(dashCloudID) && grounded)
     {
-        with (instance_create(x, y, obj_dashcloud, 
-        {
-            playerID: id
-        }))
+        with (instance_create(x, y, obj_dashcloud, { playerID: id }))
         {
             playerID.dashCloudID = id;
             

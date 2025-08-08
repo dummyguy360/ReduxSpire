@@ -2,7 +2,7 @@ function scr_pizzano_kungfu()
 {
     switch (airkung)
     {
-        case 1:
+        case 1://air
             if (!key_jump2 && jumpstop == 0 && vsp < 0.5)
             {
                 vsp /= 20;
@@ -43,7 +43,7 @@ function scr_pizzano_kungfu()
             
             break;
         
-        case 2:
+        case 2://air diagonal
             move = xscale;
             hsp = movespeed * move;
             movespeed = 8;
@@ -74,7 +74,7 @@ function scr_pizzano_kungfu()
             vsp += 0.25;
             break;
         
-        case 0:
+        case 0://ground
             move = key_left + key_right;
             hsp = xscale * movespeed;
             
@@ -87,9 +87,7 @@ function scr_pizzano_kungfu()
                     movespeed -= 0.4;
             }
             else if (kungtime <= 15 && movespeed > 0 && !key_attack)
-            {
                 movespeed -= 0.15;
-            }
             
             if (animation_end())
             {

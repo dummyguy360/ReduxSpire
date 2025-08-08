@@ -9,6 +9,7 @@ function state_player_ufofloat()
     move = key_right + key_left;
     move2 = key_down - key_up;
     
+	// Animations.
     if ((sprite_index != spr_player_ufoShoot || (animation_end() && sprite_index == spr_player_ufoShoot)) && sprite_index != spr_player_ufoShootHold)
     {
         sprite_index = spr_player_ufoFloat;
@@ -20,6 +21,7 @@ function state_player_ufofloat()
     if (move != 0 && sprite_index != spr_player_ufoShoot)
         xscale = move;
     
+	// Shoot Stuff.
     if (key_slap && sprite_index != spr_player_ufoShootHold)
     {
         image_index = 0;
@@ -30,10 +32,7 @@ function state_player_ufofloat()
         image_index = 0;
         sprite_index = spr_player_ufoShoot;
         
-        with (instance_create(x, y + 25, obj_donutShitted, 
-        {
-            bigShot: shoot_buffer >= 30
-        }))
+        with (instance_create(x, y + 25, obj_donutShitted, { bigShot: shoot_buffer >= 30 }))
         {
             var _angle = (other.xscale > 0) ? 0 : 180;
             Hmovespeed = lengthdir_x(20, _angle);
@@ -65,12 +64,13 @@ function state_player_ufofloat()
     hsp = movespeed;
     vsp = verticalMovespeed;
     
+	// Hit Wall.
     if (place_meeting_collision(x + sign(hsp), y, Exclude.SLOPES) && !place_meeting(x + sign(hsp), y, obj_destructibles))
         movespeed = 0;
     
     if (place_meeting_collision(x, y + sign(vsp), Exclude.SLOPES) && !place_meeting(x, y + sign(vsp), obj_destructibles))
         verticalMovespeed = 0;
-    
+    // Ufotimer.
     if (ufotimer <= 0)
     {
         with (instance_create(x, y, obj_ufo_dead))
@@ -98,7 +98,7 @@ function state_player_ufofloat()
     }
     
     image_speed = 0.35;
-    exit;
+    return;
 }
 
 function state_player_ufodash()
@@ -134,6 +134,7 @@ function state_player_ufodash()
         hsp = movespeed;
         vsp = verticalMovespeed;
         
+		// Hit Wall.
         if (place_meeting_collision(x + sign(hsp), y, Exclude.SLOPES) && !place_meeting(x + sign(hsp), y, obj_destructibles))
             movespeed = 0;
         
@@ -147,5 +148,5 @@ function state_player_ufodash()
         state = states.ufofloat;
     
     image_speed = 0.5;
-    exit;
+	return;
 }

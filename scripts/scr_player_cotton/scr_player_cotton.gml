@@ -47,16 +47,12 @@ function state_player_cotton()
         }
     }
     else if (movespeed > 0 && sprite_index != spr_cotton_attack && momemtum == 0)
-    {
         movespeed -= 0.5;
-    }
     
     if (scr_solid(x + xscale, y, true) && !scr_slope_ext(x + xscale, y))
     {
         if (movespeed < 8 && (place_meeting(x + xscale, y, obj_destructibles) || place_meeting(x + xscale, y, obj_chocofrog)))
-        {
             movespeed = 0;
-        }
         else if (!place_meeting(x + xscale, y, obj_destructibles) && !place_meeting(x + xscale, y, obj_chocofrog))
         {
             if (movespeed >= 8 && grounded && sprite_index != spr_cotton_slam && sprite_index != spr_cotton_attack)
@@ -153,7 +149,7 @@ function state_player_cotton()
     
     if (sprite_index == spr_cotton_slam && animation_end())
         sprite_index = spr_cottonidle;
-    
+    //Land
     if ((sprite_index == spr_cotton_fall || sprite_index == spr_cotton_doublefall || sprite_index == spr_cotton_jump || sprite_index == spr_cotton_doublejump) && grounded && vsp >= 0)
     {
         image_index = 0;
@@ -166,7 +162,7 @@ function state_player_cotton()
         instance_create(x, y, obj_landcloud);
         scr_sound(sound_land);
     }
-    
+    //Double Jump
     if (key_jump && !grounded && doublejumped == 0)
     {
         doublejumped = 1;
@@ -241,7 +237,7 @@ function state_player_cotton()
         image_speed = clamp((movespeed / 6) * 0.65, 0.35, 1);
     else
         image_speed = 0.35;
-    
+    //After Image Effect
     if (cotton_afterimagetimer > 0)
         cotton_afterimagetimer--;
     

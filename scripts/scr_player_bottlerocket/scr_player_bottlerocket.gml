@@ -34,9 +34,7 @@ function state_player_bottlerocket()
                 sprite_index = spr_player_bottlerocket;
             
             if (move == xscale)
-            {
                 movespeed = approach(movespeed, 24, 0.1);
-            }
             else if (move == -xscale)
             {
                 if (grounded)
@@ -46,14 +44,10 @@ function state_player_bottlerocket()
                     image_index = 0;
                 }
                 else
-                {
                     movespeed = approach(movespeed, 8, 0.2);
-                }
             }
             else
-            {
                 movespeed = approach(movespeed, 12, 0.2);
-            }
             
             if (key_jump)
             {
@@ -82,7 +76,7 @@ function state_player_bottlerocket()
                 scr_controlprompt("[spr_buttonfont]" + myButton1 + "[spr_promptfont] Jump Off  [spr_buttonfont]" + myButton2 + "[spr_promptfont] Turn (While Grounded)");
             }
         }
-        
+        //bump
         if (scr_solid(x + xscale, y, true) && !place_meeting(x + sign(hsp), y, obj_destructibles) && !place_meeting(x + sign(hsp), y, obj_chocofrog))
         {
             instance_create(x, y, obj_bombexplosionharmless);

@@ -100,7 +100,7 @@ function state_player_cottondrill()
         
         scr_sound(sfx_cottonjump);
     }
-    
+    //After Image Effect
     if (cotton_afterimagetimer > 0)
         cotton_afterimagetimer--;
     

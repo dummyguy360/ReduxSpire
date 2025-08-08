@@ -1,7 +1,7 @@
 function state_player_drown()
 {
+	// Snap to Top.
     var _waterY = y;
-    
     with (instance_place(x, y, obj_molasseswater))
         _waterY = wave(3, -3, 3, 0) + (y + 9);
     

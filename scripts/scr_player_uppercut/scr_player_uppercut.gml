@@ -38,6 +38,7 @@ function state_player_uppercut()
         instance_create_depth(x, y, 0, obj_landcloud);
     }
     
+	//attack after effect
     if (attack_afterimagetimer > 0)
         attack_afterimagetimer--;
     

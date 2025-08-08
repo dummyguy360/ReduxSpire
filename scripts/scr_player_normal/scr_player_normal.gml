@@ -65,9 +65,7 @@ function state_player_normal()
                             if (character == "P")
                             {
                                 if (global.cane == 1)
-                                {
                                     sprite_index = spr_caneidle;
-                                }
                                 else
                                 {
                                     sprite_index = spr_idle;
@@ -80,13 +78,9 @@ function state_player_normal()
                                 }
                             }
                             else if (character == "N")
-                            {
                                 sprite_index = spr_idle;
-                            }
                             else
-                            {
                                 sprite_index = spr_idle;
-                            }
                         }
                         else if (character == "P" || character == "N")
                         {
@@ -324,9 +318,7 @@ function state_player_normal()
             movespeed = 7;
     }
     else
-    {
         movespeed = 0;
-    }
     
     if (movespeed > 7)
         movespeed -= 0.1;
@@ -353,9 +345,7 @@ function state_player_normal()
             image_speed = 0.6;
     }
     else
-    {
         image_speed = 0.35;
-    }
     
     if ((key_down && grounded) || scr_solid(x, y - 3))
     {
@@ -446,8 +436,11 @@ function state_player_normal()
         image_index = 0;
     }
     
+#region Coneboy Copies
     if (character == "C")
     {
+		#region substate, knight 
+		//if you dont use substates youre stinnky
         if (substate == 1)
         {
             if (sprite_index == spr_idle || sprite_index == spr_idle2 || sprite_index == spr_idle3)
@@ -469,7 +462,9 @@ function state_player_normal()
                 state = states.coneboyinhale;
             }
         }
-        
+        #endregion
+		
+		#region Juice Copy
         if (substate == 2)
         {
             if (key_shoot2 && instance_number(obj_coneboyjuice) < 3)
@@ -487,5 +482,7 @@ function state_player_normal()
                 movespeed = 6;
             }
         }
+		#endregion
     }
+#endregion
 }

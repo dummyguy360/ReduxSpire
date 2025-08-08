@@ -1,53 +1,56 @@
-function scr_movingPlatforms(arg0, arg1 = true, arg2 = true)
+function scr_movingPlatforms(platformid, hcheck = true, vcheck = true)
 {
-    with (arg0)
+    with (platformid)
     {
-        if (arg1)
+        if (hcheck)
             other.x += (x - xprevious);
         
-        if (arg2)
+        if (vcheck)
             other.y += (y - yprevious);
     }
 }
 
-function scr_upslope(arg0, arg1, arg2 = 3)
+#region Regular
+function scr_upslope(x_pos, y_pos, MaxIncline = 3)
 {
-    for (var i = arg2; i > 0; i--)
+	// Move up slope
+    for (var i = MaxIncline; i > 0; i--)
     {
         var _check = true;
         var _z = i - 1;
         
         repeat (i - 1)
         {
-            if (!scr_solid(arg0, arg1 - _z))
+            if (!scr_solid(x_pos, y_pos - _z))
                 _check = false;
             
             _z--;
         }
         
-        if (scr_solid(arg0, arg1) && _check && !scr_solid(arg0, arg1 - i))
+        if (scr_solid(x_pos, y_pos) && _check && !scr_solid(x_pos, y_pos - i))
             return i;
     }
     
     return false;
 }
 
-function scr_downslope(arg0, arg1, arg2 = 3)
+function scr_downslope(x_pos, y_pos, MaxDecline = 3)
 {
-    for (var i = 1; i < (arg2 + 1); i++)
+	// Move down slope
+    for (var i = 1; i < (MaxDecline + 1); i++)
     {
         var _check = true;
         var _z = 1;
         
         repeat (i)
         {
-            if (scr_solid(arg0, arg1 + _z))
+            if (scr_solid(x_pos, y_pos + _z))
                 _check = false;
             
             _z++;
         }
         
-        if (!scr_solid(arg0, arg1) && _check && scr_solid(arg0, arg1 + (i + 1)))
+        if (!scr_solid(x_pos, y_pos) && _check && scr_solid(x_pos, y_pos + (i + 1)))
             return i;
     }
     
@@ -58,45 +61,49 @@ function scr_collide()
 {
     scr_collision();
 }
+#endregion
 
-function scr_upslope_player(arg0, arg1, arg2 = 3)
+#region Player
+function scr_upslope_player(x_pos, y_pos, MaxIncline = 3)
 {
-    for (var i = arg2; i > 0; i--)
+	// Move up slope
+    for (var i = MaxIncline; i > 0; i--)
     {
         var _check = true;
         var _z = i - 1;
         
         repeat (i - 1)
         {
-            if (!scr_solid_player(arg0, arg1 - _z))
+            if (!scr_solid_player(x_pos, y_pos - _z))
                 _check = false;
             
             _z--;
         }
         
-        if (scr_solid_player(arg0, arg1) && _check && !scr_solid_player(arg0, arg1 - i))
+        if (scr_solid_player(x_pos, y_pos) && _check && !scr_solid_player(x_pos, y_pos - i))
             return i;
     }
     
     return false;
 }
 
-function scr_downslope_player(arg0, arg1, arg2 = 3)
+function scr_downslope_player(x_pos, y_pos, MaxDecline = 3)
 {
-    for (var i = 1; i < (arg2 + 1); i++)
+	// Move down slope
+    for (var i = 1; i < (MaxDecline + 1); i++)
     {
         var _check = true;
         var _z = 1;
         
         repeat (i)
         {
-            if (scr_solid_player(arg0, arg1 + _z))
+            if (scr_solid_player(x_pos, y_pos + _z))
                 _check = false;
             
             _z++;
         }
         
-        if (!scr_solid_player(arg0, arg1) && _check && scr_solid_player(arg0, arg1 + (i + 1)))
+        if (!scr_solid_player(x_pos, y_pos) && _check && scr_solid_player(x_pos, y_pos + (i + 1)))
             return i;
     }
     
@@ -109,9 +116,12 @@ function scr_collide_player()
     groundedSlope = false;
     grinding = false;
     onMovingPlatform = noone;
+	
+	//Store Old Hsp and Vsp
     prevHsp = hsp;
     prevVsp = vsp;
     
+	#region Moving Platform
     with (obj_movingPlatform)
     {
         with (other)
@@ -129,13 +139,13 @@ function scr_collide_player()
             }
         }
     }
+	#endregion
     
+	// Vertical
     repeat (abs(vsp))
     {
         if (!scr_solid_player(x, y + sign(vsp)))
-        {
             y += sign(vsp);
-        }
         else
         {
             vsp = 0;
@@ -143,15 +153,16 @@ function scr_collide_player()
         }
     }
     
+	// Horizontal
     repeat (abs(hsp))
     {
+		//Move Up Slope
         y -= scr_upslope_player(x + sign(hsp), y);
+		//Move Down Slope
         y += scr_downslope_player(x + sign(hsp), y);
         
         if (!scr_solid_player(x + sign(hsp), y))
-        {
             x += sign(hsp);
-        }
         else
         {
             hsp = 0;
@@ -172,13 +183,16 @@ function scr_collide_player()
         vsp += (onMovingPlatform.y - onMovingPlatform.yprevious);
     }
 }
+#endregion
 
+//what why does this need to exist???
 function scr_collide_conehead()
 {
     grounded = false;
     groundedSlope = false;
     onMovingPlatform = noone;
     
+	#region Moving Platform
     with (obj_movingPlatform)
     {
         with (other.id)
@@ -196,13 +210,13 @@ function scr_collide_conehead()
             }
         }
     }
+	#endregion
     
+	// Vertical
     repeat (abs(vsp))
     {
         if (!scr_solid(x, y + sign(vsp)))
-        {
             y += sign(vsp);
-        }
         else
         {
             vsp = 0;
@@ -210,9 +224,12 @@ function scr_collide_conehead()
         }
     }
     
+	// Horizontal
     repeat (abs(hsp))
     {
+		//Move Up Slope
         y -= scr_upslope(x + sign(hsp), y);
+		//Move Down Slope
         y += scr_downslope(x + sign(hsp), y);
         
         if (!scr_solid(x + sign(hsp), y))

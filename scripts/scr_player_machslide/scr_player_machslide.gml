@@ -65,7 +65,7 @@ function state_player_machslide()
             sprite_index = spr_splat;
         }
     }
-    
+    // Mach 2 Drift.
     if (grounded && ((animation_end() && sprite_index == spr_machslideboost) || (sprite_index == spr_machslideboostFallStart || sprite_index == spr_machslideboostFall)))
     {
         hsp = 0;
@@ -75,7 +75,7 @@ function state_player_machslide()
         state = states.mach2;
         instance_create(x, y, obj_jumpdust);
     }
-    
+    // Mach 3 Drift.
     if (grounded && ((animation_end() && sprite_index == spr_machslideboost3) || (sprite_index == spr_machslideboost3FallStart || sprite_index == spr_machslideboost3Fall)))
     {
         hsp = 0;
@@ -88,10 +88,7 @@ function state_player_machslide()
     
     if (!instance_exists(dashCloudID) && grounded)
     {
-        with (instance_create(x, y, obj_dashcloud, 
-        {
-            playerID: id
-        }))
+        with (instance_create(x, y, obj_dashcloud, { playerID: id }))
             other.dashCloudID = id;
     }
 }

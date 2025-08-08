@@ -1,11 +1,16 @@
 function scr_gumbob_mixnbrew()
 {
+	#region shake it up
+	//pull out and shake drink
     if (floor(image_index) == (image_number - 1) && sprite_index == spr_gumbob_brew_pulloutdrink)
         sprite_index = spr_gumbob_brew_shake;
     
     if (floor(image_index) == (image_number - 1) && sprite_index == spr_gumbob_brew_shake)
         state = states.normal;
-    
+    #endregion
+	
+	#region directional shaking	
+	//upwards
     if (sprite_index == spr_gumbob_brew_shake && key_up)
     {
         sprite_index = spr_gumbob_brew_up;
@@ -29,4 +34,5 @@ function scr_gumbob_mixnbrew()
         state = states.normal;
         sprite_index = spr_gumbob_idle;
     }
+	#endregion
 }

@@ -31,9 +31,7 @@ function scr_coneboy_kick()
             movespeed = approach(movespeed, 0, 0.5);
         
         if (!key_shoot)
-        {
             state = states.normal;
-        }
         else if (animation_end() && sprite_index == spr_coneboy_juicespit)
         {
             with (instance_create(x, y, obj_coneboyswordhitbox))

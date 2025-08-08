@@ -1,10 +1,10 @@
-function draw_option(arg0, arg1, arg2, arg3)
+function draw_option(x, y, _string, _activated)
 {
     draw_set_color(c_white);
     
-    if (arg3 == false)
+    if (_activated == false)
         draw_set_color(#666666);
     
-    draw_text(arg0, arg1, arg2);
+    draw_text(x, y, _string);
     draw_set_color(c_white);
 }

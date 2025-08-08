@@ -9,9 +9,7 @@ function state_player_tumble()
         hsp = movespeed;
     }
     else
-    {
         movespeed = 12;
-    }
     
     if (sprite_index == spr_tumblestart && animation_end())
         sprite_index = spr_tumble;

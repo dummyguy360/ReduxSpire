@@ -1,10 +1,11 @@
 function state_player_minecart()
 {
-    move = key_left + key_right;
+    move = key_left + key_right;//Rail Slope Speed up and slowdown
     var _xscale = xscale;
     
     if (place_meeting(x, y + 1, obj_minecartRail_Slope))
     {
+		#region Object
         with (instance_place(x, y + 1, obj_minecartRail_Slope))
         {
             var slope_acceleration = abs(image_yscale) / abs(image_xscale);
@@ -20,27 +21,25 @@ function state_player_minecart()
                     other.movespeed += (0.2 * slope_acceleration);
             }
         }
+		#endregion
     }
     
+	//Movespeed funnies
     if (move == 0 && movespeed < 5)
         movespeed += 0.1;
     
-    if ((move != 0 && move != xscale) && movespeed > 3 && Dashpad_buffer <= 0)
+    if ((move != 0 && move != xscale) && movespeed > 3 && Dashpad_buffer <= 0)//Slowdown
         movespeed -= 0.05;
     
-    if ((move != 0 && move == xscale) && movespeed < 14)
+    if ((move != 0 && move == xscale) && movespeed < 14)//Go Faster
         movespeed += 0.1;
     
+	//Clamp Movespeed
     movespeed = clamp(movespeed, 0, 15);
     hsp = xscale * movespeed;
     
     if (movespeed >= 14 && !instance_exists(obj_chargeeffect))
-    {
-        instance_create(x + (32 * xscale), y, obj_chargeeffect, 
-        {
-            playerID: id
-        });
-    }
+        instance_create(x + (32 * xscale), y, obj_chargeeffect, { playerID: id });
     
     if (scr_solid(x + xscale, y, true) && !place_meeting(x + xscale, y, obj_destructibles) && !place_meeting(x + xscale, y, obj_metalblock) && !place_meeting(x + xscale, y, obj_chocofrog))
     {
@@ -65,7 +64,7 @@ function state_player_minecart()
         }
     }
     
-    if (key_jump && !grounded)
+    if (key_jump && !grounded)//Turbo Dismount
     {
         state = states.mach2;
         vsp = -12;
@@ -106,8 +105,9 @@ function state_player_minecart()
         }
     }
     
-    var groundedlandsprite = (movespeed >= 12) ? 1183 : 1417;
-    var groundedsprite = (movespeed >= 12) ? 116 : 117;
+	//Sprites
+    var groundedlandsprite = (movespeed >= 12) ? spr_player_minecartfastland : spr_player_minecartland;
+    var groundedsprite = (movespeed >= 12) ? spr_player_minecartfast : spr_player_minecart;
     
     if (!grounded)
     {

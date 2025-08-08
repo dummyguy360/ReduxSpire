@@ -1,3 +1,4 @@
+/// @description Rank Show
 obj_player.visible = 0;
 
 if (obj_player.character == "P")

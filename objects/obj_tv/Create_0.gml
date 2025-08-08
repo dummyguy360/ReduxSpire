@@ -82,49 +82,49 @@ voice6 = sfx_combovoice6p;
 voice7 = sfx_combovoice7p;
 voice8 = sfx_combovoice8p;
 
-function scr_combotext(arg0 = global.combo)
+function scr_combotext(combo = global.combo)
 {
     var sprite = spr_badcombo_intro;
     
-    if (arg0 <= 5)
+    if (combo <= 5)
     {
         sprite = spr_badcombo_intro;
         
         if (chance(0.25))
             scr_dialogue(voice1);
     }
-    else if (arg0 <= 10)
+    else if (combo <= 10)
     {
         sprite = spr_sourcombo_intro;
         
         if (chance(0.5))
             scr_dialogue(voice2);
     }
-    else if (arg0 <= 15)
+    else if (combo <= 15)
     {
         sprite = spr_okcombo_intro;
         
         if (chance(0.75))
             scr_dialogue(voice3);
     }
-    else if (arg0 <= 20)
+    else if (combo <= 20)
     {
         sprite = spr_alrightcombo_intro;
         
         if (chance(0.85))
             scr_dialogue(voice4);
     }
-    else if (arg0 <= 25)
+    else if (combo <= 25)
     {
         sprite = spr_sweetcombo_intro;
         scr_dialogue(voice5);
     }
-    else if (arg0 <= 30)
+    else if (combo <= 30)
     {
         sprite = spr_spicycombo_intro;
         scr_dialogue(voice6);
     }
-    else if (arg0 <= 35)
+    else if (combo <= 35)
     {
         sprite = spr_ruthlesscombo_intro;
         scr_dialogue(voice7);

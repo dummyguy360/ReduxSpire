@@ -6,6 +6,7 @@ function state_player_barrelcrouch()
     hsp = movespeed;
     move = key_left + key_right;
     
+	#region CONTROLS
     if (move != 0 && input_buffer == 0)
     {
         if (move == xscale)
@@ -32,9 +33,7 @@ function state_player_barrelcrouch()
             image_speed = 0.6;
     }
     else if (input_buffer == 0)
-    {
         movespeed = approach(movespeed, 0, 0.75);
-    }
     
     if (key_jump)
     {
@@ -57,7 +56,9 @@ function state_player_barrelcrouch()
             sprite_index = spr_cookiemountkick;
         }
     }
-    
+    #endregion
+
+	#region SPRITES
     if (move == 0 && input_buffer == 0 && sprite_index != spr_player_cookiemount_skid)
     {
         image_speed = 0.35;
@@ -77,4 +78,5 @@ function state_player_barrelcrouch()
     
     if (floor(image_index) == (image_number - 1) && sprite_index == spr_player_cookiemount_skid)
         sprite_index = spr_player_cookiemount;
+	#endregion
 }

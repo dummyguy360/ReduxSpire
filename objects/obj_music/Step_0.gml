@@ -1,6 +1,7 @@
 pausedmusic = global.music;
 var _oldGummyBear = GummyBear;
 
+// Gummy Harry Proximity
 if (instance_exists(obj_gummyharry))
 {
     var p = 0;

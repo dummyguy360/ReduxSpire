@@ -2,16 +2,22 @@ global.music_map = ds_map_create();
 global.secret_room = false;
 global.secretmusic = noone;
 
-function add_music(arg0, arg1, arg2, arg3, arg4 = undefined)
+/// @desc Function Description
+/// @param {Asset.GMRoom} room The Room to change music in.
+/// @param {Asset.GMSound} song The main level song.
+/// @param {Asset.GMSound} secret_song The secret song.
+/// @param {bool} continuous Boolean to toggle between continuous syncing between tracks.
+/// @param {function} function Function to handle advanced music switches.
+function add_music(rm, song, secret_song, cont, func = undefined) 
 {
-    var b = 
-    {
-        music: arg1,
-        secret_music: arg2,
-        continuous: arg3,
-        my_func: arg4
-    };
-    ds_map_set(global.music_map, arg0, b);
+	var b = 
+	{
+		music : song,
+		secret_music : secret_song,
+		continuous : cont,
+		my_func : func,
+	}
+	global.music_map[? rm] = b;
 }
 
 museffect = 0;
@@ -21,6 +27,10 @@ target_gain = 1;
 contTrack_pos = 0;
 GummyBear = false;
 music = undefined;
+// How to change Escape Music
+// By default, the escape themes are the character's respective escape themes, but changing the escapemusic variable will override those from playing
+// To set escape theme, simply set the escape music variable to whichever song you choose 
+// For escape theme loops, do [escape music, loop start, loop end]
 escapemusic = noone;
 default_escapemusic = mu_escape;
 musicGain = 1;
@@ -29,6 +39,8 @@ unforce_continuous = false;
 ignore_change = false;
 hard_force = false;
 musicfadein = 0;
+
+// Room to change, Normal Music, Secret Music, Continuous, Loop Begin, Loop End (undefined is default)
 room_details = 
 {
     music: noone,

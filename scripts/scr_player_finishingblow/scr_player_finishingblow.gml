@@ -41,7 +41,7 @@ function state_player_finishingblow()
         
         if (instance_exists(baddiegrabbedID))
         {
-            with (baddiegrabbedID)
+            with (baddiegrabbedID)//Throw Baddie
             {
                 instance_create(x, y, obj_slapstar);
                 instance_create(x, y, obj_baddiegibs);

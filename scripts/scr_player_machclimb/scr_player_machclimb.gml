@@ -10,6 +10,7 @@ function state_player_climbwall()
     suplexmove = 0;
     vsp = -verticalMovespeed;
     
+	// Running on Goop.
     if (vsp != 0 && place_meeting(x + xscale, y, obj_molassesWall))
     {
         if ((floor(image_index) % 4) == 0)
@@ -22,12 +23,10 @@ function state_player_climbwall()
         }
     }
     
+	// Movespeed.
     var _maxspeed = (move == xscale) ? 20 : 12;
-    
     if (verticalMovespeed < _maxspeed && !place_meeting(x + xscale, y, obj_molassesWall))
-    {
         verticalMovespeed += 0.1;
-    }
     else if (place_meeting(x + xscale, y, obj_molassesWall))
     {
         if (verticalMovespeed > 0)
@@ -69,6 +68,7 @@ function state_player_climbwall()
         slideHsp = -9 * xscale;
     }
     
+	//When wall ends
     if (!scr_solid(x + xscale, y))
     {
         instance_create(x, y, obj_jumpdust);
@@ -77,7 +77,7 @@ function state_player_climbwall()
         if (verticalMovespeed < 6)
             verticalMovespeed = 6;
         
-        if (verticalMovespeed < 12)
+        if (verticalMovespeed < 12)//Reset Speed
         {
             state = states.mach2;
             movespeed = verticalMovespeed;
@@ -89,7 +89,7 @@ function state_player_climbwall()
             movespeed = verticalMovespeed;
         }
     }
-    
+    //Hit Ceiling
     if ((scr_solid(x, y - 1, true) && vsp <= 0 && !place_meeting(x, y - 1, obj_destructibles)) && !scr_slope_ext(x + xscale, y))
     {
         sprite_index = spr_player_ceilingcrash;
@@ -120,7 +120,7 @@ function state_player_climbwall()
         dir = (move == xscale) ? xscale : -xscale;
         movespeed = verticalMovespeed;
     }
-    
+    //Jump out of wall
     if (key_jump && key_attack)
     {
         if (movespeed >= 12 && !place_meeting(x + xscale, y, obj_molassesWall))
@@ -173,6 +173,7 @@ function state_player_climbwall()
         vsp = -verticalMovespeed;
     }
     
+	//Effects and Image Speed
     image_speed = 0.6;
     
     if (!instance_exists(obj_cloudeffect))
@@ -192,6 +193,7 @@ function state_player_climbceiling()
     hsp = movespeed * -xscale;
     vsp = 0;
     
+	// Movespeed.
     if (movespeed < 24 && move == dir)
     {
         if (!mach4mode)
@@ -199,11 +201,9 @@ function state_player_climbceiling()
         else
             movespeed += 0.1;
     }
-    
+    // Sprites.
     if (movespeed < 12)
-    {
         sprite_index = spr_mach2ceiling;
-    }
     else if (movespeed >= 12)
     {
         if (sprite_index == spr_mach2ceiling)
@@ -211,23 +211,21 @@ function state_player_climbceiling()
         
         sprite_index = spr_mach3ceiling;
     }
-    
+    // Ceiling Ends.
     if (!place_meeting_collision(x, y - 31))
     {
         vsp = 0;
         xscale *= -1;
         
         if (movespeed < 12)
-        {
             state = states.mach2;
-        }
         else if (movespeed >= 12)
         {
             state = states.mach3;
             sprite_index = spr_mach3player;
         }
     }
-    
+    // Machslide.
     if (move == -dir)
     {
         vsp = 0;
@@ -251,7 +249,7 @@ function state_player_climbceiling()
             mach2 = 100;
         }
     }
-    
+    // Release Dash.
     if (!key_attack)
     {
         vsp = 0;
@@ -262,7 +260,7 @@ function state_player_climbceiling()
         image_index = 0;
         state = states.machslide;
     }
-    
+    // Hit Wall.
     if (place_meeting_slope(x, y - 1) && scr_solid(x - xscale, y, true) && !place_meeting(x - xscale, y, obj_destructibles) && !(place_meeting(x - xscale, y, obj_metalblock) && movespeed >= 12))
     {
         dir = (move == xscale) ? xscale : -xscale;
@@ -273,6 +271,7 @@ function state_player_climbceiling()
     else if (scr_solid(x - xscale, y, true) && !place_meeting(x - xscale, y, obj_destructibles) && !(place_meeting(x - xscale, y, obj_metalblock) && movespeed >= 12))
     {
         vsp = 0;
+		#region Bump Wall
         scr_sound(sound_maximumspeedland);
         camera_shake(20, 40);
         image_speed = 0.35;
@@ -298,8 +297,9 @@ function state_player_climbceiling()
         mach2 = 0;
         image_index = 0;
         instance_create(x + (10 * -xscale), y + 10, obj_bumpeffect);
+		#endregion
     }
-    
+    //Jump out of wall
     if (key_jump && key_attack)
     {
         if (movespeed >= 12)
@@ -331,7 +331,7 @@ function state_player_climbceiling()
             playedjumpsound = 1;
         }
     }
-    
+    //Effects and Image Speed
     image_speed = 0.6;
 }
 
@@ -346,7 +346,7 @@ function state_player_climbdownwall()
     move = key_right + key_left;
     suplexmove = 0;
     vsp = verticalMovespeed;
-    
+    // Running on Goop.
     if (vsp != 0 && place_meeting(x - xscale, y, obj_molassesWall))
     {
         if ((floor(image_index) % 4) == 0)
@@ -359,12 +359,10 @@ function state_player_climbdownwall()
         }
     }
     
+	// Movespeed.
     var _maxspeed = (move == xscale) ? 25 : 14;
-    
     if (verticalMovespeed < _maxspeed && !place_meeting(x - xscale, y, obj_molassesWall))
-    {
         verticalMovespeed += 0.1;
-    }
     else if (place_meeting(x - xscale, y, obj_molassesWall))
     {
         if (verticalMovespeed > 0)
@@ -397,7 +395,7 @@ function state_player_climbdownwall()
         sprite_index = spr_fall;
         slideHsp = -9 * xscale;
     }
-    
+    //When wall ends
     if (!scr_solid(x - (xscale * 3), y))
     {
         instance_create(x, y, obj_jumpdust);
@@ -406,7 +404,7 @@ function state_player_climbdownwall()
         state = states.freefall;
         freefallsmash = 10;
     }
-    
+    //Hit Floor
     if (scr_solid(x, y + 1) && !place_meeting(x, y + 1, obj_metalblock) && !place_meeting(x, y + 1, obj_destructibles))
     {
         if (scr_slope_ext(x, y + 1))
@@ -414,7 +412,7 @@ function state_player_climbdownwall()
             if (verticalMovespeed < 6)
                 verticalMovespeed = 6;
             
-            if (verticalMovespeed >= 6 && verticalMovespeed < 12)
+            if (verticalMovespeed >= 6 && verticalMovespeed < 12)//Reset Speed
             {
                 state = states.mach2;
                 movespeed = verticalMovespeed;
@@ -458,7 +456,7 @@ function state_player_climbdownwall()
             sprite_index = spr_bodyslamland;
         }
     }
-    
+    //Jump out of wall
     if (key_jump && key_attack)
     {
         if (movespeed >= 12 && !place_meeting(x - xscale, y, obj_molassesWall))
@@ -503,7 +501,7 @@ function state_player_climbdownwall()
             playedjumpsound = 1;
         }
     }
-    
+    //Effects and Image Speed
     image_speed = 0.6;
     
     if (!instance_exists(obj_cloudeffect))

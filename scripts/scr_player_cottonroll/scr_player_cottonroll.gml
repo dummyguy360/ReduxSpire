@@ -57,21 +57,20 @@ function state_player_cottonroll()
         instance_create(x, y, obj_highjumpcloud2);
         scr_sound(sfx_cottonjump);
     }
-    
+	
+    //Slope Speed up and slowdown
     var _xscale = xscale;
-    
     if (scr_slope_ext(x, y + 1) && !scr_solid_slope(x, y + 1))
     {
+		#region Object
         with (instance_place(x, y + 1, obj_slope))
         {
             var slope_acceleration = abs(image_yscale) / abs(image_xscale);
-            
+            //Roll Momentum
             if (_xscale == sign(image_xscale))
             {
                 if (other.movespeed > 3)
-                {
                     other.movespeed -= (0.25 * slope_acceleration);
-                }
                 else
                 {
                     other.movespeed = 3;
@@ -88,13 +87,11 @@ function state_player_cottonroll()
         with (instance_place(x, y + 1, obj_slopePlatform))
         {
             var slope_acceleration = abs(image_yscale) / abs(image_xscale);
-            
+            //Roll Momentum
             if (_xscale == sign(image_xscale))
             {
                 if (other.movespeed > 3)
-                {
                     other.movespeed -= (0.25 * slope_acceleration);
-                }
                 else
                 {
                     other.movespeed = 3;
@@ -107,8 +104,9 @@ function state_player_cottonroll()
                     other.movespeed += (0.25 * slope_acceleration);
             }
         }
+		#endregion
     }
-    
+    //After Image Effect
     if (cotton_afterimagetimer > 0)
         cotton_afterimagetimer--;
     

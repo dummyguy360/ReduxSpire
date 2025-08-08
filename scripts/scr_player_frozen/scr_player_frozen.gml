@@ -7,6 +7,7 @@ function state_player_frozen()
     else
         input_buffer_jump = 0;
     
+	//Freeze Frame
     if (global.freezeframe == true)
     {
         for (var i = 0; i < 10; i++)

@@ -9,6 +9,7 @@ secretAlpha = 1;
 secretSurface = noone;
 revealActivated = false;
 
+// Layer Setup
 for (var i = 0; i < array_length(layerArray); i++)
 {
     var arg = layerArray[i];
@@ -17,9 +18,10 @@ for (var i = 0; i < array_length(layerArray); i++)
     layerArray[i] = layerid;
 }
 
-var _f = function(arg0, arg1)
+// Sort Array
+var _f = function(elm1, elm2) 
 {
-    return -(layer_get_depth(arg0) - layer_get_depth(arg1));
-};
+	return -(layer_get_depth(elm1) - layer_get_depth(elm2));
+}
 
 array_sort(layerArray, _f);

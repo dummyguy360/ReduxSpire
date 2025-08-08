@@ -57,5 +57,5 @@ function state_player_honey()
         }
     }
     
-    exit;
+    return;
 }

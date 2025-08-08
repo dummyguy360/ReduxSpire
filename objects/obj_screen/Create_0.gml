@@ -2,9 +2,9 @@ application_surface_draw_enable(false);
 finalApplicationSurface = noone;
 finalApplicationSurfBuffer = -1;
 
-nextPowTwo = function(arg0)
+nextPowTwo = function(X)
 {
-    return power(2, ceil(log2(arg0) / log2(2)));
+    return power(2, ceil(log2(X) / log2(2)));
 };
 
 var surfW = 960;

@@ -9,16 +9,16 @@ function state_player_mach3()
     move2 = key_right2 + key_left2;
     momemtum = 1;
     crouchslideAnim = 1;
-    
+    // Jump.
     if (key_jump)
         input_buffer_jump = 0;
-    
+    // Jumpstop.
     if (!key_jump2 && jumpstop == 0 && vsp < 0.5)
     {
         vsp /= 20;
         jumpstop = 1;
     }
-    
+    // Jumping.
     if (character == "P")
     {
         if (grounded && vsp > 0)
@@ -58,7 +58,7 @@ function state_player_mach3()
             vsp = -12;
         }
     }
-    
+    // Momentum.
     if (grounded)
     {
         if (slopeCheck(x, y) && hsp != 0 && movespeed > 12 && movespeed < 18)
@@ -75,7 +75,7 @@ function state_player_mach3()
                 movespeed += 0.1;
         }
     }
-    
+    // Animations.
     if (sprite_index == spr_mach3jump && floor(image_index) == (image_number - 1))
         sprite_index = spr_mach3player;
     
@@ -85,6 +85,7 @@ function state_player_mach3()
     if (animation_end() && (sprite_index == spr_rollgetup || sprite_index == spr_machdashpad))
         sprite_index = spr_mach3player;
     
+	// Crazy Run.
     if ((movespeed > 16 && sprite_index != spr_crazyrun) && sprite_index != spr_dive && sprite_index != spr_rollgetup)
     {
         mach4mode = true;
@@ -98,10 +99,9 @@ function state_player_mach3()
         }
     }
     else if (movespeed <= 16 && sprite_index == spr_crazyrun)
-    {
         sprite_index = spr_mach3player;
-    }
     
+	// Sjump.
     if (grounded)
         Sjumpcan_doublejump = true;
     
@@ -114,6 +114,7 @@ function state_player_mach3()
         image_index = 0;
     }
     
+	// Machslide.
     if ((!key_attack && grounded) && sprite_index != spr_machdashpad && Dashpad_buffer <= 0)
     {
         scr_sound(sound_break);
@@ -132,6 +133,7 @@ function state_player_mach3()
         mach2 = 100;
     }
     
+	// Donut Shoot.
     if (key_shoot2 && global.treat)
     {
         vsp = -5;
@@ -158,6 +160,7 @@ function state_player_mach3()
         }
     }
     
+	// Machroll.
     if (key_down && !place_meeting(x, y, obj_dashpad))
     {
         flash = 0;
@@ -183,6 +186,7 @@ function state_player_mach3()
     if (grounded)
         upsideDownJump = false;
     
+	//Hit Wall
     if ((!grounded || slopeCheck(x + xscale, y)) && scr_solid(x + xscale, y, true) && !place_meeting(x + xscale, y, obj_destructibles) && !place_meeting(x + xscale, y, obj_metalblock))
     {
         if (!upsideDownJump)
@@ -215,11 +219,10 @@ function state_player_mach3()
         _ledge += slope_check_down(x + xscale, y, 3);
         
         if (_ledge != 0)
-        {
             y += _ledge;
-        }
         else
         {
+			#region Bump Wall
             scr_sound(sound_maximumspeedland);
             camera_shake(20, 40);
             image_speed = 0.35;
@@ -245,41 +248,24 @@ function state_player_mach3()
             mach2 = 0;
             image_index = 0;
             instance_create(x + (10 * xscale), y + 10, obj_bumpeffect);
+			#endregion
         }
     }
     
     if (sprite_index == spr_crazyrun && !instance_exists(obj_crazyrunothereffect))
-    {
-        instance_create(x, y, obj_crazyrunothereffect, 
-        {
-            playerID: id
-        });
-    }
+        instance_create(x, y, obj_crazyrunothereffect, { playerID: id });
     
+	// Effects.
     if (!instance_exists(obj_crazyruneffect))
-    {
-        instance_create(x, y, obj_crazyruneffect, 
-        {
-            playerID: id
-        });
-    }
+        instance_create(x, y, obj_crazyruneffect, { playerID: id });
     
     if (!instance_exists(obj_chargeeffect) && sprite_index != spr_dive)
-    {
-        instance_create(x, y, obj_chargeeffect, 
-        {
-            playerID: id
-        });
-    }
+        instance_create(x, y, obj_chargeeffect, { playerID: id });
     
     if (!instance_exists(obj_superdashcloud) && grounded)
-    {
-        instance_create(x, y, obj_superdashcloud, 
-        {
-            playerID: id
-        });
-    }
+        instance_create(x, y, obj_superdashcloud, { playerID: id });
     
+	// Image Speed.	
     if (sprite_index == spr_mach3player)
         image_speed = 0.4;
     

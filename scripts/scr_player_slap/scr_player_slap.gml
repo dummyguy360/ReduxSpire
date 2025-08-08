@@ -23,9 +23,7 @@ function state_player_slap()
             hsp = (move * movespeed) + 5;
     }
     else
-    {
         hsp = xscale * movespeed;
-    }
     
     if (move != xscale && momemtum == 1 && movespeed != 0)
         movespeed -= 0.05;
@@ -142,9 +140,7 @@ function state_player_slap()
     if (floor(image_index) == (image_number - 1) && slapbuffer == 8)
     {
         if (grounded)
-        {
             state = states.normal;
-        }
         else if (!grounded)
         {
             sprite_index = spr_player_fall;

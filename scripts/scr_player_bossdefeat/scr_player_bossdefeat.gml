@@ -1,3 +1,2 @@
-function state_player_bossdefeat()
-{
-}
+//unused
+function state_player_bossdefeat() { }

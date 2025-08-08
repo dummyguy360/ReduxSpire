@@ -3,7 +3,7 @@
   "resourceVersion": "1.1",
   "name": "README",
   "parent": {
-    "name": "Notes",
-    "path": "folders/Notes.yy",
+    "name": "SugarySpire",
+    "path": "SugarySpire.yyp",
   },
 }

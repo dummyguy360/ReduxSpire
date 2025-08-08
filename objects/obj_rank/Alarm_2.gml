@@ -1,3 +1,4 @@
+/// @description Point Count-up
 alarm[1] = -1;
 alarm[0] = -1;
 pshake = false;

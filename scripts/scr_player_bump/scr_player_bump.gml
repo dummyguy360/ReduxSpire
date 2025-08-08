@@ -14,9 +14,7 @@ function state_player_bump()
         vsp = 0;
     }
     else if (grounded && vsp > 0)
-    {
         hsp = 0;
-    }
     
     if (animation_end())
     {

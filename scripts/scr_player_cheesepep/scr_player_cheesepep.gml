@@ -32,9 +32,7 @@ function state_player_cheesepep()
     else if (grounded)
     {
         if (!place_meeting(x, y + 1, obj_railh) && !place_meeting(x, y + 1, obj_railh2))
-        {
             hsp = 0;
-        }
         else if (place_meeting(x, y + 1, obj_railh))
         {
             hsp = -5;
@@ -120,9 +118,7 @@ function state_player_cheesepep()
             movespeed = 6;
     }
     else
-    {
         movespeed = 0;
-    }
     
     if (move != 0)
     {
@@ -134,9 +130,7 @@ function state_player_cheesepep()
             image_speed = 0.6;
     }
     else
-    {
         image_speed = 0.35;
-    }
     
     if (floor(image_index) == (image_number - 1) && sprite_index == spr_cheesepep_intro)
         sprite_index = spr_cheesepep_idle;

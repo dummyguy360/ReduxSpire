@@ -112,9 +112,7 @@ function state_player_knightpep()
             movespeed = 6;
     }
     else
-    {
         movespeed = 0;
-    }
     
     if (move != 0)
     {
@@ -126,9 +124,7 @@ function state_player_knightpep()
             image_speed = 0.6;
     }
     else
-    {
         image_speed = 0.35;
-    }
     
     if (floor(image_index) == 4 && sprite_index == spr_knightpep_start)
         instance_create(x, y - 600, obj_thunder);

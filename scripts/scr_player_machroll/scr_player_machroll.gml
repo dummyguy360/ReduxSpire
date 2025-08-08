@@ -15,9 +15,7 @@ function state_player_machroll()
         instance_create(x, y + 43, obj_cloudeffect);
     
     if (grounded && sprite_index != spr_crouchslip)
-    {
         sprite_index = spr_machroll;
-    }
     else if (sprite_index != spr_dive && sprite_index != spr_crouchslip)
     {
         sprite_index = spr_dive;
@@ -50,9 +48,7 @@ function state_player_machroll()
                 state = states.machslide;
             }
             else
-            {
                 state = states.normal;
-            }
         }
     }
     

@@ -8,15 +8,13 @@ function state_player_handstandjump()
     if (mach2 < 35)
         mach2 = 35;
     
-    if (floor(image_index) < 5)
+    if (floor(image_index) < 5)//Floaty
     {
         vsp = min(vsp, 0);
         _speednerf = approach(_speednerf, 0, 0.5);
     }
     else
-    {
         _speednerf = 1;
-    }
     
     if (movespeed < 10)
         movespeed = approach(movespeed, 10, 0.5);
@@ -78,7 +76,7 @@ function state_player_handstandjump()
         jumpstop = 0;
         vsp = -11;
     }
-    
+    // Bumping
     if (scr_solid(x + xscale, y, true) && !place_meeting(x + xscale, y, obj_destructibles))
     {
         var _ledge = 0;
@@ -86,9 +84,7 @@ function state_player_handstandjump()
         _ledge += slope_check_down(x + xscale, y, 3);
         
         if (_ledge != 0)
-        {
             y += _ledge;
-        }
         else if (_ledge <= 0 && !place_meeting(x + xscale, y, obj_destructibles))
         {
             if (!grounded || slopeCheck(x + xscale, y))

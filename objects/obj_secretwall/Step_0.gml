@@ -1,3 +1,4 @@
+// Reveal Secret and Fade Back In.
 var _condition = revealCondition();
 
 if (_condition || (stopFadeBackIn && revealActivated))

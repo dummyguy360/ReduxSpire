@@ -35,6 +35,7 @@ if (!global.panic && room != rank_room && room != timesuproom && !instance_exist
         global.secretmusic = noone;
     }
     
+	//Harry Song
     if (instance_exists(obj_gummyharry))
     {
         global.harrymusic = scr_music(mu_gummyharry);

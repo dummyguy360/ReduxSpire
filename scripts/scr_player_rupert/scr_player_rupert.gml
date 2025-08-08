@@ -2,6 +2,7 @@ function state_player_rupertnormal()
 {
     doublejumped = false;
     momemtum = false;
+	#region Move Code
     move = key_left + key_right;
     hsp = xscale * movespeed;
     var a = xscale;
@@ -19,10 +20,9 @@ function state_player_rupertnormal()
             movespeed -= 0.15;
     }
     else
-    {
         movespeed = approach(movespeed, 0, 0.6);
-    }
-    
+	#endregion
+    // Slide.
     if (grounded && slopeCheck(x, y))
     {
         movespeed = 8;
@@ -33,12 +33,12 @@ function state_player_rupertnormal()
         
         state = states.rupertslide;
     }
-    
+    // Animation.
     if (move == 0)
         sprite_index = spr_player_skateidle;
     else
         sprite_index = spr_player_skateslowwalk;
-    
+    // Jump.
     if (key_jump && grounded)
     {
         jumpstop = false;
@@ -50,7 +50,7 @@ function state_player_rupertnormal()
         movespeed = hsp;
         state = states.rupertjump;
     }
-    
+    // Fall
     if (!grounded)
     {
         sprite_index = spr_player_skatedive;
@@ -66,7 +66,7 @@ function state_player_rupertslide()
     momemtum = false;
     hsp = xscale * movespeed;
     move = key_left + key_right;
-    
+    // Jumpstop.
     if (!key_jump2 && jumpstop == 0 && vsp < 0.5 && stompAnim == 0)
     {
         vsp /= 2;
@@ -75,16 +75,16 @@ function state_player_rupertslide()
     
     if (grounded && vsp > 0)
         jumpstop = false;
-    
+    // Jump.
     if (key_jump && grounded)
     {
         vsp = -10;
         instance_create(x, y, obj_highjumpcloud2);
         scr_sound(sound_jump);
-        sprite_index = spr_player_skatedoublejumpstart;
+        sprite_index = spr_player_skatedoublejumpstart; //to do: more rupert animations.
         image_index = 0;
     }
-    
+    // Double Jump.
     if (key_jump && !grounded && doublejumped == false)
     {
         jumpstop = true;
@@ -100,10 +100,10 @@ function state_player_rupertslide()
         state = states.rupertjump;
         movespeed = hsp;
     }
-    
+    // Slope Momentum.
     if (grounded && movespeed < 14)
         player_slopeMomentum(0.25, 0);
-    
+    // Sprite Transition.
     if ((sprite_index != spr_player_skatedoublejumpstart && sprite_index != spr_player_skatedoublejump) || (grounded && vsp > 0))
         sprite_index = spr_player_skatewalk;
     
@@ -112,7 +112,7 @@ function state_player_rupertslide()
         image_index = 0;
         sprite_index = spr_player_skatedoublejump;
     }
-    
+    // Slam.
     if (!grounded && vsp >= terminalVelocity)
     {
         movespeed = hsp;
@@ -121,10 +121,10 @@ function state_player_rupertslide()
         momemtum = true;
         sprite_index = spr_player_skatespin;
     }
-    
+    // Hit Wall.
     if (place_meeting_collision(x + sign(hsp), y, Exclude.SLOPES) && !place_meeting(x + sign(hsp), y, obj_destructibles) && !place_meeting(x + sign(hsp), y, obj_chocofrog) && !place_meeting(x + sign(hsp), y, obj_metalblock))
     {
-        if (!grounded)
+        if (!grounded) // Stick.
         {
             vsp = 0;
             image_index = 0;
@@ -132,7 +132,7 @@ function state_player_rupertslide()
             state = states.rupertstick;
             xscale = sign(hsp);
         }
-        else
+        else // Bump.
         {
             scr_sound(sound_bump);
             sprite_index = spr_player_skatefall;
@@ -150,7 +150,7 @@ function state_player_rupertslide()
 function state_player_rupertjump()
 {
     static blue_aft = 0;
-    
+    // Animation
     if (sprite_index != spr_player_skatespin && animation_end())
     {
         image_index = 0;
@@ -170,7 +170,7 @@ function state_player_rupertjump()
                 break;
         }
     }
-    
+    // Double Jump.
     if (key_jump && !grounded && doublejumped == 0)
     {
         jumpstop = true;
@@ -184,7 +184,7 @@ function state_player_rupertjump()
         
         scr_sound(sound_jump);
     }
-    
+    // Slam.
     if (vsp >= terminalVelocity || sprite_index == spr_player_skatespin || ((doublejumped || sprite_index == spr_player_skatewalljump || sprite_index == spr_player_skatewalljumpstart) && vsp >= 1))
     {
         jumpstop = true;
@@ -199,20 +199,10 @@ function state_player_rupertjump()
         vsp = min(vsp, 40);
         
         if (!instance_exists(groundpoundEffect))
-        {
-            groundpoundEffect = instance_create(x, y, obj_groundpoundeffect, 
-            {
-                playerID: id
-            });
-        }
+            groundpoundEffect = instance_create(x, y, obj_groundpoundeffect, { playerID: id });
         
         if (vsp > 17 && !instance_exists(obj_piledrivereffect))
-        {
-            instance_create(x, y, obj_piledrivereffect, 
-            {
-                playerID: id
-            });
-        }
+            instance_create(x, y, obj_piledrivereffect, { playerID: id });
         
         blue_aft++;
         
@@ -225,13 +215,11 @@ function state_player_rupertjump()
         image_speed = clamp(floor(abs(vsp) / 20) * 0.5, 0, 0.5) + 0.4;
     }
     else
-    {
         image_speed = 0.35;
-    }
-    
+    // Move
     hsp = movespeed;
     move = key_left + key_right;
-    
+    // Jumpstop.
     if (!key_jump2 && jumpstop == 0 && vsp < 0.5 && stompAnim == 0)
     {
         vsp /= 2;
@@ -245,7 +233,7 @@ function state_player_rupertjump()
         movespeed = approach(movespeed, move * 8, 0.65);
     else
         movespeed = approach(movespeed, 0, 0.65);
-    
+    // Stick 
     if (place_meeting_collision(x + sign(hsp), y, Exclude.SLOPES))
     {
         if (key_jump2 && move != 0 && move == sign(hsp))
@@ -257,18 +245,16 @@ function state_player_rupertjump()
             xscale = sign(hsp);
         }
         else
-        {
             movespeed = 0;
-        }
     }
-    
+    // Land
     if (grounded && vsp > 0)
     {
         doublejumped = false;
         
         if (sprite_index == spr_player_skatespin && !place_meeting(x, y + 1, obj_destructibles) && !place_meeting(x, y + 1, obj_metalblock) && !place_meeting(x, y + 1, obj_chocofrog))
         {
-            if (slopeCheck(x, y))
+            if (slopeCheck(x, y)) // Land On Slopes.	
             {
                 movespeed = 11;
                 xscale = -slopeMomentum_direction();
@@ -278,7 +264,7 @@ function state_player_rupertjump()
                 
                 state = states.rupertslide;
             }
-            else
+            else // Otherwise.
             {
                 scr_sound(sound_maximumspeedland);
                 image_index = 0;
@@ -311,7 +297,7 @@ function state_player_rupertjump()
                 flash = true;
             }
         }
-        else if (sprite_index != spr_player_skatespin)
+        else if (sprite_index != spr_player_skatespin)// Safe Landing
         {
             if (slopeCheck(x, y))
             {

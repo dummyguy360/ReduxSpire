@@ -43,7 +43,7 @@ function state_player_fireass()
             landAnim = 0;
         }
     }
-    
+    //Fire ass after effect
     if (fire_afterimagetimer > 0)
         fire_afterimagetimer--;
     

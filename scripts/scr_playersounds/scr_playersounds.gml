@@ -8,6 +8,9 @@ function scr_playersounds_init()
 
 function scr_playersounds()
 {
+	//To Do: Clean Up
+	
+	//Tumble
     if (sprite_index == spr_tumblestart && floor(image_index) >= 11 && !audio_is_playing(sound_tumblestart) && !audio_is_playing(sound_tumble))
         scr_sound(sound_tumble);
     
@@ -20,6 +23,7 @@ function scr_playersounds()
         audio_stop_sound(sound_tumblestart);
     }
     
+	//Minecart & Grinding
     if ((state == states.minecart && grounded) || state == states.grind)
     {
         if (!audio_is_playing(grindsnd))
@@ -39,6 +43,7 @@ function scr_playersounds()
     else if (audio_is_playing(flipsnd))
         audio_stop_sound(flipsnd);
     
+	// Mach.
     if (state == states.mach2 || state == states.mach3 || state == states.climbwall || state == states.climbceiling || state == states.climbdownwall)
     {
         var machsnd = noone;
