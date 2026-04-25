@@ -87,10 +87,7 @@ function state_player_climbwall()
     
     if (!scr_solid(x + xscale, y))
     {
-        instance_create(x, y, obj_jumpdust, 
-        {
-            playerID: id
-        });
+        instance_create(x, y, obj_jumpdust, { playerID: id });
         vsp = 0;
         verticalMovespeed = max(verticalMovespeed, 6);
         var old_y = y;
@@ -184,10 +181,7 @@ function state_player_climbwall()
             }
         }
         
-        with (instance_create(x, y, obj_jumpdust, 
-        {
-            playerID: id
-        }))
+        with (instance_create(x, y, obj_jumpdust, { playerID: id }))
         {
             image_xscale = other.xscale;
             sprite_index = spr_wallkick_effect;
@@ -210,12 +204,7 @@ function state_player_climbwall()
         instance_create(x, y + 43, obj_puffEffect);
     
     if (!instance_exists(superJumpEffect) && verticalMovespeed >= 12)
-    {
-        superJumpEffect = instance_create(x - (10 * xscale), y - 35, obj_superJumpEffect, 
-        {
-            PlayerID: 370
-        });
-    }
+        superJumpEffect = instance_create(x - (10 * xscale), y - 35, obj_superJumpEffect, { PlayerID: obj_player });
 }
 
 function state_player_climbceiling()
@@ -329,8 +318,8 @@ function state_player_climbceiling()
         image_index = 0;
         instance_create(x + (10 * -xscale), y + 10, obj_bumpeffect);
     }
+	
     //Jump out of wall
-    
     if (inputBufferJump > 0 && key_attack)
     {
         inputBufferJump = 0;
@@ -367,17 +356,12 @@ function state_player_climbceiling()
             playedjumpsound = 1;
         }
     }
+	
     //Effects and Image Speed
-    
     if (movespeed >= 12)
     {
         if (!instance_exists(obj_crazyruneffect))
-        {
-            instance_create(x, y, obj_crazyruneffect, 
-            {
-                playerID: id
-            });
-        }
+            instance_create(x, y, obj_crazyruneffect, { playerID: id });
         
         if (!instance_exists(obj_chargeeffect) && sprite_index != spr_dive)
         {

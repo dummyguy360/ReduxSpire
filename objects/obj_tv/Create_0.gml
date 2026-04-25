@@ -143,10 +143,17 @@ displayYMax = -300;
 displayY = displayYMax;
 displayVSP = 0;
 comboDisplay = 0;
-displayState = UnknownEnum.Value_0;
+
+enum ComboDisplay
+{
+	StartCombo = 0,
+	HoldCombo = 1,
+	LosingCombo = 2
+}
+displayState = ComboDisplay.StartCombo;
 comboTimeDisplay = 0;
 combofillDisplay = 0;
-comboSurface = -4;
+comboSurface = noone;
 xstartcombometer = 845;
 ystartcombometer = 165;
 xcombometer = 0;
@@ -157,9 +164,9 @@ idleanim = choose(500, 450, 400, 550);
 static_index = 0;
 draw_static = 0;
 expressiontime = 0;
-idlespr = -4;
-saved_tv_spr = -4;
-expressionsprite = -4;
+idlespr = noone;
+saved_tv_spr = noone;
+expressionsprite = noone;
 tvbgindex = 0;
 signalBuffer = irandom_range(300, 1000);
 signalindex = 0;

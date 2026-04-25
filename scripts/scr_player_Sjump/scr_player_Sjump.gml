@@ -19,9 +19,7 @@ function state_player_Sjump()
         movespeed = approach(movespeed, 3, 0.5);
     }
     else
-    {
         movespeed = 0;
-    }
     
     if (sprite_index == spr_player_PZ_superJump)
     {
@@ -120,12 +118,7 @@ function state_player_Sjump()
     else if (sprite_index != spr_player_PZ_superJump_cancel_intro && sprite_index != spr_player_PZ_superJump_cancel)
     {
         if (!instance_exists(superJumpEffect))
-        {
-            superJumpEffect = instance_create(x, y - 35, obj_superJumpEffect, 
-            {
-                playerID: id
-            });
-        }
+            superJumpEffect = instance_create(x, y - 35, obj_superJumpEffect, { playerID: id });
     }
     
     scr_collision();

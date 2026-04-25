@@ -131,19 +131,19 @@ function state_player_jump()
         
         if (!jumpAnim)
         {
-            var aerial_sprite_transitions = [[2084, spr_fall], [2185, spr_fall], [spr_jump, spr_fall]];
-            var i = 0;
-            
-            while (i < array_length(aerial_sprite_transitions))
+            var aerial_sprite_transitions = 
+			[
+				[spr_player_PZ_suplexDash_cancel, spr_fall], 
+				[spr_player_PZ_pileDriver_jump, spr_fall], 
+				[spr_jump, spr_fall]
+			];
+			
+            for (var i = 0; i < array_length(aerial_sprite_transitions); i++)
             {
                 if (aerial_sprite_transitions[i][0] == sprite_index)
                 {
                     sprite_index = aerial_sprite_transitions[i][1];
                     break;
-                }
-                else
-                {
-                    i++;
                 }
             }
         }

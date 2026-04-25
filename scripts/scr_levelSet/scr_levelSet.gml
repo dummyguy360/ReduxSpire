@@ -19,7 +19,7 @@ function scr_levelSet()
     instance_destroy(obj_danceoffprank);
     instance_destroy(obj_combotitle);
     instance_destroy(obj_comboEndEffect);
-    global.cutsceneManager = -4;
+    global.cutsceneManager = noone;
     
     if (instance_exists(obj_cutsceneManager))
         instance_destroy(obj_cutsceneManager);

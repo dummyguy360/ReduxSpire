@@ -103,8 +103,8 @@ function state_player_minecart()
         }
     }
     
-    var groundedlandsprite = 2340;
-    var groundedsprite = 2337;
+    var groundedlandsprite = spr_player_PZ_minecart_land;
+    var groundedsprite = spr_player_PZ_minecart;
     
     if (!grounded)
     {

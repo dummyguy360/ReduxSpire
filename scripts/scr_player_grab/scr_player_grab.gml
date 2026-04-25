@@ -54,9 +54,7 @@ function state_player_grab()
             }
         }
         else
-        {
             movespeed = 0;
-        }
         
         if (move != 0 && place_meeting(x + xscale, y, obj_solid))
             movespeed = 0;

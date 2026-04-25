@@ -26,37 +26,37 @@ function state_player_normal()
     
     if (global.panic)
     {
-        _idle_spr = 2172;
+        _idle_spr = spr_player_PZ_idle_escape;
         
         if (instance_exists(obj_coneball))
-            _idle_spr = 1278;
+            _idle_spr = spr_player_timesupidle;
     }
     
     if (global.combo >= 10)
     {
-        _idle_spr = 2171;
-        _move_spr = 2205;
+        _idle_spr = spr_player_PZ_idle_comboSmall;
+        _move_spr = spr_player_PZ_walk_comboSmall;
     }
     
     if (global.combo >= 50)
     {
-        _idle_spr = 2170;
-        _move_spr = 2129;
+        _idle_spr = spr_player_PZ_idle_comboBig;
+        _move_spr = spr_player_PZ_walk_comboBig;
     }
     
     if (global.levelname == "fudge" && global.combo < 10)
-        _idle_spr = 1475;
+        _idle_spr = spr_player_fudgeidle;
     
     if (global.levelname == "dance" && global.combo < 10)
     {
-        _idle_spr = 2216;
-        _move_spr = 2217;
+        _idle_spr = spr_player_PZ_idle_dance;
+        _move_spr = spr_player_PZ_walk_dance;
     }
     
     if (windingAnim > 0)
     {
         windingAnim -= 5;
-        _idle_spr = 2199;
+        _idle_spr = spr_player_PZ_tired;
     }
     
     if (key_taunt)
@@ -69,8 +69,8 @@ function state_player_normal()
             landAnim = false;
             slamHurt = 0;
             breakdanceSpeed = approach(breakdanceSpeed, 0.6, 0.005);
-            _idle_spr = 2169;
-            _move_spr = 2169;
+            _idle_spr = spr_player_PZ_idle_breakdance;
+            _move_spr = spr_player_PZ_idle_breakdance;
             _dontidle = true;
             _dontStep = true;
             
@@ -93,10 +93,7 @@ function state_player_normal()
         {
             instance_create(x, y, obj_poofeffect);
             
-            with (instance_create(x, y, obj_breakdanceBoomBox, 
-            {
-                playerID: id
-            }))
+            with (instance_create(x, y, obj_breakdanceBoomBox, { playerID: id }))
                 vsp = -11;
         }
         
@@ -134,9 +131,7 @@ function state_player_normal()
             if (sprite_index != spr_player_PZ_walk_breakdance && sprite_index != spr_player_PZ_idle_breakdance && !_dontidle && sprite_index != spr_player_PZ_tired)
             {
                 if (idle < spr_alrightcombo_boil)
-                {
                     idle += spr_chargershitbox;
-                }
                 else
                 {
                     sprite_index = choose(spr_idle1, spr_idle2, spr_idle3, spr_idle4, spr_idle5, spr_idle6);
@@ -213,9 +208,7 @@ function state_player_normal()
             movespeed = approach(movespeed, 7, 0.5);
     }
     else
-    {
         movespeed = 0;
-    }
     
     if (movespeed > 7)
         movespeed = approach(movespeed, 7, 0.1);
@@ -234,9 +227,7 @@ function state_player_normal()
             image_speed = 0.6;
     }
     else
-    {
         image_speed = 0.35;
-    }
     
     if (sprite_index == spr_player_PZ_walk_breakdance || sprite_index == spr_player_PZ_idle_breakdance)
         image_speed = breakdanceSpeed;

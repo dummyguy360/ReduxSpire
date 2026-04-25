@@ -23,10 +23,7 @@ function state_player_mach3()
         inputBufferJump = 0;
         scr_sound(sfx_pz_jump);
         vsp = -11;
-        instance_create(x, y, obj_jumpdust, 
-        {
-            playerID: id
-        });
+        instance_create(x, y, obj_jumpdust, { playerID: id });
     }
     
     if (grounded)
@@ -79,9 +76,7 @@ function state_player_mach3()
         }
     }
     else if (movespeed <= 16 && sprite_index == spr_crazyrun)
-    {
         sprite_index = spr_mach3player;
-    }
     
     if (key_up && sprite_index != spr_machdashpad && sprite_index != spr_dive && can_jump)
     {
@@ -218,20 +213,10 @@ function state_player_mach3()
     }
     
     if (sprite_index == spr_crazyrun && !instance_exists(obj_crazyrunothereffect))
-    {
-        instance_create(x, y, obj_crazyrunothereffect, 
-        {
-            playerID: id
-        });
-    }
+        instance_create(x, y, obj_crazyrunothereffect, { playerID: id });
     
     if (!instance_exists(obj_crazyruneffect))
-    {
-        instance_create(x, y, obj_crazyruneffect, 
-        {
-            playerID: id
-        });
-    }
+        instance_create(x, y, obj_crazyruneffect, { playerID: id });
     
     if (!instance_exists(obj_chargeeffect) && sprite_index != spr_dive)
         instance_create(x, y, obj_chargeeffect, { playerID: id });

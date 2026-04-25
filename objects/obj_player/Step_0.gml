@@ -234,7 +234,7 @@ if (state == states.mach3 || state == states.Nhookshot || state == states.mach2 
     
     if (mach_aftimg <= 0)
     {
-        with (create_afterimage(choose(UnknownEnum.Value_1, UnknownEnum.Value_2), xscale, true))
+        with (create_afterimage(choose(afterimages.blue, afterimages.pink), xscale, true))
             mach3Afterimage = true;
         
         mach_aftimg = 6;
@@ -250,12 +250,7 @@ if (((place_meeting(x, y, obj_door) && !place_meeting(x, y, obj_doorblocked)) ||
     instance_create(x, y, obj_uparrow);
 
 if (state == states.mach3 && !instance_exists(obj_speedlines))
-{
-    instance_create(x, y, obj_speedlines, 
-    {
-        playerID: id
-    });
-}
+    instance_create(x, y, obj_speedlines, { playerID: id });
 
 if (state == states.pizzanokungfu)
 {

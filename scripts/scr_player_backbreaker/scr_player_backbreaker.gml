@@ -120,16 +120,20 @@ function state_player_backbreaker()
     else
         image_speed = 0.35;
     
-    if (key_down2)
-    {
-        paletteselect++;
+	//Debug Stuff.
+	if DEBUG
+	{
+	    if (key_down2)
+	    {
+	        paletteselect++;
         
-        if (paletteselect >= array_length(my_palettes))
-            paletteselect = 0;
+	        if (paletteselect >= array_length(my_palettes))
+	            paletteselect = 0;
         
-        if (buffer_exists(my_pal_buffer))
-            buffer_delete(my_pal_buffer);
+	        if (buffer_exists(my_pal_buffer))
+	            buffer_delete(my_pal_buffer);
         
-        taunttimer = 20;
-    }
+	        taunttimer = 20;
+	    }
+	}
 }

@@ -43,15 +43,15 @@ if (statictimer < 0)
     staticdraw = false;
 
 var player_state = global.freezeframe ? obj_player.frozenstate : obj_player.state;
-var target_player = 370;
+var target_player = obj_player;
 sprite_image_number = sprite_get_number(tvsprite);
 
-if (player_state == UnknownEnum.Value_71)
+if (player_state == states.machslide)
 {
     if (target_player.sprite_index == spr_player_PZ_mach3_turn)
-        player_state = UnknownEnum.Value_70;
+        player_state = states.mach3;
     else
-        player_state = UnknownEnum.Value_69;
+        player_state = states.mach2;
 }
 
 ycombometer = ystartcombometer + DrawY + displayY;
@@ -62,34 +62,34 @@ if (!(global.combotime > 0 && global.combo > 0))
     displayY = approach(displayY, displayYMax, 5);
     comboTimeDisplay = 0;
     combofillDisplay = lerp(combofillDisplay, comboTimeDisplay / 60, 0.5);
-    displayState = UnknownEnum.Value_0;
+    displayState = ComboDisplay.StartCombo;
 }
 else
 {
     switch (displayState)
     {
-        case UnknownEnum.Value_0:
+        case ComboDisplay.StartCombo:
             displayVSP += 0.5;
             displayY = approach(displayY, 20, displayVSP);
             
             if (displayY >= 20)
-                displayState = UnknownEnum.Value_1;
+                displayState = ComboDisplay.HoldCombo;
             
             break;
         
-        case UnknownEnum.Value_1:
+        case ComboDisplay.HoldCombo:
             displayY = lerp(displayY, 0, 0.05);
             
             if (displayY < 1)
             {
                 displayY = 0;
                 displayVSP = 0;
-                displayState = UnknownEnum.Value_2;
+                displayState = ComboDisplay.LosingCombo;
             }
             
             break;
         
-        case UnknownEnum.Value_2:
+        case ComboDisplay.LosingCombo:
             var _setVSP = -1;
             
             if (global.combotime < 30)
@@ -107,9 +107,7 @@ else
                 }
             }
             else
-            {
                 displayY = approach(displayY, 0, 10);
-            }
             
             break;
     }
@@ -129,7 +127,7 @@ if ((tvsprite == spr_tvHUD_turningOn || sprite_index == spr_tvHUD_turningOn) && 
 
 tvDoingExpression = false;
 
-if (tvExpressionSprite != -4 && tvExpressionBuffer > 0)
+if (tvExpressionSprite != noone && tvExpressionBuffer > 0)
 {
     tvDoingExpression = true;
     queuedSprite = tvExpressionSprite;
@@ -149,7 +147,7 @@ if (tvExpressionSprite != -4 && tvExpressionBuffer > 0)
             _count = !obj_player.is_inSecretPortal;
             break;
         
-        case 2273:
+        case spr_tvHUD_player_PZ_keyGot:
             _count = obj_player.state != states.keyget && obj_player.state != states.actor;
             break;
     }
@@ -167,29 +165,29 @@ if (tvExpressionBuffer <= 0)
 {
     switch (player_state)
     {
-        case UnknownEnum.Value_70:
-        case UnknownEnum.Value_42:
-        case UnknownEnum.Value_31:
-        case UnknownEnum.Value_11:
-        case UnknownEnum.Value_71:
+        case states.mach3:
+        case states.backkick:
+        case states.machroll:
+        case states.climbwall:
+        case states.machslide:
             tvNormalStates = true;
             var my_mvsp = global.freezeframe ? abs(target_player.frozenstate) : abs(target_player.movespeed);
             
-            if (player_state == UnknownEnum.Value_11)
+            if (player_state == states.climbwall)
                 my_mvsp = abs(target_player.verticalMovespeed);
             
             var _oldQueue = queuedSprite;
             
-            if (player_state == UnknownEnum.Value_42)
+            if (player_state == states.backkick)
                 queuedSprite = mach2tvspr;
             
-            if (player_state == UnknownEnum.Value_70 || player_state == UnknownEnum.Value_11 || (player_state == UnknownEnum.Value_71 && target_player.sprite_index == spr_player_PZ_mach3_turn) || (player_state == UnknownEnum.Value_31 && target_player.mach3Roll > 0))
+            if (player_state == states.mach3 || player_state == states.climbwall || (player_state == states.machslide && target_player.sprite_index == spr_player_PZ_mach3_turn) || (player_state == states.machroll && target_player.mach3Roll > 0))
                 queuedSprite = mach3tvspr;
             
-            if (target_player.sprite_index == spr_player_PZ_mach4 || (player_state == UnknownEnum.Value_11 && my_mvsp >= 16) || (player_state == UnknownEnum.Value_31 && target_player.mach3Roll > 0 && my_mvsp >= 16))
+            if (target_player.sprite_index == spr_player_PZ_mach4 || (player_state == states.climbwall && my_mvsp >= 16) || (player_state == states.machroll && target_player.mach3Roll > 0 && my_mvsp >= 16))
                 queuedSprite = mach4tvspr;
             
-            if (player_state == UnknownEnum.Value_31 && target_player.mach3Roll <= 0)
+            if (player_state == states.machroll && target_player.mach3Roll <= 0)
             {
                 if (tvsprite == mach2tvspr || tvsprite == mach3tvspr || tvsprite == mach4tvspr)
                     tvForceTransition = true;
@@ -216,47 +214,47 @@ if (tvExpressionBuffer <= 0)
             
             break;
         
-        case UnknownEnum.Value_95:
+        case states.puddle:
             queuedSprite = puddletvspr;
             break;
         
-        case UnknownEnum.Value_101:
+        case states.minecart:
             queuedSprite = minecarttvspr;
             break;
         
-        case UnknownEnum.Value_108:
+        case states.fireass:
             queuedSprite = firetvspr;
             break;
         
-        case UnknownEnum.Value_88:
-        case UnknownEnum.Value_97:
-        case UnknownEnum.Value_98:
+        case states.cotton:
+        case states.cottondrill:
+        case states.cottonroll:
             queuedSprite = cottontvspr;
             break;
         
-        case UnknownEnum.Value_99:
+        case states.fling:
             queuedSprite = orbtvspr;
             break;
         
-        case UnknownEnum.Value_126:
+        case states.hooks:
             queuedSprite = hooktvspr;
             break;
         
-        case UnknownEnum.Value_140:
-        case UnknownEnum.Value_142:
-        case UnknownEnum.Value_141:
-        case UnknownEnum.Value_150:
-        case UnknownEnum.Value_148:
-        case UnknownEnum.Value_149:
-        case UnknownEnum.Value_151:
+        case states.frostburn:
+        case states.frostburnspin:
+        case states.frostburnwallrun:
+        case states.rupertjump:
+        case states.rupertnormal:
+        case states.rupertslide:
+        case states.rupertstick:
             queuedSprite = frostburntvspr;
             break;
         
-        case UnknownEnum.Value_48:
+        case states.ufofloat:
             queuedSprite = ufotvspr;
             break;
         
-        case UnknownEnum.Value_83:
+        case states.barrelcrouch:
             queuedSprite = marshdogspr;
             break;
         
@@ -306,9 +304,7 @@ if (!do_transition && tvForceTransition)
 if (tvsprite != queuedSprite)
 {
     if (!staticActivated && (!do_transition || tvsprite == spr_tvHUD_turningOn || tvsprite == spr_tvHUD_turnedOff))
-    {
         tvsprite = queuedSprite;
-    }
     else
     {
         staticActivated = true;

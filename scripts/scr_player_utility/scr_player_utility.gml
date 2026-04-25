@@ -41,10 +41,7 @@ function do_grab()
             
             if (floatyGrab > 0)
             {
-                instance_create(x, y, obj_crazyrunothereffect, 
-                {
-                    playerID: id
-                });
+                instance_create(x, y, obj_crazyrunothereffect, { playerID: id });
                 sprite_index = spr_player_PZ_suplexDash_intro;
             }
             else

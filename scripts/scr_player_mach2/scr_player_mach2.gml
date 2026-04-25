@@ -161,12 +161,8 @@ function state_player_mach2()
         }
     }
     
-    if ((!grounded || slopeCheck(x + xscale, y)) && scr_solid(x + xscale, y, true))
-    {
-    }
-    else if (scr_solid(x + xscale, y, true) && !place_meeting(x + xscale, y, obj_destructibles))
-    {
-    }
+    if ((!grounded || slopeCheck(x + xscale, y)) && scr_solid(x + xscale, y, true)) { }
+    else if (scr_solid(x + xscale, y, true) && !place_meeting(x + xscale, y, obj_destructibles)) { }
     
     if (key_shoot2 && global.treat)
     {
