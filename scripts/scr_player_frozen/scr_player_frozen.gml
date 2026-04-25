@@ -7,7 +7,6 @@ function state_player_frozen()
     else
         input_buffer_jump = 0;
     
-	//Freeze Frame
     if (global.freezeframe == true)
     {
         for (var i = 0; i < 10; i++)
@@ -21,11 +20,28 @@ function state_player_frozen()
         image_speed = 0;
         movespeed = 0;
         cutscene = true;
+        
+        if (instance_exists(obj_creamThief))
+        {
+            with (obj_creamThief)
+                image_speed = 0;
+        }
     }
     else
     {
         for (var i = 0; i < 10; i++)
             alarm_set(i, frozenalarm[i]);
+        
+        if (instance_exists(obj_creamThief))
+        {
+            with (obj_creamThief)
+            {
+                movespeed = tauntstoredmovespeed;
+                state = tauntstoredstate;
+                vsp = tauntstoredvsp;
+                image_speed = 0.35;
+            }
+        }
         
         sprite_index = frozenspriteindex;
         image_index = frozenimageindex;

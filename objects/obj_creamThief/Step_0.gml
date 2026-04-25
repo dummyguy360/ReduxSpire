@@ -97,6 +97,12 @@ switch (state)
         }
         
         break;
+    
+    case states.charge:
+        hsp = 0;
+        vsp = 0;
+        movespeed = 0;
+        break;
 }
 
 if (hsp != 0)

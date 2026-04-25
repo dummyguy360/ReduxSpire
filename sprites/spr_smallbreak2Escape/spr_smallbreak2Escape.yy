@@ -13,16 +13,16 @@
   "edgeFiltering": false,
   "For3D": false,
   "frames": [
-    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"e49633a8-1d64-4906-b5f7-3826f5e32246",},
-    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"7568afc9-8b65-4609-b411-ee085dddb382",},
-    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"60b5d21e-fefc-4bb1-9e25-aa552435c01b",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"3bf420f7-7eaa-42b7-9576-9feaecf41d08",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"2ecd3ea2-2767-4150-8529-df87282baa7a",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"40b7ba40-0d42-4957-af19-b07a9363b248",},
   ],
   "gridX": 0,
   "gridY": 0,
   "height": 32,
   "HTile": false,
   "layers": [
-    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"14c8a7b8-f4d4-4f49-aedf-4d63108662ba","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
+    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"e40227c9-19e0-4504-be60-2822742e78fb","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
   ],
   "nineSlice": null,
   "origin": 0,
@@ -55,10 +55,10 @@
     "showBackdropImage": false,
     "timeUnits": 1,
     "tracks": [
-      {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"1.0","Keyframes":[
-            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"e49633a8-1d64-4906-b5f7-3826f5e32246","path":"sprites/spr_smallbreak2Escape/spr_smallbreak2Escape.yy",},},},"Disabled":false,"id":"e3ef7700-8916-4fbb-880c-06131403ee38","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
-            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"7568afc9-8b65-4609-b411-ee085dddb382","path":"sprites/spr_smallbreak2Escape/spr_smallbreak2Escape.yy",},},},"Disabled":false,"id":"f496bf8a-bfdd-4c90-850e-8c0aeff29403","IsCreationKey":false,"Key":1.0,"Length":1.0,"Stretch":false,},
-            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"60b5d21e-fefc-4bb1-9e25-aa552435c01b","path":"sprites/spr_smallbreak2Escape/spr_smallbreak2Escape.yy",},},},"Disabled":false,"id":"76e89336-20c3-4013-814e-cb62e4842bd2","IsCreationKey":false,"Key":2.0,"Length":1.0,"Stretch":false,},
+      {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","builtinName":-1,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"1.0","Keyframes":[
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"3bf420f7-7eaa-42b7-9576-9feaecf41d08","path":"sprites/spr_smallbreak2Escape/spr_smallbreak2Escape.yy",},},},"Disabled":false,"id":"c8852816-be3a-49d3-a8c4-9e41ec142083","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"2ecd3ea2-2767-4150-8529-df87282baa7a","path":"sprites/spr_smallbreak2Escape/spr_smallbreak2Escape.yy",},},},"Disabled":false,"id":"278cfc1c-10ca-4aaa-be66-d0b9fcc1f219","IsCreationKey":false,"Key":1.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"40b7ba40-0d42-4957-af19-b07a9363b248","path":"sprites/spr_smallbreak2Escape/spr_smallbreak2Escape.yy",},},},"Disabled":false,"id":"2974070d-77c0-41cc-ae1f-1fda21a7bab5","IsCreationKey":false,"Key":2.0,"Length":1.0,"Stretch":false,},
           ],},"modifiers":[],"spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange": null,

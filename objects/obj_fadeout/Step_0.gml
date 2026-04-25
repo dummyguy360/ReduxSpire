@@ -31,9 +31,6 @@ if (instance_exists(obj_player))
             state = states.comingoutdoor;
             image_index = 0;
         }
-        
-        if (other.fadein == 1 && obj_player.state == states.door && (obj_player.sprite_index == spr_player_downpizzabox || obj_player.sprite_index == spr_player_uppizzabox))
-            state = states.crouchjump;
     }
 }
 

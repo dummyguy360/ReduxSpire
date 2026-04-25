@@ -67,7 +67,7 @@ switch (selected)
 }
 
 lightX = lerp(lightX, justfarded, 0.2);
-var asset = layer_sprite_get_id(layer_get_id("Assets_1"), "graphic_5C74AFEA");
+var asset = layer_sprite_get_id(layer_get_id("Assets_1"), "graphic_2B4FB3F4C74AFEA");
 layer_sprite_index(asset, selected);
 
 if (showtext == 1)

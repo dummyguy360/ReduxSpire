@@ -6,41 +6,47 @@ if (obj_player.character == "P")
     if (global.rank == "p")
     {
         setcolors(188, 108, 143, 134, 40, 66);
-        sprite_index = spr_rankP;
+        sprite_index = spr_rankP_new;
+        image_index = 0;
     }
     
     if (global.rank == "s")
     {
         setcolors(182, 116, 25, 143, 83, 0);
-        sprite_index = spr_rankS;
+        sprite_index = spr_rankS_new;
+        image_index = 0;
     }
     
     if (global.rank == "a")
     {
         setcolors(178, 78, 78, 99, 43, 29);
-        sprite_index = spr_rankA;
+        sprite_index = spr_rankA_new;
+        image_index = 0;
     }
     
     if (global.rank == "b")
     {
         setcolors(121, 159, 221, 51, 95, 196);
-        sprite_index = spr_rankB;
+        sprite_index = spr_rankB_new;
+        image_index = 0;
     }
     
     if (global.rank == "c")
     {
         setcolors(103, 190, 84, 67, 122, 28);
-        sprite_index = spr_rankC;
+        sprite_index = spr_rankC_new;
+        image_index = 0;
     }
     
     if (global.rank == "d")
     {
         setcolors(109, 121, 134, 84, 87, 99);
-        sprite_index = spr_rankD;
+        sprite_index = spr_rankD_new;
+        image_index = 0;
     }
     
     if (global.rank == "e")
-        sprite_index = spr_rankS;
+        sprite_index = spr_rankS_new;
 }
 
 if (obj_player.character == "N")
@@ -87,6 +93,7 @@ if (obj_player.character == "N")
 
 alarm[7] = 120;
 image_speed = 0.45;
+image_index = 0;
 
 switch (dex)
 {

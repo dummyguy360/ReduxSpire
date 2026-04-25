@@ -13,16 +13,16 @@
   "edgeFiltering": false,
   "For3D": false,
   "frames": [
-    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"341fb0f3-a1a5-44cc-b678-67ab3e9a3d82",},
-    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"3224ac10-6d88-4bbd-9ce7-6c72bb1320ad",},
-    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"87d5fd81-1cc6-495d-a35d-630e1a07b123",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"154dba33-4234-4f42-b11d-ac4af891d24f",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"9d339af7-59da-4e74-b00c-2c3b47c34f8c",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"49817164-49b3-4917-879c-6163afe12921",},
   ],
   "gridX": 0,
   "gridY": 0,
   "height": 268,
   "HTile": false,
   "layers": [
-    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"7cf60106-6f53-41a8-9a2a-91467d9c066d","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
+    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"c5cbdb9c-bb27-422b-abba-f8e274cf0b9b","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
   ],
   "nineSlice": null,
   "origin": 4,
@@ -55,10 +55,10 @@
     "showBackdropImage": false,
     "timeUnits": 1,
     "tracks": [
-      {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"1.0","Keyframes":[
-            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"341fb0f3-a1a5-44cc-b678-67ab3e9a3d82","path":"sprites/spr_pizzytv/spr_pizzytv.yy",},},},"Disabled":false,"id":"4724beef-a2d3-4cd1-9444-ebb70bc51f24","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
-            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"3224ac10-6d88-4bbd-9ce7-6c72bb1320ad","path":"sprites/spr_pizzytv/spr_pizzytv.yy",},},},"Disabled":false,"id":"53ec24b3-d2ad-42e5-ae77-053adb467727","IsCreationKey":false,"Key":1.0,"Length":1.0,"Stretch":false,},
-            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"87d5fd81-1cc6-495d-a35d-630e1a07b123","path":"sprites/spr_pizzytv/spr_pizzytv.yy",},},},"Disabled":false,"id":"a7e49f73-5e46-42c4-b883-41051f68a92b","IsCreationKey":false,"Key":2.0,"Length":1.0,"Stretch":false,},
+      {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","builtinName":-1,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"1.0","Keyframes":[
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"154dba33-4234-4f42-b11d-ac4af891d24f","path":"sprites/spr_pizzytv/spr_pizzytv.yy",},},},"Disabled":false,"id":"6ded534c-9c84-43c8-8b85-595945a0f9ae","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"9d339af7-59da-4e74-b00c-2c3b47c34f8c","path":"sprites/spr_pizzytv/spr_pizzytv.yy",},},},"Disabled":false,"id":"cda18d1d-f236-4149-a491-c0e0e0c67bb9","IsCreationKey":false,"Key":1.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"49817164-49b3-4917-879c-6163afe12921","path":"sprites/spr_pizzytv/spr_pizzytv.yy",},},},"Disabled":false,"id":"ce17c836-b229-4d0a-990d-04efbba1e40c","IsCreationKey":false,"Key":2.0,"Length":1.0,"Stretch":false,},
           ],},"modifiers":[],"spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange": null,

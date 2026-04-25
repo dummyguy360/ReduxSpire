@@ -1,7 +1,5 @@
 function state_player_cottondrill()
 {
-    static cotton_afterimagetimer = 6;
-    
     image_speed = 0.35;
     
     if (dir != xscale)
@@ -27,7 +25,7 @@ function state_player_cottondrill()
     }
     
     vsp = verticalMovespeed;
-    sprite_index = spr_cotton_drill;
+    sprite_index = spr_player_PZ_werecotton_drill_down;
     
     if (grounded && !place_meeting(x, y + 1, obj_destructibles) && !place_meeting(x, y + 1, obj_chocofrog))
     {
@@ -39,7 +37,7 @@ function state_player_cottondrill()
             vsp = 3;
             state = states.cottonroll;
             image_index = 0;
-            sprite_index = spr_cotton_roll;
+            sprite_index = spr_player_PZ_werecotton_slide;
             
             if (scr_slope_ext(x, y + 1) && !scr_solid_slope(x, y + 1))
             {
@@ -53,19 +51,20 @@ function state_player_cottondrill()
         else
         {
             state = states.cotton;
-            sprite_index = spr_cotton_land;
+            sprite_index = spr_player_PZ_werecotton_land;
             vsp = 0;
             movespeed = 0;
             image_index = 0;
         }
     }
     
-    if (key_slap2 && sprite_index != spr_cotton_attack && groundedcot == 1)
+    if (inputBufferSlap > 0 && sprite_index != spr_player_PZ_werecotton_drill_h && groundedcot == 1)
     {
+        inputBufferSlap = 0;
         state = states.cotton;
         flash = 1;
         image_index = 0;
-        sprite_index = spr_cotton_attack;
+        sprite_index = spr_player_PZ_werecotton_drill_h;
         
         if (movespeed < 8)
             movespeed = 8;
@@ -81,15 +80,16 @@ function state_player_cottondrill()
         groundedcot = 0;
     }
     
-    if (key_jump && !grounded && doublejumped == 0)
+    if (inputBufferJump > 0 && !grounded && doublejumped == 0)
     {
+        inputBufferJump = 0;
         doublejumped = 1;
         movespeed = 0;
         state = states.cotton;
         vsp = -10;
         grav = 0.1;
         image_index = 0;
-        sprite_index = spr_cotton_doublejump;
+        sprite_index = spr_player_PZ_werecotton_doubleJump;
         instance_create(x, y, obj_highjumpcloud2);
         
         with (instance_create(x, y, obj_highjumpcloud2))

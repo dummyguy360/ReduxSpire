@@ -29,8 +29,8 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "spr_rudejanitor_idle",
-    "path": "sprites/spr_rudejanitor_idle/spr_rudejanitor_idle.yy",
+    "name": "spr_rudejanitor_idle_new",
+    "path": "sprites/spr_rudejanitor_idle_new/spr_rudejanitor_idle_new.yy",
   },
   "spriteMaskId": null,
   "visible": true,

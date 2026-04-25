@@ -60,32 +60,24 @@ switch (state)
         break;
     
     case 0:
-        if (obj_player.sprite_index == obj_player.spr_player_taunt && dulltimer != 0)
+        if (obj_player.sprite_index == obj_player.spr_player_taunt)
         {
-            state = 3;
-            
             if (lap)
             {
+                state = 3;
                 sprite_index = spr_janitor2_taunt;
                 image_index = random_range(0, image_number);
-            }
-            else
-            {
-                sprite_index = spr_rosette_cheer;
-            }
-            
-            with (instance_create(x, y, obj_cloudeffect))
-            {
-                sprite_index = spr_taunteffect;
-                depth = 21;
+                
+                with (instance_create(x, y, obj_cloudeffect))
+                {
+                    sprite_index = spr_taunteffect;
+                    depth = 21;
+                }
             }
         }
         
         if (!lap && dulltimer > 0)
             dulltimer--;
-        
-        if (dulltimer == 0)
-            sprite_index = spr_rosette_dull;
         
         break;
 }

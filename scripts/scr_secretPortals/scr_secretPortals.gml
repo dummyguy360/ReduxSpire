@@ -98,13 +98,15 @@ function cutscene_secretPortal_middle()
 
 function cutscene_secretPortal_preend()
 {
-    static _portal = noone;
     var _finished = false;
     var _state = storedState;
     global.combofreeze = 30;
     
     with (obj_player)
     {
+        if (!audio_is_playing(sfx_secretexit))
+            scr_sound(sfx_secretexit);
+        
         is_inSecretPortal = true;
         state = states.actor;
         hsp = 0;
@@ -135,11 +137,22 @@ function cutscene_secretPortal_preend()
         {
             scale = approach(scale, 1, 0.05);
             
-            if (!instance_exists(_portal))
-                _portal = instance_create(x, y + 14, obj_secretPortalexit);
+            if (!instance_exists(portal))
+                portal = instance_create(x, y + 14, obj_secretPortalexit);
             else if (scale >= 1)
             {
                 scale = 1;
+                
+                with (instance_create(x, y, obj_radiating_particle))
+                {
+                    sprite_index = spr_secretpoof;
+                    image_speed = 0.25;
+                    canRotate = true;
+                    minSpd = 2;
+                    maxSpd = 5;
+                    lifeTime = -1;
+                }
+                
                 _finished = true;
             }
         }
@@ -151,12 +164,10 @@ function cutscene_secretPortal_preend()
 
 function cutscene_secretPortal_end()
 {
-    static _waittimer = 0;
-    
     var _state = storedState;
     var _finished = false;
     global.combofreeze = 30;
-    _waittimer++;
+    obj_player._waittimer++;
     
     with (obj_player)
     {
@@ -168,39 +179,19 @@ function cutscene_secretPortal_end()
         if (_waittimer > 10)
         {
             flash = true;
+            state = _state;
             
-            switch (_state)
-            {
-                case states.mach3:
-                    if (movespeed < 12)
-                        movespeed = 12;
-                
-                case states.mach2:
-                    if (movespeed < 10)
-                        movespeed = 10;
-                
-                case states.mach1:
-                    state = _state;
-                    
-                    if (movespeed < 6)
-                        movespeed = 6;
-                    
-                    vsp = -3;
-                    break;
-                
-                default:
-                    state = _state;
-                    movespeed = 0;
-                    break;
-            }
+            if (sprite_index == spr_bodyslamfall)
+                state = states.freefall;
             
+            movespeed = 0;
             _finished = true;
         }
     }
     
     if (_finished)
     {
-        _waittimer = 0;
+        obj_player._waittimer = 0;
         cutscene_event_end();
     }
 }

@@ -13,14 +13,14 @@
   "edgeFiltering": false,
   "For3D": false,
   "frames": [
-    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"ea613c84-beed-45df-8cc0-ba0bd47d9fd2",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"1c9a6c2f-4282-4fb5-97f9-40a388bad59e",},
   ],
   "gridX": 0,
   "gridY": 0,
   "height": 64,
   "HTile": false,
   "layers": [
-    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"4bac8c26-6cd5-493c-bba8-bc785155d0fd","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
+    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"2fd0282f-1865-4b15-8cb9-579a5c265765","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
   ],
   "nineSlice": null,
   "origin": 0,
@@ -54,7 +54,7 @@
     "timeUnits": 1,
     "tracks": [
       {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","builtinName":-1,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"1.0","Keyframes":[
-            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"ea613c84-beed-45df-8cc0-ba0bd47d9fd2","path":"sprites/spr_gnomeBlock_yellow/spr_gnomeBlock_yellow.yy",},},},"Disabled":false,"id":"d2a5dac0-577d-4f9a-924e-7f7922558861","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"1c9a6c2f-4282-4fb5-97f9-40a388bad59e","path":"sprites/spr_gnomeBlock_yellow/spr_gnomeBlock_yellow.yy",},},},"Disabled":false,"id":"e075db8a-55cf-4d32-aebc-c2801fb92acd","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
           ],},"modifiers":[],"spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange": null,

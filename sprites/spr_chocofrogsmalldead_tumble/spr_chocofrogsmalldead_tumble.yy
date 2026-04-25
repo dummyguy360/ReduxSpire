@@ -13,14 +13,14 @@
   "edgeFiltering": false,
   "For3D": false,
   "frames": [
-    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"8e16c4af-91c9-44cb-b23b-b11187e26f17",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"9f1b8a77-2e9d-4d0b-b2c1-682b9b951f3b",},
   ],
   "gridX": 0,
   "gridY": 0,
   "height": 100,
   "HTile": false,
   "layers": [
-    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"57204dee-861e-4b54-ab36-07a24e348ac9","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
+    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"e07d58e6-7b03-4fcb-b804-5531e37e09ea","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
   ],
   "nineSlice": null,
   "origin": 4,
@@ -54,7 +54,7 @@
     "timeUnits": 1,
     "tracks": [
       {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","builtinName":-1,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"1.0","Keyframes":[
-            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"8e16c4af-91c9-44cb-b23b-b11187e26f17","path":"sprites/spr_chocofrogsmalldead_tumble/spr_chocofrogsmalldead_tumble.yy",},},},"Disabled":false,"id":"a5493790-e22d-4ec6-a1ae-2d802dbb931b","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"9f1b8a77-2e9d-4d0b-b2c1-682b9b951f3b","path":"sprites/spr_chocofrogsmalldead_tumble/spr_chocofrogsmalldead_tumble.yy",},},},"Disabled":false,"id":"03282a6d-cfb6-4f2c-9161-875384cf2af0","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
           ],},"modifiers":[],"spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange": null,

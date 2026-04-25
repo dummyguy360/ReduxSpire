@@ -1,10 +1,22 @@
 if (ds_list_find_index(global.saveroom, id) == -1)
 {
-    instance_create(x + (sprite_width / 2), y + (sprite_height / 2), obj_bangeffect);
-    var rep = 4 + ((sprite_width / 32) - 1);
+    var rep = 3 + round(sprite_width / 32);
     
     repeat (rep)
-        instance_create(x + (sprite_width / 2), y + (sprite_height / 2), obj_metaldebris);
+    {
+        if (place_meeting(x, y, obj_secretPortal))
+        {
+            with (instance_create(random_range(bbox_left, bbox_right), random_range(bbox_top, bbox_bottom), obj_metaldebris))
+                sprite_index = spr_secretGoopDebris;
+        }
+        else
+            instance_create(random_range(bbox_left, bbox_right), random_range(bbox_top, bbox_bottom), obj_metaldebris);
+        
+        with (instance_create(random_range(bbox_left, bbox_right), random_range(bbox_top, bbox_bottom), obj_destroyableSmoke))
+            sprite_index = spr_metalsmoke;
+    }
+    
+    instance_create(x + (sprite_width / 2), y + (sprite_height / 2), obj_bangeffect);
     
     with (obj_camera)
     {
@@ -12,6 +24,6 @@ if (ds_list_find_index(global.saveroom, id) == -1)
         shake_mag_acc = 40 / room_speed;
     }
     
-    scr_sound(sound_metaldestroy);
+    scr_sound(sfx_metalbreak_new);
     ds_list_add(global.saveroom, id);
 }

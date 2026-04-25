@@ -1,11 +1,15 @@
 global.GMLIVE_realroom = room;
 var yoffset = 160;
 var _door = obj_doortrigger_parent;
+var is_box_above = false;
 
 with (obj_doortrigger_parent)
 {
     if (other.targetDoor == id_door)
         _door = id;
+    
+    if (other.box && place_meeting(x, y - 1, obj_boxofpizza))
+        is_box_above = true;
 }
 
 if (instance_exists(_door))
@@ -21,6 +25,8 @@ if (instance_exists(_door))
     
     if (vertical)
         y = _door.y + (hallwaydirection * yoffset);
+    else if (box && is_box_above)
+        y = _door.y - 1;
     else
         y = _door.y - 14;
     
@@ -46,6 +52,34 @@ with (obj_coneball)
         y += (-other.hallwaydirection * 200);
     else
         image_alpha = 0;
+}
+
+if (state == states.door && room != rank_room)
+{
+    image_index = 0;
+    
+    if (box && is_box_above)
+    {
+        hsp = 0;
+        vsp = 0;
+        verticalMovespeed = 0;
+        movespeed = 0;
+        jumpstop = true;
+        state = states.jump;
+        sprite_index = spr_fall;
+        grounded = false;
+    }
+    else if (box && !is_box_above)
+    {
+        hsp = 0;
+        vsp = 0;
+        verticalMovespeed = 0;
+        movespeed = 0;
+        jumpstop = true;
+        state = states.normal;
+        sprite_index = spr_idle;
+        grounded = true;
+    }
 }
 
 hallway = 0;

@@ -13,15 +13,15 @@
   "edgeFiltering": false,
   "For3D": false,
   "frames": [
-    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"a734830e-95f4-481a-9072-fa1437d0e8dc",},
-    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"133c699f-0620-48e4-a2f6-4437a200e626",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"329681f7-0454-496b-9a2d-b80bbf1bca2e",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"d7bee845-2bba-4800-b631-6a04f35ef024",},
   ],
   "gridX": 0,
   "gridY": 0,
   "height": 100,
   "HTile": false,
   "layers": [
-    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"f55d168e-8f5c-4c85-b2f2-a5ef28e66896","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
+    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"9d739580-7b90-4e1d-bacd-ee6af4b8560c","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
   ],
   "nineSlice": null,
   "origin": 4,
@@ -55,8 +55,8 @@
     "timeUnits": 1,
     "tracks": [
       {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","builtinName":-1,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"1.0","Keyframes":[
-            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"a734830e-95f4-481a-9072-fa1437d0e8dc","path":"sprites/spr_paintwitch_stunned/spr_paintwitch_stunned.yy",},},},"Disabled":false,"id":"8a2f23af-ff76-4914-b8a4-8399804128cd","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
-            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"133c699f-0620-48e4-a2f6-4437a200e626","path":"sprites/spr_paintwitch_stunned/spr_paintwitch_stunned.yy",},},},"Disabled":false,"id":"058d5139-e283-476d-9eb3-5220c16a706e","IsCreationKey":false,"Key":1.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"329681f7-0454-496b-9a2d-b80bbf1bca2e","path":"sprites/spr_paintwitch_stunned/spr_paintwitch_stunned.yy",},},},"Disabled":false,"id":"482ff700-12b0-4e0c-b5e1-228f2e12e287","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"d7bee845-2bba-4800-b631-6a04f35ef024","path":"sprites/spr_paintwitch_stunned/spr_paintwitch_stunned.yy",},},},"Disabled":false,"id":"45f7c8f8-3f04-4834-b26e-730b01de6b95","IsCreationKey":false,"Key":1.0,"Length":1.0,"Stretch":false,},
           ],},"modifiers":[],"spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange": null,

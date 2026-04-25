@@ -23,16 +23,8 @@ with (obj_pickaxe)
 
 with (obj_baddie)
 {
-    if (distance_to_object(other.id) < 64 && (object_index != obj_charcherry || (object_index == obj_charcherry && state == baddiestate.cherryactive)))
-    {
-        scr_sleep();
-        hsp = obj_player.xscale * 25;
-        vsp = 0;
-        grav = 0;
-        state = baddiestate.stun;
-        hp = 0;
-        thrown = 1;
-    }
+    if (distance_to_object(other.id) < 64 && (object_index != obj_charcherry || (object_index == obj_charcherry && state == states.chainsawbump)))
+        instance_destroy();
 }
 
 with (obj_player)
@@ -40,9 +32,24 @@ with (obj_player)
     state = states.parry;
     sprite_index = choose(spr_parry1, spr_parry2, spr_parry3);
     image_index = 0;
-    movespeed = -8;
-    flash = 1;
+    image_speed = 0.35;
+    movespeed = 8;
+    flash = true;
     
     with (instance_create(x, y, obj_bangeffect))
         sprite_index = spr_parryeffect;
+    
+    repeat (7)
+    {
+        with (instance_create(random_range(bbox_left, bbox_right), random_range(bbox_top, bbox_bottom), obj_radiating_particle))
+        {
+            sprite_index = spr_fuckassOrb;
+            image_speed = 0;
+            canRotate = 0;
+            minSpd = 7;
+            maxSpd = 10;
+            lifeTime = 10;
+            alarm[0] = 10;
+        }
+    }
 }

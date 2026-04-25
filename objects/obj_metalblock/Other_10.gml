@@ -34,7 +34,12 @@ if (DestroyedBy.object_index == obj_player)
             if (sprite_index == spr_bodyslamfall)
                 sprite_index = spr_bodyslamland;
             else
-                sprite_index = spr_player_donutSlam_land;
+                sprite_index = spr_player_PZ_divebomb_land;
+        }
+        else if (state == states.mach3 && sprite_index != spr_player_PZ_mach3_hit)
+        {
+            sprite_index = spr_player_PZ_mach3_hit;
+            image_index = 0;
         }
         else if (state == states.superslam)
         {

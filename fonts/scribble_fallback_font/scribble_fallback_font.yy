@@ -118,8 +118,8 @@
   "last": 9647,
   "maintainGms1Font": true,
   "parent": {
-    "name": "(System - don't call these functions)",
-    "path": "folders/Scribble/(System - don't call these functions).yy",
+    "name": "Fonts",
+    "path": "folders/Fonts.yy",
   },
   "pointRounding": 0,
   "ranges": [
@@ -127,7 +127,7 @@
   ],
   "regenerateBitmap": false,
   "sampleText": "abcdef ABCDEF\n0123456789 .,<>\"'&!?\nthe quick brown fox jumps over the lazy dog\nTHE QUICK BROWN FOX JUMPS OVER THE LAZY DOG\nDefault character: ▯ (9647)",
-  "size": 11.0,
+  "size": 0.0,
   "styleName": "Regular",
   "textureGroupId": {
     "name": "Default",

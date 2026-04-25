@@ -1,7 +1,16 @@
-if (scaledraw == true)
-    scale = approach(scale, 0, 0.2);
+if (flash && alarm[3] <= 0)
+    alarm[3] = 8;
 
-alpha = approach(alpha, 0, 0.2);
+if (alarm[4] > 0)
+    exit;
 
-if (scale <= 0 && alpha <= 0)
+numberScale = approach(numberScale, scaleTarget, (scaleTarget <= 0) ? 0.15 : 0.05);
+
+if (numberScale >= scaleTarget && scaleTarget > 0)
+{
+    flash = true;
+    scaleTarget = 0;
+}
+
+if (numberScale <= 0)
     instance_destroy();

@@ -33,8 +33,9 @@ function state_player_grind()
         scr_sound(sound_bump);
     }
     
-    if (key_jump)
+    if (inputBufferJump > 0)
     {
+        inputBufferJump = 0;
         vsp = -11;
         jumpstop = 0;
         

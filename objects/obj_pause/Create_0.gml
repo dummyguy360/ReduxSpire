@@ -23,3 +23,4 @@ playerSPalette = spr_pal;
 playerPalSelect = 0;
 playerPauseSprite = spr_pizzelle_pause;
 pausecount = -1;
+charindex = irandom_range(0, 2);

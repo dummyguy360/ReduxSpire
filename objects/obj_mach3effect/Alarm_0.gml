@@ -1,1 +1,1 @@
-vanish = 1;
+vanish = true;

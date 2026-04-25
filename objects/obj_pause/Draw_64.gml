@@ -9,13 +9,14 @@ if (global.gamePauseState == 1 && !instance_exists(obj_pausefadeout))
     draw_sprite(spr_pauseconfecti3, global.crackfollow, 0, 0);
     draw_sprite(spr_pauseconfecti4, global.wormfollow, 0, 0);
     draw_sprite(spr_pauseconfecti5, global.candyfollow, 0, 0);
+    draw_sprite_ext_flash(playerPauseSprite, charindex, 686, 293, 1, 1, 0, 5183024, 1);
     
     if (playerCustomPalette)
         pal_swap_set(playerSPalette, 1, true);
     else
-        pal_swap_set(playerSPalette, playerPalSelect, 0);
+        pal_swap_set(playerSPalette, playerPalSelect + 1, 0);
     
-    draw_sprite(playerPauseSprite, global.panic, 686, 285);
+    draw_sprite(playerPauseSprite, charindex, 693, 282);
     shader_reset();
     draw_set_font(global.font);
     draw_set_halign(fa_center);
@@ -23,7 +24,7 @@ if (global.gamePauseState == 1 && !instance_exists(obj_pausefadeout))
     var _x = 86;
     var _y = 32;
     
-    if (global.playseconds > 10)
+    if (global.playseconds >= 10)
         draw_text(_x, _y, string_hash_to_newline(string(global.playminutes) + ":" + string(global.playseconds)));
     
     if (global.playseconds < 10)

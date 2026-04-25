@@ -21,10 +21,10 @@
     {"name":"inst_30BF07CC","path":"rooms/steamy_sideroom/steamy_sideroom.yy",},
     {"name":"inst_739DDCF7","path":"rooms/steamy_sideroom/steamy_sideroom.yy",},
     {"name":"inst_367CB223","path":"rooms/steamy_sideroom/steamy_sideroom.yy",},
-    {"name":"inst_795B874E","path":"rooms/steamy_sideroom/steamy_sideroom.yy",},
-    {"name":"inst_3C3A5C7A","path":"rooms/steamy_sideroom/steamy_sideroom.yy",},
     {"name":"inst_7F1931A5","path":"rooms/steamy_sideroom/steamy_sideroom.yy",},
     {"name":"inst_41F806D1","path":"rooms/steamy_sideroom/steamy_sideroom.yy",},
+    {"name":"inst_795B874E","path":"rooms/steamy_sideroom/steamy_sideroom.yy",},
+    {"name":"inst_3C3A5C7A","path":"rooms/steamy_sideroom/steamy_sideroom.yy",},
   ],
   "isDnd": false,
   "layers": [

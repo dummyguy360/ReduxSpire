@@ -13,16 +13,16 @@
   "edgeFiltering": false,
   "For3D": false,
   "frames": [
-    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"6d957d39-4a99-44d5-8b53-f4eaedb5fb06",},
-    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"3b1e4ff2-d97c-4784-bac2-770c3b138c85",},
-    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"f03433d4-4d6c-4da0-9c8d-09fe950a60cc",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"9ea512ed-8162-43ac-a7b2-d524046a53be",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"a5af0652-4f65-419a-a2c0-235362e798f2",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"fbbb0a73-fa46-4e1e-897a-8cabb37f2510",},
   ],
   "gridX": 0,
   "gridY": 0,
   "height": 540,
   "HTile": false,
   "layers": [
-    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"b7ae45d8-904e-42cd-8f69-206746883241","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
+    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"5c938f1c-3e38-42af-89a7-f932568e0cd9","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
   ],
   "nineSlice": null,
   "origin": 0,
@@ -56,9 +56,9 @@
     "timeUnits": 1,
     "tracks": [
       {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","builtinName":-1,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"1.0","Keyframes":[
-            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"6d957d39-4a99-44d5-8b53-f4eaedb5fb06","path":"sprites/bg_martian_inside_creature2/bg_martian_inside_creature2.yy",},},},"Disabled":false,"id":"d236b2fa-cd23-45f7-8714-09e631235174","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
-            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"3b1e4ff2-d97c-4784-bac2-770c3b138c85","path":"sprites/bg_martian_inside_creature2/bg_martian_inside_creature2.yy",},},},"Disabled":false,"id":"9e6091d1-9128-4896-90a2-5e4696008a47","IsCreationKey":false,"Key":1.0,"Length":1.0,"Stretch":false,},
-            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"f03433d4-4d6c-4da0-9c8d-09fe950a60cc","path":"sprites/bg_martian_inside_creature2/bg_martian_inside_creature2.yy",},},},"Disabled":false,"id":"433eee4a-4ee8-4762-ba6d-cf8b95ac5d2e","IsCreationKey":false,"Key":2.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"9ea512ed-8162-43ac-a7b2-d524046a53be","path":"sprites/bg_martian_inside_creature2/bg_martian_inside_creature2.yy",},},},"Disabled":false,"id":"331e68f2-0b54-46d8-828c-7ff3c700d443","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"a5af0652-4f65-419a-a2c0-235362e798f2","path":"sprites/bg_martian_inside_creature2/bg_martian_inside_creature2.yy",},},},"Disabled":false,"id":"82bc5570-cec5-435d-8006-d7b74f87fa1a","IsCreationKey":false,"Key":1.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"fbbb0a73-fa46-4e1e-897a-8cabb37f2510","path":"sprites/bg_martian_inside_creature2/bg_martian_inside_creature2.yy",},},},"Disabled":false,"id":"b78724d2-bf0c-470c-aee6-96d659829fcd","IsCreationKey":false,"Key":2.0,"Length":1.0,"Stretch":false,},
           ],},"modifiers":[],"spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange": null,

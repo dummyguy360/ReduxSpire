@@ -1,4 +1,4 @@
-depth = obj_tv.depth - 1;
+depth = -102;
 state = 0;
 staticdex = 0;
 randomise();

@@ -19,7 +19,7 @@ if (grabbedPlayer != -4)
     draw_sprite(spr_flingfrog_handsmove, -1, x, y);
 else
 {
-    draw_sprite(spr_flingFrogGrab, candyindex, x, y);
+    draw_sprite(spr_flingFrogGrab_new, candyindex, x, y);
     draw_sprite(spr_flingfrog_handsidle, -1, x, y);
 }
 

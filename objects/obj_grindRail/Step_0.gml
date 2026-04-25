@@ -5,6 +5,15 @@ with (obj_player)
         if (place_meeting_platform(x, y + 1, other) && vsp >= 0 && state != states.frostburn && state != states.grind)
         {
             state = states.grind;
+            
+            if (movespeed < 0)
+            {
+                movespeed *= -1;
+                
+                if (move != 0)
+                    xscale = move;
+            }
+            
             vsp = 0;
         }
     }

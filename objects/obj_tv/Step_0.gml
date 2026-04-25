@@ -1,8 +1,5 @@
 scr_tvsprites();
 
-if (!visible)
-    sprite_index = spr_tvoff;
-
 if (!(obj_player.state == states.knightpep && obj_player.state == states.knightpepattack && obj_player.state == states.knightpepslopes))
     once = 0;
 
@@ -13,11 +10,11 @@ if (obj_player.y < (180 + obj_camera.Cam_y) && obj_player.x > ((camw - 350) + ob
 }
 else
 {
-    DrawY = lerp(DrawY, 0, 0.15);
+    DrawY = lerp(DrawY, 6, 0.15);
     alpha = 1;
 }
 
-if (global.hurtcounter >= global.hurtmilestone && global.hurtcounter >= 5)
+if (global.hurtcounter >= global.hurtmilestone && global.hurtcounter >= 10)
 {
     showtext = 1;
     alarm[0] = 150;
@@ -27,8 +24,9 @@ if (global.hurtcounter >= global.hurtmilestone && global.hurtcounter >= 5)
     else
         character = "Pizzano";
     
-    scr_controlprompt("You have hurt " + string(character) + " " + string(global.hurtmilestone) + " times...", noone, 150);
-    global.hurtmilestone += 5;
+    draw_set_font(global.promptfont);
+    scr_controlprompt("You have hurt " + string(character) + " " + string(global.hurtmilestone) + " times...", -4, 150);
+    global.hurtmilestone += 10;
 }
 
 if (obj_player.state == states.keyget)
@@ -44,218 +42,281 @@ if (staticdraw)
 if (statictimer < 0)
     staticdraw = false;
 
-var allstate = global.freezeframe ? obj_player.frozenstate : obj_player.state;
+var player_state = global.freezeframe ? obj_player.frozenstate : obj_player.state;
+var target_player = 370;
+sprite_image_number = sprite_get_number(tvsprite);
 
-switch (state)
+if (player_state == UnknownEnum.Value_71)
 {
-    case states.normal:
-        if (!instance_exists(obj_secretfound))
-        {
-            idlespr = idletvspr;
+    if (target_player.sprite_index == spr_player_PZ_mach3_turn)
+        player_state = UnknownEnum.Value_70;
+    else
+        player_state = UnknownEnum.Value_69;
+}
+
+ycombometer = ystartcombometer + DrawY + displayY;
+xcombometer = xstartcombometer + wave(-5, 5, 2, 20);
+
+if (!(global.combotime > 0 && global.combo > 0))
+{
+    displayY = approach(displayY, displayYMax, 5);
+    comboTimeDisplay = 0;
+    combofillDisplay = lerp(combofillDisplay, comboTimeDisplay / 60, 0.5);
+    displayState = UnknownEnum.Value_0;
+}
+else
+{
+    switch (displayState)
+    {
+        case UnknownEnum.Value_0:
+            displayVSP += 0.5;
+            displayY = approach(displayY, 20, displayVSP);
             
-            if (obj_player.angry)
-                idlespr = angrytvspr;
+            if (displayY >= 20)
+                displayState = UnknownEnum.Value_1;
             
-            if (global.panic)
-                idlespr = panictvspr;
-        }
-        else
-            idlespr = secrettvspr;
+            break;
         
-        var _transfo = true;
-        
-        switch (allstate)
-        {
-            default:
-                _transfo = false;
-                break;
+        case UnknownEnum.Value_1:
+            displayY = lerp(displayY, 0, 0.05);
             
-            case states.mach1:
-            case states.mach2:
-            case states.handstandjump:
-            case states.machslide:
-            case states.climbwall:
-            case states.machroll:
-            case states.crouchslide:
-            case states.mach3:
-                _transfo = false;
-                var my_mvsp = global.freezeframe ? abs(obj_player.frozenhsp) : abs(obj_player.hsp);
-                
-                if (allstate == states.climbwall)
-                    my_mvsp = global.freezeframe ? abs(obj_player.frozenvsp) : abs(obj_player.vsp);
-                
-                idlespr = mach1tvspr;
-                
-                if (my_mvsp >= 8 || allstate == states.handstandjump)
-                    idlespr = mach2tvspr;
-                
-                if (my_mvsp >= 12 || allstate == states.mach3)
-                    idlespr = mach3tvspr;
-                
-                if (my_mvsp >= 20 || obj_player.sprite_index == obj_player.spr_crazyrun)
-                    idlespr = mach4tvspr;
-                
-                if (allstate == states.handstandjump || allstate == states.crouchslide)
-                    idlespr = mach1tvspr;
-                
-                if (allstate == states.machroll)
-                    idlespr = machrolltvspr;
-                
-                break;
-            
-            case states.hooks:
-                idlespr = hooktvspr;
-                break;
-            
-            case states.minecart:
-                idlespr = minecarttvspr;
-                break;
-            
-            case states.fireass:
-                idlespr = firetvspr;
-                break;
-            
-            case states.bombpep:
-                idlespr = bombtvspr;
-                break;
-            
-            case states.cotton:
-            case states.cottondrill:
-            case states.cottonroll:
-                idlespr = cottontvspr;
-                break;
-            
-            case states.frostburn:
-            case states.frostburnspin:
-            case states.frostburnwallrun:
-            case states.rupertjump:
-            case states.rupertnormal:
-            case states.rupertslide:
-            case states.rupertstick:
-                idlespr = frostburntvspr;
-                break;
-            
-            case states.fling:
-                idlespr = orbtvspr;
-                break;
-            
-            case states.ufofloat:
-                idlespr = ufotvspr;
-                break;
-            
-            case states.barrelcrouch:
-                idlespr = marshdogspr;
-                break;
-        }
-        
-        if (!_transfo)
-        {
-            if (allstate == states.hurt)
-                scr_queue_tvanim(hurttvspr, 60);
-            
-            if ((global.combo % 3) == 0 && playComboVariable != global.combo && global.combotime > 0 && global.combo > 0)
+            if (displayY < 1)
             {
-                scr_queue_tvanim(combotvspr, 250);
-                playComboVariable = global.combo;
+                displayY = 0;
+                displayVSP = 0;
+                displayState = UnknownEnum.Value_2;
             }
-        }
-        
-        switch (sprite_index)
-        {
-            case spr_tvoff:
-                if (visible)
-                {
-                    sprite_index = spr_tvturnon;
-                    image_index = 0;
-                }
-                
-                break;
             
-            case spr_tvturnon:
-                if (floor(image_index) == (image_number - 1))
-                    sprite_index = idletvspr;
-                
-                break;
+            break;
+        
+        case UnknownEnum.Value_2:
+            var _setVSP = -1;
             
-            case idletvspr:
-                idleanim--;
-                
-                if (idleanim <= 0 && floor(image_index) == (image_number - 1))
-                {
-                    sprite_index = choose(tvchange1, tvchange2);
-                    image_index = 0;
-                }
-                
-                break;
-            
-            case tvchange1:
-            case tvchange2:
-                if (floor(image_index) == (image_number - 1))
-                {
-                    sprite_index = idlespr;
-                    idleanim = choose(500, 450, 400, 550);
-                }
-                
-                break;
-        }
-        
-        if (saved_tv_spr != idlespr && !draw_static && !global.freezeframe)
-        {
-            saved_tv_spr = idlespr;
-            draw_static = true;
-            state = states.tv_transition;
-            static_index = 0;
-        }
-        
-        break;
-    
-    case states.tv_transition:
-        draw_static = true;
-        saved_tv_spr = idlespr;
-        
-        if (floor(static_index) >= 4)
-        {
-            if (expressionsprite != noone)
+            if (global.combotime < 30)
             {
-                state = states.tv_expression;
-                sprite_index = expressionsprite;
+                if (global.combotime < 15)
+                    _setVSP = -2;
+                
+                displayY += displayVSP;
+                displayVSP += 0.5;
+                
+                if (displayY > 0)
+                {
+                    displayY = 0;
+                    displayVSP = _setVSP;
+                }
             }
             else
             {
-                state = states.normal;
-                sprite_index = saved_tv_spr;
+                displayY = approach(displayY, 0, 10);
             }
             
-            image_index = 0;
-            draw_static = 0;
-        }
-        
-        break;
+            break;
+    }
     
-    case states.tv_expression:
-        switch (expressionsprite)
-        {
-            case hurttvspr:
-                if (allstate != states.hurt)
-                    expressiontime--;
-                
-                break;
-            
-            default:
-                expressiontime--;
-                break;
-        }
-        
-        if (expressiontime <= 0)
-        {
-            state = states.tv_transition;
-            expressionsprite = noone;
-            draw_static = true;
-            static_index = 0;
-        }
-        
-        break;
+    comboDisplay = global.combo;
+    var target_combo_time = clamp(global.combotime, 0, 60);
+    var meter_fill_width = sprite_get_width(spr_tvHUD_comboMeter_fill);
+    combofillDisplay = lerp(combofillDisplay, (target_combo_time / 60) * meter_fill_width, 0.5);
+    combofillDisplay = clamp(combofillDisplay, 0, meter_fill_width);
 }
+
+if (sprite_index == spr_tvHUD_turningOn && floor(turningOnindex) >= 17)
+    sprite_index = spr_tvHUD_frame;
+
+if ((tvsprite == spr_tvHUD_turningOn || sprite_index == spr_tvHUD_turningOn) && floor(turningOnindex) < 17)
+    exit;
+
+tvDoingExpression = false;
+
+if (tvExpressionSprite != -4 && tvExpressionBuffer > 0)
+{
+    tvDoingExpression = true;
+    queuedSprite = tvExpressionSprite;
+    var _count = true;
+    var _sprite_check = tvExpressionSprite;
+    
+    if (tvsprite == spr_tvHUD_player_PZ_hurtExp_1 || tvsprite == spr_tvHUD_player_PZ_hurtExp_2 || tvsprite == spr_tvHUD_player_PZ_hurtExp_3 || tvsprite == spr_tvHUD_player_PZ_hurtExp_4 || tvsprite == spr_tvHUD_player_PZ_hurtExp_5 || tvsprite == spr_tvHUD_player_PZ_hurtExp_6 || tvsprite == spr_tvHUD_player_PZ_hurtExp_7 || tvsprite == spr_tvHUD_player_PZ_hurtExp_8 || tvsprite == spr_tvHUD_player_PZ_hurtExp_9 || tvsprite == spr_tvHUD_player_PZ_hurtExp_10)
+        _sprite_check = hurttvspr;
+    
+    switch (_sprite_check)
+    {
+        case hurttvspr:
+            _count = obj_player.state != states.hurt;
+            break;
+        
+        case secrettvspr:
+            _count = !obj_player.is_inSecretPortal;
+            break;
+        
+        case 2273:
+            _count = obj_player.state != states.keyget && obj_player.state != states.actor;
+            break;
+    }
+    
+    if (_count && tvExpressionBuffer-- <= 0)
+    {
+        tvExpressionSprite = undefined;
+        tvExpressionBuffer = 0;
+    }
+}
+
+tvNormalStates = false;
+
+if (tvExpressionBuffer <= 0)
+{
+    switch (player_state)
+    {
+        case UnknownEnum.Value_70:
+        case UnknownEnum.Value_42:
+        case UnknownEnum.Value_31:
+        case UnknownEnum.Value_11:
+        case UnknownEnum.Value_71:
+            tvNormalStates = true;
+            var my_mvsp = global.freezeframe ? abs(target_player.frozenstate) : abs(target_player.movespeed);
+            
+            if (player_state == UnknownEnum.Value_11)
+                my_mvsp = abs(target_player.verticalMovespeed);
+            
+            var _oldQueue = queuedSprite;
+            
+            if (player_state == UnknownEnum.Value_42)
+                queuedSprite = mach2tvspr;
+            
+            if (player_state == UnknownEnum.Value_70 || player_state == UnknownEnum.Value_11 || (player_state == UnknownEnum.Value_71 && target_player.sprite_index == spr_player_PZ_mach3_turn) || (player_state == UnknownEnum.Value_31 && target_player.mach3Roll > 0))
+                queuedSprite = mach3tvspr;
+            
+            if (target_player.sprite_index == spr_player_PZ_mach4 || (player_state == UnknownEnum.Value_11 && my_mvsp >= 16) || (player_state == UnknownEnum.Value_31 && target_player.mach3Roll > 0 && my_mvsp >= 16))
+                queuedSprite = mach4tvspr;
+            
+            if (player_state == UnknownEnum.Value_31 && target_player.mach3Roll <= 0)
+            {
+                if (tvsprite == mach2tvspr || tvsprite == mach3tvspr || tvsprite == mach4tvspr)
+                    tvForceTransition = true;
+                
+                if (((queuedSprite == tvchange1 || queuedSprite == tvchange2) && animation_end()) || (queuedSprite != tvchange1 && queuedSprite != tvchange2))
+                    queuedSprite = global.panic ? panictvspr : idletvspr;
+                
+                if (queuedSprite == idletvspr && tvIdleAnimationBuffer-- <= 0 && global.combo < 10)
+                {
+                    tvIdleAnimationBuffer = choose(500, 450, 400, 550);
+                    queuedSprite = choose(tvchange1, tvchange2);
+                    image_index = 0;
+                }
+                
+                if (global.combo >= 10 && !global.panic)
+                    queuedSprite = combotvspr;
+                
+                if (global.combo >= 50 && !global.panic)
+                    queuedSprite = angrytvspr;
+            }
+            
+            if (queuedSprite != _oldQueue)
+                tvForceTransition = true;
+            
+            break;
+        
+        case UnknownEnum.Value_95:
+            queuedSprite = puddletvspr;
+            break;
+        
+        case UnknownEnum.Value_101:
+            queuedSprite = minecarttvspr;
+            break;
+        
+        case UnknownEnum.Value_108:
+            queuedSprite = firetvspr;
+            break;
+        
+        case UnknownEnum.Value_88:
+        case UnknownEnum.Value_97:
+        case UnknownEnum.Value_98:
+            queuedSprite = cottontvspr;
+            break;
+        
+        case UnknownEnum.Value_99:
+            queuedSprite = orbtvspr;
+            break;
+        
+        case UnknownEnum.Value_126:
+            queuedSprite = hooktvspr;
+            break;
+        
+        case UnknownEnum.Value_140:
+        case UnknownEnum.Value_142:
+        case UnknownEnum.Value_141:
+        case UnknownEnum.Value_150:
+        case UnknownEnum.Value_148:
+        case UnknownEnum.Value_149:
+        case UnknownEnum.Value_151:
+            queuedSprite = frostburntvspr;
+            break;
+        
+        case UnknownEnum.Value_48:
+            queuedSprite = ufotvspr;
+            break;
+        
+        case UnknownEnum.Value_83:
+            queuedSprite = marshdogspr;
+            break;
+        
+        default:
+            tvNormalStates = true;
+            
+            if (tvsprite == mach2tvspr || tvsprite == mach3tvspr || tvsprite == mach4tvspr)
+                tvForceTransition = true;
+            
+            if (((queuedSprite == tvchange1 || queuedSprite == tvchange2) && animation_end()) || (queuedSprite != tvchange1 && queuedSprite != tvchange2))
+                queuedSprite = global.panic ? panictvspr : idletvspr;
+            
+            if (queuedSprite == idletvspr && tvIdleAnimationBuffer-- <= 0 && global.combo < 10)
+            {
+                tvIdleAnimationBuffer = choose(500, 450, 400, 550);
+                queuedSprite = choose(tvchange1, tvchange2);
+                image_index = 0;
+            }
+            
+            if (global.combo >= 10 && !global.panic)
+                queuedSprite = combotvspr;
+            
+            if (global.combo >= 50 && !global.panic)
+                queuedSprite = angrytvspr;
+            
+            break;
+    }
+}
+
+var do_transition = false;
+
+if (tvDoingExpression != tvPrevDoingExpression)
+{
+    tvPrevDoingExpression = tvDoingExpression;
+    do_transition = true;
+}
+
+if (!do_transition && tvNormalStates != tvPrevNormalStates)
+{
+    tvPrevNormalStates = tvNormalStates;
+    do_transition = true;
+}
+
+if (!do_transition && tvForceTransition)
+    do_transition = true;
+
+if (tvsprite != queuedSprite)
+{
+    if (!staticActivated && (!do_transition || tvsprite == spr_tvHUD_turningOn || tvsprite == spr_tvHUD_turnedOff))
+    {
+        tvsprite = queuedSprite;
+    }
+    else
+    {
+        staticActivated = true;
+        tvForceTransition = false;
+    }
+}
+
+sprite_index = tvsprite;
 
 if (textbubblesprites == spr_tv_bubbleopen && floor(textbubbleframes) >= (sprite_get_number(spr_tv_bubbleopen) - 1))
     textbubblesprites = spr_tv_bubble;
@@ -370,7 +431,7 @@ if (global.panic)
 {
     if (global.fill > 0)
     {
-        var _spd = (1 - (target_fill / global.maxwave)) * (sprite_get_number(spr_bartimer_roll) * 10);
+        var _spd = (1 - (target_fill / global.maxwave)) * sprite_get_number(spr_bartimer_roll) * 10;
         roll_index = _spd % sprite_get_number(spr_bartimer_roll);
         oldTimer_index = secs % 2;
         coneball_index += 0.35;

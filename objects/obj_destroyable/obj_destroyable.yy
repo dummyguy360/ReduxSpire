@@ -32,8 +32,8 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "spr_smallbreak",
-    "path": "sprites/spr_smallbreak/spr_smallbreak.yy",
+    "name": "spr_smallbreak_new",
+    "path": "sprites/spr_smallbreak_new/spr_smallbreak_new.yy",
   },
   "spriteMaskId": null,
   "visible": true,

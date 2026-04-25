@@ -16,10 +16,7 @@
     "name": "Effects",
     "path": "folders/Objects/Effects and Particles/Effects.yy",
   },
-  "parentObjectId": {
-    "name": "par_aftereffect",
-    "path": "objects/par_aftereffect/par_aftereffect.yy",
-  },
+  "parentObjectId": null,
   "persistent": false,
   "physicsAngularDamping": 0.1,
   "physicsDensity": 0.5,
@@ -34,7 +31,7 @@
   "physicsShapePoints": [],
   "physicsStartAwake": true,
   "properties": [],
-  "solid": false,
+  "solid": true,
   "spriteId": {
     "name": "spr_player_airdash1",
     "path": "sprites/spr_player_airdash1/spr_player_airdash1.yy",

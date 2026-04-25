@@ -3,9 +3,9 @@
   "resourceVersion": "1.0",
   "name": "spr_candysona_dead4",
   "bbox_bottom": 92,
-  "bbox_left": 29,
-  "bbox_right": 76,
-  "bbox_top": 40,
+  "bbox_left": 22,
+  "bbox_right": 78,
+  "bbox_top": 14,
   "bboxMode": 0,
   "collisionKind": 1,
   "collisionTolerance": 0,
@@ -13,14 +13,14 @@
   "edgeFiltering": false,
   "For3D": false,
   "frames": [
-    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"2f880035-c0ce-4ed1-8b4d-3abe3706de13",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"b1933330-fc06-4ae5-85a5-aa246341faa3",},
   ],
   "gridX": 0,
   "gridY": 0,
   "height": 100,
   "HTile": false,
   "layers": [
-    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"2f8703be-d27e-4a47-9865-ae7f4300bfb1","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
+    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"bb9916af-a1b8-434a-9ab8-42f664762a3b","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
   ],
   "nineSlice": null,
   "origin": 4,
@@ -54,7 +54,7 @@
     "timeUnits": 1,
     "tracks": [
       {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","builtinName":-1,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"1.0","Keyframes":[
-            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"2f880035-c0ce-4ed1-8b4d-3abe3706de13","path":"sprites/spr_candysona_dead4/spr_candysona_dead4.yy",},},},"Disabled":false,"id":"ec9aedfa-08fc-4f6f-bc4f-a889b0464984","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"b1933330-fc06-4ae5-85a5-aa246341faa3","path":"sprites/spr_candysona_dead4/spr_candysona_dead4.yy",},},},"Disabled":false,"id":"bbc10bf1-3453-466a-b50c-6376e90b8931","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
           ],},"modifiers":[],"spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange": null,

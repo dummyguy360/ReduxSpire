@@ -14,7 +14,37 @@ with (obj_player)
         }
         else if (global.key_inv == 1)
         {
-            scr_sound(sound_unlockingdoor);
+            scr_sound(sfx_keyunlock);
+            scr_sound(sfx_cheers);
+            
+            if (chance_update(50))
+            {
+                audio_stop_sound(sfx_PZvoice_collect1);
+                audio_stop_sound(sfx_PZvoice_collect2);
+                audio_stop_sound(sfx_PZvoice_collect3);
+                audio_stop_sound(sfx_PZvoice_collect4);
+                audio_stop_sound(sfx_PZvoice_collect5);
+                var a = scr_sound(choose(sfx_PZvoice_collect1, sfx_PZvoice_collect2, sfx_PZvoice_collect3, sfx_PZvoice_collect4, sfx_PZvoice_collect5));
+                audio_sound_pitch(a, random_range(0.95, 1.05));
+            }
+            
+            var target_x = (x - sprite_xoffset) + (sprite_width / 2);
+            var target_y = (y - sprite_yoffset) + (sprite_height / 2);
+            
+            if (instance_exists(obj_spookey))
+            {
+                with (obj_spookey)
+                {
+                    with (instance_create(x, y, obj_spookeyUnlocking))
+                    {
+                        targetX = target_x;
+                        targetY = target_y;
+                    }
+                    
+                    instance_destroy();
+                }
+            }
+            
             state = states.victory;
             image_index = 0;
             obj_camera.chargecamera = 0;

@@ -79,7 +79,7 @@ if (!global.freezeframe && invtime <= 0 && place_meeting(x, y, obj_player) && st
 {
     with (obj_player)
     {
-        if (state == states.mach3 || state == states.mach2 || state == states.pizzanokungfu || state == states.minecart || state == states.bottlerocket)
+        if (state == states.mach3 || state == states.mach2 || state == states.pizzanokungfu || state == states.minecart || state == states.bottlerocket || (state == states.machroll && mach3Roll > 0))
         {
             instance_create(other.x, other.y, obj_slapstar);
             instance_create(other.x, other.y, obj_baddiegibs);
@@ -128,7 +128,7 @@ if (!global.freezeframe && invtime <= 0 && place_meeting(x, y, obj_player) && st
             if (state == states.Sjump)
                 other.vsp -= 8;
             
-            other.movespeed = 7 * (abs(pctg) / 32);
+            other.movespeed = (7 * abs(pctg)) / 32;
             
             if (sign(pctg) != 0)
                 other.xscale = sign(pctg);
@@ -153,22 +153,27 @@ if (!global.freezeframe && invtime <= 0 && place_meeting(x, y, obj_player) && st
                 instance_create(x + (other.xscale * 40), y, obj_punchdust);
             }
             
-            if (!key_up)
+            if (movespeed <= 10)
             {
                 state = states.grab;
-                sprite_index = spr_player_haulingstart;
+                sprite_index = spr_player_PZ_hauling_intro;
                 image_index = 0;
             }
             else
             {
+                sprite_index = spr_player_PZ_swingDing;
+                movespeed = max(movespeed, 10);
+                state = states.charge;
+            }
+            
+            if (!grounded)
+                vsp = -6;
+            
+            if (key_up)
+            {
                 state = states.superslam;
-                sprite_index = spr_player_piledriverstart;
-                
-                if (grounded)
-                    vsp = -12;
-                else
-                    vsp = -6;
-                
+                sprite_index = spr_player_PZ_pileDriver_intro;
+                vsp = -14;
                 grounded = false;
                 image_index = 0;
                 image_speed = 0.35;

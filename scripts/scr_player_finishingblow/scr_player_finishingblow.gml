@@ -1,93 +1,89 @@
 function state_player_finishingblow()
 {
-    static backto = 0;
-    
     move = key_right + key_left;
     hsp = movespeed;
-    backto = approach(backto, 0, 0.25);
-    
-    if (floor(image_index) < 5 && sprite_index != spr_player_swingdingend)
-        movespeed = approach(movespeed, 0, 0.25);
-    else
-        movespeed = approach(movespeed, move * 8, 0.5);
     
     if (animation_end())
     {
-        backto = 0;
         state = states.normal;
         movespeed = abs(movespeed);
+        
+        if (sprite_index == spr_player_PZ_swingDing_end && key_attack)
+        {
+            state = states.mach2;
+            movespeed = max(movespeed, 6);
+        }
     }
     
     var throw_frame = 6;
     
-    if (sprite_index == spr_pizzano_lungehit)
-        throw_frame = 4;
-    
-    if (sprite_index == spr_player_lungehit)
-        throw_frame = 2;
-    
-    if (sprite_index == spr_player_swingdingend)
+    if (sprite_index == spr_player_PZ_swingDing_end)
         throw_frame = 0;
     
-    if (animation_end(undefined, throw_frame) && !instance_exists(obj_swordhitbox))
+    if (floor(image_index) < throw_frame && sprite_index != spr_player_PZ_swingDing_end)
+        movespeed = approach(movespeed, 0, 1);
+    else
+        movespeed = approach(movespeed, -xscale * 4, 0.5);
+    
+    if (floor(image_index) >= throw_frame && !instance_exists(obj_swordhitbox) && instance_exists(baddiegrabbedID))
     {
-        movespeed = -xscale * 3;
         vsp = -5;
-        backto = -xscale * 5;
         scr_sound(sound_punch);
         scr_sound(sound_killingblow);
         instance_create(x, y, obj_swordhitbox);
-        camera_shake(5, 20);
         
-        if (instance_exists(baddiegrabbedID))
+        with (baddiegrabbedID)
         {
-            with (baddiegrabbedID)//Throw Baddie
+            instance_create(x, y, obj_slapstar);
+            instance_create(x, y, obj_baddiegibs);
+            
+            if (!scr_solid(other.x + (60 * obj_player.xscale), y) && !scr_slope(other.x + (60 * obj_player.xscale), y))
+                x = obj_player.x + (60 * obj_player.xscale);
+            else
+                x = obj_player.x;
+            
+            y = obj_player.y - 16;
+            instance_create(x, y, obj_bangeffect);
+            
+            with (instance_create(x, y, obj_machalleffect))
+                sprite_index = spr_parryeffect;
+            
+            with (instance_create(x, y, obj_radiating_particle))
             {
-                instance_create(x, y, obj_slapstar);
-                instance_create(x, y, obj_baddiegibs);
-                instance_create(x, y, obj_bangeffect);
-                
-                with (instance_create(x, y, obj_bangeffect))
-                    sprite_index = spr_parryeffect;
-                
-                hp = 0;
-                alarm[1] = 5;
-                thrown = true;
-                grounded = false;
-                
-                if (other.sprite_index != spr_player_uppercutfinishingblow)
-                {
-                    hithsp = obj_player.xscale * 25;
-                    hitvsp = 0;
-                }
-                else
-                {
-                    hitvsp = -25;
-                    hithsp = 0;
-                }
-                
-                hsp = hithsp;
-                vsp = hitvsp;
-                linethrown = true;
-                state = baddiestate.stun;
-                stunned = 500;
+                sprite_index = spr_fuckassOrb;
+                image_speed = 0;
+                canRotate = 0;
+                minSpd = 7;
+                maxSpd = 10;
+                lifeTime = 10;
+                alarm[0] = 10;
             }
+            
+            hp = 0;
+            flash = 1;
+            alarm[1] = 5;
+            thrown = true;
+            
+            if (other.sprite_index != spr_player_PZ_finishingBlow_uppercut)
+            {
+                hsp = obj_player.xscale * 25;
+                vsp = 0;
+            }
+            else
+            {
+                vsp = -25;
+                hsp = 0;
+                flyup = true;
+            }
+            
+            state = states.cheesepep;
+            stunned = 9999;
         }
         
         global.combotime = 60;
         global.hit += 1;
-        
-        if (sprite_index == spr_player_lungehit)
-        {
-            state = states.supergrab;
-            movespeed = -xscale * 8;
-            hsp = movespeed;
-            vsp = 0;
-        }
-        
-        scr_sleep();
     }
     
     image_speed = 0.4;
-    landAnim = 0;
+    landAnim = false;
 }

@@ -27,5 +27,21 @@ if (pid > 0 && !pid.cutscene && !instance_exists(obj_fadeout) && !instance_exist
         scr_sound(mu_timesup);
     }
     
+    audio_stop_sound(sfx_coneball);
+    audio_stop_sound(c_snd);
+    audio_stop_sound(sfx_coneball_moving);
     instance_destroy();
 }
+
+if (audio_emitter_exists(c_emit) && room != timesuproom)
+{
+    if (!audio_is_playing(c_snd))
+        c_snd = audio_play_sound_on(c_emit, sfx_coneball_moving, 1, 10);
+    
+    var c_vol = global.soundVolume * global.masterVolume;
+    audio_sound_gain(c_snd, c_vol, 0);
+    audio_emitter_position(c_emit, x - 480, y - 270, 0);
+}
+
+savedCamX = x - camera_get_view_x(view_camera[0]);
+savedCamY = y - camera_get_view_y(view_camera[0]);

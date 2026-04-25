@@ -48,6 +48,18 @@ if (place_meeting(x, y, _player) && !scr_solid(x, y) && _player.vsp >= -3 && _pl
             scr_sound(sfx_bloop);
         }
         
+        scr_sound(sfx_transfo);
+        
+        if (chance_update(50))
+        {
+            audio_stop_sound(sfx_PZvoice_transfo1);
+            audio_stop_sound(sfx_PZvoice_transfo2);
+            audio_stop_sound(sfx_PZvoice_transfo3);
+            audio_stop_sound(sfx_PZvoice1);
+            var a = scr_sound(choose(sfx_PZvoice_transfo1, sfx_PZvoice_transfo2, sfx_PZvoice_transfo3, sfx_PZvoice_hurt5));
+            audio_sound_pitch(a, random_range(0.95, 1.05));
+        }
+        
         state = states.fling;
         hsp = 0;
         vsp = 0;
@@ -63,8 +75,8 @@ if (grabbedPlayer != -4)
         x = other.x;
         y = other.y;
         
-        if (sprite_index != spr_player_candyidle)
-            sprite_index = spr_player_candybegin;
+        if (sprite_index != spr_player_PZ_flinged)
+            sprite_index = spr_player_PZ_flinged_start;
         
         state = states.fling;
         
@@ -104,7 +116,7 @@ if (grabbedPlayer != -4)
     
     x = clamp(x, xstart - 280, xstart + 280);
     
-    if ((x >= (xstart + 200) || x <= (xstart - 200)) || ((xprevious - x) == 0 && (yprevious - y) == 0))
+    if (x >= (xstart + 200) || x <= (xstart - 200) || ((xprevious - x) == 0 && (yprevious - y) == 0))
         farBuffer++;
     else
         farBuffer = 0;
@@ -119,7 +131,7 @@ if (grabbedPlayer != -4)
             hsp = other.hsp;
             movespeed = abs(hsp);
             vsp = other.max_vsp;
-            sprite_index = spr_player_candytransitionup;
+            sprite_index = spr_player_PZ_flinged_straightup_start_old;
             
             if (sign(hsp) != 0)
                 xscale = sign(hsp);
@@ -139,7 +151,7 @@ if (grabbedPlayer != -4)
             hsp = other.hsp;
             movespeed = abs(hsp);
             vsp = -6;
-            sprite_index = spr_player_candytransitionup;
+            sprite_index = spr_player_PZ_flinged_straightup_start_old;
             
             if (sign(hsp) != 0)
                 xscale = sign(hsp);

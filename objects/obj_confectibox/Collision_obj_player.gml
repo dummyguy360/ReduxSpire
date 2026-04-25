@@ -12,13 +12,24 @@ if (sprite_index != spr_confectiboxopen)
     
     if (object_get_parent(_content.object_index) == par_confecti)
     {
+        if (chance_update(50))
+        {
+            audio_stop_sound(sfx_PZvoice_collect1);
+            audio_stop_sound(sfx_PZvoice_collect2);
+            audio_stop_sound(sfx_PZvoice_collect3);
+            audio_stop_sound(sfx_PZvoice_collect4);
+            audio_stop_sound(sfx_PZvoice_collect5);
+            var a = scr_sound(choose(sfx_PZvoice_collect1, sfx_PZvoice_collect2, sfx_PZvoice_collect3, sfx_PZvoice_collect4, sfx_PZvoice_collect5));
+            audio_sound_pitch(a, random_range(0.95, 1.05));
+        }
+        
         with (instance_create(x + (sprite_width / 2), y + (sprite_height / 2), obj_explosioneffect))
         {
             sprite_index = spr_taunteffect;
             depth = -2;
         }
         
-        scr_sound(sound_toppingot);
+        scr_sound(sfx_confectiget_new);
         helptimer = -1;
         
         if (global.toppintotal < 5)
@@ -36,9 +47,14 @@ if (sprite_index != spr_confectiboxopen)
     }
     
     repeat (6)
-        instance_create(x + 50, y + 50, obj_cagedebris);
+    {
+        if (image_yscale == -1)
+            instance_create(x + (50 * image_xscale), y - 50, obj_cagedebris);
+        else
+            instance_create(x + (50 * image_xscale), y + 50, obj_cagedebris);
+    }
     
-    audio_emitter_free(emitter);
+    audio_stop_sound(sound_confectihelp);
     instance_destroy();
     ds_list_add(global.saveroom, id);
 }

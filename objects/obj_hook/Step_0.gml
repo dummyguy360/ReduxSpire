@@ -1,5 +1,3 @@
-audio_emitter_position(hookSoundEmitter, x, y, 0);
-
 if (global.freezeframe)
     exit;
 
@@ -50,10 +48,18 @@ switch (state)
                 y = other.y - 14;
                 xscale = sign(other.image_xscale);
                 
-                if (abs(_hsp) >= abs(_vsp))
-                    sprite_index = spr_player_hookhoriz;
-                else
-                    sprite_index = spr_player_hookvert;
+                if (sprite_index == spr_player_skateidle || sprite_index == spr_player_skatewalljumpstart || sprite_index == spr_player_skateland || sprite_index == spr_player_skatejumpstart || sprite_index == spr_player_skatedive || sprite_index == spr_player_skatedoublejumpstart || sprite_index == spr_player_skatejump || sprite_index == spr_player_skatewallrun || sprite_index == spr_player_skateslowwalk || sprite_index == spr_player_skatespin || sprite_index == spr_player_skatedrift || sprite_index == spr_player_skatecrouch || sprite_index == spr_player_skatefall || sprite_index == spr_player_skatedoublejump)
+                {
+                    sprite_index = spr_player_PZ_frostburn_hook;
+                }
+                else if (!(sprite_index == spr_player_skateidle || sprite_index == spr_player_skatewalljumpstart || sprite_index == spr_player_skateland || sprite_index == spr_player_skatejumpstart || sprite_index == spr_player_skatedive || sprite_index == spr_player_skatedoublejumpstart || sprite_index == spr_player_skatejump || sprite_index == spr_player_skatewallrun || sprite_index == spr_player_skateslowwalk || sprite_index == spr_player_skatespin || sprite_index == spr_player_skatedrift || sprite_index == spr_player_skatecrouch || sprite_index == spr_player_skatefall || sprite_index == spr_player_skatedoublejump) && sprite_index != spr_player_PZ_frostburn_hook)
+                {
+                    if (sprite_index != spr_player_PZ_hookhoriz_start && sprite_index != spr_player_PZ_hookhoriz)
+                        image_index = 0;
+                    
+                    if (sprite_index != spr_player_PZ_hookhoriz)
+                        sprite_index = spr_player_PZ_hookhoriz_start;
+                }
             }
         }
         
@@ -78,3 +84,6 @@ switch (state)
         
         break;
 }
+
+if (bbox_in_camera_new(self, view_camera[0]) && !audio_is_playing(sfx_propeller))
+    scr_sound(sfx_propeller);

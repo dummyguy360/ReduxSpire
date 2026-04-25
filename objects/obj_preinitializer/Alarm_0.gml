@@ -2,7 +2,7 @@ if (ds_exists(textureLoaderList, ds_type_list))
 {
     if (!ds_list_empty(textureLoaderList))
     {
-        var tex = ds_list_find_value(textureLoaderList, 0);
+        var tex = textureLoaderList[| 0];
         
         for (var i = 0; i < array_length(tex); i++)
         {

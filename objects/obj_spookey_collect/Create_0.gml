@@ -3,3 +3,6 @@ image_speed = 0.35;
 
 if (global.key_inv == 1)
     instance_destroy();
+
+blurEffectTimer = 0;
+image_alpha = 1;

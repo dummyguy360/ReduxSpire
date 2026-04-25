@@ -12,6 +12,9 @@ function scr_scareenemy()
             
             hsp = 0;
             
+            if (chance(0.05))
+                scr_sound(choose(sfx_enemyrarescream, sfx_enemyrarescream2));
+            
             if (grav != 0 && grounded)
                 vsp = -3;
             

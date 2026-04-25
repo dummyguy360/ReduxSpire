@@ -22,6 +22,9 @@ vsp = 0;
 image_speed = 0.35;
 grounded = 0;
 state = thiefstate.idle;
+tauntstoredmovespeed = 0;
+tauntstoredvsp = 0;
+tauntstoredstate = 0;
 
 with (instance_create(x, y, obj_icontracker))
 {
@@ -29,6 +32,6 @@ with (instance_create(x, y, obj_icontracker))
     
     visible_cond = function()
     {
-        return target.state != thiefstate.idle;
+        return target.state != states.frozen && target.state != states.charge;
     };
 }

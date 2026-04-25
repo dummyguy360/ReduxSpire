@@ -16,8 +16,8 @@
     "path": "folders/Tile Sets.yy",
   },
   "spriteId": {
-    "name": "spr_ts_dance",
-    "path": "sprites/spr_ts_dance/spr_ts_dance.yy",
+    "name": "_decompiled_ts_dance",
+    "path": "sprites/_decompiled_ts_dance/_decompiled_ts_dance.yy",
   },
   "spriteNoExport": true,
   "textureGroupId": {

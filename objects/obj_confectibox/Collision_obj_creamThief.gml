@@ -22,7 +22,6 @@ if (sprite_index != spr_confectiboxopen && other.state == thiefstate.grab)
     repeat (4)
         instance_create(x + 50, y + 50, obj_cagedebris);
     
-    audio_emitter_free(emitter);
     instance_destroy();
     ds_list_add(global.saveroom, id);
 }

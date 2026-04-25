@@ -13,16 +13,16 @@
   "edgeFiltering": false,
   "For3D": false,
   "frames": [
-    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"39b1d511-24f7-4a38-af2f-8300709b98f7",},
-    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"efacced5-dba8-4a61-8fec-3bf2deb082e6",},
-    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"0e1791bb-da96-4481-8a9d-434a9ec5d07b",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"64b8df81-a1a0-4e84-8398-aad14c9f3e48",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"a240ecdc-4368-474c-9980-21089c2788ce",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"e9cba475-4e83-438c-a19a-8ac6aa908aab",},
   ],
   "gridX": 0,
   "gridY": 0,
   "height": 64,
   "HTile": false,
   "layers": [
-    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"a58b314f-6dea-4d9e-9a61-ad9885d82f2d","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
+    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"632c4b4c-bb91-41df-bbba-f2c7e7ebc104","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
   ],
   "nineSlice": null,
   "origin": 0,
@@ -55,10 +55,10 @@
     "showBackdropImage": false,
     "timeUnits": 1,
     "tracks": [
-      {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"1.0","Keyframes":[
-            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"39b1d511-24f7-4a38-af2f-8300709b98f7","path":"sprites/spr_onoffblock_uncanny/spr_onoffblock_uncanny.yy",},},},"Disabled":false,"id":"c9214d64-9ba8-47d7-b39b-af0d185c033e","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
-            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"efacced5-dba8-4a61-8fec-3bf2deb082e6","path":"sprites/spr_onoffblock_uncanny/spr_onoffblock_uncanny.yy",},},},"Disabled":false,"id":"99e919ab-318c-4eae-b069-3f7cda1060c3","IsCreationKey":false,"Key":1.0,"Length":1.0,"Stretch":false,},
-            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"0e1791bb-da96-4481-8a9d-434a9ec5d07b","path":"sprites/spr_onoffblock_uncanny/spr_onoffblock_uncanny.yy",},},},"Disabled":false,"id":"f636bbae-c36c-4115-be39-b4661109b991","IsCreationKey":false,"Key":2.0,"Length":1.0,"Stretch":false,},
+      {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","builtinName":-1,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"1.0","Keyframes":[
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"64b8df81-a1a0-4e84-8398-aad14c9f3e48","path":"sprites/spr_onoffblock_uncanny/spr_onoffblock_uncanny.yy",},},},"Disabled":false,"id":"e5beb4ed-9056-4fea-81c6-09591d1cdd86","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"a240ecdc-4368-474c-9980-21089c2788ce","path":"sprites/spr_onoffblock_uncanny/spr_onoffblock_uncanny.yy",},},},"Disabled":false,"id":"de38db30-60f3-402e-adb2-a4f555e29860","IsCreationKey":false,"Key":1.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"e9cba475-4e83-438c-a19a-8ac6aa908aab","path":"sprites/spr_onoffblock_uncanny/spr_onoffblock_uncanny.yy",},},},"Disabled":false,"id":"67c756da-dde4-45ad-8310-ebd462a9ebbb","IsCreationKey":false,"Key":2.0,"Length":1.0,"Stretch":false,},
           ],},"modifiers":[],"spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange": null,

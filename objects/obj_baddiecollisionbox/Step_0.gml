@@ -18,6 +18,19 @@ if (instance_exists(baddieID) && !baddieID.invincible && place_meeting(x, y, obj
         {
             if (instakillmove == true && other.baddieID.invtime <= 0)
             {
+                if (instance_exists(obj_creamThief))
+                {
+                    with (obj_creamThief)
+                    {
+                        tauntstoredmovespeed = movespeed;
+                        tauntstoredvsp = vsp;
+                        tauntstoredstate = state;
+                        vsp = 0;
+                        movespeed = 0;
+                        state = states.charge;
+                    }
+                }
+                
                 var angle = point_direction(other.baddieID.x, other.baddieID.y, x + hsp, y + vsp);
                 var ymovespeed = 2 + abs(vsp);
                 var vdirection = sign(round(hsp + (xscale / 2)));
@@ -25,17 +38,30 @@ if (instance_exists(baddieID) && !baddieID.invincible && place_meeting(x, y, obj
                 scr_sleep();
                 other.baddieID.initialvsp = clamp(-lengthdir_y(ymovespeed, angle) - 2, -25, random_range(-1, -15));
                 other.baddieID.initialhsp = vdirection * (random_range(1, 7) + abs(floor(hsp * 1.2)));
+                other.baddieID.image_xscale = -xscale;
                 
-                with (instance_create(x, y, obj_bangeffect))
-                    sprite_index = spr_enemypuncheffect;
+                with (instance_create(other.baddieID.x, other.baddieID.y, obj_machalleffect))
+                    sprite_index = spr_kungfuEffect;
                 
-                global.hit += 1;
-                global.combotime = 60;
+                with (instance_create(other.baddieID.x, other.baddieID.y, obj_machalleffect))
+                    sprite_index = spr_parryeffect;
                 
-                if (x != bID.x)
-                    bID.image_xscale = sign(bID.x - x);
-                else
-                    bID.image_xscale = -xscale;
+                repeat (6)
+                {
+                    instance_create(x, y, obj_slapstar);
+                    instance_create(x, y, obj_baddiegibs);
+                    
+                    with (instance_create(x, y, obj_radiating_particle))
+                    {
+                        sprite_index = spr_fuckassOrb;
+                        image_speed = 0;
+                        canRotate = 0;
+                        minSpd = 7;
+                        maxSpd = 10;
+                        lifeTime = 10;
+                        alarm[0] = 10;
+                    }
+                }
                 
                 other.baddieID.hsp = image_xscale * abs(obj_player.hsp);
                 other.baddieID.vsp = -10;
@@ -48,13 +74,26 @@ if (instance_exists(baddieID) && !baddieID.invincible && place_meeting(x, y, obj
                 other.baddieID.setfordeath = 1;
                 camera_shake(3, 3);
                 
-                repeat (3)
+                if (state == states.mach3 && sprite_index != spr_player_PZ_superJump_cancel && sprite_index != spr_player_PZ_mach3_hit)
                 {
-                    instance_create(x, y, obj_slapstar);
-                    instance_create(x, y, obj_baddiegibs);
+                    sprite_index = spr_player_PZ_mach3_hit;
+                    image_index = 0;
                 }
                 
-                if (!grounded && state != states.freefall && key_jump2)
+                if ((mach3Roll > 0 || sprite_index == spr_player_PZ_machRoll3_intro || sprite_index == spr_player_PZ_machRoll3) && state == states.machroll)
+                {
+                    mach3Roll = mach3RollMax;
+                    mach3Roll = 30;
+                    flash = false;
+                    
+                    if (grounded)
+                    {
+                        sprite_index = spr_player_PZ_machRoll3_intro;
+                        image_index = 0;
+                    }
+                }
+                
+                if (!grounded && state != states.freefall && (key_jump2 || inputBufferJump > 0))
                 {
                     suplexmove = 0;
                     vsp = -11;
@@ -144,7 +183,7 @@ if (instance_exists(baddieID) && !baddieID.invincible && place_meeting(x, y, obj
                 }
             }
             
-            if (instance_exists(other.baddieID) && (state == states.cotton && sprite_index == spr_cotton_attack))
+            if (instance_exists(other.baddieID) && state == states.cotton && sprite_index == spr_player_PZ_werecotton_drill_h)
             {
                 with (other.baddieID)
                 {
@@ -232,13 +271,6 @@ if (instance_exists(baddieID) && !baddieID.invincible && place_meeting(x, y, obj
                 other.baddieID.stunned = 200;
                 other.baddieID.state = baddiestate.stun;
                 bID.invtime = 5;
-                
-                if (!grounded && state != states.freefall && key_jump2)
-                {
-                    suplexmove = 0;
-                    sprite_index = spr_mach2jump;
-                    vsp = -11;
-                }
             }
             
             if (instance_exists(other.baddieID) && state == states.pizzanopummel && other.baddieID.state != baddiestate.grabbed && other.baddieID.invtime <= 0)
@@ -342,22 +374,28 @@ if (instance_exists(baddieID) && !baddieID.invincible && place_meeting(x, y, obj
                     with (bID)
                         scr_grab_boss();
                 }
-                else if (!key_up)
+                
+                if (movespeed <= 10)
                 {
                     state = states.grab;
-                    sprite_index = spr_player_haulingstart;
+                    sprite_index = spr_player_PZ_hauling_intro;
                     image_index = 0;
                 }
                 else
                 {
+                    sprite_index = spr_player_PZ_swingDing;
+                    movespeed = max(movespeed, 10);
+                    state = states.charge;
+                }
+                
+                if (!grounded)
+                    vsp = -6;
+                
+                if (key_up)
+                {
                     state = states.superslam;
-                    sprite_index = spr_player_piledriverstart;
-                    
-                    if (grounded)
-                        vsp = -12;
-                    else
-                        vsp = -6;
-                    
+                    sprite_index = spr_player_PZ_pileDriver_intro;
+                    vsp = -14;
                     grounded = false;
                     image_index = 0;
                     image_speed = 0.35;

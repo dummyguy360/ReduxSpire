@@ -4,6 +4,7 @@ if (secretActivated && !place_meeting(x, y, obj_secretPortalexit))
     {
         var _cutscene = cutscene_create([cutscene_secretPortal_start, cutscene_secretPortal_middle, cutscene_secretPortal_preend, cutscene_secretPortal_end]);
         cutscene_declare_actor(id, "SECRETPORTAL");
+        scr_queue_tvanim(obj_tv.secrettvspr, 80);
         
         if (is_undefined(storedState))
             storedState = functionState();
@@ -13,7 +14,7 @@ if (secretActivated && !place_meeting(x, y, obj_secretPortalexit))
         
         image_index = 0;
         sprite_index = spr_secretPortal_tele;
-        scr_sound(sfx_secretportalenter);
+        scr_sound(sfx_secretenter);
         ds_list_add(global.saveroom, id);
     }
 }

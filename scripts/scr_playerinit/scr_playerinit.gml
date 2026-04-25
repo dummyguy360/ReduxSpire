@@ -255,6 +255,12 @@ function scr_playerrespawn(usetechdiff = true)
                 }
             }
             
+            if (state == states.barrelcrouch)
+            {
+                with (instance_create(x, y, obj_cookiemount))
+                    sprite_index = spr_cookiemounthurt;
+            }
+            
             state = states.hurt;
             alarm[8] = 30;
             alarm[7] = 60;

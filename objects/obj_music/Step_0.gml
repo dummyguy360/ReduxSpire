@@ -46,7 +46,7 @@ if (room != timesuproom && room != rank_room && !instance_exists(obj_endlevelfad
     
     if (global.panic)
     {
-        _new_song = (obj_player.character == "N") ? mu_pizzanoescape : mu_escape;
+        _new_song = (obj_player.character == "N") ? mu_pizzanoescape : mu_escape_new;
         
         if (global.lapcount >= 1)
             _new_song = mu_lap;

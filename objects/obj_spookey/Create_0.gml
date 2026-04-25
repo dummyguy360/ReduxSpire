@@ -6,3 +6,5 @@ vsp = 0;
 grav = 0.5;
 grounded = 0;
 movespeed = 0;
+blurEffectTimer = 0;
+approachval = 0;

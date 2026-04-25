@@ -15,3 +15,10 @@ with (instance_place(x, y, obj_doortrigger_parent))
 
 TrueVisible = visible;
 visible = true;
+
+if (ds_list_find_index(global.saveroom, id) != -1)
+{
+    sprite_index = spriteDoorUnlocked;
+    image_index = image_number - 1;
+    image_speed = 0;
+}

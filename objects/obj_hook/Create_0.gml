@@ -1,10 +1,3 @@
-enum HookState 
-{
-	idle,
-	goback,
-	carrying
-}
-
 hookSoundEmitter = audio_emitter_create();
 hookSound = audio_play_sound_on(hookSoundEmitter, sfx_propeller, true, 100);
 audio_emitter_gain(hookSoundEmitter, 1);

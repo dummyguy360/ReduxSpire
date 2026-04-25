@@ -8,7 +8,7 @@ function state_player_geyser()
         xscale = move;
     
     vsp = approach(vsp, -18, 1);
-    sprite_index = spr_player_geyser;
+    sprite_index = spr_player_PZ_geyser;
     
     if (scr_solid(x, y + vsp) && vsp < 0 && !place_meeting(x, y + vsp, obj_destructibles))
         vsp = 5 + round(-vsp / 10);

@@ -32,8 +32,8 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "spr_metaldebris",
-    "path": "sprites/spr_metaldebris/spr_metaldebris.yy",
+    "name": "spr_metaldebris_new",
+    "path": "sprites/spr_metaldebris_new/spr_metaldebris_new.yy",
   },
   "spriteMaskId": null,
   "visible": true,

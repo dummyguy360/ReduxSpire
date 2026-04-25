@@ -9,8 +9,6 @@ if (global.combotime <= 0)
     if (chooseOnecomboend == false)
     {
         comboendImage = 0;
-        comboendSprite = scr_combotext(draw_combo);
-        scr_sound(sound_comboend);
         chooseOnecomboend = true;
     }
 }

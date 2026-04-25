@@ -1,38 +1,12 @@
-title_index = 0;
-title = 0;
-vsp = 0;
-mvsp = 0;
-blinking = false;
-image_alpha = 3;
-depth = -10;
-image_speed = 0;
-alpha = 3;
-seq = 0;
-type = 0;
-var num = floor(global.combo / 25);
-num = clamp(num, 0, 3);
-type = num;
+x = 832;
+y = 265;
+ystart = y;
 depth = obj_tv.depth - 1;
-
-switch (type)
-{
-    case 0:
-        image_xscale = 0;
-        image_yscale = 0;
-        break;
-    
-    case 1:
-        image_xscale = 3;
-        image_yscale = 0;
-        break;
-    
-    case 2:
-        image_xscale = 0;
-        image_yscale = 3;
-        break;
-    
-    case 3:
-        image_xscale = 0;
-        image_yscale = 0;
-        break;
-}
+scr_sound(choose(comboup1, comboup2, comboup4));
+title = 0;
+showVery = title >= 25;
+title_cur = wrap(title, 0, 24) * 2;
+title_index = 0;
+image_speed = 0.35;
+alarm[0] = 120;
+workaround = 2240;

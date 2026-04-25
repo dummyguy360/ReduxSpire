@@ -9,7 +9,7 @@ else if (global.style >= 55)
 else
     global.stylethreshold = 0;
 
-global.style = clamp(global.style, 0, 220);
+global.style = 0;
 
 if (global.combofreeze <= 0)
     global.style -= 0.05;

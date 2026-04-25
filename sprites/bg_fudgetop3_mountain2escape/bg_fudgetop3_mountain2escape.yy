@@ -13,14 +13,14 @@
   "edgeFiltering": false,
   "For3D": false,
   "frames": [
-    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"6af3aa16-9c00-4e00-b8de-3b73a0fe4a44",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"5c783f95-1af3-477f-a2bb-0e6779d22624",},
   ],
   "gridX": 0,
   "gridY": 0,
   "height": 540,
   "HTile": false,
   "layers": [
-    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"61dc1123-9599-44b8-be35-b24cf281b904","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
+    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"1f69c640-e566-4808-b78b-e172cc8ec49c","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
   ],
   "nineSlice": null,
   "origin": 0,
@@ -54,7 +54,7 @@
     "timeUnits": 1,
     "tracks": [
       {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","builtinName":-1,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"1.0","Keyframes":[
-            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"6af3aa16-9c00-4e00-b8de-3b73a0fe4a44","path":"sprites/bg_fudgetop3_mountain2escape/bg_fudgetop3_mountain2escape.yy",},},},"Disabled":false,"id":"a7fcb248-e752-491d-9f2c-9351c82cfcbc","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"5c783f95-1af3-477f-a2bb-0e6779d22624","path":"sprites/bg_fudgetop3_mountain2escape/bg_fudgetop3_mountain2escape.yy",},},},"Disabled":false,"id":"f44b8124-87e0-4c5d-b582-d4326b41e196","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
           ],},"modifiers":[],"spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange": null,

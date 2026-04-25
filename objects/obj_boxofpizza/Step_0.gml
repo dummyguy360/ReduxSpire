@@ -11,24 +11,25 @@ with (obj_player)
                 depth = -30;
             }
             
-            scr_sound(sound_box);
+            scr_sound(sfx_pizzabox_enter);
             obj_player.box = 1;
             mach2 = 0;
             obj_camera.chargecamera = 0;
             x = other.x;
             obj_player.targetDoor = other.targetDoor;
             obj_player.targetRoom = other.targetRoom;
-            sprite_index = spr_player_downpizzabox;
+            sprite_index = spr_player_PZ_pipeDown_getIn;
             image_index = 0;
+            image_speed = 0.35;
             state = states.door;
         }
     }
     
     if (other.image_yscale == -1)
     {
-        if ((((key_up || state == states.Sjump) && !place_meeting(x, y - 1, obj_destructibles) && place_meeting(x, y - 1, other.id) && (state == states.jump || state == states.uppercut || state == states.Sjump)) && !place_meeting(x, y - 1, obj_destructibles) && place_meeting(x, y - 1, other.id)) && !instance_exists(obj_fadeout))
+        if ((key_up || state == states.Sjump || state == states.climbwall) && !place_meeting(x, y - 1, obj_destructibles) && place_meeting(x, y - 1, other.id) && (state == states.jump || state == states.uppercut || state == states.Sjump || state == states.climbwall) && !place_meeting(x, y - 1, obj_destructibles) && place_meeting(x, y - 1, other.id) && !instance_exists(obj_fadeout))
         {
-            scr_sound(sound_box);
+            scr_sound(sfx_pizzabox_enter);
             
             with (other)
             {
@@ -43,8 +44,9 @@ with (obj_player)
             x = other.x;
             obj_player.targetDoor = other.targetDoor;
             obj_player.targetRoom = other.targetRoom;
-            sprite_index = spr_player_uppizzabox;
+            sprite_index = spr_player_PZ_pipeUp_getIn;
             image_index = 0;
+            image_speed = 0.35;
             state = states.door;
         }
     }

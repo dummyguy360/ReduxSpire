@@ -1,11 +1,9 @@
 function state_player_cottonroll()
 {
-    static cotton_afterimagetimer = 6;
-    
     if (movespeed > 8)
-        sprite_index = spr_cotton_rollMax;
+        sprite_index = spr_player_PZ_werecotton_roll;
     else
-        sprite_index = spr_cotton_roll;
+        sprite_index = spr_player_PZ_werecotton_slide;
     
     hsp = xscale * movespeed;
     dir = xscale;
@@ -21,21 +19,22 @@ function state_player_cottonroll()
     if (movespeed < 3)
         movespeed = 3;
     
-    if ((grounded && !key_down && movespeed <= 8) && !scr_solid(x, y - 16) && !scr_solid(x, y - 32))
+    if (grounded && !key_down && movespeed <= 8 && !scr_solid(x, y - 16) && !scr_solid(x, y - 32))
     {
         state = states.cotton;
         sprite_index = spr_cottonidle;
         momemtum = true;
     }
     
-    if (key_jump && !grounded)
+    if (inputBufferJump > 0 && !grounded)
     {
+        inputBufferJump = 0;
         momemtum = true;
         state = states.cotton;
         vsp = -10;
         grav = 0.1;
         image_index = 0;
-        sprite_index = spr_cotton_doublejump;
+        sprite_index = spr_player_PZ_werecotton_doubleJump;
         
         with (instance_create(x, y, obj_highjumpcloud2))
         {
@@ -46,14 +45,15 @@ function state_player_cottonroll()
         scr_sound(sfx_cottondoublejump);
     }
     
-    if (key_jump && grounded && !scr_solid(x, y - 16) && !scr_solid(x, y - 32))
+    if (inputBufferJump > 0 && grounded && !scr_solid(x, y - 16) && !scr_solid(x, y - 32))
     {
+        inputBufferJump = 0;
         momemtum = true;
         state = states.cotton;
         vsp = -14;
         grav = 0.025;
         image_index = 0;
-        sprite_index = spr_cotton_jump;
+        sprite_index = spr_player_PZ_werecotton_jump;
         instance_create(x, y, obj_highjumpcloud2);
         scr_sound(sfx_cottonjump);
     }

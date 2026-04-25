@@ -16,8 +16,8 @@
     "path": "folders/Tile Sets.yy",
   },
   "spriteId": {
-    "name": "spr_ts_hubOLD",
-    "path": "sprites/spr_ts_hubOLD/spr_ts_hubOLD.yy",
+    "name": "_decompiled_ts_hubOLD",
+    "path": "sprites/_decompiled_ts_hubOLD/_decompiled_ts_hubOLD.yy",
   },
   "spriteNoExport": true,
   "textureGroupId": {

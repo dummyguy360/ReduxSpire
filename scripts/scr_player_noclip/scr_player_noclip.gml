@@ -7,7 +7,8 @@ function state_player_noclip()
     hspCarry = 0;
     vspCarry = 0;
     move = key_left + key_right;
-    sprite_index = spr_player_idle;
+    global.combofreeze = 30;
+    sprite_index = spr_player_PZ_noclip;
     
     if (key_attack)
         movespeed = 18;

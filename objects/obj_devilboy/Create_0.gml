@@ -6,6 +6,6 @@ vsp = 0;
 grav = 0.5;
 grounded = 0;
 movespeed = 0;
-image_alpha = 0.8;
+image_alpha = 1;
 following = true;
 alarm[0] = 180;

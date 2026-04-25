@@ -81,7 +81,7 @@ function cutscene_rosetteMines_start()
     
     if (finished == true)
     {
-        obj_rosette.sprite_index = spr_rosettegivetreat;
+        obj_rosette.sprite_index = spr_rosettegivetreat_new;
         obj_rosette.image_index = 0;
         cutscene_event_end();
     }
@@ -100,7 +100,7 @@ function cutscene_rosetteMines_middle()
     
     with (obj_rosette)
     {
-        sprite_index = spr_rosettegivetreat;
+        sprite_index = spr_rosettegivetreat_new;
         
         if (animation_end())
             finished = true;
@@ -110,7 +110,7 @@ function cutscene_rosetteMines_middle()
     {
         obj_player.sprite_index = spr_player_donutget;
         obj_player.image_index = 7;
-        obj_rosette.sprite_index = spr_rosettegavetreat;
+        obj_rosette.sprite_index = spr_rosettegavetreat_new;
         cutscene_event_end();
     }
 }

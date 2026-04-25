@@ -5,9 +5,9 @@ condition = function()
 
 output = function()
 {
-    portal_activate(inst_1E7702B1, true);
+    portal_activate(104280, true);
     
-    with (inst_5AA2CE59)
+    with (104078)
     {
         y = ystart + 32;
         

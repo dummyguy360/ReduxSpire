@@ -13,15 +13,15 @@
   "edgeFiltering": false,
   "For3D": false,
   "frames": [
-    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"eebaa466-1439-45d8-8f3d-d2f6e0166737",},
-    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"18dc582e-5302-478a-a4fb-4a5009ec0dde",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"b14d1e04-8b96-4515-95c3-be6a28de123c",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"4fe669e1-13d5-4afd-bdd1-553b22dede23",},
   ],
   "gridX": 0,
   "gridY": 0,
   "height": 100,
   "HTile": false,
   "layers": [
-    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"069a4c70-5562-4517-b36b-86b35df02344","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
+    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"630b2d9b-9dea-4cab-ac4e-63a2c816dc2f","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
   ],
   "nineSlice": null,
   "origin": 4,
@@ -55,8 +55,8 @@
     "timeUnits": 1,
     "tracks": [
       {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","builtinName":-1,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"1.0","Keyframes":[
-            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"eebaa466-1439-45d8-8f3d-d2f6e0166737","path":"sprites/spr_creamthief_fall/spr_creamthief_fall.yy",},},},"Disabled":false,"id":"9e8f82cb-d8d8-4a2d-896e-6a694095041a","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
-            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"18dc582e-5302-478a-a4fb-4a5009ec0dde","path":"sprites/spr_creamthief_fall/spr_creamthief_fall.yy",},},},"Disabled":false,"id":"d2d8acbb-947b-48de-99da-a7d7cdfb6d4a","IsCreationKey":false,"Key":1.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"b14d1e04-8b96-4515-95c3-be6a28de123c","path":"sprites/spr_creamthief_fall/spr_creamthief_fall.yy",},},},"Disabled":false,"id":"47fd4b0f-92b7-4b63-803a-7c789e1cd622","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"4fe669e1-13d5-4afd-bdd1-553b22dede23","path":"sprites/spr_creamthief_fall/spr_creamthief_fall.yy",},},},"Disabled":false,"id":"403f0924-c716-4896-9ba2-b5dabfed5e8e","IsCreationKey":false,"Key":1.0,"Length":1.0,"Stretch":false,},
           ],},"modifiers":[],"spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange": null,

@@ -19,27 +19,10 @@ if (ds_list_find_index(global.saveroom, id) == -1)
     obj_tv.target_fill = global.fill;
     global.wave = 0;
     global.maxwave = global.fill;
+    scr_sound(sfx_gummybear_impact);
+    scr_sound(sfx_escaperumble);
     instance_create(x, y, obj_panicchanger);
-    
-    switch (global.combo)
-    {
-        case 0:
-        case 1:
-            scr_sound(sound_combo1);
-            break;
-        
-        case 2:
-            scr_sound(sound_combo2);
-            break;
-        
-        case 3:
-            scr_sound(sound_combo3);
-            break;
-        
-        default:
-            scr_sound(sound_combo4);
-            break;
-    }
+    scr_sound(sound_combo1);
     
     if (set_theme != noone)
         obj_music.escapemusic = set_theme;

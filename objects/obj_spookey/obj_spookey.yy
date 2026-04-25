@@ -14,7 +14,10 @@
     "name": "Followers",
     "path": "folders/Objects/level/Followers.yy",
   },
-  "parentObjectId": null,
+  "parentObjectId": {
+    "name": "par_follower",
+    "path": "objects/par_follower/par_follower.yy",
+  },
   "persistent": true,
   "physicsAngularDamping": 0.1,
   "physicsDensity": 0.5,

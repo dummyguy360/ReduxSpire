@@ -1,9 +1,9 @@
 if (ds_list_find_index(global.saveroom, id) == -1)
 {
-    with (instance_create(x + 32, y + 32, obj_cloudeffect))
+    with (instance_create((x - sprite_xoffset) + (sprite_width / 2), (y - sprite_yoffset) + (sprite_height / 2), obj_cloudeffect))
     {
-        image_speed = 0.35;
-        sprite_index = spr_smallbreak2_dead;
+        image_speed = 0.3;
+        sprite_index = spr_smallbreak2_dead_new;
     }
     
     instance_create(x, y, obj_collect);

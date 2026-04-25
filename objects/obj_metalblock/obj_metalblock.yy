@@ -36,8 +36,8 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "spr_metalblock",
-    "path": "sprites/spr_metalblock/spr_metalblock.yy",
+    "name": "spr_metalblocknew",
+    "path": "sprites/spr_metalblocknew/spr_metalblocknew.yy",
   },
   "spriteMaskId": null,
   "visible": true,

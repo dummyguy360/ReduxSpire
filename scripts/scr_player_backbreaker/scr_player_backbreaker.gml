@@ -10,7 +10,7 @@ function state_player_backbreaker()
     
     landAnim = 0;
     
-    if (sprite_index == spr_taunt || (sprite_index == spr_supertaunt1 || sprite_index == spr_supertaunt2 || sprite_index == spr_supertaunt3))
+    if (sprite_index == spr_taunt)
     {
         taunttimer--;
         vsp = 0;
@@ -27,7 +27,8 @@ function state_player_backbreaker()
         if (taunttimer >= 5 && supertauntcharged == true && key_up)
         {
             image_index = 0;
-            sprite_index = choose(spr_supertaunt1, spr_supertaunt2, spr_supertaunt3);
+            sprite_index = choose(spr_supertaunt1, spr_supertaunt2, spr_supertaunt3, spr_supertaunt4);
+            scr_sound(sfx_supertaunt);
         }
         
         if (!instance_exists(parryid))
@@ -43,16 +44,31 @@ function state_player_backbreaker()
     if (taunttimer <= 0 && sprite_index == spr_taunt)
         scr_taunt_setVariables();
     // Supertaunt.
-    if (sprite_index == spr_supertaunt1 || sprite_index == spr_supertaunt2 || sprite_index == spr_supertaunt3)
+    
+    if (sprite_index == spr_supertaunt1 || sprite_index == spr_supertaunt2 || sprite_index == spr_supertaunt3 || sprite_index == spr_supertaunt4)
     {
         vsp = 0;
         hsp = 0;
         supertauntbuffer = 100;
         
-        if (floor(image_index) >= 5 && supertauntcharged == true)
+        if (supertauntcharged == true)
         {
             instance_create(x, y, obj_supertaunthitbox);
-            instance_create(x, y, obj_tauntaftereffectspawner);
+            
+            for (var i = 0; i < 9; i++)
+            {
+                var h_sign = (i % 3) - 1;
+                var v_sign = floor(i / 3) - 1;
+                
+                if (!(h_sign == 0 && v_sign == 0))
+                {
+                    with (instance_create(x, y, obj_tauntaftereffectspawner))
+                    {
+                        hspeed = h_sign * 20;
+                        vspeed = v_sign * 20;
+                    }
+                }
+            }
             
             if (!instance_exists(parryid))
             {
@@ -63,19 +79,22 @@ function state_player_backbreaker()
                 }
             }
             
+            scr_sleep();
+            
             with (obj_camera)
             {
                 scr_sleep();
-                obj_player.state = states.backbreaker;
                 shake_mag = 10;
                 shake_mag_acc = 30 / room_speed;
             }
             
+            supercharge = 0;
             supertauntcharged = false;
         }
         
         if (animation_end())
         {
+            supercharge = 0;
             supertauntbuffer = 0;
             supertauntcharged = false;
             scr_taunt_setVariables();
@@ -85,7 +104,7 @@ function state_player_backbreaker()
     if (floor(image_index) == (image_number - 1) && sprite_index == spr_player_eatspaghetti)
         state = states.normal;
     
-    if (floor(image_index) == (image_number - 1) && sprite_index == spr_Timesup && place_meeting(x, y, obj_exitgate))
+    if (floor(image_index) == (image_number - 1) && sprite_index == spr_Timesup && (place_meeting(x, y, obj_exitgate) || room != timesuproom))
         state = states.normal;
     
     if (floor(image_index) == (image_number - 1) && (sprite_index == spr_player_levelcomplete || sprite_index == spr_playerN_victory))
@@ -94,63 +113,23 @@ function state_player_backbreaker()
     if (floor(image_index) == (image_number - 1) && sprite_index == spr_bossintro)
         state = states.normal;
     
-    if (sprite_index == spr_supertaunt1 || sprite_index == spr_supertaunt2 || sprite_index == spr_supertaunt3)
+    if (sprite_index == spr_supertaunt1 || sprite_index == spr_supertaunt2 || sprite_index == spr_supertaunt3 || sprite_index == spr_supertaunt4)
         image_speed = 0.4;
     else if (sprite_index == spr_taunt)
         image_speed = 0;
     else
         image_speed = 0.35;
-    // Debug Stuff.
-	if DEBUG
-	{
-	    if (key_down2)
-	    {
-	        paletteselect++;
-        
-	        if (paletteselect >= array_length(my_palettes))
-	            paletteselect = 0;
-        
-	        if (buffer_exists(my_pal_buffer))
-	            buffer_delete(my_pal_buffer);
-        
-	        taunttimer = 20;
-	    }
     
-	    if (key_up2 && supertauntcharged == false)
-	    {
-	        switch (character)
-	        {
-	            case "P":
-	                character = "N";
-	                paletteselect = 1;
-	                break;
-            
-	            case "N":
-	                character = "G";
-	                paletteselect = 1;
-	                break;
-            
-	            case "G":
-	                character = "C";
-	                paletteselect = 0;
-	                break;
-            
-	            case "C":
-	                character = "P";
-	                paletteselect = 1;
-	                break;
-	        }
+    if (key_down2)
+    {
+        paletteselect++;
         
-	        scr_characterspr();
-	        tauntStored.sprite_index = spr_idle;
-	        tauntStored.state = states.normal;
-	        scr_sound(choose(sound_taunt1, sound_taunt2, sound_taunt3, sound_taunt4, sound_taunt5, sound_taunt6, sound_taunt7, sound_taunt8));
-	        taunttimer = 20;
-	        image_index = irandom_range(0, sprite_get_number(spr_taunt));
-	        sprite_index = spr_taunt;
+        if (paletteselect >= array_length(my_palettes))
+            paletteselect = 0;
         
-	        with (instance_create(x, y, obj_taunteffect))
-	            playerID = other.id;
-	    }
-	}
+        if (buffer_exists(my_pal_buffer))
+            buffer_delete(my_pal_buffer);
+        
+        taunttimer = 20;
+    }
 }

@@ -1,4 +1,3 @@
-fadealpha = 0;
 fadein = 0;
 var _depth = 0;
 var olddepth = 0;
@@ -17,4 +16,19 @@ for (var i = 0; i < array_length(a); i++)
     }
 }
 
-depth = olddepth + 10;
+fadealpha = 2;
+scr_escapebgs();
+depth = -600;
+obj_tv.tvbg = spr_tvbgescape;
+
+with (obj_collectEscape)
+{
+    image_alpha = 1;
+    instance_create(x, y, obj_poofeffect);
+}
+
+with (obj_bigcollectEscape)
+{
+    image_alpha = 1;
+    instance_create(x, y, obj_poofeffect);
+}

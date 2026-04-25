@@ -71,3 +71,5 @@ timer_in = 180;
 timer_y = 100;
 painterdex = 0;
 pizdex = 0;
+oldPointCollect = 0;
+pointColors = [0];

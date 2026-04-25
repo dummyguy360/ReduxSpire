@@ -13,14 +13,14 @@
   "edgeFiltering": false,
   "For3D": false,
   "frames": [
-    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"72c88b65-87a3-49a5-9ee4-a66b1d8d2cb3",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"e65cb13e-6c19-42f2-9146-ee24f9bc558a",},
   ],
   "gridX": 0,
   "gridY": 0,
   "height": 100,
   "HTile": false,
   "layers": [
-    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"4dabbf23-5698-4307-9721-e1837cf86063","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
+    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"944e29de-e30c-4991-a670-6729806ca683","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
   ],
   "nineSlice": null,
   "origin": 4,
@@ -54,7 +54,7 @@
     "timeUnits": 1,
     "tracks": [
       {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","builtinName":-1,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"1.0","Keyframes":[
-            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"72c88b65-87a3-49a5-9ee4-a66b1d8d2cb3","path":"sprites/spr_gumbob_propeller_fly/spr_gumbob_propeller_fly.yy",},},},"Disabled":false,"id":"3ab5cf71-ec1c-4948-9af0-08cc83c1cd08","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"e65cb13e-6c19-42f2-9146-ee24f9bc558a","path":"sprites/spr_gumbob_propeller_fly/spr_gumbob_propeller_fly.yy",},},},"Disabled":false,"id":"69ef484f-efc5-4d56-8097-7ce740162b29","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
           ],},"modifiers":[],"spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange": null,

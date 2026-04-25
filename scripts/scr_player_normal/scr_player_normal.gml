@@ -19,288 +19,185 @@ function state_player_normal()
     else if (place_meeting(x, y + 1, obj_railh2))
         hsp = (move * movespeed) + 5;
     
-    if ((machslideAnim == 0 && landAnim == 0 && shotgunAnim == 0) && sprite_index != spr_coneboy_spit)
+    var _idle_spr = spr_idle;
+    var _move_spr = spr_move;
+    var _dontidle = false;
+    var _dontStep = false;
+    
+    if (global.panic)
     {
-        if (move == 0 && sprite_index != spr_coneboy_spit && !key_taunt)
+        _idle_spr = 2172;
+        
+        if (instance_exists(obj_coneball))
+            _idle_spr = 1278;
+    }
+    
+    if (global.combo >= 10)
+    {
+        _idle_spr = 2171;
+        _move_spr = 2205;
+    }
+    
+    if (global.combo >= 50)
+    {
+        _idle_spr = 2170;
+        _move_spr = 2129;
+    }
+    
+    if (global.levelname == "fudge" && global.combo < 10)
+        _idle_spr = 1475;
+    
+    if (global.levelname == "dance" && global.combo < 10)
+    {
+        _idle_spr = 2216;
+        _move_spr = 2217;
+    }
+    
+    if (windingAnim > 0)
+    {
+        windingAnim -= 5;
+        _idle_spr = 2199;
+    }
+    
+    if (key_taunt)
+    {
+        if (breakdanceBuffer++ >= 10)
         {
-            if (idle < bg_sucrosebgDebris)
-                idle += spr_chargershitbox;
+            idle = spr_player_machpunch2;
+            windingAnim = 0;
+            machslideAnim = 0;
+            landAnim = false;
+            slamHurt = 0;
+            breakdanceSpeed = approach(breakdanceSpeed, 0.6, 0.005);
+            _idle_spr = 2169;
+            _move_spr = 2169;
+            _dontidle = true;
+            _dontStep = true;
             
-            if (idle >= spr_alrightcombo_boil && floor(image_index) == (image_number - 1))
+            if (sprite_index == spr_idle1 || sprite_index == spr_idle2 || sprite_index == spr_idle3 || sprite_index == spr_idle4 || sprite_index == spr_idle5 || sprite_index == spr_idle6)
             {
-                shotgunAnim = 0;
-                facehurt = 0;
-                idle = spr_player_machpunch2;
                 image_index = 0;
+                sprite_index = _idle_spr;
+            }
+        }
+    }
+    else
+    {
+        breakdanceBuffer = 0;
+        breakdanceSpeed = 0.25;
+    }
+    
+    if (breakdanceSpeed >= 0.5)
+    {
+        if (!instance_exists(obj_breakdanceBoomBox))
+        {
+            instance_create(x, y, obj_poofeffect);
+            
+            with (instance_create(x, y, obj_breakdanceBoomBox, 
+            {
+                playerID: id
+            }))
+                vsp = -11;
+        }
+        
+        breakdance_effect--;
+    }
+    
+    if (breakdance_effect <= 0)
+    {
+        instance_create(x + irandom_range(-70, 70), y + irandom_range(-70, 70), obj_breakdanceEffects);
+        breakdance_effect = 10;
+    }
+    
+    if ((!machslideAnim && !landAnim) || animation_end())
+    {
+        machslideAnim = false;
+        landAnim = false;
+        
+        if (move == 0 && ((sprite_index != spr_idle1 && sprite_index != spr_idle2 && sprite_index != spr_idle3 && sprite_index != spr_idle4 && sprite_index != spr_idle5 && sprite_index != spr_idle6) || animation_end()))
+        {
+            if (slamHurt)
+            {
+                slamHurt--;
+                
+                if (animation_end() && sprite_index == spr_player_PZ_groundPoundEnd_intro)
+                    sprite_index = (sprite_index == spr_player_PZ_groundPoundEnd_intro) ? spr_player_PZ_groundPoundEnd : spr_player_facehurt;
+            }
+            else
+            {
+                if (sprite_index != _idle_spr)
+                    image_index = 0;
+                
+                sprite_index = _idle_spr;
             }
             
-            if (sprite_index != spr_caneidle && global.panic == 0 && sprite_index != spr_angryidle && !key_taunt)
+            if (sprite_index != spr_player_PZ_walk_breakdance && sprite_index != spr_player_PZ_idle_breakdance && !_dontidle && sprite_index != spr_player_PZ_tired)
             {
-                if (idle >= spr_alrightcombo_boil && sprite_index != spr_idle1 && sprite_index != spr_idle2 && sprite_index != spr_idle3)
-                {
-                    randomise();
-                    idleanim = random_range(0, 100);
-                    
-                    if (idleanim <= 25)
-                        sprite_index = spr_idle1;
-                    else if (idleanim > 25 && idleanim < 50)
-                        sprite_index = spr_idle2;
-                    else if (idleanim > 50 && idleanim < 75)
-                        sprite_index = spr_idle3;
-                    else if (idleanim > 75)
-                        sprite_index = spr_idle4;
-                    
-                    image_index = 0;
-                }
-                
                 if (idle < spr_alrightcombo_boil)
                 {
-                    if (facehurt == 0)
+                    idle += spr_chargershitbox;
+                }
+                else
+                {
+                    sprite_index = choose(spr_idle1, spr_idle2, spr_idle3, spr_idle4, spr_idle5, spr_idle6);
+                    image_index = 0;
+                    
+                    if (chance_update(25))
                     {
-                        if (windingAnim < 1800 || angry == 1)
-                        {
-                            start_running = 1;
-                            movespeed = 0;
-                            
-                            if (character == "P")
-                            {
-                                if (global.cane == 1)
-                                    sprite_index = spr_caneidle;
-                                else
-                                {
-                                    sprite_index = spr_idle;
-                                    
-                                    if (global.levelname == "fudge")
-                                        sprite_index = spr_player_fudgeidle;
-                                    
-                                    if (global.levelname == "dance")
-                                        sprite_index = spr_player_danceidle;
-                                }
-                            }
-                            else if (character == "N")
-                                sprite_index = spr_idle;
-                            else
-                                sprite_index = spr_idle;
-                        }
-                        else if (character == "P" || character == "N")
-                        {
-                            idle = spr_player_machpunch2;
-                            windingAnim--;
-                            sprite_index = spr_player_winding;
-                        }
+                        var a = scr_sound(choose(sfx_PZvoice_idle1, sfx_PZvoice_idle2, sfx_PZvoice_idle3, sfx_PZvoice_idle4, sfx_PZvoice2));
+                        audio_sound_pitch(a, random_range(0.95, 1.05));
                     }
-                    else if (facehurt == 1 && character == "P")
-                    {
-                        windingAnim = 0;
-                        
-                        if (sprite_index != spr_player_facehurtup && sprite_index != spr_player_facehurt)
-                            sprite_index = spr_player_facehurtup;
-                        
-                        if (floor(image_index) == (image_number - 1) && sprite_index == spr_player_facehurtup)
-                            sprite_index = spr_player_facehurt;
-                    }
+                    
+                    idle = spr_player_machpunch2;
                 }
             }
-            
-            if (global.panic == 1)
-                sprite_index = spr_escapeidle;
-            
-            if (instance_exists(obj_coneball) && sprite_index == spr_escapeidle)
-                sprite_index = spr_timesupidle;
         }
-        
-        if (move != 0 && !key_taunt)
-        {
-            machslideAnim = 0;
-            idle = spr_player_machpunch2;
-            facehurt = 0;
-            
-            if (angry == 1 || global.stylethreshold > 3)
-                sprite_index = spr_angrywalk;
-            else if (global.cane == 1)
-                sprite_index = spr_canewalk;
-            else if (global.levelname == "dance")
-                sprite_index = spr_player_dancewalk;
-            else
-                sprite_index = spr_move;
-        }
-        
-        if (key_taunt)
-            sprite_index = spr_player_breakdance;
         
         if (move != 0)
-            xscale = move;
-    }
-    
-    if (landAnim == 1 && sprite_index != spr_coneboy_spit)
-    {
-        if (shotgunAnim == 0)
         {
-            if (move == 0)
-            {
-                movespeed = 0;
-                sprite_index = spr_land;
-                
-                if (floor(image_index) == (image_number - 1))
-                    landAnim = 0;
-            }
+            slamHurt = 0;
             
-            if (move != 0)
-            {
-                sprite_index = spr_land2;
-                
-                if (floor(image_index) == (image_number - 1))
-                {
-                    landAnim = 0;
-                    
-                    if (global.cane == 0)
-                        sprite_index = spr_move;
-                    else
-                        sprite_index = spr_canewalk;
-                    
-                    image_index = 0;
-                }
-            }
-        }
-        
-        if (shotgunAnim == 1)
-        {
-            sprite_index = spr_shotgun_land;
-            
-            if (floor(image_index) == (image_number - 1))
-            {
-                landAnim = 0;
-                
-                if (global.cane == 0)
-                    sprite_index = spr_move;
-                else
-                    sprite_index = spr_canewalk;
-                
+            if (sprite_index != _move_spr)
                 image_index = 0;
-            }
+            
+            sprite_index = _move_spr;
         }
     }
-    
-    if (machslideAnim == 1)
+    else
     {
-        sprite_index = spr_machslideend;
+        if (slamHurt)
+            sprite_index = spr_player_facehurtup;
         
-        if (floor(image_index) == (image_number - 1) && sprite_index == spr_machslideend)
-            machslideAnim = 0;
-    }
-    
-    if (sprite_index == spr_player_shotgun && floor(image_index) == (image_number - 1))
-        sprite_index = spr_shotgun_idle;
-    
-    if (landAnim == 0)
-    {
-        if (shotgunAnim == 1 && move == 0 && sprite_index != spr_player_shotgun)
-            sprite_index = spr_shotgun_idle;
-        else if (shotgunAnim == 1 && sprite_index != spr_player_shotgun)
-            sprite_index = spr_shotgun_walk;
+        if (landAnim)
+            sprite_index = (move == 0) ? spr_land : spr_land2;
+        
+        if (machslideAnim)
+            sprite_index = spr_machslideend;
     }
     
     if (scr_solid(x + move, y, true))
         movespeed = 0;
     
+    jumpstop = false;
     jumpstop = 0;
     
     if (!grounded && !key_jump)
     {
-        if (shotgunAnim == 0)
-            sprite_index = spr_fall;
-        else
-            sprite_index = spr_shotgun_fall;
-        
+        sprite_index = spr_fall;
         jumpAnim = 0;
         state = states.jump;
         image_index = 0;
     }
     
-    if (character == "C" && key_attack && inhalingenemy == false && substate == 0)
-        state = states.coneboyinhale;
-    
-    if (character == "C" && inhalingenemy == true && key_down && grounded)
+    if (can_jump && inputBufferJump > 0 && !key_down && (!key_attack || scr_solid(x + xscale, y, true)))
     {
-        if (storedinhalebaddie == "obj_knight")
-            substate = 1;
-        else if (storedinhalebaddie == "obj_googlyjuice")
-            substate = 2;
-        
-        scr_sound(sfx_coneboyswallow);
-        inhalingenemy = false;
-    }
-    
-    if (character == "C" && inhalingenemy == true && key_slap && grounded)
-    {
-        sprite_index = spr_coneboy_spit;
-        instance_create(x, y, obj_coneboyprojectile);
-        inhalingenemy = false;
-    }
-    
-    if (sprite_index == spr_coneboy_spit)
-    {
-        hsp = xscale * movespeed;
-        movespeed = -5;
-        move = 0;
-    }
-    
-    if (character == "C" && substate == 0 && key_shoot2 && headless == false && !instance_exists(obj_coneboyhead))
-    {
-        if (move == 0)
-            movespeed = 0;
-        else
-            movespeed = 3;
-        
-        state = states.coneboykick;
-        image_index = 0;
-        sprite_index = spr_coneboy_kick;
-        headless = true;
-        
-        with (instance_create(x, y, obj_coneboyhead))
-        {
-            playerID = other.id;
-            image_xscale = other.xscale;
-            movespeed = 10;
-            
-            if (!playerID.key_up)
-                vsp = -6;
-            else
-                vsp = -12;
-        }
-        
-        scr_sound(sfx_coneboykick);
-        audio_sound_pitch(sfx_coneboykick, 1.2);
-        headless = 1;
-    }
-    
-    if (sprite_index == spr_coneboy_spit && animation_end())
-        sprite_index = spr_idle;
-    
-    if (key_jump && grounded && !key_down)
-    {
-        scr_sound(sound_jump);
+        inputBufferJump = 0;
+        scr_sound(sfx_pz_jump);
         sprite_index = spr_jump;
         
-        if (shotgunAnim == 1)
-            sprite_index = spr_shotgun_jump;
+        with (instance_create(x, y, obj_highjumpcloud2))
+            sprite_index = spr_highjumpcloud1;
         
-        instance_create(x, y, obj_highjumpcloud2);
-        vsp = -12;
-        state = states.jump;
-        image_index = 0;
-        jumpAnim = 1;
-    }
-    
-    if (grounded && input_buffer_jump < 8 && !key_down && !key_attack && vsp > 0)
-    {
-        scr_sound(sound_jump);
-        sprite_index = spr_jump;
-        
-        if (shotgunAnim == 1)
-            sprite_index = spr_shotgun_jump;
-        
-        instance_create(x, y, obj_highjumpcloud2);
         stompAnim = 0;
         vsp = -11;
         state = states.jump;
@@ -313,23 +210,15 @@ function state_player_normal()
     if (move != 0)
     {
         if (movespeed < 7)
-            movespeed += 0.5;
-        else if (floor(movespeed) == 7)
-            movespeed = 7;
+            movespeed = approach(movespeed, 7, 0.5);
     }
     else
+    {
         movespeed = 0;
+    }
     
     if (movespeed > 7)
-        movespeed -= 0.1;
-    
-    if (key_slap2 && shotgunAnim == 1 && !instance_exists(obj_cutscene_upstairs))
-    {
-        global.ammo -= 1;
-        sprite_index = spr_player_shotgun;
-        state = states.shotgun;
-        image_index = 0;
-    }
+        movespeed = approach(movespeed, 7, 0.1);
     
     momemtum = 0;
     
@@ -345,144 +234,61 @@ function state_player_normal()
             image_speed = 0.6;
     }
     else
+    {
         image_speed = 0.35;
+    }
+    
+    if (sprite_index == spr_player_PZ_walk_breakdance || sprite_index == spr_player_PZ_idle_breakdance)
+        image_speed = breakdanceSpeed;
     
     if ((key_down && grounded) || scr_solid(x, y - 3))
     {
-        if (slopeCheck(x, y) && (abs(scr_checkSlopeAngle()) % 90) >= 45)
+        state = states.crouch;
+        landAnim = 0;
+        crouchAnim = 1;
+        image_index = 0;
+        idle = spr_player_machpunch2;
+    }
+    
+    if (grounded && move != 0 && vsp >= 0)
+    {
+        if (!stepEffectBuffer--)
         {
-            movespeed = hsp;
-            xscale = -slopeMomentum_direction();
-            state = states.tumble;
-            sprite_index = spr_tumblestart;
-            scr_sound(sound_tumblestart);
-        }
-        else
-        {
-            state = states.crouch;
-            landAnim = 0;
-            crouchAnim = 1;
-            image_index = 0;
-            idle = spr_player_machpunch2;
+            instance_create(x, y + 43, obj_puffEffect);
+            
+            if (!_dontStep)
+                scr_sound(sfx_playerstep);
+            
+            stepEffectBuffer = 12;
         }
     }
     
-    if (!instance_exists(obj_cloudeffect) && grounded && move != 0 && (floor(image_index) == 4 || floor(image_index) == 10))
-        instance_create(x, y + 43, obj_cloudeffect);
-    
-    if (!instance_exists(obj_cloudeffect) && grounded && move != 0 && (sprite_index == spr_player_downslopes || sprite_index == spr_player_upslopes))
-        instance_create(x, y + 43, obj_cloudeffect);
+    if (key_shoot2 && global.treat)
+    {
+        vsp = -5;
+        state = states.donut;
+        image_index = 0;
+        sprite_index = spr_player_throwDonut;
+        
+        with (instance_create(x, y + 25, obj_donutShitted))
+        {
+            var _angle = (other.xscale > 0) ? 0 : 180;
+            Hmovespeed = lengthdir_x(20, _angle);
+            Vmovespeed = lengthdir_y(20, _angle);
+            shattedBy = other.id;
+        }
+    }
     
     do_taunt();
     do_grab();
     
-    if (global.cane == 1)
-    {
-        if (scr_solid(x + sign(hsp), y) && (xscale == 1 && (move == 1 && !place_meeting(x + 1, y, obj_slope))))
-            movespeed = 0;
-        
-        if (scr_solid(x + sign(hsp), y) && (xscale == -1 && (move == -1 && !place_meeting(x - 1, y, obj_slope))))
-            movespeed = 0;
-        
-        if (key_jump2 && grounded && canrebound == 0)
-        {
-            sprite_index = spr_player_canefall;
-            vsp = -15;
-            canrebound = 1;
-            state = states.jump;
-        }
-        
-        if (key_slap2 && !key_down && suplexmove == 0 && shotgunAnim == 0)
-        {
-            scr_sound(sound_suplex1);
-            instance_create(x, y, obj_slaphitbox);
-            suplexmove = 1;
-            vsp = 0;
-            instance_create(x, y, obj_jumpdust);
-            image_index = 0;
-            sprite_index = spr_canesuplex;
-            state = states.handstandjump;
-            
-            if (character == "DEEZNUTS")
-                vsp = -5;
-        }
-    }
-    
-    if (key_shoot2 && key_up && breakdanceammo > 0)
-    {
-        state = states.breakdance;
-        sprite_index = spr_player_breakdancebeach;
-        image_index = 0;
-        breakdanceammo -= 1;
-    }
-    
-    if (key_slap2 && character == "G")
-    {
-        state = states.gumbobmixnbrew;
-        image_index = 0;
-        sprite_index = spr_gumbob_brew_pulloutdrink;
-    }
-    
     if (key_attack && grounded && !scr_solid(x + xscale, y, true))
     {
         mach2 = 0;
-        
-        if (movespeed < 6)
-            movespeed = 6;
-        
+        movespeed = max(abs(movespeed), 6);
         sprite_index = spr_mach1;
-        jumpAnim = 1;
-        state = states.mach2;
         image_index = 0;
+        jumpAnim = true;
+        state = states.mach2;
     }
-    
-#region Coneboy Copies
-    if (character == "C")
-    {
-		#region substate, knight 
-		//if you dont use substates youre stinnky
-        if (substate == 1)
-        {
-            if (sprite_index == spr_idle || sprite_index == spr_idle2 || sprite_index == spr_idle3)
-                sprite_index = spr_coneboy_sword_idle;
-            
-            if (key_up && key_slap2)
-            {
-                vsp = -15;
-                state = states.uppercut;
-                suplexmove = true;
-                sprite_index = spr_coneboy_sworduppercut;
-                instance_create(x, y, obj_coneboyswordhitbox);
-            }
-            
-            if (key_attack)
-            {
-                instance_create(x, y, obj_coneboyswordhitbox);
-                sprite_index = spr_coneboy_sworddash;
-                state = states.coneboyinhale;
-            }
-        }
-        #endregion
-		
-		#region Juice Copy
-        if (substate == 2)
-        {
-            if (key_shoot2 && instance_number(obj_coneboyjuice) < 3)
-            {
-                image_index = 0;
-                sprite_index = spr_coneboy_juicespit;
-                state = states.coneboykick;
-                instance_create(x, y, obj_coneboyjuice);
-            }
-            
-            if (key_attack)
-            {
-                sprite_index = spr_coneboy_juicewave;
-                state = states.coneboyinhale;
-                movespeed = 6;
-            }
-        }
-		#endregion
-    }
-#endregion
 }

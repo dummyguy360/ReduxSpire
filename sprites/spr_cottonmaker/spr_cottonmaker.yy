@@ -13,16 +13,16 @@
   "edgeFiltering": false,
   "For3D": false,
   "frames": [
-    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"7de34f55-ef44-4014-83c9-91c730e6e1c2",},
-    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"e3403a6f-379b-475b-a5db-fb120d409f15",},
-    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"e4e83cda-4604-4dc4-b5b4-0e500def6123",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"6862ea8e-c554-4c7c-a465-82371d203305",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"0b48c63d-9c4a-4145-ac35-e2273d6c35da",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"ffbf8021-b024-42aa-9f3c-6deba3356ff9",},
   ],
   "gridX": 0,
   "gridY": 0,
   "height": 100,
   "HTile": false,
   "layers": [
-    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"075a5beb-8d34-4596-815c-1db96411e792","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
+    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"f75bbe05-0c3e-4a32-8f54-7aaf43cc5458","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
   ],
   "nineSlice": null,
   "origin": 0,
@@ -55,10 +55,10 @@
     "showBackdropImage": false,
     "timeUnits": 1,
     "tracks": [
-      {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"1.0","Keyframes":[
-            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"7de34f55-ef44-4014-83c9-91c730e6e1c2","path":"sprites/spr_cottonmaker/spr_cottonmaker.yy",},},},"Disabled":false,"id":"5f790285-cc3c-4bb5-9bc0-ae913c99605a","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
-            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"e3403a6f-379b-475b-a5db-fb120d409f15","path":"sprites/spr_cottonmaker/spr_cottonmaker.yy",},},},"Disabled":false,"id":"eab3a99a-792a-4fc6-bbaf-d9387faaa33d","IsCreationKey":false,"Key":1.0,"Length":1.0,"Stretch":false,},
-            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"e4e83cda-4604-4dc4-b5b4-0e500def6123","path":"sprites/spr_cottonmaker/spr_cottonmaker.yy",},},},"Disabled":false,"id":"10765494-3ddf-4503-b526-0859c934edff","IsCreationKey":false,"Key":2.0,"Length":1.0,"Stretch":false,},
+      {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","builtinName":-1,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"1.0","Keyframes":[
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"6862ea8e-c554-4c7c-a465-82371d203305","path":"sprites/spr_cottonmaker/spr_cottonmaker.yy",},},},"Disabled":false,"id":"33d03cd1-a425-4fc4-b79a-202cbeba0429","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"0b48c63d-9c4a-4145-ac35-e2273d6c35da","path":"sprites/spr_cottonmaker/spr_cottonmaker.yy",},},},"Disabled":false,"id":"f9f7dd70-cc3f-485e-bb44-2087d1420b1b","IsCreationKey":false,"Key":1.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"ffbf8021-b024-42aa-9f3c-6deba3356ff9","path":"sprites/spr_cottonmaker/spr_cottonmaker.yy",},},},"Disabled":false,"id":"500b32d4-e86f-401f-a5e6-4277633a5aef","IsCreationKey":false,"Key":2.0,"Length":1.0,"Stretch":false,},
           ],},"modifiers":[],"spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange": null,

@@ -5,12 +5,12 @@ if (!instance_exists(obj_cutsceneManager))
 {
     if (global.treat)
     {
-        if (sprite_index != spr_rosettegavetreat)
-            sprite_index = spr_rosettegavetreatIDLE;
+        if (sprite_index != spr_rosettegavetreat_new)
+            sprite_index = spr_rosettegavetreatIDLE_new;
     }
     else
-        sprite_index = spr_rosette;
+        sprite_index = spr_rosette_new;
 }
 
-if (animation_end() && sprite_index == spr_rosettegavetreat)
-    sprite_index = spr_rosettegavetreatIDLE;
+if (animation_end() && sprite_index == spr_rosettegavetreat_new)
+    sprite_index = spr_rosettegavetreatIDLE_new;

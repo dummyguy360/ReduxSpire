@@ -1,8 +1,14 @@
-if (helptimer == 0)
+var do_hop = false;
+
+if (floor(helpindex) > 36 && bbox_in_camera(view_camera[0]))
 {
-    helptimer = 360;
-    alarm[0] = 1;
+    helpindex = 0;
+    do_hop = true;
 }
 
-if (helptimer != 0 && helptimer > 0)
-    helptimer--;
+if (do_hop && sprite_index != spr_confecticage_hop)
+{
+    scr_sound(sound_confectihelp);
+    image_index = 0;
+    sprite_index = spr_confecticage_hop;
+}

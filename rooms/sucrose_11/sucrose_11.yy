@@ -52,8 +52,6 @@
     {"name":"inst_7DF422B9","path":"rooms/sucrose_11/sucrose_11.yy",},
     {"name":"inst_40D2F7E5","path":"rooms/sucrose_11/sucrose_11.yy",},
     {"name":"inst_3B1CD11","path":"rooms/sucrose_11/sucrose_11.yy",},
-    {"name":"inst_4690A23C","path":"rooms/sucrose_11/sucrose_11.yy",},
-    {"name":"inst_96F7768","path":"rooms/sucrose_11/sucrose_11.yy",},
     {"name":"inst_4C4E4C93","path":"rooms/sucrose_11/sucrose_11.yy",},
     {"name":"inst_F2D21BF","path":"rooms/sucrose_11/sucrose_11.yy",},
     {"name":"inst_520BF6EA","path":"rooms/sucrose_11/sucrose_11.yy",},
@@ -73,6 +71,8 @@
     {"name":"inst_7A3B9F4B","path":"rooms/sucrose_11/sucrose_11.yy",},
     {"name":"inst_3D1A7477","path":"rooms/sucrose_11/sucrose_11.yy",},
     {"name":"inst_7FF949A2","path":"rooms/sucrose_11/sucrose_11.yy",},
+    {"name":"inst_96F7768","path":"rooms/sucrose_11/sucrose_11.yy",},
+    {"name":"inst_4690A23C","path":"rooms/sucrose_11/sucrose_11.yy",},
   ],
   "isDnd": false,
   "layers": [

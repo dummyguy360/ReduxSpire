@@ -6,3 +6,6 @@ if (room == outer_room1 && obj_player.state == states.titlescreen)
     obj_player.state = states.backbreaker;
     obj_player.sprite_index = spr_player_machfreefall;
 }
+
+if (room == hub_w1 && obj_player.state == states.titlescreen)
+    obj_player.state = states.normal;

@@ -1,7 +1,7 @@
 if (ds_list_find_index(global.baddieroom, id) == -1 && inhaleddestroyvar == false)
 {
     if (debris == true)
-        scr_sound(sfx_glassbreak);
+        scr_sound(sfx_glassbreak_new);
     
     with (instance_create(x, y, obj_puddle))
     {
@@ -13,8 +13,6 @@ if (ds_list_find_index(global.baddieroom, id) == -1 && inhaleddestroyvar == fals
 
 if ((ds_list_find_index(global.baddieroom, id) == -1 || important) && inhaleddestroyvar == false)
 {
-    obj_tv.image_index = irandom_range(0, 4);
-    
     repeat (3)
     {
         instance_create(x, y, obj_slapstar);
@@ -42,25 +40,7 @@ if ((ds_list_find_index(global.baddieroom, id) == -1 || important) && inhaleddes
             i++;
         }
         
-        switch (global.combo)
-        {
-            case 0:
-            case 1:
-                scr_sound(sound_combo1);
-                break;
-            
-            case 2:
-                scr_sound(sound_combo2);
-                break;
-            
-            case 3:
-                scr_sound(sound_combo3);
-                break;
-            
-            default:
-                scr_sound(sound_combo4);
-                break;
-        }
+        scr_sound(sound_combo1);
     }
     
     if (!important)

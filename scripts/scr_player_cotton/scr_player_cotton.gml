@@ -1,16 +1,14 @@
 function state_player_cotton()
 {
-    static cotton_afterimagetimer = 6;
-    
     move = key_left + key_right;
     
     if (sprite_index == spr_cotton_slam && move != xscale)
     {
         image_index = 0;
-        sprite_index = spr_cotton_walk;
+        sprite_index = spr_player_PZ_werecotton_walk;
     }
     
-    if (sprite_index != spr_cotton_attack)
+    if (sprite_index != spr_player_PZ_werecotton_drill_h)
     {
         if (move != 0)
             xscale = move;
@@ -42,47 +40,43 @@ function state_player_cotton()
             if (movespeed < 6)
                 movespeed += 0.5;
             
-            if (movespeed > 6 && sprite_index != spr_cotton_attack && grounded && momemtum == 0)
+            if (movespeed > 6 && sprite_index != spr_player_PZ_werecotton_drill_h && grounded && momemtum == 0)
                 movespeed -= 0.5;
         }
     }
-    else if (movespeed > 0 && sprite_index != spr_cotton_attack && momemtum == 0)
+    else if (movespeed > 0 && sprite_index != spr_player_PZ_werecotton_drill_h && momemtum == 0)
+    {
         movespeed -= 0.5;
+    }
     
     if (scr_solid(x + xscale, y, true) && !scr_slope_ext(x + xscale, y))
     {
         if (movespeed < 8 && (place_meeting(x + xscale, y, obj_destructibles) || place_meeting(x + xscale, y, obj_chocofrog)))
             movespeed = 0;
         else if (!place_meeting(x + xscale, y, obj_destructibles) && !place_meeting(x + xscale, y, obj_chocofrog))
-        {
-            if (movespeed >= 8 && grounded && sprite_index != spr_cotton_slam && sprite_index != spr_cotton_attack)
-            {
-                sprite_index = spr_cotton_slam;
-                image_index = 0;
-            }
-            
             movespeed = 0;
-        }
     }
     
     if (vsp > 5)
         vsp = 5;
     
-    if (key_jump && grounded)
+    if (inputBufferJump > 0 && grounded)
     {
+        inputBufferJump = 0;
         vsp = -14;
         grav = 0.025;
         image_index = 0;
-        sprite_index = spr_cotton_jump;
+        sprite_index = spr_player_PZ_werecotton_jump;
         instance_create(x, y, obj_highjumpcloud2);
         scr_sound(sfx_cottonjump);
     }
     
-    if (key_slap2 && sprite_index != spr_cotton_attack && groundedcot == 1)
+    if (inputBufferSlap > 0 && sprite_index != spr_player_PZ_werecotton_drill_h && groundedcot == 1)
     {
+        inputBufferSlap = 0;
         flash = 1;
         image_index = 0;
-        sprite_index = spr_cotton_attack;
+        sprite_index = spr_player_PZ_werecotton_drill_h;
         
         if (movespeed < 8)
             movespeed = 8;
@@ -98,7 +92,7 @@ function state_player_cotton()
         groundedcot = 0;
     }
     
-    if (sprite_index == spr_cotton_attack)
+    if (sprite_index == spr_player_PZ_werecotton_drill_h)
     {
         hsp = movespeed * xscale;
         instance_create(x, y, obj_swordhitbox);
@@ -113,11 +107,11 @@ function state_player_cotton()
             movespeed = 0;
             vsp = 0;
             hsp = 0;
-            sprite_index = spr_cotton_fall;
+            sprite_index = spr_player_PZ_werecotton_fall;
         }
     }
     
-    if (animation_end() && sprite_index == spr_cotton_attack)
+    if (animation_end() && sprite_index == spr_player_PZ_werecotton_drill_h)
     {
         image_index = 0;
         sprite_index = spr_cottonidle;
@@ -126,49 +120,50 @@ function state_player_cotton()
     if (sprite_index == spr_cottonidle && move != 0)
     {
         image_index = 0;
-        sprite_index = spr_cotton_walk;
+        sprite_index = spr_player_PZ_werecotton_walk;
     }
     
-    if ((sprite_index == spr_cotton_walk || sprite_index == spr_cotton_run || sprite_index == spr_cotton_maxrun) && move == 0)
+    if ((sprite_index == spr_player_PZ_werecotton_walk || sprite_index == spr_cotton_run || sprite_index == spr_cotton_maxrun) && move == 0)
     {
         image_index = 0;
         sprite_index = spr_cottonidle;
     }
     
-    if (sprite_index == spr_cotton_jump && animation_end())
+    if (sprite_index == spr_player_PZ_werecotton_jump && animation_end())
     {
         image_index = 0;
-        sprite_index = spr_cotton_fall;
+        sprite_index = spr_player_PZ_werecotton_fall;
     }
     
-    if (sprite_index == spr_cotton_doublejump && animation_end())
+    if (sprite_index == spr_player_PZ_werecotton_doubleJump && animation_end())
     {
         image_index = 0;
-        sprite_index = spr_cotton_doublefall;
+        sprite_index = spr_player_PZ_werecotton_doubleJump_fall;
     }
     
     if (sprite_index == spr_cotton_slam && animation_end())
         sprite_index = spr_cottonidle;
-    //Land
-    if ((sprite_index == spr_cotton_fall || sprite_index == spr_cotton_doublefall || sprite_index == spr_cotton_jump || sprite_index == spr_cotton_doublejump) && grounded && vsp >= 0)
+    
+    if ((sprite_index == spr_player_PZ_werecotton_fall || sprite_index == spr_player_PZ_werecotton_doubleJump_fall || sprite_index == spr_player_PZ_werecotton_jump || sprite_index == spr_player_PZ_werecotton_doubleJump) && grounded && vsp >= 0)
     {
         image_index = 0;
         
         if (move != 0)
-            sprite_index = spr_cotton_land2;
+            sprite_index = spr_player_PZ_werecotton_land_walk;
         else
-            sprite_index = spr_cotton_land;
+            sprite_index = spr_player_PZ_werecotton_land;
         
         instance_create(x, y, obj_landcloud);
         scr_sound(sound_land);
     }
-    //Double Jump
-    if (key_jump && !grounded && doublejumped == 0)
+    
+    if (inputBufferJump > 0 && !grounded && doublejumped == 0)
     {
+        inputBufferJump = 0;
         doublejumped = 1;
         vsp = -10;
         image_index = 0;
-        sprite_index = spr_cotton_doublejump;
+        sprite_index = spr_player_PZ_werecotton_doubleJump;
         
         with (instance_create(x, y, obj_highjumpcloud2))
         {
@@ -179,17 +174,17 @@ function state_player_cotton()
         scr_sound(sfx_cottondoublejump);
     }
     
-    if (sprite_index == spr_cotton_land && animation_end())
+    if (sprite_index == spr_player_PZ_werecotton_land && animation_end())
         sprite_index = spr_cottonidle;
     
-    if (sprite_index == spr_cotton_land2 && animation_end())
-        sprite_index = spr_cotton_walk;
+    if (sprite_index == spr_player_PZ_werecotton_land_walk && animation_end())
+        sprite_index = spr_player_PZ_werecotton_walk;
     
     if (key_down2 && !grounded)
     {
         verticalMovespeed = -5;
         state = states.cottondrill;
-        sprite_index = spr_cotton_drill;
+        sprite_index = spr_player_PZ_werecotton_drill_down;
         image_index = 0;
         scr_sound(sound_suplex1);
         flash = 1;
@@ -215,11 +210,11 @@ function state_player_cotton()
         vsp = 3;
         state = states.cottonroll;
         image_index = 0;
-        sprite_index = spr_cotton_roll;
+        sprite_index = spr_player_PZ_werecotton_slide;
     }
     
-    if (!grounded && sprite_index != spr_cotton_jump && sprite_index != spr_cotton_attack && sprite_index != spr_cotton_doublejump && sprite_index != spr_cotton_doublefall && sprite_index != spr_cotton_drill)
-        sprite_index = spr_cotton_fall;
+    if (!grounded && sprite_index != spr_player_PZ_werecotton_jump && sprite_index != spr_player_PZ_werecotton_drill_h && sprite_index != spr_player_PZ_werecotton_doubleJump && sprite_index != spr_player_PZ_werecotton_doubleJump_fall && sprite_index != spr_player_PZ_werecotton_drill_down)
+        sprite_index = spr_player_PZ_werecotton_fall;
     
     if (!key_jump2 && jumpstop == 0 && vsp < 0.5)
     {
@@ -233,11 +228,11 @@ function state_player_cotton()
         doublejumped = 0;
     }
     
-    if (sprite_index == spr_cotton_walk)
-        image_speed = clamp((movespeed / 6) * 0.65, 0.35, 1);
+    if (sprite_index == spr_player_PZ_werecotton_walk)
+        image_speed = clamp((movespeed / 6) * 0.65, 0.35, 0.55);
     else
         image_speed = 0.35;
-    //After Image Effect
+    
     if (cotton_afterimagetimer > 0)
         cotton_afterimagetimer--;
     

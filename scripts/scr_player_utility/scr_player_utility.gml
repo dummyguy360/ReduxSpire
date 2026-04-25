@@ -8,9 +8,9 @@ function do_taunt()
         
         if (supertauntcharged == true && key_up)
         {
-            scr_sound(sound_supertaunt1);
+            scr_sound(sfx_supertaunt);
             image_index = 0;
-            sprite_index = choose(spr_supertaunt1, spr_supertaunt2, spr_supertaunt3);
+            sprite_index = choose(spr_supertaunt1, spr_supertaunt2, spr_supertaunt3, spr_supertaunt4);
         }
         else
         {
@@ -30,76 +30,56 @@ function do_taunt()
 
 function do_grab()
 {
-    if (key_slap2 && !key_down && !suplexmove && shotgunAnim == 0)
+    if (inputBufferSlap > 0 && shotgunAnim == 0)
     {
-        if (global.treat) // Throw Donut
+        inputBufferSlap = 0;
+        
+        if (!key_up)
         {
-            if (state == states.crouch || state == states.normal)
+            scr_sound(sound_suplex1);
+            inputBufferSlap = 0;
+            
+            if (floatyGrab > 0)
             {
-                if (move == 0)
-                    movespeed = 0;
+                instance_create(x, y, obj_crazyrunothereffect, 
+                {
+                    playerID: id
+                });
+                sprite_index = spr_player_PZ_suplexDash_intro;
             }
             else
-                vsp = -3;
+                flash = floatyGrab > 0;
             
-            state = states.donut;
+            vsp = 0;
+            instance_create(x, y, obj_jumpdust);
             image_index = 0;
-            sprite_index = spr_player_throwDonut;
             
-            with (instance_create(x, y + 25, obj_donutShitted))// To Do: Add a charged shot
+            if (state == states.normal || state == states.jump)
+                movespeed = 8;
+            else
+                movespeed = max(movespeed, 5);
+            
+            state = states.handstandjump;
+            
+            if (key_down)
             {
-                var _angle = (other.xscale > 0) ? 0 : 180;
-                Hmovespeed = lengthdir_x(20, _angle);
-                Vmovespeed = lengthdir_y(20, _angle);
-                shattedBy = other.id;
-            }
-        }
-        else if (!key_up) // Grabdash
-        {
-            if (character == "P")
-            {
-                scr_sound(sound_suplex1);
-                instance_create(x, y, obj_slaphitbox);
-                suplexmove = 1;
-                vsp = 0;
-                instance_create(x, y, obj_jumpdust);
-                image_index = 0;
-                sprite_index = spr_suplexdash;
+                vsp = max(vsp, 6);
+                floatyGrab = 0;
                 
-                if (state == states.normal || state == states.jump)
-                    movespeed = 8;
-                else if (movespeed < 5)
-                    movespeed = 5;
-                
-                state = states.handstandjump;
-            }
-            else if (character == "N")
-            {
-                scr_sound(sfx_kungfuair);
-                
-                if (movespeed < 9)
-                    movespeed = 9;
-                
-                airkung = 0;
-                kungtime = 30;
-                state = states.pizzanokungfu;
-                flash = 1;
-                
-                if (!grounded)
+                if (grounded)
                 {
-                    airkung = 1;
-                    sprite_index = choose(spr_pizzano_kungfuair1start, spr_pizzano_kungfuair2start, spr_pizzano_kungfuair3start);
+                    grav = 0.5;
+                    sprite_index = spr_crouchslipintro;
+                    image_index = 0;
+                    state = states.machroll;
+                    
+                    with (instance_create(x, y, obj_jumpdust))
+                        image_xscale = other.xscale;
+                    
+                    movespeed = 11;
+                    crouchSlipBuffer = 25;
+                    crouchSlipAntiBuffer = 0;
                 }
-                else
-                    sprite_index = choose(spr_pizzano_kungfu1, spr_pizzano_kungfu2, spr_pizzano_kungfu3, spr_pizzano_kungfu4, spr_pizzano_kungfu5);
-                
-                instance_create(x, y, obj_crazyrunothereffect);
-                
-                if (!instance_exists(obj_superdashcloud) && grounded)
-                    instance_create(x, y, obj_superdashcloud, { playerID: id });
-                
-                p1Vibration(30, 5);
-                image_index = 0;
             }
         }
         else if (key_up)
@@ -109,20 +89,21 @@ function do_grab()
 
 function do_uppercut()
 {
+    inputBufferSlap = 0;
+    dir = xscale;
     movespeed = hsp;
-    vsp = -10;
-    
-    if (grounded)
-        vsp = -14;
-    
+    vsp = grounded ? -14 : -10;
+    grav = 0;
     state = states.uppercut;
-    suplexmove = true;
-    sprite_index = spr_player_uppercutbegin;
+    flash = false;
+    sprite_index = spr_player_PZ_uppercut_intro;
     image_index = 0;
-    scr_sound(sound_jump);
-    scr_sound(sound_rollgetup);
-    scr_sound(sound_suplex1);
+    var uppercutpitch = random_range(0.9, 1.1);
+    var _a = scr_sound(sfx_uppercut);
+    var _a2 = scr_sound(sfx_uppercut2);
+    audio_sound_pitch(_a, uppercutpitch);
+    audio_sound_pitch(_a2, uppercutpitch);
     
-    with (instance_create(x, y, obj_cloudeffect))
-        sprite_index = spr_tornadocloud;
+    with (instance_create(x, y, obj_highjumpcloud2))
+        sprite_index = spr_highjumpcloud1;
 }

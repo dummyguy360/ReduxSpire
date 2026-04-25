@@ -20,4 +20,4 @@ gonealpha = 0.85;
 vanish = 0;
 spr_palette = spr_afterimagepal;
 draw_angle = obj_player.draw_angle;
-frozen = false;
+alphadiff = 1;

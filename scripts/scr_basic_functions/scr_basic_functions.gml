@@ -369,3 +369,47 @@ function gate_createlayer(sprite, index, xscroll = 0, yscroll = 0, imgspd = 0)
         func: noone
     };
 }
+
+function snap_to_ledge(arg0 = xscale, arg1 = 32)
+{
+    var _ledge = false;
+    var _y = y;
+    
+    if (!place_meeting(x + arg0, y - arg1, obj_solid))
+    {
+        _ledge = true;
+        x += arg0;
+        
+        while (place_meeting(x, y, obj_solid))
+            y--;
+    }
+    
+    return _ledge;
+}
+
+function sprite_animation_end(arg0 = sprite_index, arg1 = image_index, arg2 = sprite_get_number(arg0), arg3 = image_speed)
+{
+    return (arg1 + ((arg3 * sprite_get_speed(arg0)) / ((sprite_get_speed_type(arg0) == 1) ? 1 : game_get_speed(gamespeed_fps)))) >= arg2;
+}
+
+function bbox_in_rectangle(arg0, arg1, arg2, arg3, arg4)
+{
+    if (!instance_exists(arg0))
+        return false;
+    
+    return rectangle_in_rectangle(arg0.bbox_left, arg0.bbox_top, arg0.bbox_right, arg0.bbox_bottom, arg1, arg2, arg3, arg4);
+}
+
+function bbox_in_camera_new(arg0, arg1, arg2 = 0)
+{
+    var cam_x = camera_get_view_x(arg1);
+    var cam_y = camera_get_view_y(arg1);
+    var cam_w = camera_get_view_width(arg1);
+    var cam_h = camera_get_view_height(arg1);
+    return bbox_in_rectangle(arg0, cam_x - arg2, cam_y - arg2, cam_x + cam_w + arg2, cam_y + cam_h + arg2);
+}
+
+function chance_update(arg0)
+{
+    return random(100) <= arg0;
+}

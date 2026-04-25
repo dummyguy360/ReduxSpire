@@ -2,130 +2,72 @@ function scr_enemy_stun()
 {
     stunned--;
     
-    if (!thrown && !throw_hit)
-        sprite_index = stunfallspr;
-    else
-    {
+    if (thrown)
         sprite_index = deadspr;
-        
-        with (create_afterimage(afterimages.fade, image_xscale))
-        {
-            image_alpha = 0.6;
-            vanish = true;
-        }
-    }
+    else
+        sprite_index = stunfallspr;
     
     image_speed = 0.35;
-    var t = thrown;
-    var f = throw_hit;
     
-    if (thrown && linethrown)
+    if ((grounded || (grounded && !place_meeting(x, y, obj_platform))) && vsp > 0)
     {
-        if (abs(hithsp) > abs(hitvsp))
-            hitvsp = 0;
-        
-        hsp = hithsp;
-        vsp = hitvsp;
-        vsp -= grav;
-    }
-    
-    if (grounded && !thrown)
         hsp = approach(hsp, 0, 0.3);
+        
+        if (hp > 0)
+            thrown = false;
+    }
     
-    var _h = 0;
-    var _hh = 0;
-    // Impact w Collisions when Thrown
-    if ((grounded && vsp > 0 && !place_meeting(x + hsp, y, obj_destructibles) && thrown) || (hsp != 0 && place_meeting_collision(x + hsp, y) && !place_meeting(x + hsp, y, obj_destructibles) && thrown))
+    if ((grounded || (grounded && !place_meeting(x, y, obj_cottonplatform))) && vsp > 0)
     {
-        vsp = -5;
-        thrown = false;
+        approach(hsp, 0, 0.3);
         
-        if (hithsp != 0 || hsp != 0)
-        {
-            _h = sign(hsp);
-            _hh = sign(hithsp);
-            hsp = 5 * -_h;
-            hithsp = 5 * -_hh;
-        }
+        if (hp > 0)
+            thrown = false;
     }
-    // Impact w Ceilings when Thrown
-    if ((vsp < 0 || hitvsp < 0) && place_meeting_collision(x, y - 1) && !place_meeting(x, y + hitvsp, obj_destructibles) && thrown)
+    
+    if (place_meeting(x, y + 1, obj_railh))
+        hsp = -5;
+    else if (place_meeting(x, y + 1, obj_railh2))
+        hsp = 5;
+    
+    if (scr_solid(x + -image_xscale, y) && !thrown && !place_meeting(x + -image_xscale, y, obj_slope))
     {
-        vsp = 5;
-        thrown = false;
-    }
-    // Impact w Collisions when Thrown Hit
-    if ((grounded && vsp > 0 && !place_meeting(x + hsp, y, obj_destructibles) && throw_hit) || (hsp != 0 && place_meeting_collision(x + hsp, y) && !place_meeting(x + hsp, y, obj_destructibles) && throw_hit))
-    {
-        vsp = -5;
-        throw_hit = false;
+        with (instance_create(x, y, obj_bulletimpact))
+            image_xscale = -other.image_xscale;
         
-        if (hithsp != 0 || hsp != 0)
-        {
-            _h = sign(hsp);
-            _hh = sign(hithsp);
-            hsp = 5 * -_h;
-            hithsp = 5 * -_hh;
-        }
+        grav = 0.5;
+        image_xscale *= -1;
+        hsp = -image_xscale * 4;
     }
-    // Impact w Ceilings when Thrown Hit
-    if ((vsp < 0 || hitvsp < 0) && place_meeting_collision(x, y - 1) && !place_meeting(x, y + hitvsp, obj_destructibles) && throw_hit && shoulderbashed <= 0)
+    
+    if ((scr_solid(x + -image_xscale, y) || place_meeting(x, y, obj_hallway) || place_meeting(x, y, obj_vertical_hallway)) && thrown && !place_meeting(x + -image_xscale, y, obj_destructibles) && !place_meeting(x + -image_xscale, y, obj_slope) && !place_meeting(x + -image_xscale, y, obj_slope))
     {
-        vsp = 5;
-        throw_hit = false;
-    }
-    // Throw impact
-    if (t != thrown && t)
-    {
-        show_debug_message("impact");
-        eliteHP--;
-        throw_hit = false;
-        linethrown = false;
+        with (instance_create(x, y, obj_bulletimpact))
+            image_xscale = -other.image_xscale;
         
-        if (!eliteEnemy || eliteHP <= 0)
+        instance_create(x, y, obj_poofeffect);
+        instance_destroy();
+    }
+    
+    if (flyup && thrown)
+    {
+        if (place_meeting(x, y - 1, obj_solid) && !place_meeting(x - 1, y, obj_destructibles))
         {
-            if (destroyable)
-                instance_destroy();
-            else
-            {
-                repeat (2)
-                {
-                    instance_create(x, y, obj_slapstar);
-                    instance_create(x, y, obj_baddiegibs);
-                }
-                
-                with (instance_create(x, y, obj_bangeffect))
-                    sprite_index = spr_enemypuncheffect;
-                
-                scr_sound(sound_punch);
-                flash = true;
-            }
+            with (instance_create(x, y, obj_bulletimpact))
+                image_xscale = -other.image_xscale;
+            
+            instance_create(x, y, obj_poofeffect);
+            instance_destroy();
         }
         
-        if (boss_enemy)
+        if (place_meeting(x, y + vsp, obj_solid) && !place_meeting(x + vsp, y, obj_destructibles))
         {
-            hsp *= 1.5;
-            stunned = 0;
-            state = baddiestate.walk;
+            with (instance_create(x, y, obj_bulletimpact))
+                image_xscale = -other.image_xscale;
+            
+            instance_create(x, y, obj_poofeffect);
+            instance_destroy();
         }
-    }
-    else if (f != throw_hit && f)
-    {
-        repeat (2)
-        {
-            instance_create(x, y, obj_slapstar);
-            instance_create(x, y, obj_baddiegibs);
-        }
-        
-        with (instance_create(x, y, obj_bangeffect))
-            sprite_index = spr_enemypuncheffect;
-        
-        scr_sound(sound_slapswipe2);
-        flash = true;
-        throw_hit = false;
-        
-        if (stunned < 100)
-            stunned = 100;
     }
     
     if (grounded && stunned < 0 && !thrown)
@@ -163,6 +105,73 @@ function scr_enemy_stun()
         {
             sprite_index = idlespr;
             state = baddiestate.idle;
+        }
+    }
+    
+    if (flyup && vsp > -25 && thrown)
+        vsp = -25;
+    
+    if (thrown)
+    {
+        if (cloudbuffer > 0)
+            cloudbuffer--;
+        else
+        {
+            cloudbuffer = 5;
+            instance_create(x, y, obj_cloudeffect);
+        }
+        
+        if (!flyup)
+        {
+            hsp = 25 * -image_xscale;
+            vsp = 0;
+            
+            if (place_meeting(x + sign(hsp), y, obj_destructibles))
+            {
+                with (instance_place(x + sign(hsp), y, obj_destructibles))
+                {
+                    DestroyedBy = other.id;
+                    event_user(0);
+                }
+            }
+            
+            if (place_meeting(x + -image_xscale, y, obj_destructibles))
+            {
+                with (instance_place(x + -image_xscale, y, obj_destructibles))
+                {
+                    DestroyedBy = other.id;
+                    event_user(0);
+                }
+            }
+            
+            if (place_meeting(x + hsp, y, obj_destructibles))
+            {
+                with (instance_place(x + hsp, y, obj_destructibles))
+                {
+                    DestroyedBy = other.id;
+                    event_user(0);
+                }
+            }
+        }
+        else
+        {
+            if (place_meeting(x - 1, y, obj_destructibles))
+            {
+                with (instance_place(x - 1, y, obj_destructibles))
+                {
+                    DestroyedBy = other.id;
+                    event_user(0);
+                }
+            }
+            
+            if (place_meeting(x + vsp, y, obj_destructibles))
+            {
+                with (instance_place(x + vsp, y, obj_destructibles))
+                {
+                    DestroyedBy = other.id;
+                    event_user(0);
+                }
+            }
         }
     }
 }

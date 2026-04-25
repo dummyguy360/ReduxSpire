@@ -7,7 +7,6 @@
   "inheritCreationOrder": false,
   "inheritLayers": false,
   "instanceCreationOrder": [
-    {"name":"inst_74F00AF2","path":"rooms/dragonlair_2/dragonlair_2.yy",},
     {"name":"inst_37CEE01E","path":"rooms/dragonlair_2/dragonlair_2.yy",},
     {"name":"inst_7AADB549","path":"rooms/dragonlair_2/dragonlair_2.yy",},
     {"name":"inst_3D8C8A75","path":"rooms/dragonlair_2/dragonlair_2.yy",},
@@ -33,6 +32,7 @@
     {"name":"inst_76F531DB","path":"rooms/dragonlair_2/dragonlair_2.yy",},
     {"name":"inst_39D40707","path":"rooms/dragonlair_2/dragonlair_2.yy",},
     {"name":"inst_7CB2DC32","path":"rooms/dragonlair_2/dragonlair_2.yy",},
+    {"name":"inst_74F00AF2","path":"rooms/dragonlair_2/dragonlair_2.yy",},
     {"name":"inst_3F91B15E","path":"rooms/dragonlair_2/dragonlair_2.yy",},
     {"name":"inst_270868A","path":"rooms/dragonlair_2/dragonlair_2.yy",},
     {"name":"inst_454F5BB5","path":"rooms/dragonlair_2/dragonlair_2.yy",},

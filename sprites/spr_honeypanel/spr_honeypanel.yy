@@ -13,16 +13,16 @@
   "edgeFiltering": false,
   "For3D": false,
   "frames": [
-    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"cd7664a5-0047-4a88-8cbb-70bd22a64a5a",},
-    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"99534d86-f40e-4b40-a2f5-19cd918b3ed2",},
-    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"e1c2a6f2-217a-4c7f-ba93-46a82bd7b946",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"7e06fece-b29a-4631-b042-20e4307d5eb9",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"d224bd4b-54b8-407b-bb1b-16e28049bd3e",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"3d646e15-5778-4558-863c-387d90b5d27f",},
   ],
   "gridX": 0,
   "gridY": 0,
   "height": 145,
   "HTile": false,
   "layers": [
-    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"a4417606-a532-4684-b6aa-2874e6376f44","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
+    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"1cb61f00-185e-4d92-a108-aea13557f6ba","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
   ],
   "nineSlice": null,
   "origin": 4,
@@ -55,10 +55,10 @@
     "showBackdropImage": false,
     "timeUnits": 1,
     "tracks": [
-      {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"1.0","Keyframes":[
-            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"cd7664a5-0047-4a88-8cbb-70bd22a64a5a","path":"sprites/spr_honeypanel/spr_honeypanel.yy",},},},"Disabled":false,"id":"c2f94f25-10e2-4d6c-ab0b-8a2a9f6f2194","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
-            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"99534d86-f40e-4b40-a2f5-19cd918b3ed2","path":"sprites/spr_honeypanel/spr_honeypanel.yy",},},},"Disabled":false,"id":"fd0da8e0-ecc9-4fd2-97b8-bf34cb58babc","IsCreationKey":false,"Key":1.0,"Length":1.0,"Stretch":false,},
-            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"e1c2a6f2-217a-4c7f-ba93-46a82bd7b946","path":"sprites/spr_honeypanel/spr_honeypanel.yy",},},},"Disabled":false,"id":"37a06b27-a3ce-46af-afd0-33d6ab0e01b6","IsCreationKey":false,"Key":2.0,"Length":1.0,"Stretch":false,},
+      {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","builtinName":-1,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"1.0","Keyframes":[
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"7e06fece-b29a-4631-b042-20e4307d5eb9","path":"sprites/spr_honeypanel/spr_honeypanel.yy",},},},"Disabled":false,"id":"902b2ed5-4738-4be6-b55c-2d08d84a53be","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"d224bd4b-54b8-407b-bb1b-16e28049bd3e","path":"sprites/spr_honeypanel/spr_honeypanel.yy",},},},"Disabled":false,"id":"834769f3-50fc-446b-afbb-b870227fb6a3","IsCreationKey":false,"Key":1.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"3d646e15-5778-4558-863c-387d90b5d27f","path":"sprites/spr_honeypanel/spr_honeypanel.yy",},},},"Disabled":false,"id":"bb38971e-b9e2-4010-8920-907654336ad2","IsCreationKey":false,"Key":2.0,"Length":1.0,"Stretch":false,},
           ],},"modifiers":[],"spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange": null,

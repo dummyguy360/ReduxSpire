@@ -14,7 +14,7 @@ if (!global.freezeframe)
     {
         switch (other.color)
         {
-            case 1:
+            case #010000:
                 r = 48;
                 g = 168;
                 b = 248;
@@ -23,7 +23,7 @@ if (!global.freezeframe)
                 b2 = 121;
                 break;
             
-            case 2:
+            case #020000:
                 r = 232;
                 g = 80;
                 b = 152;

@@ -13,15 +13,15 @@
   "edgeFiltering": false,
   "For3D": false,
   "frames": [
-    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"c5558c0a-ab4e-4e64-8675-305cc393fb53",},
-    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"b34c44d6-7095-4067-8d93-9e41131ff9c9",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"76eadfc8-b6da-4f57-905c-13b7d0960c6c",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"0e5eb981-215b-4f7e-ad3d-646998d9162b",},
   ],
   "gridX": 0,
   "gridY": 0,
   "height": 68,
   "HTile": false,
   "layers": [
-    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"016e0bd5-7b53-47c3-a92b-e65f94d70df0","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
+    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"9ad0935e-7f5a-4fb4-a97e-79cccbd1f702","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
   ],
   "nineSlice": null,
   "origin": 4,
@@ -55,8 +55,8 @@
     "timeUnits": 1,
     "tracks": [
       {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","builtinName":-1,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"1.0","Keyframes":[
-            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"c5558c0a-ab4e-4e64-8675-305cc393fb53","path":"sprites/spr_rankcardflipped/spr_rankcardflipped.yy",},},},"Disabled":false,"id":"820dae93-2a40-448b-a84b-b427bb794cbf","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
-            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"b34c44d6-7095-4067-8d93-9e41131ff9c9","path":"sprites/spr_rankcardflipped/spr_rankcardflipped.yy",},},},"Disabled":false,"id":"3b2ae910-3f20-4e2f-8c51-9abc1a901bf9","IsCreationKey":false,"Key":1.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"76eadfc8-b6da-4f57-905c-13b7d0960c6c","path":"sprites/spr_rankcardflipped/spr_rankcardflipped.yy",},},},"Disabled":false,"id":"2e8704f9-1e2d-4604-9997-bb746eab795c","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"0e5eb981-215b-4f7e-ad3d-646998d9162b","path":"sprites/spr_rankcardflipped/spr_rankcardflipped.yy",},},},"Disabled":false,"id":"14ae9b53-6b26-46cc-a78a-3785024f3549","IsCreationKey":false,"Key":1.0,"Length":1.0,"Stretch":false,},
           ],},"modifiers":[],"spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange": null,

@@ -1,0 +1,10 @@
+image_index = 0;
+image_speed = 0.35;
+depth = 8;
+spriteDoorUnlocked = 1859;
+spriteDoorLocked = 2310;
+spriteDoorEscape = 2310;
+spriteDoorLight = 375;
+spriteDoorLock = 2311;
+sprite_index = spriteDoorLocked;
+lightIndex = 0;

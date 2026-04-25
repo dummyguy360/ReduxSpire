@@ -11,10 +11,9 @@ output = function()
 {
     if (obj_player.x >= obj_train.x)
     {
-		//Fail Condition
         with (obj_player)
         {
-            sprite_index = spr_player_mach3hitwall;
+            sprite_index = spr_player_PZ_hitWall_mach3;
             hsp = 2.5 * -xscale;
             vsp = -3;
             mach2 = 0;
@@ -23,11 +22,11 @@ output = function()
             
             if (state == states.minecart)
             {
-                for (var i = 0; i < (sprite_get_number(spr_minecartdebris) - 1); i++)
+                for (var i = 0; i < (sprite_get_number(spr_minecartdebris_new) - 1); i++)
                 {
                     with (instance_create(x + irandom_range(-9, 9), y + irandom_range(-9, 9), obj_debris))
                     {
-                        sprite_index = spr_minecartdebris;
+                        sprite_index = spr_minecartdebris_new;
                         image_index = i;
                         vsp = floor(random_range(-5, -9));
                         hsp = floor(random_range(-5, 7));
@@ -38,13 +37,12 @@ output = function()
             state = states.bump;
         }
     }
-	//Win Condition
     else
     {
-        with (inst_67382D88)//Spawn Collectables
+        with (108720)
             alarm[1] = 1;
         
-        with (inst_2FD4AD0B)//Destroy Wall
+        with (108723)
             instance_destroy();
         
         has_won = true;

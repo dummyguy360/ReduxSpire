@@ -59,6 +59,7 @@ function state_player_machslide()
         
         if (scr_solid(x + xscale, y, true))
         {
+            scr_sound(sfx_splat);
             state = states.bump;
             movespeed = 0;
             image_index = 0;
@@ -66,7 +67,8 @@ function state_player_machslide()
         }
     }
     // Mach 2 Drift.
-    if (grounded && ((animation_end() && sprite_index == spr_machslideboost) || (sprite_index == spr_machslideboostFallStart || sprite_index == spr_machslideboostFall)))
+    
+    if (grounded && ((animation_end() && sprite_index == spr_machslideboost) || sprite_index == spr_machslideboostFallStart || sprite_index == spr_machslideboostFall))
     {
         hsp = 0;
         image_index = 0;
@@ -76,7 +78,8 @@ function state_player_machslide()
         instance_create(x, y, obj_jumpdust);
     }
     // Mach 3 Drift.
-    if (grounded && ((animation_end() && sprite_index == spr_machslideboost3) || (sprite_index == spr_machslideboost3FallStart || sprite_index == spr_machslideboost3Fall)))
+    
+    if (grounded && ((animation_end() && sprite_index == spr_machslideboost3) || sprite_index == spr_machslideboost3FallStart || sprite_index == spr_machslideboost3Fall))
     {
         hsp = 0;
         sprite_index = spr_mach3player;

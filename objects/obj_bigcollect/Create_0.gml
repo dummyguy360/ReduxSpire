@@ -18,3 +18,6 @@ switch (obj_player.character)
 
 image_speed = 0.35;
 gotowardsPlayer = false;
+
+if (global.levelname == "sucrose")
+    sprite_index = spr_bigcollectescape;

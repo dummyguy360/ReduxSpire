@@ -1,15 +1,19 @@
-canCollide = function(callingObject = obj_player)
+canCollide = function(arg0 = 370)
 {
-    switch (callingObject)
+    switch (arg0)
     {
-        case obj_player:
-        case obj_player2:
-            var _state = global.freezeframe ? callingObject.frozenstate : callingObject.state;
+        case 370:
+        case 578:
+            var _state = global.freezeframe ? arg0.frozenstate : arg0.state;
             return _state != states.ladder;
-            break;
         
         default:
             return true;
-            break;
     }
 };
+
+if (sprite_index == spr_slopePlatform || sprite_index == spr_slopePlatform2)
+{
+    sprite_index = spr_slopePlatform2;
+    mask_index = spr_slopePlatform;
+}

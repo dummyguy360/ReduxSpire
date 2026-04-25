@@ -4,6 +4,7 @@
   "name": "obj_panicPortal",
   "eventList": [
     {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,},
+    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,},
     {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":7,"eventType":7,"isDnD":false,},
     {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":8,"isDnD":false,},
   ],
@@ -30,8 +31,8 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "spr_enemy_panicSpawner",
-    "path": "sprites/spr_enemy_panicSpawner/spr_enemy_panicSpawner.yy",
+    "name": "spr_enemy_panicSpawner_new",
+    "path": "sprites/spr_enemy_panicSpawner_new/spr_enemy_panicSpawner_new.yy",
   },
   "spriteMaskId": null,
   "visible": true,

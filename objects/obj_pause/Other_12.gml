@@ -10,7 +10,7 @@ if (room != rank_room && room != hub_w1 && room != outer_room1 && room != outer_
     room = hub_w1;
     
     with (obj_tv)
-        tvsprite = spr_tvoff;
+        tvsprite = spr_tvHUD_turnedOff;
     
     with (obj_player)
         targetDoor = "A";
@@ -30,7 +30,7 @@ else if (room == hub_w1 || room == outer_room1 || room == outer_room2 || room ==
     room = realtitlescreen;
     
     with (obj_tv)
-        tvsprite = spr_tvoff;
+        tvsprite = spr_tvHUD_turnedOff;
     
     with (obj_player)
     {

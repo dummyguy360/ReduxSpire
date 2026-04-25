@@ -72,7 +72,6 @@ new_message = "";
 global.newhudtvanim = ds_queue_create();
 global.newhudmessage = ds_queue_create();
 alarm[1] = 1;
-DrawY = 0;
 voice1 = sfx_combovoice1p;
 voice2 = sfx_combovoice2p;
 voice3 = sfx_combovoice3p;
@@ -81,64 +80,6 @@ voice5 = sfx_combovoice5p;
 voice6 = sfx_combovoice6p;
 voice7 = sfx_combovoice7p;
 voice8 = sfx_combovoice8p;
-
-function scr_combotext(combo = global.combo)
-{
-    var sprite = spr_badcombo_intro;
-    
-    if (combo <= 5)
-    {
-        sprite = spr_badcombo_intro;
-        
-        if (chance(0.25))
-            scr_dialogue(voice1);
-    }
-    else if (combo <= 10)
-    {
-        sprite = spr_sourcombo_intro;
-        
-        if (chance(0.5))
-            scr_dialogue(voice2);
-    }
-    else if (combo <= 15)
-    {
-        sprite = spr_okcombo_intro;
-        
-        if (chance(0.75))
-            scr_dialogue(voice3);
-    }
-    else if (combo <= 20)
-    {
-        sprite = spr_alrightcombo_intro;
-        
-        if (chance(0.85))
-            scr_dialogue(voice4);
-    }
-    else if (combo <= 25)
-    {
-        sprite = spr_sweetcombo_intro;
-        scr_dialogue(voice5);
-    }
-    else if (combo <= 30)
-    {
-        sprite = spr_spicycombo_intro;
-        scr_dialogue(voice6);
-    }
-    else if (combo <= 35)
-    {
-        sprite = spr_ruthlesscombo_intro;
-        scr_dialogue(voice7);
-    }
-    else
-    {
-        sprite = spr_wtfcombo_intro;
-        scr_dialogue(voice8);
-    }
-    
-    global.combolost = 1;
-    return sprite;
-}
-
 timer_index = 0;
 timer_sprite = spr_timer;
 coneball_index = 0;
@@ -169,3 +110,57 @@ promptappeared = false;
 prompt_timer = 0;
 tvbg = spr_tvbgs;
 current_bg = 0;
+clock_index = 0;
+muteIconAlpha = 1;
+muteIconBufferMax = 400;
+muteIconBuffer = muteIconBufferMax;
+keyPositions = [[-62, -15], [-9, 39], [34, -4], [18, -21], [-45, 43], [-63, 28], [-17, -20]];
+playBackSpeed = 1;
+playbackDirection = 1;
+xscreensaver = keyPositions[0][0];
+yscreensaver = keyPositions[0][1];
+keyframeIndex = 0;
+keyframeNumber = array_length(keyPositions);
+tvBG = 1179;
+tvBG_index = 0;
+hidden = false;
+sprite_index = spr_tvHUD_turningOn;
+queuedSprite = 1212;
+sprite_image_number = 1;
+tvIdleAnimationBuffer = choose(500, 450, 400, 550);
+tvEscapeBuffer = irandom_range(300, 1000);
+tvExpressionSprite = undefined;
+tvExpressionBuffer = 0;
+tvNormalStates = false;
+tvPrevNormalStates = tvNormalStates;
+tvForceTransition = false;
+tvDoingExpression = false;
+tvPrevDoingExpression = tvDoingExpression;
+staticActivated = 0;
+turningOnindex = 0;
+DrawY = 6;
+displayYMax = -300;
+displayY = displayYMax;
+displayVSP = 0;
+comboDisplay = 0;
+displayState = UnknownEnum.Value_0;
+comboTimeDisplay = 0;
+combofillDisplay = 0;
+comboSurface = -4;
+xstartcombometer = 845;
+ystartcombometer = 165;
+xcombometer = 0;
+ycombometer = 0;
+image_index_combometer = 0;
+state = states.frozen;
+idleanim = choose(500, 450, 400, 550);
+static_index = 0;
+draw_static = 0;
+expressiontime = 0;
+idlespr = -4;
+saved_tv_spr = -4;
+expressionsprite = -4;
+tvbgindex = 0;
+signalBuffer = irandom_range(300, 1000);
+signalindex = 0;
+weakSignal = false;

@@ -13,16 +13,16 @@
   "edgeFiltering": false,
   "For3D": false,
   "frames": [
-    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"653cca05-fc43-4af0-985f-5c5ed6a4d9ff",},
-    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"d34a2998-e9f6-49ae-b15f-6e24236f22f5",},
-    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"7ca7639a-df8b-4b3a-a533-f28bce7d2d04",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"d579c5b4-f02e-4c64-a660-bfc7a901c940",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"6a1ddc77-f0e6-463a-9e02-bdbdaa860fc3",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"a3cc6361-7cc8-42bc-bc75-3d5e70e6cf51",},
   ],
   "gridX": 0,
   "gridY": 0,
   "height": 100,
   "HTile": false,
   "layers": [
-    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"6ae8b1bf-7db8-4974-800c-fd7ba9d09e0c","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
+    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"bb788ac0-4aaf-48f4-99fa-ae3f016daac7","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
   ],
   "nineSlice": null,
   "origin": 4,
@@ -56,9 +56,9 @@
     "timeUnits": 1,
     "tracks": [
       {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","builtinName":-1,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"1.0","Keyframes":[
-            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"653cca05-fc43-4af0-985f-5c5ed6a4d9ff","path":"sprites/spr_creamthief_victoryEscape/spr_creamthief_victoryEscape.yy",},},},"Disabled":false,"id":"43152873-9611-45b9-bfd0-8bd601568902","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
-            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"d34a2998-e9f6-49ae-b15f-6e24236f22f5","path":"sprites/spr_creamthief_victoryEscape/spr_creamthief_victoryEscape.yy",},},},"Disabled":false,"id":"1ba1e970-761c-455a-9908-01a10a8eb999","IsCreationKey":false,"Key":1.0,"Length":1.0,"Stretch":false,},
-            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"7ca7639a-df8b-4b3a-a533-f28bce7d2d04","path":"sprites/spr_creamthief_victoryEscape/spr_creamthief_victoryEscape.yy",},},},"Disabled":false,"id":"b3ac0622-8b2b-4938-bbd9-58ccb3d9eabf","IsCreationKey":false,"Key":2.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"d579c5b4-f02e-4c64-a660-bfc7a901c940","path":"sprites/spr_creamthief_victoryEscape/spr_creamthief_victoryEscape.yy",},},},"Disabled":false,"id":"a1ed6b10-433f-4f68-9722-2cf972dfd095","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"6a1ddc77-f0e6-463a-9e02-bdbdaa860fc3","path":"sprites/spr_creamthief_victoryEscape/spr_creamthief_victoryEscape.yy",},},},"Disabled":false,"id":"66710ab4-89cb-4aa7-9d2e-692a9fb131a7","IsCreationKey":false,"Key":1.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"a3cc6361-7cc8-42bc-bc75-3d5e70e6cf51","path":"sprites/spr_creamthief_victoryEscape/spr_creamthief_victoryEscape.yy",},},},"Disabled":false,"id":"767a8749-6587-4456-99fa-e5099ad7bd3f","IsCreationKey":false,"Key":2.0,"Length":1.0,"Stretch":false,},
           ],},"modifiers":[],"spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange": null,

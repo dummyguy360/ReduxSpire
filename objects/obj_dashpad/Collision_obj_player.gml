@@ -1,12 +1,3 @@
-if (other.state == states.mach3)
-{
-    with (other)
-    {
-        movespeed += 0.25;
-        movespeed = clamp(movespeed, 12, 24);
-    }
-}
-
 if (other.Dashpad_buffer <= 0)
 {
     audio_stop_sound(sound_dashpad);
@@ -16,8 +7,10 @@ if (other.Dashpad_buffer <= 0)
     {
         if (state != states.Sjumpprep && state != states.bombpep && state != states.minecart && state != states.crouch && state != states.seacream && state != states.seacreamjump && state != states.seacreamstick && state != states.barrelcrouch && sprite_get_bbox_bottom(mask_index) <= other.bbox_bottom)
         {
-            movespeed += 0.25;
-            movespeed = clamp(movespeed, 12, 24);
+            if (state == states.mach3 && movespeed < 20 && xscale == sign(other.image_xscale))
+                movespeed += 4;
+            
+            movespeed = clamp(movespeed, 12, 20);
             
             if (character == "P")
             {
@@ -77,7 +70,7 @@ if (other.Dashpad_buffer <= 0)
         {
             xscale = sign(other.image_xscale);
             movespeed += 4;
-            movespeed = clamp(movespeed, 14, 24);
+            movespeed = clamp(movespeed, 14, 20);
             
             if (!scr_solid(other.x, y))
                 x = other.x;
@@ -85,7 +78,7 @@ if (other.Dashpad_buffer <= 0)
             flash = 1;
             Dashpad_buffer = 50;
             image_index = 0;
-            sprite_index = spr_player_minecartfastland;
+            sprite_index = spr_player_PZ_minecart_land;
         }
         else if ((state == states.seacream || state == states.seacreamjump || state == states.seacreamstick) && sprite_get_bbox_bottom(mask_index) <= other.bbox_bottom)
         {

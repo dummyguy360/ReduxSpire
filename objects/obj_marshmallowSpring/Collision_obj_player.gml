@@ -1,7 +1,11 @@
 with (other)
 {
-    if (!cutscene && !global.freezeframe && (state != states.backbreaker && state != states.freefall && state != states.freefallprep && state != states.freefallland))
+    if (!cutscene && !global.freezeframe && state != states.backbreaker && state != states.freefall && state != states.freefallprep && state != states.freefallland)
     {
+        audio_stop_sound(sfx_bounce1);
+        audio_stop_sound(sfx_bounce2);
+        audio_stop_sound(sfx_bounce3);
+        scr_sound(choose(sfx_bounce1, sfx_bounce2, sfx_bounce3));
         jumpstop = true;
         vsp = -21;
         
@@ -19,10 +23,7 @@ with (other)
             state = states.mach2;
         
         if (state == states.jump || state == states.normal)
-        {
-            sprite_index = spr_player_outofcontrolfall;
-            image_index = 0;
-        }
+            sprite_index = spr_player_PZ_fall_outOfControl;
         
         with (other)
         {

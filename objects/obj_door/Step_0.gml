@@ -9,8 +9,6 @@ with (obj_player)
         targetRoom = other.targetRoom;
         state = states.door;
         global.roomsave = 0;
-        ds_list_add(global.saveroom, other.id);
-        other.sprite_index = spr_doorvisited;
         
         if (other.ResetSaveroom == true)
         {
@@ -19,7 +17,8 @@ with (obj_player)
             ds_list_clear(global.baddieroom);
         }
         
-        other.visited = 1;
+        if (ds_list_find_index(global.saveroom, other.id) == -1)
+            ds_list_add(global.saveroom, other.id);
     }
 }
 

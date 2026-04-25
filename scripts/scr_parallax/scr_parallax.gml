@@ -1,5 +1,5 @@
 //Functions - making sure
-//global.ParallaxMap = ds_map_create();//this causes parallax to not work, so dont add it back
+global.ParallaxMap = ds_map_create();
 
 /// @desc This function passes a layer and an associated function.
 /// @param {any*} lay_id ID or name of the layer to store.

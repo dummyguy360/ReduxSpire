@@ -23,6 +23,7 @@ if (fadealpha >= 1)
         instance_activate_object(obj_parallax);
         instance_activate_object(obj_screen);
         instance_activate_object(obj_rpc);
+        obj_pause.charindex = irandom_range(0, 2);
         instance_destroy();
     }
 }

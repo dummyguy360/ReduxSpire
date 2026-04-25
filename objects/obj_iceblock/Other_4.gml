@@ -12,8 +12,8 @@ if (room == sucrose_6 || room == sucrose_6_1 || room == sucrose_7 || room == suc
     color_index = 1;
     color = 
     {
-        light: #264d72,
-        dark: #000000
+        light: #264D72,
+        dark: c_black
     };
 }
 

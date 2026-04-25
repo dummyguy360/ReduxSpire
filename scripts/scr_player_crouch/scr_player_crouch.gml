@@ -1,5 +1,6 @@
 function state_player_crouch()
 {
+    var room_to_jump = !(place_meeting(x, y - 16, obj_solid) || place_meeting(x, y - 32, obj_solid));
     move = key_left + key_right;
     
     if (!place_meeting(x, y + 1, obj_railh) && !place_meeting(x, y + 1, obj_railh2))
@@ -11,11 +12,7 @@ function state_player_crouch()
     
     mask_index = spr_crouchmask;
     turning = 0;
-    
-    if (character != "C")
-        movespeed = 4;
-    else
-        movespeed = 0;
+    movespeed = 4;
     
     if (!grounded && !key_jump)
     {
@@ -26,9 +23,10 @@ function state_player_crouch()
         image_index = 0;
     }
     
-    if (key_jump && grounded && !scr_solid(x, y - 16) && !scr_solid(x, y - 32))
+    if (inputBufferJump > 0 && grounded && room_to_jump)
     {
-        scr_sound(sound_jump);
+        inputBufferJump = 0;
+        scr_sound(sfx_pz_jump);
         vsp = -8;
         state = states.crouchjump;
         movespeed = 4;
@@ -46,24 +44,16 @@ function state_player_crouch()
         image_index = 0;
         sprite_index = spr_player_throwDonut;
         
-        with (instance_create(x, y + 16, obj_donutThrowable))
+        with (instance_create(x, y + 25, obj_donutShitted))
         {
-            image_xscale = other.xscale;
-            
-            if (other.key_up)
-            {
-                movespeed = 7;
-                vsp = -14;
-            }
-            else
-            {
-                movespeed = 8;
-                vsp = -5;
-            }
+            var _angle = (other.xscale > 0) ? 0 : 180;
+            Hmovespeed = lengthdir_x(20, _angle);
+            Vmovespeed = lengthdir_y(20, _angle);
+            shattedBy = other.id;
         }
     }
     
-    if (grounded && !key_down && !scr_solid(x, y - 16) && !scr_solid(x, y - 32) && !key_jump)
+    if (grounded && !key_down && !key_jump && room_to_jump)
     {
         state = states.normal;
         movespeed = 0;
@@ -127,7 +117,7 @@ function state_player_crouch()
         instance_create(x, y, obj_taunteffect);
     }
     
-    if (key_slap2 && grounded)
+    if (inputBufferSlap > 0 && grounded)
     {
         if (character == "C")
         {
@@ -143,7 +133,7 @@ function state_player_crouch()
         else
         {
             scr_sound(sound_suplex1);
-            suplexmove = 1;
+            inputBufferSlap = 0;
             vsp = 0;
             instance_create(x, y, obj_jumpdust);
             grav = 0.5;
@@ -154,7 +144,7 @@ function state_player_crouch()
             with (instance_create(x, y, obj_jumpdust))
                 image_xscale = other.xscale;
             
-            movespeed = 12;
+            movespeed = 11;
             crouchslipbuffer = 25;
         }
     }

@@ -1,1 +1,1 @@
-room_goto(rm_introVideo);
+room_goto(rm_disclaimer);

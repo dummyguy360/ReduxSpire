@@ -11,7 +11,7 @@ function state_player_door()
     crouchAnim = 1;
     machhitAnim = 0;
     
-    if (sprite_index != spr_player_downpizzabox && sprite_index != spr_player_uppizzabox)
+    if (sprite_index != spr_player_PZ_pipeDown_getIn && sprite_index != spr_player_PZ_pipeUp_getIn)
         sprite_index = spr_lookdoor;
     
     if (animation_end())
@@ -28,10 +28,7 @@ function state_player_door()
     if (place_meeting(x, y, obj_door) || place_meeting(x, y, obj_keydoor) || place_meeting(x, y, obj_keydoorclock))
     {
         with (instance_place(x, y, par_door))
-        {
             other.x = approach(other.x, (x - sprite_xoffset) + (sprite_width / 2), 2);
-            other.y = approach(other.y, (y - sprite_yoffset) + (sprite_height / 2), 5);
-        }
     }
     
     global.combofreeze = 30;

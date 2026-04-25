@@ -1,39 +1,52 @@
+var shakeX = Collectshake * random_range(-1, 1);
+var shakeY = Collectshake * random_range(-1, 1);
+
 if (DrawHUD)
 {
-    var shakeX = irandom_range(-Collectshake, Collectshake);
-    var shakeY = irandom_range(-Collectshake, Collectshake);
+    shakeX = Collectshake * random_range(-1, 1);
+    shakeY = Collectshake * random_range(-1, 1);
     
     if (room != scootercutsceneidk && room != rm_credits && room != devroom && room != palroom && room != rank_room && room != rm_introVideo && room != realtitlescreen)
     {
-        pal_swap_set(spr_heatpal, heatpal, 0);
-        draw_sprite_part_ext(spr_heatmeterunder, obj_stylebar.image_index, 0, 0, (global.style * 4.25) / 4, sprite_get_height(spr_heatmeterunder), -6 + shakeX, 8 + DrawY + shakeY, 1, 1, c_white, 1);
-        draw_sprite_ext(spr_heatmeter, obj_stylebar.image_index, 128 + shakeX, 96 + shakeY + DrawY, 1, 1, 0, c_white, 1);
-        draw_sprite_ext(spr_cakehud, obj_stylebar.image_index, 128 + shakeX, 96 + shakeY + DrawY, 1, 1, 0, c_white, 1);
+        draw_sprite_ext(spr_cakehud, 0, 121 + shakeX, 88 + shakeY + DrawY, 1, 1, 0, c_white, 1);
         
         if (global.collect > global.crank)
-            draw_sprite_ext(spr_cranktopping, obj_stylebar.image_index, 128 + shakeX, 96 + shakeY + DrawY, 1, 1, 0, c_white, 1);
+            draw_sprite_ext(spr_cranktopping, 0, 121 + shakeX, 88 + shakeY + DrawY, 1, 1, 0, c_white, 1);
         
         if (global.collect > global.brank)
-            draw_sprite_ext(spr_branktopping, obj_stylebar.image_index, 128 + shakeX, 96 + shakeY + DrawY, 1, 1, 0, c_white, 1);
+            draw_sprite_ext(spr_branktopping, 0, 121 + shakeX, 88 + shakeY + DrawY, 1, 1, 0, c_white, 1);
         
         if (global.collect > global.arank)
-            draw_sprite_ext(spr_aranktopping, obj_stylebar.image_index, 128 + shakeX, 96 + shakeY + DrawY, 1, 1, 0, c_white, 1);
+            draw_sprite_ext(spr_aranktopping, 0, 121 + shakeX, 88 + shakeY + DrawY, 1, 1, 0, c_white, 1);
         
         if (global.collect > global.srank)
-            draw_sprite_ext(spr_sranktopping, obj_stylebar.image_index, 128 + shakeX, 96 + shakeY + DrawY, 1, 1, 0, c_white, 1);
+            draw_sprite_ext(spr_sranktopping, 0, 121 + shakeX, 88 + shakeY + DrawY, 1, 1, 0, c_white, 1);
         
         shader_reset();
-        draw_set_font(global.collectfont);
+        draw_set_font(global.candlefont);
         draw_set_halign(fa_center);
         draw_set_color(c_white);
         var _string = string(global.collect);
         var _string_length = string_length(_string);
         
+        if (oldPointCollect != _string)
+        {
+            array_resize(pointColors, _string_length);
+            
+            for (self.i = 0; self.i < _string_length; self.i++)
+                pointColors[self.i] = (((_string_length - self.i) * 3) + real(string_char_at(_string, self.i + 1))) % 7;
+            
+            oldPointCollect = _string;
+        }
+        
         for (var i = 0; i < _string_length; i++)
         {
-            var _xx = 140 + (-(string_width(_string) / 2) + ((string_width(_string) / _string_length) * i));
-            var _yyoffset = ((i % 2) == 0) ? -4 : 0;
-            draw_text(_xx + shakeX, 29 + obj_stylebar.hudbounce + _yyoffset + DrawY + shakeY, string_char_at(_string, i + 1));
+            var palette_select = pointColors[i];
+            pal_swap_set(spr_palcandle, palette_select, false);
+            var x_offset = (((string_width(_string) / _string_length) * i) - (string_width(_string) / 2)) + 5;
+            var y_offset = (i % 2) ? 0 : -6;
+            draw_text(137 + x_offset + shakeX, 23 + y_offset + DrawY + shakeY, string_char_at(_string, i + 1));
+            pal_swap_reset();
         }
     }
     
@@ -42,25 +55,31 @@ if (DrawHUD)
     draw_set_color(c_white);
 }
 
-if (global.levelname != "none" && global.showplaytimer && room != hub_w1 && room != hub_w2 && room != timesuproom && !instance_exists(obj_endlevelfade) && !instance_exists(obj_titlecard) && room != rm_titlecard)
+if (global.levelname != "none" && room != hub_w1 && room != hub_w2 && room != timesuproom && !instance_exists(obj_endlevelfade) && !instance_exists(obj_titlecard) && room != rm_titlecard)
 {
     var tiny = ":";
-    var tinier = ":";
+    var tinier = ".";
     var tinyish = ":";
+    var tiniest = "";
     
     if (global.playseconds < 10)
         tiny = ":0";
     
     if (global.playmiliseconds < 10)
-        tinier = ":0";
+        tinier = ".0";
     
     if (global.playminutes < 10)
         tinyish = ":0";
     
+    if (global.playhour < 10)
+        tiniest = "0";
+    
     draw_set_color(c_white);
-    draw_set_halign(fa_left);
-    draw_set_font(global.smallfont);
-    draw_text(823, 512, string_hash_to_newline(string(global.playhour) + string(tinyish) + string(global.playminutes) + string(tiny) + string(global.playseconds) + string(tinier) + string(global.playmiliseconds)));
+    draw_set_halign(fa_right);
+    draw_set_valign(fa_bottom);
+    draw_set_font(global.smallfont_new);
+    draw_text(944, 532, string_hash_to_newline(string(tiniest) + string(global.playhour) + string(tinyish) + string(global.playminutes) + string(tiny) + string(global.playseconds) + string(tinier) + string(global.playmiliseconds)));
+    draw_set_valign(fa_top);
 }
 
 if (global.levelname != "none" && !(room == timesuproom || room == rank_room || room == timesuproom || room == hub_w1 || room == hub_w2 || room == hub_basement || instance_exists(obj_bosscontroller)))
@@ -81,6 +100,7 @@ if (global.levelname != "none" && !(room == timesuproom || room == rank_room || 
                 local_rank = global.srank;
                 minus_moment = global.srank;
                 bubbleframe = 0;
+                break;
             
             case "S":
                 bubbleempty = spr_rankbubble_s;
@@ -137,16 +157,17 @@ if (global.levelname != "none" && !(room == timesuproom || room == rank_room || 
             
             if (global.currentrank == "P")
                 draw_sprite_ext(spr_rankbubble_pfilled, -1, 16, 16 + DrawY, 1, 1, 0, c_white, 1);
-            else if (global.currentrank == "S")
+            
+            if (global.currentrank == "S")
                 draw_sprite_ext(spr_rankbubble_sfilled, -1, 16, 16 + DrawY, 1, 1, 0, c_white, 1);
             else
             {
                 draw_sprite_ext(bubbleempty, -1, 16, 16 + DrawY, 1, 1, 0, c_white, 1);
-                draw_sprite_part_ext(bubblefilled, -1, 0, bubbleHeight - (bubbleHeight * rankpercent), bubbleWidth, bubbleHeight * rankpercent, 16, 16 + ((bubbleHeight - (bubbleHeight * rankpercent)) + DrawY), 1, 1, c_white, 1);
+                draw_sprite_part_ext(bubblefilled, -1, 0, bubbleHeight - (bubbleHeight * rankpercent), bubbleWidth, bubbleHeight * rankpercent, 16, ((16 + bubbleHeight) - (bubbleHeight * rankpercent)) + DrawY, 1, 1, c_white, 1);
             }
             
             surface_reset_target();
-            draw_surface_ext(rankbubblesurface, (200 - ((surface_get_width(rankbubblesurface) / 2) * bubblescale)) + 1, (5 - ((surface_get_height(rankbubblesurface) / 2) * bubblescale)) + 1, 1 + bubblescale, 1 + bubblescale, 0, c_white, alpha);
+            draw_surface_ext(rankbubblesurface, (214 - ((surface_get_width(rankbubblesurface) / 2) * bubblescale)) + 1 + shakeX, (17 - ((surface_get_height(rankbubblesurface) / 2) * bubblescale)) + 1 + shakeY + DrawY, 1 + bubblescale, 1 + bubblescale, 0, c_white, alpha);
         }
     }
 }

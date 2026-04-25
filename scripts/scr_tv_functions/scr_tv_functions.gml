@@ -1,16 +1,10 @@
-function scr_queue_tvanim(spr = noone, buffer = 150)
+function scr_queue_tvanim(arg0 = -4, arg1 = 150)
 {
-    with (obj_tv)
-    {
-        if (expressionsprite != spr && spr != idletvspr)
-        {
-            expressionsprite = spr;
-            draw_static = true;
-            state = states.tv_transition;
-            static_index = 0;
-            expressiontime = buffer;
-        }
-    }
+    if (obj_tv.tvExpressionSprite != arg0)
+        obj_tv.tvForceTransition = true;
+    
+    obj_tv.tvExpressionSprite = arg0;
+    obj_tv.tvExpressionBuffer = arg1;
 }
 
 function scr_forceplay_tvanim(arg0 = -4, arg1 = 150)
@@ -60,5 +54,6 @@ function scr_controlprompt(prompt = "[spr_promptfont]No prompt set", save = prom
             prompt_timer = 2;
         }
     }
-    return;
+    
+    exit;
 }

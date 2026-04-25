@@ -6,7 +6,7 @@ with (instance_nearest(x, y, obj_player))
             instance_destroy();
     }
     
-    if ((place_meeting(x + hsp, y, other.id) || place_meeting(x + xscale, y, other.id)) && state == states.cotton && sprite_index == spr_cotton_attack)
+    if ((place_meeting(x + hsp, y, other.id) || place_meeting(x + xscale, y, other.id)) && state == states.cotton && sprite_index == spr_player_PZ_werecotton_drill_h)
     {
         with (other.id)
             instance_destroy();
@@ -72,19 +72,19 @@ with (instance_nearest(x, y, obj_player))
             instance_destroy();
     }
     
-    if ((place_meeting(x + hsp, y, other.id) || place_meeting(x + xscale, y, other.id)) && (state == states.bottlerocket && substate == 0))
+    if ((place_meeting(x + hsp, y, other.id) || place_meeting(x + xscale, y, other.id)) && state == states.bottlerocket && substate == 0)
     {
         with (other.id)
             instance_destroy();
     }
     
-    if ((place_meeting(x + hsp, y, other.id) || place_meeting(x + xscale, y, other.id)) && (state == states.barrelcrouch && substate == 0))
+    if ((place_meeting(x + hsp, y, other.id) || place_meeting(x + xscale, y, other.id)) && state == states.barrelcrouch && substate == 0)
     {
         with (other.id)
             instance_destroy();
     }
     
-    if ((place_meeting(x + hsp, y, other.id) || place_meeting(x + xscale, y, other.id)) && (state == states.smirk && sprite_index == spr_pizzelleuforoll))
+    if ((place_meeting(x + hsp, y, other.id) || place_meeting(x + xscale, y, other.id)) && state == states.smirk && sprite_index == spr_pizzelleuforoll)
     {
         with (other.id)
             instance_destroy();

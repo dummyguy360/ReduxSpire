@@ -3,6 +3,7 @@
   "resourceVersion": "1.0",
   "name": "obj_janitorDoor",
   "eventList": [
+    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,},
     {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,},
     {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":4,"eventType":7,"isDnD":false,},
   ],
@@ -32,9 +33,12 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "spr_worlddoor_closed",
-    "path": "sprites/spr_worlddoor_closed/spr_worlddoor_closed.yy",
+    "name": "spr_janitordoor_closed",
+    "path": "sprites/spr_janitordoor_closed/spr_janitordoor_closed.yy",
   },
-  "spriteMaskId": null,
+  "spriteMaskId": {
+    "name": "spr_door",
+    "path": "sprites/spr_door/spr_door.yy",
+  },
   "visible": true,
 }

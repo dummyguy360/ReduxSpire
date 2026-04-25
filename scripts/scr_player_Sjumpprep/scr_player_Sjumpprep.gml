@@ -4,7 +4,7 @@ function state_player_Sjumpprep()
     mach2 = 0;
     move = key_left + key_right;
     
-    if (sprite_index == spr_player_superjumpprep)
+    if (sprite_index == spr_player_PZ_superJump_prep)
     {
         if (!place_meeting(x, y + 1, obj_railh) && !place_meeting(x, y + 1, obj_railh2))
             hsp = xscale * movespeed;
@@ -17,7 +17,7 @@ function state_player_Sjumpprep()
             movespeed -= 0.8;
     }
     
-    if (sprite_index == spr_player_superjumppreplight || sprite_index == spr_player_superjumpright || sprite_index == spr_player_superjumpleft)
+    if (sprite_index == spr_player_PZ_superJump_prep_flash || sprite_index == spr_player_PZ_superJump_prep_right || sprite_index == spr_player_PZ_superJump_prep_left)
     {
         if (!place_meeting(x, y + 1, obj_railh) && !place_meeting(x, y + 1, obj_railh2))
             hsp = move * 2;
@@ -27,61 +27,46 @@ function state_player_Sjumpprep()
             hsp = (move * 2) + 5;
     }
     
-    if (sprite_index != spr_player_superjumpprep)
+    if (sprite_index != spr_player_PZ_superJump_prep)
     {
         if (sign(hsp) == 0)
-            sprite_index = spr_player_superjumppreplight;
-        
-        if (sign(hsp) == 1)
         {
-            if (xscale == 1)
-                sprite_index = spr_player_superjumpright;
-            
-            if (xscale == -1)
-                sprite_index = spr_player_superjumpleft;
+            sprite_index = spr_player_PZ_superJump_prep_flash;
         }
-        
-        if (sign(hsp) == -1)
+        else if (sign(hsp) == 1)
         {
             if (xscale == 1)
-                sprite_index = spr_player_superjumpleft;
-            
-            if (xscale == -1)
-                sprite_index = spr_player_superjumpright;
+                sprite_index = spr_player_PZ_superJump_prep_right;
+            else if (xscale == -1)
+                sprite_index = spr_player_PZ_superJump_prep_left;
+        }
+        else if (xscale == 1)
+            sprite_index = spr_player_PZ_superJump_prep_left;
+        else if (xscale == -1)
+        {
+            sprite_index = spr_player_PZ_superJump_prep_right;
         }
     }
     
-    start_running = 1;
     alarm[4] = 14;
-    jumpAnim = 1;
-    dashAnim = 1;
-    landAnim = 0;
-    machslideAnim = 1;
-    moveAnim = 1;
-    stopAnim = 1;
-    crouchslideAnim = 1;
-    crouchAnim = 1;
+    jumpAnim = true;
+    landAnim = false;
+    machslideAnim = true;
+    crouchAnim = true;
     
-    if (floor(image_index) == (image_number - 1) && sprite_index == spr_player_superjumpprep)
-        sprite_index = spr_player_superjumppreplight;
+    if (floor(image_index) == (image_number - 1) && sprite_index == spr_player_PZ_superJump_prep)
+        sprite_index = spr_player_PZ_superJump_prep_flash;
     
-    if (!key_up && (grounded || Sjumpcan_doublejump == true) && (sprite_index == spr_player_superjumppreplight || sprite_index == spr_player_superjumpleft || sprite_index == spr_player_superjumpright || sprite_index == spr_pizzano_sjumpprep) && !scr_solid(x, y - 16) && !scr_solid(x, y - 32))
+    if (!key_up && grounded && (sprite_index == spr_player_PZ_superJump_prep_flash || sprite_index == spr_player_PZ_superJump_prep_left || sprite_index == spr_player_PZ_superJump_prep_right) && !scr_solid(x, y - 16) && !scr_solid(x, y - 32))
     {
-        scr_sound(sound_superjumprelease);
-        instance_create(x, y, obj_explosioneffect);
-        sprite_index = spr_player_superjump;
-        
-        if (character == "N")
-            sprite_index = spr_pizzano_sjump;
-        
+        scr_sound(sfx_pz_superjumpRelease);
+        instance_create(x, y, obj_mushroomCloudEffect);
+        sprite_index = spr_player_PZ_superJump;
         state = states.Sjump;
         vsp = -12;
-        movespeed = 12;
+        verticalMovespeed = vsp;
         Sjumpcan_doublejump = false;
     }
-    
-    if (!audio_is_playing(sound_superjumpcharge2))
-        scr_sound(sound_superjumpcharge2);
     
     image_speed = 0.35;
 }

@@ -20,7 +20,7 @@ if (surface_exists(global.parallaxbg_surface))
 	#endregion
     
 	//Draw Thing
-    if (get_panic())
+    if (get_panic() && global.panicbg)
     {
         shader_set(shd_panicbg);
         var panic_id = shader_get_uniform(shd_panicbg, "panic");

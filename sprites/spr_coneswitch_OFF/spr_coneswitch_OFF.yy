@@ -13,16 +13,16 @@
   "edgeFiltering": false,
   "For3D": false,
   "frames": [
-    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"7898f107-6746-4e61-969a-6968b3ab9475",},
-    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"9fde37cc-6e88-4972-ba7d-9dffc9002dea",},
-    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"c3d83830-1415-4566-aee6-b8400468e5ad",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"b1cc4234-86fd-4879-b537-26747b932fde",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"d3af5a2b-1c4d-4dc5-b539-adfa11d57972",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"1d006324-0602-45ae-be28-8b1a8a5c1e33",},
   ],
   "gridX": 0,
   "gridY": 0,
   "height": 121,
   "HTile": false,
   "layers": [
-    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"609928f7-5221-458f-a863-1ba5c185b823","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
+    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"e75615cd-4791-4376-b45f-981cc5a30580","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
   ],
   "nineSlice": null,
   "origin": 9,
@@ -55,10 +55,10 @@
     "showBackdropImage": false,
     "timeUnits": 1,
     "tracks": [
-      {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"1.0","Keyframes":[
-            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"7898f107-6746-4e61-969a-6968b3ab9475","path":"sprites/spr_coneswitch_OFF/spr_coneswitch_OFF.yy",},},},"Disabled":false,"id":"e4788f6b-f890-40a1-bfb1-193c5eea8d0e","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
-            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"9fde37cc-6e88-4972-ba7d-9dffc9002dea","path":"sprites/spr_coneswitch_OFF/spr_coneswitch_OFF.yy",},},},"Disabled":false,"id":"1cca8f7c-4172-473b-b7fa-277796d78825","IsCreationKey":false,"Key":1.0,"Length":1.0,"Stretch":false,},
-            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"c3d83830-1415-4566-aee6-b8400468e5ad","path":"sprites/spr_coneswitch_OFF/spr_coneswitch_OFF.yy",},},},"Disabled":false,"id":"72b68024-040d-49a7-ba3a-961c547ba471","IsCreationKey":false,"Key":2.0,"Length":1.0,"Stretch":false,},
+      {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","builtinName":-1,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"1.0","Keyframes":[
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"b1cc4234-86fd-4879-b537-26747b932fde","path":"sprites/spr_coneswitch_OFF/spr_coneswitch_OFF.yy",},},},"Disabled":false,"id":"48f58a99-ff12-4625-9da5-dcbcf28571a5","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"d3af5a2b-1c4d-4dc5-b539-adfa11d57972","path":"sprites/spr_coneswitch_OFF/spr_coneswitch_OFF.yy",},},},"Disabled":false,"id":"51106c6b-9a36-4884-b0dd-2487a23652e5","IsCreationKey":false,"Key":1.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"1d006324-0602-45ae-be28-8b1a8a5c1e33","path":"sprites/spr_coneswitch_OFF/spr_coneswitch_OFF.yy",},},},"Disabled":false,"id":"c15fe1fd-b5fa-4d50-9505-a204a9669f49","IsCreationKey":false,"Key":2.0,"Length":1.0,"Stretch":false,},
           ],},"modifiers":[],"spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange": null,

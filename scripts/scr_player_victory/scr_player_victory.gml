@@ -14,7 +14,7 @@ function state_player_victory()
     if (place_meeting(x, y, obj_keydoor) || place_meeting(x, y, obj_keydoorclock))
         sprite_index = spr_victory;
     
-    if (animation_end() && (!place_meeting(x, y, obj_startgate) && room != rm_titlecard))
+    if (animation_end() && !place_meeting(x, y, obj_startgate) && room != rm_titlecard)
     {
         if (sprite_index == spr_victory)
         {
@@ -29,7 +29,7 @@ function state_player_victory()
             if (!instance_exists(obj_fadeout))
                 instance_create(x, y, obj_fadeout);
             
-            obj_tv.tvsprite = spr_tvturnon;
+            obj_tv.tvsprite = spr_tvHUD_turningOn;
             obj_tv.image_index = 0;
         }
     }
@@ -53,10 +53,7 @@ function state_player_victory()
     if (place_meeting(x, y, obj_door) || place_meeting(x, y, obj_keydoor) || place_meeting(x, y, obj_keydoorclock))
     {
         with (instance_place(x, y, par_door))
-        {
             other.x = approach(other.x, (x - sprite_xoffset) + (sprite_width / 2), 2);
-            other.y = approach(other.y, (y - sprite_yoffset) + (sprite_height / 2), 5);
-        }
     }
     
     global.combofreeze = 30;

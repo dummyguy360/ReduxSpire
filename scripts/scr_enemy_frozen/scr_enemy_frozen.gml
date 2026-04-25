@@ -29,7 +29,23 @@ function scr_enemy_frozen()
             }
             
             if (!eliteEnemy || eliteHP <= 0)
-                instance_destroy();
+            {
+            }
+            
+            instance_destroy();
+            
+            if (object_index == obj_bigcherry)
+            {
+                with (instance_create(x, y, obj_gigacherrydead))
+                {
+                    movespeed = abs(obj_player.frozenhsp + 4);
+                    
+                    if (!global.hitstunEnabled)
+                        movespeed = abs(obj_player.hsp + 4);
+                    
+                    image_xscale = obj_player.xscale;
+                }
+            }
             
             setfordeath = 0;
         }

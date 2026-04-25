@@ -32,8 +32,8 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "spr_baddiegibs",
-    "path": "sprites/spr_baddiegibs/spr_baddiegibs.yy",
+    "name": "spr_baddieGibs",
+    "path": "sprites/spr_baddieGibs/spr_baddieGibs.yy",
   },
   "spriteMaskId": null,
   "visible": true,

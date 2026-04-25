@@ -6,9 +6,13 @@ audio_stop_sound(sound_taunt5);
 audio_stop_sound(sound_taunt6);
 audio_stop_sound(sound_taunt7);
 audio_stop_sound(sound_taunt8);
+audio_stop_sound(sfx_tauntnew);
 
 if (obj_player.character == "P")
-    tauntsound = choose(sound_taunt1, sound_taunt2, sound_taunt3, sound_taunt4, sound_taunt5, sound_taunt6, sound_taunt7);
+{
+    tauntsound = 253;
+    audio_sound_pitch(tauntsound, random_range(0.95, 1.05));
+}
 else
     tauntsound = choose(sound_tauntpizzano1, sound_tauntpizzano2, sound_tauntpizzano3, sound_tauntpizzano4, sound_tauntpizzano5, sound_tauntpizzano6, sound_tauntpizzano7, sound_tauntpizzano8);
 

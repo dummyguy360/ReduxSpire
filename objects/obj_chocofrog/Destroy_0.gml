@@ -2,7 +2,7 @@ if (ds_list_find_index(global.saveroom, id) == -1)
 {
     var combob = clamp(global.combo, 1, 4);
     var combobsnd = asset_get_index("sound_combo" + string(combob));
-    scr_sound(combobsnd);
+    scr_sound(sound_combo1);
     scr_sound(sound_punch);
     
     if (object_index == obj_chocofrog)
@@ -14,7 +14,6 @@ if (ds_list_find_index(global.saveroom, id) == -1)
     global.hit += 1;
     var _score = 10 * power(2, global.combo - 1);
     _score = clamp(_score, 10, 80);
-    create_small_number(x, y, string(_score));
     global.collect += _score;
     global.combotime = 60;
     global.style += 4;

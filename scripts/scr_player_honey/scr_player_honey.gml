@@ -18,8 +18,11 @@ function state_player_honey()
         y = lerp(y, webID.y, 0.3);
     }
     
-    if (key_jump || key_slap2)
+    if (inputBufferJump > 0 || inputBufferSlap > 0)
     {
+        inputBufferJump = 0;
+        inputBufferSlap = 0;
+        
         if (instance_exists(webID))
         {
             x = webID.x;
@@ -48,7 +51,7 @@ function state_player_honey()
         }
         
         jumpAnim = 1;
-        scr_sound(sound_jump);
+        scr_sound(sfx_pz_jump);
         
         if (instance_exists(webID))
         {
@@ -57,5 +60,5 @@ function state_player_honey()
         }
     }
     
-    return;
+    exit;
 }

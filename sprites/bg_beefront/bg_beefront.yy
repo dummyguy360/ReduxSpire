@@ -13,14 +13,14 @@
   "edgeFiltering": false,
   "For3D": false,
   "frames": [
-    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"cc2994ce-71b1-46df-8fbc-6a7fc7463533",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"e079a1d2-1a90-46d2-9a72-c7897e264932",},
   ],
   "gridX": 0,
   "gridY": 0,
   "height": 490,
   "HTile": false,
   "layers": [
-    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"109dcd74-ea12-46d8-b65b-e6cba7f210b2","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
+    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"ab08d1cb-6801-42fd-b0ff-496f7f7a75d9","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
   ],
   "nineSlice": null,
   "origin": 0,
@@ -54,7 +54,7 @@
     "timeUnits": 1,
     "tracks": [
       {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","builtinName":-1,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"1.0","Keyframes":[
-            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"cc2994ce-71b1-46df-8fbc-6a7fc7463533","path":"sprites/bg_beefront/bg_beefront.yy",},},},"Disabled":false,"id":"932b5254-0c20-4135-aaa2-df6f1d8ecaa0","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"e079a1d2-1a90-46d2-9a72-c7897e264932","path":"sprites/bg_beefront/bg_beefront.yy",},},},"Disabled":false,"id":"97db7792-f32a-464f-b667-ba553194f99f","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
           ],},"modifiers":[],"spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange": null,

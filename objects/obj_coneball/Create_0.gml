@@ -1,4 +1,4 @@
-depth = -100;
+depth = -151;
 scr_sound(sfx_coneball);
 image_speed = 0.35;
 image_alpha = 0;
@@ -16,3 +16,9 @@ projcool = 5;
 fading = false;
 alpha = 1;
 attack = 1;
+audio_falloff_set_model(audio_falloff_linear_distance);
+audio_listener_orientation(0, 0, 1, 0, -1, 0);
+c_emit = audio_emitter_create();
+c_snd = audio_play_sound_on(c_emit, sfx_coneball_moving, 1, 10);
+audio_emitter_falloff(c_emit, 300, 1000, 1);
+audio_sound_gain(c_snd, 0, 0);

@@ -57,3 +57,5 @@ frozenmovespeed = 0;
 frozengrav = 0.35;
 frozenhsp = 0;
 frozenvsp = 0;
+flyup = 0;
+cloudbuffer = 5;

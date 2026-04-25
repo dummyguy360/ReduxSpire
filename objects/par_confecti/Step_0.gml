@@ -14,6 +14,10 @@ switch (state)
     case confectistate.appear:
         scr_confecti_appear();
         break;
+    
+    case states.Nhookshot:
+        scr_confecti_unlock();
+        break;
 }
 
 if (room == rank_room)

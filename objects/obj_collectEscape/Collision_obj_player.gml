@@ -1,7 +1,7 @@
 if (global.panic)
 {
-    audio_stop_sound(sound_escapeclock);
-    var a = scr_sound(sound_escapeclock);
+    audio_stop_sound(sfx_escapecollect);
+    var a = scr_sound(sfx_escapecollect);
     audio_sound_pitch(a, random_range(0.95, 1.1));
     global.collect += 10;
     global.pizzameter += 1;

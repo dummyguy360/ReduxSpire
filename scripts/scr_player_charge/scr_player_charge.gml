@@ -3,58 +3,70 @@ function state_player_charge()
     if (windingAnim < 2000)
         windingAnim++;
     
-    if (!place_meeting(x, y + 1, obj_railh) && !place_meeting(x, y + 1, obj_railh2))
-        hsp = xscale * movespeed;
-    else if (place_meeting(x, y + 1, obj_railh))
-        hsp = (xscale * movespeed) - 5;
-    else if (place_meeting(x, y + 1, obj_railh2))
-        hsp = (xscale * movespeed) + 5;
-    
-    if (!key_attack)
-        movespeed -= 0.5;
-    else if (movespeed < 10)
-        movespeed += 1;
-    else if (movespeed > 10)
-        movespeed -= 0.15;
-    
-    move2 = key_right2 + key_left2;
+    hsp = xscale * movespeed;
+    movespeed = approach(movespeed, 0, 0.25);
     move = key_right + key_left;
-    crouchslideAnim = 1;
     
-    if (!key_jump2 && jumpstop == 0 && vsp < 0.5)
+    if (!key_jump2 && !jumpstop && vsp < 0.5)
     {
         vsp /= 20;
-        jumpstop = 1;
+        jumpstop = true;
     }
     
-    if (movespeed <= 0)
-        state = states.grab;
-    
-    if (key_slap2)
+    if (movespeed <= 2)
     {
-        sprite_index = spr_player_swingdingend;
-        state = states.finishingblow;
-        image_index = 0;
-        movespeed /= 2;
+        state = states.grab;
+        sprite_index = spr_player_PZ_hauling_idle;
     }
     
     if (grounded && vsp > 0)
-        jumpstop = 0;
+        jumpstop = false;
     
-    if (input_buffer_jump < 8 && grounded)
+    if (inputBufferJump > 0 && can_jump)
     {
-        scr_sound(sound_jump);
-        vsp = -10;
+        scr_sound(sfx_pz_jump);
+        vsp = -11;
+        grav = 0.3;
+        inputBufferJump = 0;
     }
     
-    if (key_jump)
-        input_buffer_jump = 0;
+    if (key_down && !grounded)
+    {
+        sprite_index = spr_piledriver;
+        vsp = -6;
+        state = states.superslam;
+        image_index = 0;
+        image_speed = 0.35;
+    }
     
-    if (scr_solid(x + xscale, y, true))
-        xscale *= -1;
+    if (inputBufferSlap > 0 || (scr_solid(x + xscale, y, true) && !place_meeting(x + xscale, y, obj_destructibles)))
+    {
+        sprite_index = spr_player_PZ_swingDing_end;
+        state = states.finishingblow;
+        movespeed *= xscale;
+        hsp = movespeed;
+        image_index = 0;
+        inputBufferSlap = 0;
+    }
     
-    image_speed = 0.65;
+    image_speed = 0.5;
     
     if (!instance_exists(obj_dashcloud) && grounded)
         instance_create(x, y, obj_dashcloud);
+    
+    afterimage_timer--;
+    
+    if (afterimage_timer < 0)
+    {
+        with (instance_create(x, y, obj_blur_aftereffect))
+        {
+            image_index = max(other.image_index - 1, 0);
+            image_alpha = 0.8;
+            playerid = other.object_index;
+            image_xscale = other.xscale;
+            sprite_index = other.sprite_index;
+        }
+        
+        afterimage_timer = 2;
+    }
 }

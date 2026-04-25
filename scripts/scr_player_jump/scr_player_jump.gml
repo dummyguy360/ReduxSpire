@@ -2,22 +2,24 @@ function state_player_jump()
 {
     move = key_left + key_right;
     
-    if (momemtum == 0)
-        hsp = move * movespeed;
-    else
+    if (momentum)
         hsp = xscale * movespeed;
+    else
+        hsp = move * movespeed;
     
-    if (move != xscale && momemtum == 1 && movespeed != 0)
+    if (move != xscale && momentum && movespeed != 0)
         movespeed = approach(movespeed, 0, 0.1);
     
     if (movespeed <= 0)
-        momemtum = 0;
+        momentum = false;
     
-    if ((move == 0 && momemtum == 0) || scr_solid(x + hsp, y))
+    if ((move == 0 && !momentum) || scr_solid(x + hsp, y))
     {
         movespeed = 0;
         mach2 = 0;
     }
+    
+    hsp += (railmovespeed * raildir);
     
     if (move != 0 && movespeed < 7)
         movespeed += 0.5;
@@ -25,8 +27,16 @@ function state_player_jump()
     if (movespeed > 7)
         movespeed -= 0.1;
     
-    if ((scr_solid(x + 1, y) && move == 1) || (scr_solid(x - 1, y) && move == -1))
-        movespeed = 0;
+    if (move == xscale && scr_solid(x + xscale, y))
+    {
+        var _ledge = false;
+        
+        if (vsp < 0)
+            _ledge = snap_to_ledge(xscale, 6);
+        
+        if (!_ledge)
+            movespeed = 0;
+    }
     
     if (dir != xscale)
     {
@@ -50,66 +60,38 @@ function state_player_jump()
         jumpstop = 1;
     }
     
-    if (ladderbuffer > 0)
-        ladderbuffer--;
+    ladderBuffer = max(ladderBuffer - 1, 0);
     
-    if (scr_solid(x, y - 1) && jumpstop == 0 && jumpAnim == 1)
+    if (scr_solid(x, y - 1) && !jumpstop && jumpAnim)
     {
         vsp = grav;
-        jumpstop = 1;
+        jumpstop = true;
     }
     
-    if (grounded && input_buffer_jump < 8 && !key_down && !key_attack && vsp > 0 && !(sprite_index == spr_player_facestomp || sprite_index == spr_player_freefall))
+    if (can_jump && inputBufferJump > 0 && !key_down && (!key_attack || scr_solid(x + xscale, y, true)))
     {
-        scr_sound(sound_jump);
+        inputBufferJump = 0;
+        scr_sound(sfx_pz_jump);
         sprite_index = spr_jump;
         
-        if (shotgunAnim == 1)
-            sprite_index = spr_shotgun_jump;
+        with (instance_create(x, y, obj_highjumpcloud2))
+            sprite_index = spr_highjumpcloud1;
         
-        instance_create_depth(x, y, -6, obj_highjumpcloud2);
         stompAnim = 0;
         vsp = -11;
+        grav = 0.3;
         state = states.jump;
         jumpAnim = 1;
         jumpstop = 0;
         image_index = 0;
         freefallstart = 0;
-        instance_create_depth(x, y, 0, obj_landcloud);
+        instance_create(x, y, obj_landcloud);
     }
     
-    if (key_attack && character == "N" && charged)
+    if (grounded && vsp > 0 && (!key_attack || scr_solid(x + xscale, y, true)))
     {
-        sprite_index = spr_pizzano_sjumpprepside;
-        image_index = 0;
-        movespeed = 0;
-        mach2 = 0;
-        charged = 0;
-        state = states.pizzanosidejump;
-    }
-    
-    if (key_up && character == "N" && charged)
-    {
-        alarm[0] = 240;
-        sprite_index = spr_pizzano_sjumpprep;
-        image_index = 0;
-        movespeed = 0;
-        mach2 = 0;
-        state = states.Sjump;
-    }
-    
-    if (key_attack && grounded && fallinganimation < 40 && character == "DEEZNUTS")
-    {
-        mach2 = 0;
-        movespeed = 0;
-        sprite_index = spr_null;
-        jumpAnim = 1;
-        state = states.pizzanomach;
-        image_index = 0;
-    }
-    
-    if (grounded && vsp > 0 && !key_attack)
-    {
+        inputBufferSecondJump = 0;
+        
         if (key_attack)
             landAnim = 0;
         
@@ -119,60 +101,56 @@ function state_player_jump()
         jumpstop = 0;
         image_index = 0;
         freefallstart = 0;
-        instance_create_depth(x, y, 0, obj_landcloud);
-        scr_sound(sound_step);
+        instance_create(x, y, obj_landcloud);
+        scr_sound(sfx_playerstep);
         doublejumped = 0;
+        floatyGrab = 18;
     }
     
-    if (key_jump)
-        input_buffer_jump = 0;
+    if (vsp > 5)
+        fallinganimation++;
     
-    if (character == "P")
+    if (fallinganimation >= 40 && fallinganimation < 65 && sprite_index != spr_player_PZ_flinged_straightup_old)
+        sprite_index = spr_player_PZ_freeFall_1;
+    
+    if (fallinganimation >= 40 && fallinganimation < 65 && sprite_index == spr_player_PZ_flinged_straightup_old)
     {
-        if (vsp > 5)
-            fallinganimation++;
+        sprite_index = spr_player_PZ_freeFall_1;
         
-        if ((fallinganimation >= 40 && fallinganimation < 80) && sprite_index != spr_player_candyup)
-            sprite_index = spr_player_freefall;
-        
-        if ((fallinganimation >= 40 && fallinganimation < 80) && sprite_index == spr_player_candyup)
-        {
-            sprite_index = spr_player_freefall;
-            
-            if (!instance_exists(obj_candifiedeffect1))
-                instance_create(x, y, obj_candifiedeffect1);
-        }
-        
-        if (fallinganimation >= 80)
-            sprite_index = spr_player_freefall2;
+        if (!instance_exists(obj_candifiedeffect1))
+            instance_create(x, y, obj_candifiedeffect1);
     }
     
-    if (stompAnim == 0)
+    if (fallinganimation >= 65)
+        sprite_index = spr_player_PZ_freeFall_2;
+    
+    if (!stompAnim)
     {
-        if (jumpAnim == 1)
-        {
-            if (floor(image_index) == (image_number - 1))
-                jumpAnim = 0;
-        }
+        if (jumpAnim && animation_end())
+            jumpAnim = false;
         
-        if (jumpAnim == 0)
+        if (!jumpAnim)
         {
-            if (sprite_index == spr_airdash1)
-                sprite_index = spr_airdash2;
+            var aerial_sprite_transitions = [[2084, spr_fall], [2185, spr_fall], [spr_jump, spr_fall]];
+            var i = 0;
             
-            if (sprite_index == spr_player_suplexdashCancel)
-                sprite_index = spr_fall;
-            
-            if (sprite_index == spr_jump)
-                sprite_index = spr_fall;
+            while (i < array_length(aerial_sprite_transitions))
+            {
+                if (aerial_sprite_transitions[i][0] == sprite_index)
+                {
+                    sprite_index = aerial_sprite_transitions[i][1];
+                    break;
+                }
+                else
+                {
+                    i++;
+                }
+            }
         }
     }
     
-    if (stompAnim == 1)
-    {
-        if (sprite_index == spr_stompprep && floor(image_index) == (image_number - 1))
-            sprite_index = spr_stomp;
-    }
+    if (sprite_index == spr_stompprep && floor(image_index) == (image_number - 1))
+        sprite_index = spr_stomp;
     
     if (move != 0)
         xscale = move;
@@ -186,26 +164,18 @@ function state_player_jump()
         image_index = 0;
         sprite_index = spr_player_throwDonut;
         
-        with (instance_create(x, y + 16, obj_donutThrowable))
+        with (instance_create(x, y + 25, obj_donutShitted))
         {
-            image_xscale = other.xscale;
-            
-            if (other.key_up)
-            {
-                movespeed = 8;
-                vsp = -5;
-            }
-            else
-            {
-                movespeed = 9;
-                vsp = 5;
-            }
+            var _angle = (other.xscale > 0) ? 0 : 180;
+            Hmovespeed = lengthdir_x(20, _angle);
+            Vmovespeed = lengthdir_y(20, _angle);
+            shattedBy = other.id;
         }
     }
     
     do_grab();
     
-    if (grounded && (sprite_index == spr_player_facestomp || sprite_index == spr_player_freefall || sprite_index == spr_player_freefall2))
+    if (grounded && (sprite_index == spr_player_PZ_freeFall_1 || sprite_index == spr_player_PZ_freeFall_2))
     {
         scr_sound(sound_maximumspeedland);
         
@@ -225,18 +195,20 @@ function state_player_jump()
         }
         
         image_index = 0;
-        sprite_index = spr_player_freefallland;
+        sprite_index = spr_player_PZ_freefallland;
         state = states.freefallland;
+        vsp = 0;
         doublejumped = 0;
     }
     
     do_taunt();
     
-    if (key_down2)
+    if (key_down && !key_slap2 && !grounded)
     {
         image_index = 0;
-        sprite_index = spr_bodyslamstart;
+        sprite_index = spr_player_PZ_groundPound_intro;
         vsp = -6;
+        freeFallSmash = -14;
         
         if (global.treat)
         {
@@ -251,83 +223,13 @@ function state_player_jump()
             vsp = 0;
     }
     
-    if (global.cane == 1)
-    {
-        if (!grounded)
-            canrebound = 0;
-        
-        if (key_down2)
-        {
-            image_index = 0;
-            state = states.freefall;
-            sprite_index = spr_caneslam;
-            vsp = -18;
-        }
-        
-        if (!key_down && key_slap2 && suplexmove == 0 && shotgunAnim == 0)
-        {
-            scr_sound(sound_suplex1);
-            instance_create(x, y, obj_slaphitbox);
-            suplexmove = 1;
-            vsp = 0;
-            instance_create(x, y, obj_jumpdust);
-            image_index = 0;
-            sprite_index = spr_canesuplex;
-            state = states.handstandjump;
-        }
-    }
+    if (floor(image_index) == (image_number - 1) && sprite_index == spr_player_PZ_flinged_straightup_start_old)
+        sprite_index = spr_player_PZ_flinged_straightup_old;
     
-    if (sprite_index == spr_caneslam)
-    {
-        vsp = 17;
-        
-        if (!instance_exists(obj_mach3effect))
-            instance_create(x, y - 32, obj_mach3effect);
-    }
-    
-    if (key_jump && character == "G" && !grounded && gumbobpropellercooldown == 0)
-    {
-        state = states.gumbobpropeller;
-        sprite_index = spr_gumbob_propeller_start;
-        movespeed = 0;
-        vsp = 0;
-    }
-    
-    if (key_jump && character == "N" && !grounded && doublejumped == 0 && !scr_solid(x + xscale, y, true))
-    {
-        doublejumped = 1;
-        vsp = -10;
-        sprite_index = spr_pizzano_djump;
-    }
-    
-    if (floor(image_index) == (image_number - 1) && sprite_index == spr_player_candytransitionup)
-        sprite_index = spr_player_candyup;
-    
-    if (character == "C" && inhalingenemy == true && key_slap && !grounded)
-    {
-        sprite_index = spr_coneboy_spitair;
-        
-        with (instance_create(x, y, obj_coneboyprojectile))
-            directionthing = 1;
-        
-        inhalingenemy = false;
-        vsp -= 4;
-    }
-    
-    if (sprite_index == spr_coneboy_spitair)
-    {
-        hsp = xscale * movespeed;
-        hsp = -5 * xscale;
-        move = 0;
-    }
-    
-    if (key_attack && grounded && fallinganimation < 40)
+    if (key_attack && grounded && !scr_solid(x + xscale, y, true) && fallinganimation < 40)
     {
         mach2 = 0;
-        
-        if (movespeed < 6)
-            movespeed = 6;
-        
+        movespeed = max(movespeed, 6);
         sprite_index = spr_mach1;
         jumpAnim = 1;
         state = states.mach2;

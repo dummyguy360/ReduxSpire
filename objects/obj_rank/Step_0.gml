@@ -5,8 +5,16 @@ if (clipy != 0 && goup)
     clipy = approach(clipy, 0, 25 - accel);
     accel = approach(accel, 24, 0.4);
     
-    if ((sprite_index == spr_rankP || sprite_index == spr_pizzano_rankP) && clipy <= 270)
+    if ((sprite_index == spr_rankP_new || sprite_index == spr_pizzano_rankP || sprite_index == spr_rankPend) && clipy <= 270)
+    {
         x = approach(x, 0, 25 - accel);
+        
+        if (sprite_index == spr_rankP_new)
+        {
+            sprite_index = spr_rankPend;
+            image_index = 0;
+        }
+    }
 }
 
 if (floor(image_index) >= (image_number - 1))
@@ -51,13 +59,21 @@ if (jandraw == 1)
 
 totalalpha = approach(totalalpha, 1, 0.1);
 
-if (canleave == 1 && key_jump2)
+if (canleave == 1 && key_jump2 && !instance_exists(obj_fadeout))
     alarm[4] = 1;
 
 flash = approach(flash, 0, 0.1);
 
-if (!goup)
+if (sprite_index == spr_rankPend)
 {
-    if (sprite_index != spr_player_rankwait && sprite_index != spr_pizzano_rankwait)
-        x = lerp(x, 259, 0.5);
+    if (sprite_animation_end())
+    {
+        image_index = image_number - 1;
+        image_speed = 0;
+    }
+    
+    if (floor(image_index) > 13)
+        image_index = 13;
+    
+    image_speed = 0.35;
 }

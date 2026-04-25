@@ -13,16 +13,16 @@
   "edgeFiltering": false,
   "For3D": false,
   "frames": [
-    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"7a79e123-5d57-4b5e-94e3-91ff59ed92b2",},
-    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"a6673d37-acf1-4821-a393-5bf81a310ee4",},
-    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"b39604f3-9ac4-4d8d-acfa-17eaddd3b740",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"2b1e2e05-cb5f-4ba9-8319-2a6c57408965",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"4a52a247-3771-42c4-8ee1-c496fc7b2a47",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"9d43786b-f9fd-44a7-b1e6-0eea3ccdbf82",},
   ],
   "gridX": 0,
   "gridY": 0,
   "height": 32,
   "HTile": false,
   "layers": [
-    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"e841f4a7-6edc-4ef7-bba2-f10bbe43e6cc","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
+    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"cb9c9a8b-7a0c-404c-bcaa-664b6ef958b5","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
   ],
   "nineSlice": {
     "resourceType": "GMNineSliceData",
@@ -79,10 +79,10 @@
     "showBackdropImage": false,
     "timeUnits": 1,
     "tracks": [
-      {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"1.0","Keyframes":[
-            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"7a79e123-5d57-4b5e-94e3-91ff59ed92b2","path":"sprites/spr_coneblock_on/spr_coneblock_on.yy",},},},"Disabled":false,"id":"92c34bf1-c0ae-4c71-9ea4-dbba9f430bec","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
-            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"a6673d37-acf1-4821-a393-5bf81a310ee4","path":"sprites/spr_coneblock_on/spr_coneblock_on.yy",},},},"Disabled":false,"id":"56349f11-6cc5-4413-a02d-a74b9d78735a","IsCreationKey":false,"Key":1.0,"Length":1.0,"Stretch":false,},
-            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"b39604f3-9ac4-4d8d-acfa-17eaddd3b740","path":"sprites/spr_coneblock_on/spr_coneblock_on.yy",},},},"Disabled":false,"id":"82240b0f-a0a7-41c7-831d-9058689efec3","IsCreationKey":false,"Key":2.0,"Length":1.0,"Stretch":false,},
+      {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","builtinName":-1,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"1.0","Keyframes":[
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"2b1e2e05-cb5f-4ba9-8319-2a6c57408965","path":"sprites/spr_coneblock_on/spr_coneblock_on.yy",},},},"Disabled":false,"id":"8124a331-d92d-4849-843a-f5ce60cecbe2","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"4a52a247-3771-42c4-8ee1-c496fc7b2a47","path":"sprites/spr_coneblock_on/spr_coneblock_on.yy",},},},"Disabled":false,"id":"48a18b1f-f62d-4cb6-ac93-34b4f928cead","IsCreationKey":false,"Key":1.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"9d43786b-f9fd-44a7-b1e6-0eea3ccdbf82","path":"sprites/spr_coneblock_on/spr_coneblock_on.yy",},},},"Disabled":false,"id":"dadbb9d6-f457-48c1-a7f9-00b01f7d1e9c","IsCreationKey":false,"Key":2.0,"Length":1.0,"Stretch":false,},
           ],},"modifiers":[],"spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange": null,

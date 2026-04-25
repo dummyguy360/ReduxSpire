@@ -23,6 +23,7 @@ function state_player_trick()
             y += _ledge;
         else if (_ledge <= 0)
         {
+            scr_sound(sfx_splat);
             state = states.bump;
             image_index = 0;
             sprite_index = spr_splat;

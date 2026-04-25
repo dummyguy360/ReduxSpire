@@ -1,3 +1,63 @@
+var _is_region_active = false;
+var _region = -4;
+var _debugZOOM = false;
+
+if (true && keyboard_check(ord("C")))
+    _debugZOOM = true;
+
+with (obj_cameraRegion)
+{
+    if (Region_active == true && activationCode())
+    {
+        _region = id;
+        
+        with (other)
+        {
+            if (_region.ClampRight)
+                Camera_width = lerp(Camera_width, _region.x + _region.sprite_width, 0.2);
+            else
+                Camera_width = lerp(Camera_width, room_width, 0.1);
+            
+            if (_region.ClampBottom)
+                Camera_height = lerp(Camera_height, _region.y + _region.sprite_height, 0.2);
+            else
+                Camera_height = lerp(Camera_height, room_height, 0.1);
+            
+            if (_region.ClampLeft)
+                Camera_xorigin = lerp(Camera_xorigin, _region.x, 0.2);
+            else
+                Camera_xorigin = lerp(Camera_xorigin, 0, 0.1);
+            
+            if (_region.ClampTop)
+                Camera_yorigin = lerp(Camera_yorigin, _region.y, 0.2);
+            else
+                Camera_yorigin = lerp(Camera_yorigin, 0, 0.1);
+            
+            if (_debugZOOM == false)
+                cam_lzoom = lerp(cam_lzoom, _region.zoom, 0.2);
+            
+            cam_langle = lerp(cam_langle, -_region.image_angle, 0.2);
+            _is_region_active = true;
+        }
+    }
+}
+
+if (!_is_region_active)
+{
+    Camera_width = lerp(Camera_width, room_width, 0.1);
+    Camera_height = lerp(Camera_height, room_height, 0.1);
+    Camera_xorigin = lerp(Camera_xorigin, 0, 0.1);
+    Camera_yorigin = lerp(Camera_yorigin, 0, 0.1);
+    
+    if (_debugZOOM == false)
+        cam_lzoom = lerp(cam_lzoom, 1, 0.1);
+    
+    cam_langle = lerp(cam_langle, 0, 0.1);
+}
+
+global.targetCamX = obj_player.x;
+global.targetCamY = obj_player.y - 32;
+
 if (room == timesuproom || room == rank_room || room == rm_credits || room == rm_titlecard || room == hub_w1 || room == hub_w2 || room == tutorial_1 || instance_exists(obj_bosscontroller))
     DrawHUD = 0;
 else
@@ -5,6 +65,8 @@ else
 
 if (get_panic() && !global.freezeframe)
 {
+    var _oldcollect = global.collect;
+    
     if (global.fill > global.maxwave)
         global.maxwave = global.fill;
     
@@ -17,26 +79,29 @@ if (get_panic() && !global.freezeframe)
         {
             global.collect -= 5;
             
-            with (instance_create(obj_player.x, obj_player.y, obj_pizzaloss))
-                sprite_index = choose(spr_collect1, spr_collect2, spr_collect3, spr_collect4, spr_collect5);
+            with (instance_create(x, y, obj_pointLoseNumber))
+            {
+                image_blend = c_red;
+                number = string(global.collect - _oldcollect);
+            }
         }
     }
     
-    if (global.panic && global.fill <= 0 && obj_tv.timer_out <= 0)
+    if (global.panic && global.fill <= 0)
     {
         if (!instance_exists(obj_coneball) && room != timesuproom)
             instance_create(obj_player.x, obj_player.y, obj_coneball);
-        
-        global.greyscalefade = approach(global.greyscalefade, 0.45, 0.005);
     }
-    else
-        global.greyscalefade = approach(global.greyscalefade, 0, 0.005);
+    
+    global.greyscalefade = approach(global.greyscalefade, 0, 0.005);
     
     if (global.screentilt)
         camera_set_view_angle(view_camera[0], scr_sin(3.5 * clamp(global.wave / global.maxwave, 0, 1), 65 - (5 * clamp(global.wave / global.maxwave, 0, 1))));
     
-    global.wave = clamp(clamp(global.wave + (60 / room_speed), 0, global.maxwave - global.fill), 0, global.maxwave);
-    panicshake = clamp(lerp(1, 3, global.wave / global.maxwave), 1, 3);
+    if (global.panicbg)
+        global.wave = clamp(clamp(global.wave + (60 / room_speed), 0, global.maxwave - global.fill), 0, global.maxwave);
+    
+    panicshake = 1;
     panicshakeacc = 3 / room_speed;
 }
 else
@@ -119,7 +184,7 @@ var vw = cam_w * cam_zoom;
 var vh = cam_h * cam_zoom;
 camera_set_view_size(view_camera[0], vw, vh);
 
-if (instance_exists(obj_player) && (obj_player.state != states.timesup && obj_player.state != states.gameover))
+if (instance_exists(obj_player) && obj_player.state != states.timesup && obj_player.state != states.gameover)
 {
     var target = 
     {
@@ -135,34 +200,36 @@ if (instance_exists(obj_player) && (obj_player.state != states.timesup && obj_pl
     {
         var _player = obj_player;
         var _targetcharge = 0;
-        var _tspeed = 0;
+        var _tspeed = 6;
         
         if (_player.state == states.mach2 || _player.state == states.mach3)
         {
-            _targetcharge = _player.xscale * ((_player.movespeed / 4) * 50);
+            _targetcharge = ((_player.xscale * _player.movespeed) / 4) * 50;
             _tspeed = 0.3;
             chargecamera = approach(chargecamera, _targetcharge, _tspeed);
         }
         else if (_player.state == states.climbceiling)
         {
-            _targetcharge = -_player.xscale * ((_player.movespeed / 4) * 50);
+            _targetcharge = ((-_player.xscale * _player.movespeed) / 4) * 50;
             _tspeed = 0.3;
             chargecamera = approach(chargecamera, _targetcharge, _tspeed);
         }
         else if (abs(_player.hsp) >= 16 && _player.state != states.climbdownwall && _player.state != states.climbwall && _player.state != states.Sjump)
         {
-            _targetcharge = sign(_player.hsp) * ((abs(_player.hsp) / 4) * 50);
+            _targetcharge = ((sign(_player.hsp) * abs(_player.hsp)) / 4) * 50;
             _tspeed = 2;
             
-            if ((_targetcharge > 0 && chargecamera < 0) || (_targetcharge < 0 && chargecamera > 0))
+            if (sign(chargecamera) != sign(_player.hsp) && sign(_player.hsp) != 0)
                 _tspeed = 8;
             
             chargecamera = approach(chargecamera, _targetcharge, _tspeed);
         }
         else if (_player.state == states.machslide)
-            chargecamera = approach(chargecamera, 0, 10);
-        else
-            chargecamera = approach(chargecamera, 0, 6);
+        {
+            _tspeed = 10;
+        }
+        
+        chargecamera = approach(chargecamera, _targetcharge, _tspeed);
     }
     
     _cam_x += chargecamera;
@@ -170,8 +237,14 @@ if (instance_exists(obj_player) && (obj_player.state != states.timesup && obj_pl
     _cam_y = clamp(_cam_y, Camera_yorigin, Camera_height - vh);
     _cam_x = clamp(_cam_x, 0, room_width - vw);
     _cam_y = clamp(_cam_y, 0, room_height - vh);
-    _shake_x += irandom_range(-panicshake, panicshake);
-    _shake_y += irandom_range(-panicshake, panicshake);
+    _cam_x += irandom_range(-panicshake, panicshake);
+    _cam_y += irandom_range(-panicshake, panicshake);
+    
+    if (global.panic)
+    {
+        _shake_x += (panicshake * random_range(-1, 1));
+        _shake_y += (panicshake * random_range(-1, 1));
+    }
     
     if (shake_mag != 0)
     {
@@ -180,19 +253,9 @@ if (instance_exists(obj_player) && (obj_player.state != states.timesup && obj_pl
     }
     
     lspd = 0.3;
-    
-    if (global.smoothcam == true)
-    {
-        Cam_x = lerp(Cam_x, _cam_x, lspd);
-        Cam_y = lerp(Cam_y, _cam_y, lspd);
-    }
-    else
-    {
-        Cam_x = _cam_x;
-        Cam_y = _cam_y;
-    }
-    
-    camera_set_view_pos(view_camera[0], Cam_x + _shake_x, Cam_y + _shake_y + irandom_range(-shake_mag, shake_mag));
+    Cam_x = _cam_x;
+    Cam_y = _cam_y;
+    camera_set_view_pos(view_camera[0], Cam_x + _shake_x, Cam_y + _shake_y);
 }
 
 if (obj_player.y < (180 + obj_camera.Cam_y) && obj_player.x < (350 + obj_camera.Cam_x))
@@ -220,13 +283,46 @@ else if (global.collect >= global.srank)
 
 if (oldranklol != global.currentrank)
 {
-    bubblescale = 1.5;
+    bubblescale = 2;
+    var rank_index = rank_checker(string_lower(global.currentrank));
+    var oldrank_index = rank_checker(string_lower(oldranklol));
+    
+    if (room != scootercutsceneidk && room != rm_credits && room != devroom && room != palroom && room != rank_room && room != realtitlescreen && room != hub_w1 && room != hub_w2 && room != outer_room1 && room != outer_room2 && room != rm_initializer)
+    {
+        if (oldrank_index > rank_index)
+        {
+            if (global.currentrank == "D" && global.collect > 0)
+                scr_sound(sfx_rankdown5);
+            else if (global.currentrank == "C")
+                scr_sound(sfx_rankdown4);
+            else if (global.currentrank == "B")
+                scr_sound(sfx_rankdown3);
+            else if (global.currentrank == "A")
+                scr_sound(sfx_rankdown2);
+            else if (global.currentrank == "S")
+                scr_sound(sfx_rankdown1);
+        }
+        else if (oldrank_index < rank_index)
+        {
+            if (global.currentrank == "C")
+                scr_sound(sfx_rankup1);
+            else if (global.currentrank == "B")
+                scr_sound(sfx_rankup2);
+            else if (global.currentrank == "A")
+                scr_sound(sfx_rankup3);
+            else if (global.currentrank == "S")
+                scr_sound(sfx_rankup4);
+            else if (global.currentrank == "P")
+                scr_sound(sfx_rankup5);
+        }
+    }
+    
     oldranklol = global.currentrank;
 }
 
-bubblescale = approach(bubblescale, 0, 0.1);
+bubblescale = approach(bubblescale, 0, 0.2);
 global.screenflash -= 1;
-audio_listener_position(camx + (cam_w / 2), camy + (cam_h / 2), 0);
+audio_listener_position(camera_get_view_x(view_camera[0]) + (cam_w / 2), camera_get_view_y(view_camera[0]) + (cam_h / 2), 0);
 
 if (painterdex < sprite_get_number(spr_painterhp))
     painterdex += 0.35;
@@ -281,5 +377,6 @@ switch (room)
         break;
 }
 
+audio_listener_position(camera_get_view_x(view_camera[0]) + (cam_w / 2), camera_get_view_y(view_camera[0]) + (cam_h / 2), 0);
 audio_listener_position(Cam_x, Cam_y, 0);
 audio_listener_orientation(0, 0, 1, 0, -1, 0);

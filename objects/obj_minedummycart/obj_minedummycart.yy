@@ -32,8 +32,8 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "spr_minecart",
-    "path": "sprites/spr_minecart/spr_minecart.yy",
+    "name": "spr_minecartEmpty_moving",
+    "path": "sprites/spr_minecartEmpty_moving/spr_minecartEmpty_moving.yy",
   },
   "spriteMaskId": {
     "name": "spr_minecart",

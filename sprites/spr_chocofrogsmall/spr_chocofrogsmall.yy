@@ -13,16 +13,16 @@
   "edgeFiltering": false,
   "For3D": false,
   "frames": [
-    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"aafd2a3c-1346-4295-ad98-10c3496ccb67",},
-    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"6f39dd0c-1d07-4543-912a-29b83603b18b",},
-    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"df492a11-5444-4666-bad4-2554e81b9742",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"dd181277-262f-41ea-9cbd-83c18c178c02",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"68e00c79-3147-4b23-900a-f45159539ca8",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"0fec33e4-d7b8-4f0b-b745-7804df3504a9",},
   ],
   "gridX": 0,
   "gridY": 0,
   "height": 32,
   "HTile": false,
   "layers": [
-    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"8189345a-4b6d-41a8-886d-8e44c6130446","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
+    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"c48faa06-1ba5-4be5-bbe7-d19abf492a44","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
   ],
   "nineSlice": null,
   "origin": 0,
@@ -55,10 +55,10 @@
     "showBackdropImage": false,
     "timeUnits": 1,
     "tracks": [
-      {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"1.0","Keyframes":[
-            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"aafd2a3c-1346-4295-ad98-10c3496ccb67","path":"sprites/spr_chocofrogsmall/spr_chocofrogsmall.yy",},},},"Disabled":false,"id":"ddf954cd-df68-4a29-8ac4-ed5360ed8bc9","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
-            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"6f39dd0c-1d07-4543-912a-29b83603b18b","path":"sprites/spr_chocofrogsmall/spr_chocofrogsmall.yy",},},},"Disabled":false,"id":"5f20bdd6-e55f-47ee-b7b3-e194809d1fe7","IsCreationKey":false,"Key":1.0,"Length":1.0,"Stretch":false,},
-            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"df492a11-5444-4666-bad4-2554e81b9742","path":"sprites/spr_chocofrogsmall/spr_chocofrogsmall.yy",},},},"Disabled":false,"id":"fc7c57fc-cf10-4ce1-acc2-19760fa542bc","IsCreationKey":false,"Key":2.0,"Length":1.0,"Stretch":false,},
+      {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","builtinName":-1,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"1.0","Keyframes":[
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"dd181277-262f-41ea-9cbd-83c18c178c02","path":"sprites/spr_chocofrogsmall/spr_chocofrogsmall.yy",},},},"Disabled":false,"id":"5970be39-db37-4e15-93cc-af1352067608","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"68e00c79-3147-4b23-900a-f45159539ca8","path":"sprites/spr_chocofrogsmall/spr_chocofrogsmall.yy",},},},"Disabled":false,"id":"06fb3e97-06d2-4434-ada4-bbb36dfd7c27","IsCreationKey":false,"Key":1.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"0fec33e4-d7b8-4f0b-b745-7804df3504a9","path":"sprites/spr_chocofrogsmall/spr_chocofrogsmall.yy",},},},"Disabled":false,"id":"c47e6c85-be7e-4f1e-ba90-2cfc0b01b493","IsCreationKey":false,"Key":2.0,"Length":1.0,"Stretch":false,},
           ],},"modifiers":[],"spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange": null,

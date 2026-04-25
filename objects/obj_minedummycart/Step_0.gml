@@ -5,7 +5,7 @@ if (Dashpad_buffer > 0)
 
 var _player = instance_nearest(x, y, obj_player);
 
-if (sprite_index == spr_minecart)
+if (sprite_index == spr_minecartEmpty_moving)
 {
     if (place_meeting(x, y - 4, _player) && _player.vsp > 0 && _player.state != states.minecart)
     {
@@ -17,7 +17,7 @@ if (sprite_index == spr_minecart)
             _player.movespeed = clamp(_player.movespeed / 4, 3, 12);
         
         _player.vsp = vsp;
-        _player.sprite_index = spr_player_minecart;
+        _player.sprite_index = spr_player_PZ_minecart;
         _player.x = x;
         _player.y = y;
         _player.xscale = image_xscale;

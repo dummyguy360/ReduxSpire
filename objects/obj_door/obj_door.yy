@@ -36,8 +36,8 @@
   ],
   "solid": false,
   "spriteId": {
-    "name": "spr_door",
-    "path": "sprites/spr_door/spr_door.yy",
+    "name": "spr_doorvisited",
+    "path": "sprites/spr_doorvisited/spr_doorvisited.yy",
   },
   "spriteMaskId": null,
   "visible": true,

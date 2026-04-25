@@ -40,7 +40,7 @@ function state_player_bottlerocket()
                 if (grounded)
                 {
                     substate = 1;
-                    sprite_index = spr_player_bottlerocket_turn;
+                    sprite_index = spr_player_PZ_bottleRocket_turn;
                     image_index = 0;
                 }
                 else
@@ -49,8 +49,9 @@ function state_player_bottlerocket()
             else
                 movespeed = approach(movespeed, 12, 0.2);
             
-            if (key_jump)
+            if (inputBufferJump > 0)
             {
+                inputBufferJump = 0;
                 state = states.mach2;
                 vsp = -15;
                 image_index = 0;
@@ -81,11 +82,11 @@ function state_player_bottlerocket()
         {
             instance_create(x, y, obj_bombexplosionharmless);
             vsp = -6;
-            movespeed = movespeed / 2;
+            movespeed /= 2;
             xscale *= -1;
             mach2 = 0;
             grounded = 0;
-            sprite_index = spr_player_slipnslidestart;
+            sprite_index = spr_player_PZ_slipSlide_intro;
             state = states.puddle;
         }
     }

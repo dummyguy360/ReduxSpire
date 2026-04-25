@@ -1,90 +1,50 @@
 function state_player_ladder()
 {
-    jumpAnim = 1;
-    dashAnim = 1;
-    landAnim = 0;
-    moveAnim = 1;
-    stopAnim = 1;
-    crouchslideAnim = 1;
-    crouchAnim = 0;
-    machhitAnim = 0;
+    floatyGrab = 18;
+    jumpAnim = true;
+    landAnim = false;
+    crouchAnim = false;
     turning = 0;
-    jumpstop = 0;
+    jumpstop = false;
     movespeed = 0;
     hsp = 0;
-    suplexmove = 0;
+    flash = false;
+    grav = 0;
     
-    if (character != "N")
+    if (key_up)
     {
-        if (key_up)
-        {
-            sprite_index = spr_laddermove;
-            vsp = -6;
-            image_speed = 0.35;
-        }
-        else if (key_down)
-        {
-            sprite_index = spr_ladderdown;
-            vsp = 6;
-            image_speed = -0.35;
-        }
-        else
-        {
-            sprite_index = spr_Ladder;
-            vsp = 0;
-        }
-    }
-    else if (key_up)
-    {
-        if (sprite_index == spr_pizzano_ladder2)
-            image_index = 7;
-        else if (sprite_index == spr_pizzano_ladder)
-            image_index = 0;
-        
         sprite_index = spr_laddermove;
-        vsp = -6;
+        
+        if (vsp > -6)
+            vsp = -6;
+        
+        if (!stepEffectBuffer--)
+        {
+            instance_create(x, y + 43, obj_puffEffect);
+            scr_sound(sfx_playerstep);
+            stepEffectBuffer = 12;
+        }
+        
         image_speed = 0.35;
     }
     else if (key_down)
     {
-        if (sprite_index == spr_pizzano_ladder2)
-            image_index = 6;
-        else if (sprite_index == spr_pizzano_ladder)
-            image_index = 12;
+        sprite_index = spr_ladderdown;
         
-        sprite_index = spr_pizzano_ladderdown;
-        vsp = 6;
-        image_speed = 0.35;
+        if (vsp < 10)
+            vsp = 10;
+        
+        image_speed = -0.35;
     }
     else
     {
-        if (sprite_index == spr_pizzano_ladderup)
-        {
-            if (image_index > 3 && image_index < 10)//facing camera
-                sprite_index = spr_pizzano_ladder2;
-            else if (sprite_index != spr_pizzano_ladder)
-                sprite_index = spr_pizzano_ladder;
-        }
-        else if (sprite_index == spr_pizzano_ladderdown)
-        {
-            if (image_index > 2 && image_index < 8)//facing camera
-                sprite_index = spr_pizzano_ladder2;
-            else if (sprite_index != spr_pizzano_ladder)
-                sprite_index = spr_pizzano_ladder;
-        }
-        
+        sprite_index = spr_Ladder;
         vsp = 0;
     }
     
     mach2 = 0;
     jumpAnim = 1;
     dashAnim = 1;
-    landAnim = 0;
-    moveAnim = 1;
-    stopAnim = 1;
-    crouchslideAnim = 1;
-    crouchAnim = 1;
-    machhitAnim = 0;
     
     if (!place_meeting(x, y, obj_ladder))
     {
@@ -92,14 +52,18 @@ function state_player_ladder()
         jumpAnim = 0;
         state = states.normal;
         image_index = 0;
+        inputLadderBuffer = 5;
         vsp = 0;
     }
     
-    if (key_jump)
+    if (inputBufferJump > 0)
     {
-        scr_sound(sound_jump);
+        inputBufferJump = 0;
+        scr_sound(sfx_pz_jump);
         sprite_index = spr_jump;
         ladderbuffer = 20;
+        ladderBuffer = 20;
+        inputLadderBuffer = 20;
         jumpAnim = 1;
         state = states.jump;
         vsp = -9;

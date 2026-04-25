@@ -36,7 +36,7 @@
   ],
   "physicsStartAwake": true,
   "properties": [
-    {"resourceType":"GMObjectProperty","resourceVersion":"1.0","name":"targetRoom","filters":[],"listItems":[],"multiselect":false,"rangeEnabled":false,"rangeMax":0.0,"rangeMin":0.0,"value":"rm_missing","varType":4,},
+    {"resourceType":"GMObjectProperty","resourceVersion":"1.0","name":"targetRoom","filters":[],"listItems":[],"multiselect":false,"rangeEnabled":false,"rangeMax":0.0,"rangeMin":0.0,"value":"rm_missing","varType":5,},
     {"resourceType":"GMObjectProperty","resourceVersion":"1.0","name":"secretActivated","filters":[],"listItems":[],"multiselect":false,"rangeEnabled":false,"rangeMax":0.0,"rangeMin":0.0,"value":"true","varType":3,},
     {"resourceType":"GMObjectProperty","resourceVersion":"1.0","name":"functionState","filters":[],"listItems":[],"multiselect":false,"rangeEnabled":false,"rangeMax":0.0,"rangeMin":0.0,"value":"defaultSecretState()","varType":4,},
     {"resourceType":"GMObjectProperty","resourceVersion":"1.0","name":"storedState","filters":[],"listItems":[],"multiselect":false,"rangeEnabled":false,"rangeMax":0.0,"rangeMin":0.0,"value":"states.freefall","varType":4,},

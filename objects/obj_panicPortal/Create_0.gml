@@ -5,3 +5,4 @@ drawXscale = 1;
 scale = 0;
 spr_palette = spr_null;
 paletteselect = 0;
+spawnEnemy = 0;

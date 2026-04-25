@@ -16,8 +16,8 @@
     "path": "folders/Tile Sets.yy",
   },
   "spriteId": {
-    "name": "spr_ts_sucrose",
-    "path": "sprites/spr_ts_sucrose/spr_ts_sucrose.yy",
+    "name": "_decompiled_ts_sucrose",
+    "path": "sprites/_decompiled_ts_sucrose/_decompiled_ts_sucrose.yy",
   },
   "spriteNoExport": true,
   "textureGroupId": {

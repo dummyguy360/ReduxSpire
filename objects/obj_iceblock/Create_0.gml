@@ -12,9 +12,9 @@ scr_collision_init();
 image_speed = 0;
 color_index = 0;
 color = 
-{ 
-	light :	#ffa4a4, 
-	dark : #cc5b5b 
+{
+    light: #FFA4A4,
+    dark: #CC5B5B
 };
 invtime = 0;
 grounded = false;

@@ -30,8 +30,8 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "spr_minecart",
-    "path": "sprites/spr_minecart/spr_minecart.yy",
+    "name": "spr_minecartEmpty",
+    "path": "sprites/spr_minecartEmpty/spr_minecartEmpty.yy",
   },
   "spriteMaskId": {
     "name": "spr_minecart",

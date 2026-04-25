@@ -17,9 +17,10 @@ function scr_levelSet()
     instance_destroy(obj_discoball);
     instance_destroy(obj_discoball);
     instance_destroy(obj_danceoffprank);
-	
-	//Aborts all Cutscenes
-    global.cutsceneManager = noone;
+    instance_destroy(obj_combotitle);
+    instance_destroy(obj_comboEndEffect);
+    global.cutsceneManager = -4;
+    
     if (instance_exists(obj_cutsceneManager))
         instance_destroy(obj_cutsceneManager);
     
@@ -77,6 +78,7 @@ function scr_levelSet()
     global.lapmusic = false;
 	#endregion
 	
+    global.savedcombo = 0;
     ini_open("saveData.ini");
     var ranks = ini_read_string("Ranks", string(global.levelname), "none");
     ini_close();
@@ -86,8 +88,8 @@ function scr_levelSet()
     global.kungairtime = ini_read_string("achievments", "kungairtime", 0);
     ini_close();
 	#endregion
-    global.showplaytimer = (ranks != "none");
     #region Camera Reset
+    global.showplaytimer = 1;
     with (obj_camera)
     {
         NextFreeze = false;
@@ -254,6 +256,16 @@ function scr_levelSet()
         substate = 0;
         sourbuddied = 0;
         hp = 6;
+        inputBufferJump = 8;
+        inputBufferSlap = 0;
+        targetxscale = 1;
+        hitLagbuffer = 0;
+        wetTimer = 0;
+        railmovespeed = 0;
+        raildir = 1;
+        supercharge = 0;
+        portal = -4;
+        _waittimer = 0;
     }
     
     with (obj_tv)
@@ -268,12 +280,28 @@ function scr_levelSet()
         tvlength = 0;
         ds_queue_clear(global.newhudtvanim);
         ds_queue_clear(global.newhudmessage);
+        sprite_index = spr_tvHUD_turningOn;
+        tvsprite = spr_tvHUD_turningOn;
+        queuedSprite = 1212;
         alarm[1] = 1;
-        staticdraw = false;
-        DrawY = 0;
+        DrawY = 6;
         shownranka = 0;
         shownrankb = 0;
         shownrankc = 0;
+        image_index = 0;
+        displayY = displayYMax;
+        sprite_image_number = sprite_get_number(spr_tvHUD_turningOn);
+        tvIdleAnimationBuffer = choose(500, 450, 400, 550);
+        tvExpressionSprite = undefined;
+        tvExpressionBuffer = 0;
+        staticActivated = false;
+        tvNormalStates = false;
+        tvPrevNormalStates = tvNormalStates;
+        tvDoingExpression = false;
+        tvPrevDoingExpression = tvDoingExpression;
+        turningOnindex = 0;
+        global.hurtcounter = 0;
+        global.hurtmilestone = 10;
     }
     
     with (obj_music)

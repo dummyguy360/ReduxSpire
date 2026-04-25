@@ -140,5 +140,12 @@ if (tauntBuffer == true)
         tauntBuffer = false;
 }
 
-if (place_meeting_solid(x, y) && state == baddiestate.stun && thrown)
-    instance_destroy();
+if (state == states.cheesepepstick)
+{
+    if (obj_player.state == states.charge && obj_player.sprite_index == spr_player_PZ_swingDing && obj_player.image_index < 5)
+        depth = obj_player.depth - 1;
+    else if (obj_player.state == states.superslam && obj_player.sprite_index == spr_player_PZ_pileDriver_land)
+        depth = obj_player.depth - 1;
+    else
+        depth = 0;
+}

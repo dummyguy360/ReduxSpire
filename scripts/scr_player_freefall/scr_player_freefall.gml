@@ -1,39 +1,62 @@
 function state_player_freefall()
 {
-    landAnim = 1;
+    if (place_meeting(x, y, obj_vertical_hallway))
+        exit;
     
-    if (verticalMovespeed >= 2)
+    landAnim = true;
+    var is_divebomb = sprite_index == spr_player_PZ_divebomb_start || sprite_index == spr_player_PZ_divebomb_fall;
+    
+    if (sprite_index == spr_player_donutSlam_intro && sprite_animation_end())
     {
-        verticalMovespeed += 0.5;
-        
-        if (verticalMovespeed > 17 && !instance_exists(obj_piledrivereffect))
-            instance_create(x, y, obj_piledrivereffect, { playerID: id });
+        sprite_index = spr_player_donutSlam;
+        image_index = 0;
     }
     
-    verticalMovespeed += grav;
-    verticalMovespeed = clamp(verticalMovespeed, 15, 40);
-    vsp = verticalMovespeed;
-    freefallsmash += (verticalMovespeed / 15);
+    if (vsp >= 2)
+    {
+        vsp += 0.5;
+        
+        if (verticalMovespeed > 17)
+        {
+            if (!cloudeffect--)
+            {
+                instance_create(x, y, obj_cloudeffect);
+                cloudeffect = 8;
+            }
+            
+            if (!piledrivereffect--)
+            {
+                instance_create(x, y, obj_piledrivereffect, 
+                {
+                    playerID: id
+                });
+                piledrivereffect = 15;
+            }
+        }
+    }
+    
+    if (vsp > 0)
+        freefallsmash++;
+    else if (vsp < 0)
+        freefallsmash = -14;
+    
     move = key_left + key_right;
     
     if (!grounded)
     {
-        if (sprite_index != spr_player_outofcontrolfall)
-            hsp = move * movespeed;
-        else
-            hsp = 0;
+        hsp = (sprite_index == spr_player_PZ_fall_outOfControl) ? 0 : (move * movespeed);
         
-        if (move != xscale && momemtum == 1 && movespeed != 0)
+        if (move != xscale && movespeed != 0)
             movespeed -= 0.05;
         
-        if (movespeed == 0)
-            momemtum = 0;
-        
-        if ((move == 0 && momemtum == 0) || scr_solid(x + hsp, y))
+        if (move != dir && move != 0)
         {
+            dir = move;
             movespeed = 0;
-            mach2 = 0;
         }
+        
+        if (move == 0 || scr_solid(x + hsp, y))
+            movespeed = 0;
         
         if (move != 0 && movespeed < 7)
             movespeed += 0.25;
@@ -44,62 +67,47 @@ function state_player_freefall()
         if (scr_solid(x + move, y) && move != 0)
             movespeed = 0;
         
-        if (dir != xscale)
-        {
-            mach2 = 0;
-            dir = xscale;
-            movespeed = 0;
-        }
-        
-        if (move == -xscale)
-        {
-            mach2 = 0;
-            movespeed = 0;
-            momemtum = 0;
-        }
-        
-        if (move != 0)
+        if (move != 0 && !is_divebomb)
             xscale = move;
     }
     
-    if (sprite_index != spr_player_outofcontrolfall)
+    if (sprite_index != spr_player_PZ_fall_outOfControl)
     {
-        if (sprite_index == spr_bodyslamstart)
-            sprite_index = spr_bodyslamfall;
-        
-        if (sprite_index == spr_bombdropstart)
-            sprite_index = spr_bombdropfall;
-        
-        if (global.treat)
-            sprite_index = spr_player_donutSlam;
     }
     
-    if (grounded && (freefallsmash < 10 || !place_meeting(x, y + vsp, obj_metalblock)) && !place_meeting(x, y + vsp, obj_destructibles))
+    if (sprite_index == spr_player_PZ_groundPound_intro && animation_end())
     {
-		// Land On Slopes.
+        image_index = 0;
+        sprite_index = spr_player_PZ_groundPound;
+    }
+    
+    if (sprite_index == spr_player_PZ_divebomb_start && animation_end())
+    {
+        image_index = 0;
+        sprite_index = spr_player_PZ_divebomb_fall;
+    }
+    
+    if (grounded && (freefallsmash < 10 || !place_meeting(x, y + vsp, obj_metalblock)) && !place_meeting(x, y + 1, obj_destructibles) && !place_meeting(x, y + 1, obj_vertical_hallway) && !place_meeting(x, y + vsp, obj_vertical_hallway))
+    {
         if (slopeCheck(x, y) && !place_meeting(x, y, obj_dashpad))
         {
             state = states.machroll;
             sprite_index = spr_crouchslip;
+            movespeed = (freefallsmash > 20) ? 12 : 8;
             
-            if (freefallsmash > 20)
-                movespeed = 12;
-            else
-                movespeed = 8;
-            
-            xscale = -slopeMomentum_direction();
+            with (instance_place(x, y + 1, obj_slope))
+                other.xscale = -sign(image_xscale);
             
             with (instance_create(x, y, obj_jumpdust))
                 image_xscale = other.xscale;
         }
-		// Otherwise.
         else
         {
             scr_sound(sound_maximumspeedland);
             image_index = 0;
             state = states.freefallland;
-            jumpAnim = 1;
-            jumpstop = 0;
+            jumpAnim = true;
+            jumpstop = false;
             
             with (obj_baddie)
             {
@@ -117,19 +125,19 @@ function state_player_freefall()
             }
             
             combo = 0;
-            bounce = 0;
-            instance_create(x, y, obj_landcloud);
+            
+            with (instance_create(x, y, obj_landcloud))
+                sprite_index = spr_groundpoundLandEffect;
+            
             freefallstart = 0;
             image_index = 0;
+            var landing_sprite_transitions = [[2050, 2098], [2066, 2098], [2110, 250], [2141, 2142], [2143, 2142], [141, 1360], [1574, 1360]];
             
-            if (sprite_index == spr_bodyslamfall)
-                sprite_index = spr_bodyslamland;
-            
-            if (sprite_index == spr_player_donutSlam)
-                sprite_index = spr_player_donutSlam_land;
-            
-            if (sprite_index == spr_bombdropfall)
-                sprite_index = spr_bombdropland;
+            for (var i = 0; i < array_length(landing_sprite_transitions); i++)
+            {
+                if (sprite_index == landing_sprite_transitions[i][0])
+                    sprite_index = landing_sprite_transitions[i][1];
+            }
         }
     }
     
@@ -137,7 +145,32 @@ function state_player_freefall()
     
     if (freefallsmash >= 10)
     {
-        if (!instance_exists(groundpoundEffect))
-            groundpoundEffect = instance_create(x, y, obj_groundpoundeffect, { playerID: id });
+        if (!instance_exists(obj_groundpoundeffect))
+            instance_create(x, y + 32, obj_groundpoundeffect);
+        
+        if (!instance_exists(obj_piledrivereffect))
+        {
+            with (instance_create(x, y, obj_piledrivereffect))
+            {
+                playerID = obj_player;
+                xscale = other.xscale;
+            }
+        }
+    }
+    
+    afterimage_timer--;
+    
+    if (afterimage_timer < 0)
+    {
+        with (instance_create(x, y, obj_blur_aftereffect))
+        {
+            image_index = max(other.image_index - 1, 0);
+            image_alpha = 0.8;
+            playerid = other.object_index;
+            image_xscale = other.xscale;
+            sprite_index = other.sprite_index;
+        }
+        
+        afterimage_timer = 2;
     }
 }

@@ -8,10 +8,10 @@ if (!(ds_list_find_index(global.saveroom, id) != -1))
         depth = -2;
     }
     
-    scr_sound(sound_toppingot);
+    scr_sound(sfx_rudyunlock);
     global.combofreeze = 30;
     global.combotime = 60;
     ds_list_add(global.saveroom, id);
     instance_destroy();
-    scr_queue_tvanim(spr_pizzytvjanitor, 150);
+    scr_queue_tvanim(spr_tvHUD_janitorTreasure, 150);
 }

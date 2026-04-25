@@ -13,16 +13,16 @@
   "edgeFiltering": false,
   "For3D": false,
   "frames": [
-    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"f9931f23-3a8e-44a8-8f6b-178d703665d5",},
-    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"8b208ae1-b76b-47ea-8e75-e63fc3755361",},
-    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"b09ebab7-16fb-4834-90bd-79d8f210495b",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"4f289bf8-1248-486e-9f3a-c1efe2825b02",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"74b694a9-ee21-4419-888d-53f3956b6a8a",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"5a113e16-f622-49bd-a073-47e610fe1a04",},
   ],
   "gridX": 0,
   "gridY": 0,
   "height": 96,
   "HTile": false,
   "layers": [
-    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"4c7dc202-60d3-427c-9269-62aad03bd4ba","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
+    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"9a6dbedf-b21e-4463-8def-cd9cbee9b62d","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
   ],
   "nineSlice": null,
   "origin": 4,
@@ -55,10 +55,10 @@
     "showBackdropImage": false,
     "timeUnits": 1,
     "tracks": [
-      {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"1.0","Keyframes":[
-            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"f9931f23-3a8e-44a8-8f6b-178d703665d5","path":"sprites/spr_explosiveBarrel/spr_explosiveBarrel.yy",},},},"Disabled":false,"id":"957aaedc-8d65-4600-8f48-4c2557af27c8","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
-            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"8b208ae1-b76b-47ea-8e75-e63fc3755361","path":"sprites/spr_explosiveBarrel/spr_explosiveBarrel.yy",},},},"Disabled":false,"id":"ca6f1a3b-f242-49e6-a99d-25720e096efa","IsCreationKey":false,"Key":1.0,"Length":1.0,"Stretch":false,},
-            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"b09ebab7-16fb-4834-90bd-79d8f210495b","path":"sprites/spr_explosiveBarrel/spr_explosiveBarrel.yy",},},},"Disabled":false,"id":"a26edc8d-f8f5-4e61-96d1-b17dbc0cc1f7","IsCreationKey":false,"Key":2.0,"Length":1.0,"Stretch":false,},
+      {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","builtinName":-1,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"1.0","Keyframes":[
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"4f289bf8-1248-486e-9f3a-c1efe2825b02","path":"sprites/spr_explosiveBarrel/spr_explosiveBarrel.yy",},},},"Disabled":false,"id":"b10ff379-7ec1-4443-bbbd-3fafe5e8af60","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"74b694a9-ee21-4419-888d-53f3956b6a8a","path":"sprites/spr_explosiveBarrel/spr_explosiveBarrel.yy",},},},"Disabled":false,"id":"a97ca482-c3f7-4dab-b407-41511e3d6671","IsCreationKey":false,"Key":1.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"5a113e16-f622-49bd-a073-47e610fe1a04","path":"sprites/spr_explosiveBarrel/spr_explosiveBarrel.yy",},},},"Disabled":false,"id":"253fa62a-0532-4bb3-989b-fb6b603ad3ae","IsCreationKey":false,"Key":2.0,"Length":1.0,"Stretch":false,},
           ],},"modifiers":[],"spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange": null,

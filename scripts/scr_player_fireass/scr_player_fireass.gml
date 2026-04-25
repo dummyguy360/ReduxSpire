@@ -1,13 +1,14 @@
 function state_player_fireass()
 {
-    static fire_afterimagetimer = 6;
+    if (sprite_index == spr_player_PZ_fireAss_intro && sprite_animation_end())
+        sprite_index = spr_player_PZ_fireAss_fall;
     
     image_speed = 0.35;
     
     if (scr_solid(x + xscale, y, false) && !place_meeting(x + xscale, y, obj_chocofrog))
         xscale *= -1;
     
-    if (sprite_index == spr_player_fireass)
+    if (sprite_index == spr_player_PZ_fireAss_fall || sprite_index == spr_player_PZ_fireAss_intro)
     {
         move = key_left + key_right;
         
@@ -20,12 +21,12 @@ function state_player_fireass()
         if (grounded && vsp > 0)
         {
             movespeed = 6;
-            sprite_index = spr_player_fireassend;
+            sprite_index = spr_player_PZ_fireAss_ground;
             image_index = 0;
         }
     }
     
-    if (sprite_index == spr_player_fireassend)
+    if (sprite_index == spr_player_PZ_fireAss_ground)
     {
         hsp = xscale * movespeed;
         
@@ -47,7 +48,7 @@ function state_player_fireass()
     if (fire_afterimagetimer > 0)
         fire_afterimagetimer--;
     
-    if (fire_afterimagetimer <= 0 && sprite_index != spr_player_fireassend)
+    if (fire_afterimagetimer <= 0 && sprite_index != spr_player_PZ_fireAss_ground)
     {
         create_afterimage(afterimages.orange, xscale);
         fire_afterimagetimer = 6;

@@ -331,3 +331,20 @@ function meta_give_all()
     };
 }
 #endregion
+function sh_game_speed(arg0_)
+{
+    var arg0 = argument0[1];
+    var new_game_speed = max(round(real(string_digits(arg0))), 1);
+    game_set_speed(new_game_speed, gamespeed_fps);
+}
+
+function meta_game_speed()
+{
+    return 
+    {
+        description: "Changes the game speed.",
+        arguments: ["<fps>"],
+        suggestions: [[]],
+        argumentDescriptions: ["Game speed, in frames per second."]
+    };
+}

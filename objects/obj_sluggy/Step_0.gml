@@ -63,7 +63,7 @@ if (state != baddiestate.idle && state != baddiestate.scared && state != baddies
 if (state != baddiestate.idle && state != baddiestate.scared && state != baddiestate.stun && state != baddiestate.grabbed && state != baddiestate.cherryactive && state != baddiestate.slugjump && state != baddiestate.slugparry && jumptimer > 0)
     jumptimer--;
 
-var _isplayerpresent = jumptimer <= 0 && (obj_player.x > (x - 250) && obj_player.x < (x + 250) && y <= (obj_player.y + 200) && y >= (obj_player.y - 16));
+var _isplayerpresent = jumptimer <= 0 && obj_player.x > (x - 250) && obj_player.x < (x + 250) && y <= (obj_player.y + 200) && y >= (obj_player.y - 16);
 
 if (grounded && (!use_heat() || ragereset <= 0) && (_isplayerpresent || (scr_solid(x + (image_xscale * 32), y, true) && !scr_solid(x + (image_xscale * 32), y - 100, true) && !scr_slope_ext(x + (image_xscale * 32), y) && !scr_slope_ext(x, y + 1))))
 {
@@ -89,7 +89,7 @@ if (grounded && (!use_heat() || ragereset <= 0) && (_isplayerpresent || (scr_sol
             
             state = baddiestate.rage;
             ragereset = 100;
-            sprite_index = spr_cotton_attack;
+            sprite_index = spr_player_PZ_werecotton_drill_h;
             image_index = 0;
             movespeed = 8;
             vsp = 0;

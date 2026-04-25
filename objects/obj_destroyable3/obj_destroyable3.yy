@@ -32,8 +32,8 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "spr_bigbreak",
-    "path": "sprites/spr_bigbreak/spr_bigbreak.yy",
+    "name": "spr_bigbreak_new",
+    "path": "sprites/spr_bigbreak_new/spr_bigbreak_new.yy",
   },
   "spriteMaskId": null,
   "visible": true,

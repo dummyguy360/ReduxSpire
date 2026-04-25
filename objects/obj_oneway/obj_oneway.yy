@@ -33,8 +33,8 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "spr_onewayblock",
-    "path": "sprites/spr_onewayblock/spr_onewayblock.yy",
+    "name": "spr_lemonheadblock",
+    "path": "sprites/spr_lemonheadblock/spr_lemonheadblock.yy",
   },
   "spriteMaskId": null,
   "visible": true,

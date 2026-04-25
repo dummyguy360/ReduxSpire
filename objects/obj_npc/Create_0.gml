@@ -14,3 +14,4 @@ mytex_y = 0;
 mysurf = noone;
 mycut = noone;
 propdex = 0;
+instance_destroy();

@@ -15,7 +15,7 @@ condition = function()
 
 output = function()
 {
-    with (inst_4CD0885E)
+    with (103984)
     {
         sprite_index = spr_geyserCutscene_Active;
         image_index = 0;

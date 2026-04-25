@@ -1,8 +1,8 @@
 if (ds_list_find_index(global.saveroom, id) == -1)
 {
-    with (instance_create(x + 32, y + 32, obj_cloudeffect))
+    with (instance_create((x - sprite_xoffset) + (sprite_width / 2), (y - sprite_yoffset) + (sprite_height / 2), obj_cloudeffect))
     {
-        image_speed = 0.35;
+        image_speed = 0.3;
         sprite_index = spr_bigbreak2_dead;
     }
     
@@ -13,7 +13,6 @@ if (ds_list_find_index(global.saveroom, id) == -1)
     scr_sound(sound_points);
     global.collect += 50;
     global.pizzameter += 5;
-    scr_queue_tvanim(obj_tv.happytvspr, 50);
     create_small_number(x, y, "50");
     global.combofreeze = 30;
     global.combotime += 45;

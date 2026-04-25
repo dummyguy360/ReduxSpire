@@ -13,15 +13,15 @@
   "edgeFiltering": false,
   "For3D": false,
   "frames": [
-    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"733e728c-4317-4a96-b7ca-c2b92ac8f3c1",},
-    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"309e46fe-0efe-48e6-a598-a6324a0483e0",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"2478a1d6-598d-4fc3-b0d5-4b4b53c18a0e",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"699e37aa-7324-4f06-ab04-2a5964705104",},
   ],
   "gridX": 0,
   "gridY": 0,
   "height": 540,
   "HTile": false,
   "layers": [
-    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"2dd413d2-e787-4177-8aed-5059f5278f0a","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
+    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"2afe74ce-fe8a-4f6b-9ef6-1750d99fe0c1","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
   ],
   "nineSlice": null,
   "origin": 0,
@@ -55,9 +55,9 @@
     "timeUnits": 1,
     "tracks": [
       {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"1.0","Keyframes":[
-            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"733e728c-4317-4a96-b7ca-c2b92ac8f3c1","path":"sprites/bg_exitwaylighthousebottomE/bg_exitwaylighthousebottomE.yy",},},},"Disabled":false,"id":"0aea51bf-8e7d-4133-98da-207e924e310a","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
-            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"309e46fe-0efe-48e6-a598-a6324a0483e0","path":"sprites/bg_exitwaylighthousebottomE/bg_exitwaylighthousebottomE.yy",},},},"Disabled":false,"id":"8b209e66-cc32-47e0-bb85-e5835b0ed44b","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
-          ],},"modifiers":[],"spriteId":null,"trackColour":4278190208,"tracks":[],"traits":0,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"2478a1d6-598d-4fc3-b0d5-4b4b53c18a0e","path":"sprites/bg_exitwaylighthousebottomE/bg_exitwaylighthousebottomE.yy",},},},"Disabled":false,"id":"ef03bb9d-1951-4612-bf98-ca4c0a0f75cf","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"699e37aa-7324-4f06-ab04-2a5964705104","path":"sprites/bg_exitwaylighthousebottomE/bg_exitwaylighthousebottomE.yy",},},},"Disabled":false,"id":"4bc7cb98-f5f2-405c-8191-365173e18211","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
+          ],},"modifiers":[],"spriteId":null,"trackColour":8421376,"tracks":[],"traits":0,},
     ],
     "visibleRange": null,
     "volume": 1.0,
