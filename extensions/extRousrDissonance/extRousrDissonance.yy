@@ -12,67 +12,86 @@
   "androidsourcedir": "",
   "author": "",
   "classname": "",
-  "copyToTargets": -1,
-  "date": "2026-04-24T12:11:30.5069925-07:00",
+  "copyToTargets": 35184372088898,
+  "date": "2017-11-10T00:03:15",
   "description": "",
   "exportToGame": true,
-  "extensionVersion": "0.0.1",
+  "extensionVersion": "1.1.0",
   "files": [
-    {"resourceType":"GMExtensionFile","resourceVersion":"1.0","name":"","constants":[],"copyToTargets":-1,"filename":"rousrDissonance.dll","final":"discord_shutdown","functions":[
-        {"resourceType":"GMExtensionFunction","resourceVersion":"1.0","name":"discord_init","argCount":2,"args":[
+    {"resourceType":"GMExtensionFile","resourceVersion":"1.0","name":"","constants":[],"copyToTargets":35184372089026,"filename":"rousrDissonance.dll","final":"discord_shutdown","functions":[
+        {"resourceType":"GMExtensionFunction","resourceVersion":"1.0","name":"discord_init","argCount":0,"args":[
             1,
             1,
-          ],"documentation":"","externalName":"Init","help":"","hidden":false,"kind":1,"returnType":2,},
-        {"resourceType":"GMExtensionFunction","resourceVersion":"1.0","name":"discord_update_presence","argCount":0,"args":[],"documentation":"","externalName":"UpdatePresence","help":"","hidden":false,"kind":1,"returnType":2,},
-        {"resourceType":"GMExtensionFunction","resourceVersion":"1.0","name":"discord_run_callbacks","argCount":0,"args":[],"documentation":"","externalName":"RunCallbacks","help":"","hidden":false,"kind":1,"returnType":2,},
-        {"resourceType":"GMExtensionFunction","resourceVersion":"1.0","name":"discord_reset_presence","argCount":0,"args":[],"documentation":"","externalName":"ResetPresence","help":"","hidden":false,"kind":1,"returnType":2,},
-        {"resourceType":"GMExtensionFunction","resourceVersion":"1.0","name":"discord_set_state","argCount":1,"args":[
+          ],"documentation":"","externalName":"Init","help":"initialize Discord with the application ID and Steam ID (_application_id, [_steam_id])","hidden":false,"kind":1,"returnType":2,},
+        {"resourceType":"GMExtensionFunction","resourceVersion":"1.0","name":"discord_update_presence","argCount":0,"args":[],"documentation":"","externalName":"UpdatePresence","help":"send the presences updates to Discord, call after sets.","hidden":false,"kind":1,"returnType":2,},
+        {"resourceType":"GMExtensionFunction","resourceVersion":"1.0","name":"discord_run_callbacks","argCount":0,"args":[],"documentation":"","externalName":"RunCallbacks","help":"run any pending discord call backs - call once per step","hidden":false,"kind":1,"returnType":2,},
+        {"resourceType":"GMExtensionFunction","resourceVersion":"1.0","name":"discord_reset_presence","argCount":0,"args":[],"documentation":"","externalName":"ResetPresence","help":"clears all presence data currently set this session","hidden":false,"kind":1,"returnType":2,},
+        {"resourceType":"GMExtensionFunction","resourceVersion":"1.0","name":"discord_set_state","argCount":0,"args":[
             1,
-          ],"documentation":"","externalName":"SetState","help":"","hidden":false,"kind":1,"returnType":2,},
-        {"resourceType":"GMExtensionFunction","resourceVersion":"1.0","name":"discord_set_details","argCount":1,"args":[
+          ],"documentation":"","externalName":"SetState","help":"set the state string (_state)","hidden":false,"kind":1,"returnType":2,},
+        {"resourceType":"GMExtensionFunction","resourceVersion":"1.0","name":"discord_set_details","argCount":0,"args":[
             1,
-          ],"documentation":"","externalName":"SetDetails","help":"","hidden":false,"kind":1,"returnType":2,},
-        {"resourceType":"GMExtensionFunction","resourceVersion":"1.0","name":"discord_set_timestamps","argCount":4,"args":[
+          ],"documentation":"","externalName":"SetDetails","help":"set the details string (_details)","hidden":false,"kind":1,"returnType":2,},
+        {"resourceType":"GMExtensionFunction","resourceVersion":"1.0","name":"discord_set_timestamps","argCount":0,"args":[
             2,
             2,
             2,
             2,
-          ],"documentation":"","externalName":"SetTimeStamps","help":"","hidden":false,"kind":1,"returnType":2,},
-        {"resourceType":"GMExtensionFunction","resourceVersion":"1.0","name":"discord_set_large_image","argCount":2,"args":[
+          ],"documentation":"","externalName":"SetTimeStamps","help":"set the start and end timestamp, in unix time format (_start_lo, _start_hi, _end_lo, _end_hi)","hidden":false,"kind":1,"returnType":2,},
+        {"resourceType":"GMExtensionFunction","resourceVersion":"1.0","name":"discord_set_large_image","argCount":0,"args":[
             1,
             1,
-          ],"documentation":"","externalName":"SetLargeImage","help":"","hidden":false,"kind":1,"returnType":2,},
-        {"resourceType":"GMExtensionFunction","resourceVersion":"1.0","name":"discord_set_small_image","argCount":2,"args":[
+          ],"documentation":"","externalName":"SetLargeImage","help":"set the large image detail and caption  (_large_image_key, _large_image_text)","hidden":false,"kind":1,"returnType":2,},
+        {"resourceType":"GMExtensionFunction","resourceVersion":"1.0","name":"discord_set_small_image","argCount":0,"args":[
             1,
             1,
-          ],"documentation":"","externalName":"SetSmallImage","help":"","hidden":false,"kind":1,"returnType":2,},
-        {"resourceType":"GMExtensionFunction","resourceVersion":"1.0","name":"discord_set_party","argCount":3,"args":[
-            1,
-            2,
-            2,
-          ],"documentation":"","externalName":"SetPartyData","help":"","hidden":false,"kind":1,"returnType":2,},
-        {"resourceType":"GMExtensionFunction","resourceVersion":"1.0","name":"discord_set_match_secret","argCount":2,"args":[
+          ],"documentation":"","externalName":"SetSmallImage","help":"set the small image detail and caption (_small_image_key, _small_image_text)","hidden":false,"kind":1,"returnType":2,},
+        {"resourceType":"GMExtensionFunction","resourceVersion":"1.0","name":"discord_set_party","argCount":0,"args":[
             1,
             2,
-          ],"documentation":"","externalName":"SetMatchSecret","help":"","hidden":false,"kind":1,"returnType":2,},
-        {"resourceType":"GMExtensionFunction","resourceVersion":"1.0","name":"discord_set_join_secret","argCount":1,"args":[
+            2,
+          ],"documentation":"","externalName":"SetPartyData","help":"set the party id and member count data (_party_id, _party_count, _party_max)","hidden":false,"kind":1,"returnType":2,},
+        {"resourceType":"GMExtensionFunction","resourceVersion":"1.0","name":"discord_set_match_secret","argCount":0,"args":[
             1,
-          ],"documentation":"","externalName":"SetJoinSecret","help":"","hidden":false,"kind":1,"returnType":2,},
-        {"resourceType":"GMExtensionFunction","resourceVersion":"1.0","name":"discord_set_spectate_secret","argCount":1,"args":[
+            2,
+          ],"documentation":"","externalName":"SetMatchSecret","help":"set the match secret, and whether or not the match represents a finite \"match\" (_match_secret, _instance)","hidden":false,"kind":1,"returnType":2,},
+        {"resourceType":"GMExtensionFunction","resourceVersion":"1.0","name":"discord_set_join_secret","argCount":0,"args":[
             1,
-          ],"documentation":"","externalName":"SetSpectateSecret","help":"","hidden":false,"kind":1,"returnType":2,},
-        {"resourceType":"GMExtensionFunction","resourceVersion":"1.0","name":"RegisterCallbacks","argCount":4,"args":[
+          ],"documentation":"","externalName":"SetJoinSecret","help":"set the unique, encrypted join secret token (_join_secret)","hidden":false,"kind":1,"returnType":2,},
+        {"resourceType":"GMExtensionFunction","resourceVersion":"1.0","name":"discord_set_spectate_secret","argCount":0,"args":[
+            1,
+          ],"documentation":"","externalName":"SetSpectateSecret","help":"set the unique, encrypted spectate secret token (_spectate_secret)","hidden":false,"kind":1,"returnType":2,},
+        {"resourceType":"GMExtensionFunction","resourceVersion":"1.0","name":"RegisterCallbacks","argCount":0,"args":[
             1,
             1,
             1,
             1,
           ],"documentation":"","externalName":"RegisterCallbacks","help":"","hidden":false,"kind":1,"returnType":1,},
-        {"resourceType":"GMExtensionFunction","resourceVersion":"1.0","name":"discord_respond","argCount":2,"args":[
+        {"resourceType":"GMExtensionFunction","resourceVersion":"1.0","name":"discord_respond","argCount":0,"args":[
             1,
             2,
-          ],"documentation":"","externalName":"Respond","help":"","hidden":false,"kind":1,"returnType":2,},
-        {"resourceType":"GMExtensionFunction","resourceVersion":"1.0","name":"discord_shutdown","argCount":0,"args":[],"documentation":"","externalName":"Shutdown","help":"","hidden":false,"kind":1,"returnType":2,},
-      ],"init":"","kind":1,"order":[],"origname":"","ProxyFiles":[],"uncompress":false,"usesRunnerInterface":false,},
+          ],"documentation":"","externalName":"Respond","help":"send a reply to `ask to join` request (_user_id, _reply)","hidden":false,"kind":1,"returnType":2,},
+        {"resourceType":"GMExtensionFunction","resourceVersion":"1.0","name":"discord_shutdown","argCount":0,"args":[],"documentation":"","externalName":"Shutdown","help":"Shutdown Discord","hidden":false,"kind":1,"returnType":2,},
+      ],"init":"","kind":1,"order":[
+        {"name":"discord_init","path":"extensions/extRousrDissonance/extRousrDissonance.yy",},
+        {"name":"discord_update_presence","path":"extensions/extRousrDissonance/extRousrDissonance.yy",},
+        {"name":"discord_run_callbacks","path":"extensions/extRousrDissonance/extRousrDissonance.yy",},
+        {"name":"discord_reset_presence","path":"extensions/extRousrDissonance/extRousrDissonance.yy",},
+        {"name":"discord_set_state","path":"extensions/extRousrDissonance/extRousrDissonance.yy",},
+        {"name":"discord_set_details","path":"extensions/extRousrDissonance/extRousrDissonance.yy",},
+        {"name":"discord_set_timestamps","path":"extensions/extRousrDissonance/extRousrDissonance.yy",},
+        {"name":"discord_set_large_image","path":"extensions/extRousrDissonance/extRousrDissonance.yy",},
+        {"name":"discord_set_small_image","path":"extensions/extRousrDissonance/extRousrDissonance.yy",},
+        {"name":"discord_set_party","path":"extensions/extRousrDissonance/extRousrDissonance.yy",},
+        {"name":"discord_set_match_secret","path":"extensions/extRousrDissonance/extRousrDissonance.yy",},
+        {"name":"discord_set_join_secret","path":"extensions/extRousrDissonance/extRousrDissonance.yy",},
+        {"name":"discord_set_spectate_secret","path":"extensions/extRousrDissonance/extRousrDissonance.yy",},
+        {"name":"RegisterCallbacks","path":"extensions/extRousrDissonance/extRousrDissonance.yy",},
+        {"name":"discord_respond","path":"extensions/extRousrDissonance/extRousrDissonance.yy",},
+        {"name":"discord_shutdown","path":"extensions/extRousrDissonance/extRousrDissonance.yy",},
+      ],"origname":"","ProxyFiles":[
+        {"resourceType":"GMProxyFile","resourceVersion":"1.0","name":"rousrDissonance.dylib","TargetMask":1,},
+      ],"uncompress":false,"usesRunnerInterface":false,},
   ],
   "gradleinject": "",
   "hasConvertedCodeInjection": true,
@@ -84,7 +103,7 @@
   "iosCocoaPodDependencies": "",
   "iosCocoaPods": "",
   "ioscodeinjection": "",
-  "iosdelegatename": "",
+  "iosdelegatename": null,
   "iosplistinject": "",
   "iosProps": false,
   "iosSystemFrameworkEntries": [],
@@ -94,7 +113,7 @@
   "maclinkerflags": "",
   "macsourcedir": "",
   "options": [],
-  "optionsFile": null,
+  "optionsFile": "options.json",
   "packageId": "",
   "parent": {
     "name": "Extensions",
@@ -102,14 +121,14 @@
   },
   "productId": "",
   "sourcedir": "",
-  "supportedTargets": -1,
+  "supportedTargets": 35184372088898,
   "tvosclassname": null,
   "tvosCocoaPodDependencies": "",
   "tvosCocoaPods": "",
   "tvoscodeinjection": "",
   "tvosdelegatename": null,
-  "tvosmaccompilerflags": "",
-  "tvosmaclinkerflags": "",
+  "tvosmaccompilerflags": null,
+  "tvosmaclinkerflags": null,
   "tvosplistinject": "",
   "tvosProps": false,
   "tvosSystemFrameworkEntries": [],

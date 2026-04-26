@@ -185,3 +185,4 @@ function pal_swap_enable_layer(_layer_index) {
   global.retro_pal_swapper.layer_map[? _layer_index] = _data;
   ds_priority_add(global.retro_pal_swapper.layer_priority,_layer_index,layer_get_depth(_layer_index));
 }
+
