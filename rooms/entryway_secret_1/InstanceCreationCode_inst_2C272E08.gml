@@ -1,9 +1,9 @@
 condition = function()
 {
-    return !instance_exists(124469);
+    return !instance_exists(inst_3DC84C03);
 };
 
 output = function()
 {
-    portal_activate(101139, true);
+    portal_activate(inst_266983B1, true);
 };

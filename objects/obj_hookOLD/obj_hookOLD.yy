@@ -29,7 +29,7 @@
   "physicsShapePoints": [],
   "physicsStartAwake": true,
   "properties": [
-    {"resourceType":"GMObjectProperty","resourceVersion":"1.0","name":"hookSubState","filters":[],"listItems":[],"multiselect":false,"rangeEnabled":false,"rangeMax":0.0,"rangeMin":0.0,"value":"UnknownEnum.Value_0","varType":4,},
+    {"resourceType":"GMObjectProperty","resourceVersion":"1.0","name":"hookSubState","filters":[],"listItems":[],"multiselect":false,"rangeEnabled":false,"rangeMax":0.0,"rangeMin":0.0,"value":"HookType.normal","varType":4,},
   ],
   "solid": false,
   "spriteId": {

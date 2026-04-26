@@ -39,10 +39,10 @@ output = function()
     }
     else
     {
-        with (108720)
+        with (inst_67382D88)
             alarm[1] = 1;
         
-        with (108723)
+        with (inst_2FD4AD0B)
             instance_destroy();
         
         has_won = true;

@@ -1,4 +1,4 @@
 output = function()
 {
-    portal_activate(103113, true);
+    portal_activate(inst_48A9414A, true);
 };

@@ -1,11 +1,11 @@
 condition = function()
 {
-    return !instance_exists(104162);
+    return !instance_exists(inst_4BC0C0A1);
 };
 
 output = function()
 {
-    with (104138)
+    with (inst_6DCC48D)
     {
         if (!(ds_list_find_index(global.saveroom, id) != -1))
         {
@@ -18,7 +18,7 @@ output = function()
         }
     }
     
-    with (104139)
+    with (inst_49BB99B8)
     {
         if (!(ds_list_find_index(global.saveroom, id) != -1))
         {
@@ -31,7 +31,7 @@ output = function()
         }
     }
     
-    with (104208)
+    with (inst_4FCB0E73)
     {
         if (!(ds_list_find_index(global.saveroom, id) != -1))
         {

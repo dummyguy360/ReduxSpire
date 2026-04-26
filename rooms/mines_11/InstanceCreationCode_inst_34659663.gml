@@ -1,8 +1,8 @@
 output = function()
 {
-    if (instance_exists(108077))
+    if (instance_exists(inst_7186C137))
     {
-        with (108077)
+        with (inst_7186C137)
             Region_active = false;
     }
 };
