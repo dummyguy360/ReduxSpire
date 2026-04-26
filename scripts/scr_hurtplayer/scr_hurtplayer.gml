@@ -72,8 +72,8 @@ function scr_hurtplayer(player = obj_player, mspeed)
                 else
                     scr_queue_tvanim(obj_tv.hurttvspr, 60);
                 
-                if (!is_undefined(arg1))
-                    movespeed = arg1;
+                if (!is_undefined(mspeed))
+                    movespeed = mspeed;
                 else
                     movespeed = 8;
                 

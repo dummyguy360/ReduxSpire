@@ -45,9 +45,7 @@ function state_player_cotton()
         }
     }
     else if (movespeed > 0 && sprite_index != spr_player_PZ_werecotton_drill_h && momemtum == 0)
-    {
         movespeed -= 0.5;
-    }
     
     if (scr_solid(x + xscale, y, true) && !scr_slope_ext(x + xscale, y))
     {

@@ -34,7 +34,7 @@ function scr_characterspr()
             spr_laddermove = spr_player_PZ_ladder_up;
             spr_ladderdown = spr_player_PZ_ladder_down;
             spr_keyget = spr_player_PZ_gotKey;
-            spr_crouchslipintro = 2136;
+            spr_crouchslipintro = spr_player_PZ_crouchSlip_intro;
             spr_crouchslip = spr_player_PZ_crouchSlip;
             spr_slippingonice = spr_player_slippingonice;
             spr_mach1 = spr_player_PZ_mach1;
@@ -98,15 +98,15 @@ function scr_characterspr()
             spr_idle2 = spr_player_PZ_idleAnim_2;
             spr_idle3 = spr_player_PZ_idleAnim_3;
             spr_idle4 = spr_player_PZ_idleAnim_4;
-            spr_idle5 = 2167;
-            spr_idle6 = 2168;
+            spr_idle5 = spr_player_PZ_idleAnim_5;
+            spr_idle6 = spr_player_PZ_idleAnim_6;
             spr_parry1 = spr_player_PZ_parry_1;
             spr_parry2 = spr_player_PZ_parry_2;
             spr_parry3 = spr_player_PZ_parry_3;
             spr_supertaunt1 = spr_player_PZ_superTaunt_1;
             spr_supertaunt2 = spr_player_PZ_superTaunt_2;
             spr_supertaunt3 = spr_player_PZ_superTaunt_3;
-            spr_supertaunt4 = 2056;
+            spr_supertaunt4 = spr_player_PZ_superTaunt_4;
             spr_suplexdash = spr_player_PZ_suplexDash_intro;
             spr_piledriver = spr_player_PZ_pileDriver;
             spr_piledriverland = spr_player_PZ_pileDriver_land;

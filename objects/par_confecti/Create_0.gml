@@ -2,7 +2,8 @@ enum confectistate
 {
 	normal,
 	taunt,
-	appear
+	appear,
+	unlock // added but unused?
 }
 
 image_speed = 0.35;

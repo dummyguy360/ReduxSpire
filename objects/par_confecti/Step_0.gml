@@ -15,7 +15,7 @@ switch (state)
         scr_confecti_appear();
         break;
     
-    case states.Nhookshot:
+    case confectistate.unlock:
         scr_confecti_unlock();
         break;
 }

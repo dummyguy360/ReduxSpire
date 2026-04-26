@@ -6,14 +6,10 @@ if (!(is_hub() || !scr_roomcheck()))
         draw_sprite(spr_tvHUD_turningOn, turningOnindex, 845, 74 + DrawY);
     }
     else
-    {
         turningOnindex = 0;
-    }
     
     if (!staticActivated)
-    {
         static_index = 0;
-    }
     else
     {
         static_index += 0.3;
@@ -42,9 +38,7 @@ if (!(is_hub() || !scr_roomcheck()))
         var meter_sprite2 = sprite_get_height(spr_tvHUD_comboMeter_fill);
         
         if (!surface_exists(comboSurface))
-        {
             comboSurface = surface_create(meter_sprite, meter_sprite2);
-        }
         else
         {
             surface_set_target(comboSurface);
@@ -173,8 +167,8 @@ if (!(is_hub() || !scr_roomcheck()))
             draw_set_halign(fa_left);
             var _tmr_spr = oldTimer_sprite;
             
-            if (_tmr_spr == 1411 && gaining_time)
-                _tmr_spr = 698;
+            if (_tmr_spr == spr_timer && gaining_time)
+                _tmr_spr = spr_timer_gain;
             
             draw_sprite_ext(oldBall_sprite, oldBall_index, timerx, timery, 1, 1, 0, c_white, 1);
             draw_sprite_ext(_tmr_spr, oldTimer_index, timerx, timery, 1, 1, 0, c_white, 1);

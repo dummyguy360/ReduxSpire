@@ -14,7 +14,7 @@ function scr_confecti_taunt()
                 instance_destroy();
         }
         
-        state = states.normal;
+        state = confectistate.taunt;
         sprite_index = spr_supertaunt;
         image_index = 0;
     }

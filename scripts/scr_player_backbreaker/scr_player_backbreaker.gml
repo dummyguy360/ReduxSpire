@@ -21,6 +21,7 @@ function state_player_backbreaker()
         state = states.machslide;
         sprite_index = spr_player_crouchslide;
     }
+	
     // Taunt.
     if (sprite_index == spr_taunt)
     {
@@ -43,8 +44,8 @@ function state_player_backbreaker()
     
     if (taunttimer <= 0 && sprite_index == spr_taunt)
         scr_taunt_setVariables();
+		
     // Supertaunt.
-    
     if (sprite_index == spr_supertaunt1 || sprite_index == spr_supertaunt2 || sprite_index == spr_supertaunt3 || sprite_index == spr_supertaunt4)
     {
         vsp = 0;
