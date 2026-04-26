@@ -64,7 +64,7 @@ with (obj_player)
                     x = obj_player.x - (16 * obj_player.image_xscale);
                     y = obj_player.y;
                     image_index = 0;
-                    state = states.Nhookshot;
+                    state = confectistate.unlock;
                 }
             }
         }

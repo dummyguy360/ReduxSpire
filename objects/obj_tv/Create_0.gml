@@ -114,18 +114,27 @@ clock_index = 0;
 muteIconAlpha = 1;
 muteIconBufferMax = 400;
 muteIconBuffer = muteIconBufferMax;
-keyPositions = [[-62, -15], [-9, 39], [34, -4], [18, -21], [-45, 43], [-63, 28], [-17, -20]];
+keyPositions = 
+[
+	[-62, -15], 
+	[-9, 39], 
+	[34, -4], 
+	[18, -21], 
+	[-45, 43], 
+	[-63, 28], 
+	[-17, -20]
+];
 playBackSpeed = 1;
 playbackDirection = 1;
 xscreensaver = keyPositions[0][0];
 yscreensaver = keyPositions[0][1];
 keyframeIndex = 0;
 keyframeNumber = array_length(keyPositions);
-tvBG = 1179;
+tvBG = spr_treasure_mines;//1179;//unused so it doesn't matter
 tvBG_index = 0;
 hidden = false;
 sprite_index = spr_tvHUD_turningOn;
-queuedSprite = 1212;
+queuedSprite = spr_knight_turn;//1212;
 sprite_image_number = 1;
 tvIdleAnimationBuffer = choose(500, 450, 400, 550);
 tvEscapeBuffer = irandom_range(300, 1000);

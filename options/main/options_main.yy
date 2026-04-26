@@ -2,8 +2,11 @@
   "resourceType": "GMMainOptions",
   "resourceVersion": "1.4",
   "name": "Main",
+  "ConfigValues": {
+    "Playtester": {"option_collision_compatibility":"false",},
+  },
   "option_author": "",
-  "option_collision_compatibility": true,
+  "option_collision_compatibility": false,
   "option_copy_on_write_enabled": false,
   "option_draw_colour": 4294967295,
   "option_game_speed": 60,

@@ -9,4 +9,4 @@ title_cur = wrap(title, 0, 24) * 2;
 title_index = 0;
 image_speed = 0.35;
 alarm[0] = 120;
-workaround = 2240;
+workaround = spr_comboTitles;

@@ -11,7 +11,7 @@ title_cur = wrap(title, 0, 24) * 2;
 title_index = 0;
 image_speed = 0.35;
 timer = 30;
-workaround = 2241;
+workaround = spr_comboEnd;
 combo = 0;
 
 if (room != hub_w1)

@@ -3,7 +3,7 @@ enum confectistate
 	normal,
 	taunt,
 	appear,
-	unlock // added but unused?
+	unlock // added for rudy
 }
 
 image_speed = 0.35;

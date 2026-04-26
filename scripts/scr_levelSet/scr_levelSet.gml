@@ -282,7 +282,7 @@ function scr_levelSet()
         ds_queue_clear(global.newhudmessage);
         sprite_index = spr_tvHUD_turningOn;
         tvsprite = spr_tvHUD_turningOn;
-        queuedSprite = 1212;
+        queuedSprite = spr_knight_turn;//1212;
         alarm[1] = 1;
         DrawY = 6;
         shownranka = 0;

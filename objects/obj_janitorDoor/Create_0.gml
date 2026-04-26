@@ -1,10 +1,10 @@
 image_index = 0;
 image_speed = 0.35;
 depth = 8;
-spriteDoorUnlocked = 1859;
-spriteDoorLocked = 2310;
-spriteDoorEscape = 2310;
-spriteDoorLight = 375;
-spriteDoorLock = 2311;
+spriteDoorUnlocked = spr_worlddoor_open;
+spriteDoorLocked = spr_janitordoor_closed;
+spriteDoorEscape = spr_janitordoor_closed;
+spriteDoorLight = spr_null;
+spriteDoorLock = spr_worlddoor_lock;
 sprite_index = spriteDoorLocked;
 lightIndex = 0;
