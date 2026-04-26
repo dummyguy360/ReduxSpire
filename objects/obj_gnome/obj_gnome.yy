@@ -30,7 +30,7 @@
   "physicsStartAwake": true,
   "properties": [
     {"resourceType":"GMObjectProperty","resourceVersion":"1.0","name":"wall","filters":[],"listItems":[],"multiselect":false,"rangeEnabled":false,"rangeMax":0.0,"rangeMin":0.0,"value":"undefined","varType":4,},
-    {"resourceType":"GMObjectProperty","resourceVersion":"1.0","name":"colorID","filters":[],"listItems":[],"multiselect":false,"rangeEnabled":false,"rangeMax":0.0,"rangeMin":0.0,"value":"GnomeFlags.Red","varType":4,},
+    {"resourceType":"GMObjectProperty","resourceVersion":"1.0","name":"colorID","filters":[],"listItems":[],"multiselect":false,"rangeEnabled":false,"rangeMax":0.0,"rangeMin":0.0,"value":"GnomeFlags.RED","varType":4,},
   ],
   "solid": false,
   "spriteId": {
